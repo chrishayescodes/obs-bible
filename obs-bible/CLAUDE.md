@@ -12,7 +12,7 @@ The OSB (Open Source Bible) Bible project is a React-based web application for b
 - **Component Development**: Storybook 9.0.18 for isolated component development and documentation
 - **Linting**: ESLint 9.30.1 with React-specific plugins
 - **Styling**: Pure CSS with category-based color theming and responsive design
-- **Data Format**: JSON structure for Bible metadata and XML files for chapter content
+- **Data Format**: JSON structure for Bible metadata, XML files for chapter content, and JSON files for verse text
 
 ## Project Structure
 
@@ -23,9 +23,14 @@ obs-bible/
 │   │   ├── kjv_structure.json          # Bible structure and metadata
 │   │   ├── kjvfull.xml                 # Complete KJV Bible XML
 │   │   ├── parse_kjv_bible.py          # Python script for data processing
-│   │   └── output_chapters/            # Individual chapter XML files (66 books)
-│   │       ├── Gen/                    # Genesis chapters (Gen_1.xml to Gen_50.xml)
-│   │       ├── Matt/                   # Matthew chapters (Matt_1.xml to Matt_28.xml)
+│   │   ├── extract_verses_to_json.py   # Python script to extract verses from XML to JSON
+│   │   ├── output_chapters/            # Individual chapter XML files (66 books)
+│   │   │   ├── Gen/                    # Genesis chapters (Gen_1.xml to Gen_50.xml)
+│   │   │   ├── Matt/                   # Matthew chapters (Matt_1.xml to Matt_28.xml)
+│   │   │   └── ... (all 66 Bible books)
+│   │   └── output_chapters_json/       # Individual chapter JSON files (66 books)
+│   │       ├── Gen/                    # Genesis chapters (Gen_1.json to Gen_50.json)
+│   │       ├── Matt/                   # Matthew chapters (Matt_1.json to Matt_28.json)
 │   │       └── ... (all 66 Bible books)
 ├── src/
 │   ├── App.jsx                         # Main application component
@@ -72,7 +77,7 @@ obs-bible/
 
 ### Data Structure
 
-The application uses a two-tier data architecture:
+The application uses a three-tier data architecture:
 
 1. **Bible Structure JSON** (`/public/data/kjv_structure.json`):
    - Hierarchical structure: `old_testament` and `new_testament`
@@ -84,6 +89,21 @@ The application uses a two-tier data architecture:
    - Individual XML files for each chapter (e.g., `Gen_1.xml`)
    - OSIS XML format with Strong's numbers and morphological analysis
    - Contains structured verse data with lemma and morphological information
+   - Each verse is contained on a single line with start and end markers
+
+3. **Chapter JSON Files** (`/public/data/output_chapters_json/`):
+   - Individual JSON files for each chapter (e.g., `Gen_1.json`)
+   - Simple key-value structure with OSIS IDs as keys (e.g., "Gen.1.1")
+   - Plain text verse content as values
+   - Generated from XML files using `extract_verses_to_json.py`
+   - Example structure:
+     ```json
+     {
+       "Gen.1.1": "In the beginning God created the heaven and the earth.",
+       "Gen.1.2": "And the earth was without form, and void...",
+       ...
+     }
+     ```
 
 ### Component Architecture
 
@@ -364,13 +384,24 @@ The project implements comprehensive testing with 110 passing tests:
 
 ### Bible Data Pipeline
 
-The application includes a Python script (`parse_kjv_bible.py`) for processing Bible data:
+The application includes Python scripts for processing Bible data:
 
-1. **Input**: Complete KJV XML file with Strong's numbers
-2. **Processing**: Extracts book structure, chapters, and verse counts
-3. **Output**: 
-   - Structured JSON metadata (`kjv_structure.json`)
-   - Individual chapter XML files organized by book
+#### 1. Structure Extraction (`parse_kjv_bible.py`)
+- **Input**: Complete KJV XML file with Strong's numbers
+- **Processing**: Extracts book structure, chapters, and verse counts
+- **Output**: 
+  - Structured JSON metadata (`kjv_structure.json`)
+  - Individual chapter XML files organized by book
+
+#### 2. Verse Extraction (`extract_verses_to_json.py`)
+- **Input**: Individual chapter XML files from `output_chapters/`
+- **Processing**: 
+  - Parses each XML file line by line (verses are on single lines)
+  - Extracts OSIS IDs from verse markers
+  - Extracts plain text from `<ns1:w>` and `<ns1:transChange>` tags
+  - Ignores `<ns1:note>` tags and their content
+- **Output**: JSON files with verse text in `output_chapters_json/`
+- **Total Files Processed**: 1,189 chapter files across 66 books
 
 ### XML Structure
 
