@@ -60,13 +60,15 @@ describe('ChapterSelector', () => {
       expect(screen.getByText('5')).toBeInTheDocument();
     });
 
-    test('displays verse counts for each chapter', () => {
+    test('buttons have verse count in title attributes', () => {
       render(<ChapterSelector bookData={mockBookData} />);
       
-      // Check that verse counts are displayed
-      expect(screen.getByText('31')).toBeInTheDocument(); // Chapter 1: 31 verses
-      expect(screen.getByText('25')).toBeInTheDocument(); // Chapter 2: 25 verses
-      expect(screen.getByText('24')).toBeInTheDocument(); // Chapter 3: 24 verses
+      // Check that verse counts are in title attributes (not displayed as text)
+      const chapter1Button = screen.getByText('1').closest('button');
+      expect(chapter1Button).toHaveAttribute('title', 'Chapter 1 - 31 verses');
+      
+      const chapter2Button = screen.getByText('2').closest('button');
+      expect(chapter2Button).toHaveAttribute('title', 'Chapter 2 - 25 verses');
     });
   });
 
@@ -215,7 +217,10 @@ describe('ChapterSelector', () => {
       expect(screen.getByText('Obadiah')).toBeInTheDocument();
       expect(screen.getByText('1 chapters')).toBeInTheDocument();
       expect(screen.getByText('1')).toBeInTheDocument();
-      expect(screen.getByText('21')).toBeInTheDocument();
+      
+      // Verse count should be in title attribute, not displayed as text
+      const chapter1Button = screen.getByText('1').closest('button');
+      expect(chapter1Button).toHaveAttribute('title', 'Chapter 1 - 21 verses');
     });
 
     test('handles book with many chapters', () => {
@@ -258,7 +263,11 @@ describe('ChapterSelector', () => {
 
       render(<ChapterSelector bookData={bookWithZeroVerses} />);
 
-      expect(screen.getAllByText('0')).toHaveLength(2); // Should display 0 verses for both chapters
+      // Verse counts should not be displayed as text anymore, only in title attributes
+      const chapter1Button = screen.getByText('1').closest('button');
+      const chapter2Button = screen.getByText('2').closest('button');
+      expect(chapter1Button).toHaveAttribute('title', 'Chapter 1 - 0 verses');
+      expect(chapter2Button).toHaveAttribute('title', 'Chapter 2 - 0 verses');
     });
   });
 

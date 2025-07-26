@@ -72,10 +72,18 @@ The application uses a two-tier data architecture:
 ### Component Architecture
 
 #### Main Application (`App.jsx`)
-- Manages global state for selected book and Bible data
-- Handles data fetching from `/data/kjv_structure.json`
-- Implements loading states and error handling
-- Renders book selection interface and selected book information
+- **State Management**: Manages `selectedBook`, `selectedChapter`, and `bibleData` state
+- **Data Fetching**: Loads Bible structure from `/data/kjv_structure.json`
+- **Navigation Flow**: Implements book → chapter selection with back navigation
+- **User Interface**: 
+  - Shows BibleBookSelector when no book is selected
+  - Shows ChapterSelector when book is selected
+  - Displays selected chapter information (book + chapter + verse count)
+  - Provides "Back to Books" button for navigation
+- **Event Handling**: 
+  - `handleBookSelect`: Sets selected book and resets chapter selection
+  - `handleChapterSelect`: Sets selected chapter for display
+- **Loading States**: Handles loading and error states during data fetch
 
 #### BibleBookSelector Component (`src/book-selection/`)
 - **Purpose**: Interactive grid for selecting Bible books
@@ -115,14 +123,22 @@ The application uses a comprehensive CSS architecture:
 
 2. **Application Styles** (`src/App.css`):
    - Layout for main application components
-   - Selected book information display
+   - Selected chapter information display (`.selected-info`)
+   - Chapter view container (`.chapter-view`)
+   - Back navigation button (`.back-button`) with hover effects
    - Loading state styling
+   - Dark mode support for all navigation elements
 
-3. **Component Styles** (`src/book-selection/BibleBookSelector.css`):
-   - Responsive grid system
-   - Category-based color theming (10 categories)
-   - Interactive states (hover, focus, selected)
-   - Mobile-responsive breakpoints
+3. **Component Styles**:
+   - **BibleBookSelector** (`src/book-selection/BibleBookSelector.css`):
+     - Responsive grid system with category-based color theming
+     - Interactive states (hover, focus, selected)
+     - Mobile-responsive breakpoints
+   - **ChapterSelector** (`src/chapter-selection/ChapterSelector.css`):
+     - CSS Grid layout with `auto-fill` for proper row wrapping
+     - Simplified button styling with consistent sizing
+     - Responsive breakpoints for different screen sizes
+     - Fixed button heights to prevent size variations
 
 ### Category Color System
 
@@ -190,11 +206,13 @@ The project implements comprehensive testing with 41 passing tests:
    - **Mocking**: CSS imports mocked for testing
    - **VS Code Integration**: Enhanced Jest extension settings for test discovery
 
-3. **Recent Test Fixes** (Latest):
-   - Fixed missing `type="button"` attributes in ChapterSelector component
-   - Resolved test assertion issues with multiple elements containing same text
-   - Added `useEffect` to reset component state when props change
-   - Enhanced VS Code Jest extension configuration for better test discovery
+3. **Recent Updates** (Latest):
+   - **Test Fixes**: Fixed missing `type="button"` attributes and test assertion issues
+   - **CSS Grid Layout**: Implemented proper row wrapping with `auto-fill` grid
+   - **App Integration**: Added complete navigation flow from books to chapters
+   - **State Management**: Integrated chapter selection with automatic state reset
+   - **UI Enhancement**: Added back navigation and selected chapter display
+   - **Responsive Design**: Fixed button overflow and wrapping issues
 
 4. **Storybook Stories**:
    - Component isolation and development
@@ -264,13 +282,31 @@ The `.vscode/settings.json` includes optimized settings for Jest test discovery:
 - `jest.runMode`: Set to on-demand for better performance
 - `jest.useDashedArgs`: Proper argument passing to Jest
 
+## Application Flow
+
+### User Navigation Experience
+The application provides a seamless navigation experience:
+
+1. **Initial State**: User sees the BibleBookSelector with all 66 Bible books organized by testament
+2. **Book Selection**: User clicks a book → ChapterSelector appears with "Back to Books" button
+3. **Chapter Selection**: User clicks a chapter → Selected chapter info displays (Book - Chapter X, verse count)
+4. **Navigation**: User can return to book selection using the back button
+
+### State Management Architecture
+- **App-level State**: `selectedBook`, `selectedChapter`, `bibleData`
+- **Automatic Reset**: Chapter selection resets when book changes
+- **Conditional Rendering**: Components render based on selection state
+- **Event Propagation**: Child components communicate via callback props
+
 ## Key Features
 
-1. **Responsive Design**: Adapts from mobile (3 columns) to desktop (12+ columns)
-2. **Dark Mode Support**: System preference detection and manual override
-3. **Accessibility**: Keyboard navigation, screen reader support, meaningful titles
-4. **Performance**: Component-level CSS, efficient rendering, lazy loading ready
-5. **Developer Experience**: Hot reload, comprehensive testing, component isolation
+1. **Complete Navigation Flow**: Book selection → Chapter selection with back navigation
+2. **Responsive Design**: Adapts from mobile to desktop with proper button wrapping
+3. **State Management**: Integrated book and chapter selection with automatic state reset
+4. **Dark Mode Support**: System preference detection and manual override for all components
+5. **Accessibility**: Keyboard navigation, screen reader support, meaningful titles
+6. **Performance**: Component-level CSS, efficient rendering, lazy loading ready
+7. **Developer Experience**: Hot reload, comprehensive testing, component isolation
 
 ## Future Development Considerations
 

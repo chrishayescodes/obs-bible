@@ -42,8 +42,7 @@ const ChapterSelector = ({ bookData, onChapterSelect }) => {
             onClick={() => handleChapterClick(chapterNumber)}
             title={`Chapter ${chapterNumber} - ${verseCount} verses`}
           >
-            <span className="chapter-number">{chapterNumber}</span>
-            <span className="verse-count">{verseCount}</span>
+            {chapterNumber}
           </button>
         ))}
       </div>

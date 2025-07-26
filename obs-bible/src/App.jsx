@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import BibleBookSelector from './components/BibleBookSelector'
+import BibleBookSelector from './book-selection'
+import ChapterSelector from './chapter-selection'
 
 function App() {
   const [selectedBook, setSelectedBook] = useState(null)
+  const [selectedChapter, setSelectedChapter] = useState(null)
   const [bibleData, setBibleData] = useState(null)
   const [loading, setLoading] = useState(true)
 
@@ -23,7 +25,13 @@ function App() {
 
   const handleBookSelect = (bookId, bookInfo) => {
     setSelectedBook({ id: bookId, ...bookInfo })
+    setSelectedChapter(null) // Reset chapter selection when book changes
     console.log('Selected book:', bookId, bookInfo)
+  }
+
+  const handleChapterSelect = (chapterNumber) => {
+    setSelectedChapter(chapterNumber)
+    console.log('Selected chapter:', chapterNumber)
   }
 
   if (loading) {
@@ -38,13 +46,30 @@ function App() {
   return (
     <div className="app">
       <h1>OSB Bible</h1>
-      {selectedBook && (
-        <div className="selected-book-info">
-          <h2>{selectedBook.title}</h2>
-          <p>{selectedBook.chapter_count} chapters • {selectedBook.total_verses} verses</p>
+      
+      {selectedBook && selectedChapter && (
+        <div className="selected-info">
+          <h2>{selectedBook.title} - Chapter {selectedChapter}</h2>
+          <p>{selectedBook.chapters[selectedChapter]} verses</p>
         </div>
       )}
-      <BibleBookSelector bibleData={bibleData} onBookSelect={handleBookSelect} />
+      
+      {selectedBook ? (
+        <div className="chapter-view">
+          <button 
+            className="back-button" 
+            onClick={() => setSelectedBook(null)}
+          >
+            ← Back to Books
+          </button>
+          <ChapterSelector 
+            bookData={selectedBook} 
+            onChapterSelect={handleChapterSelect}
+          />
+        </div>
+      ) : (
+        <BibleBookSelector bibleData={bibleData} onBookSelect={handleBookSelect} />
+      )}
     </div>
   )
 }

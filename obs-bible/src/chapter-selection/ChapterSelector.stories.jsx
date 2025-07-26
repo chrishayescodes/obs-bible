@@ -79,8 +79,15 @@ export default {
   title: 'Components/ChapterSelector',
   component: ChapterSelector,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: '100%', minWidth: '800px', padding: '20px' }}>
+        <Story />
+      </div>
+    ),
+  ],
   tags: ['autodocs'],
 };
 
@@ -167,4 +174,27 @@ export const WithoutCallback = {
     bookData: mockMatthewData,
     // No onChapterSelect callback provided
   },
+};
+
+export const GridTest = {
+  args: {
+    bookData: mockGenesisData,
+    onChapterSelect: (chapterNumber) => {
+      console.log('Chapter selected:', chapterNumber);
+    },
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ 
+        width: '100%', 
+        minWidth: '1200px', 
+        padding: '20px',
+        border: '2px solid red',
+        backgroundColor: '#f0f0f0'
+      }}>
+        <h3>Grid Test - Should show multiple columns</h3>
+        <Story />
+      </div>
+    ),
+  ],
 };
