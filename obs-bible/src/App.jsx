@@ -23,7 +23,6 @@ function App() {
   if (loading) {
     return (
       <div className="app">
-        <h1>OSB Bible</h1>
         <div className="loading">Loading Bible data...</div>
       </div>
     )
@@ -31,7 +30,6 @@ function App() {
 
   return (
     <div className="app">
-      <h1>OSB Bible</h1>
       <Navigation bibleData={bibleData} />
     </div>
   )
