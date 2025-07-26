@@ -1,0 +1,252 @@
+.chapter-selector {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.chapter-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.chapter-header h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.chapter-count {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
+  max-width: 100%;
+}
+
+.chapter-button {
+  background-color: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 12px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  font-family: inherit;
+  color: #475569;
+}
+
+.chapter-button:hover {
+  background-color: #e2e8f0;
+  border-color: #64748b;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-button.selected {
+  background-color: #3b82f6;
+  border-color: #2563eb;
+  color: white;
+}
+
+.chapter-button.selected:hover {
+  background-color: #2563eb;
+  border-color: #1d4ed8;
+}
+
+.chapter-number {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.verse-count {
+  font-size: 12px;
+  opacity: 0.8;
+  display: block;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .chapter-header h3 {
+    color: #e2e8f0;
+  }
+
+  .chapter-count {
+    color: #a0aec0;
+  }
+
+  .chapter-button {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #e5e7eb;
+  }
+
+  .chapter-button:hover {
+    background-color: #4b5563;
+    border-color: #6b7280;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .loading {
+    color: #a0aec0;
+  }
+}
+
+/* Explicit dark mode class support */
+.dark .chapter-header h3 {
+  color: #e2e8f0;
+}
+
+.dark .chapter-count {
+  color: #a0aec0;
+}
+
+.dark .chapter-button {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #e5e7eb;
+}
+
+.dark .chapter-button:hover {
+  background-color: #4b5563;
+  border-color: #6b7280;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark .loading {
+  color: #a0aec0;
+}
+
+/* Responsive adjustments for different viewport sizes */
+/* Extra large screens - 12+ columns */
+@media (min-width: 1400px) {
+  .chapters-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  }
+}
+
+/* Large screens - 10-12 columns */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .chapters-grid {
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+  }
+}
+
+/* Medium screens - 8-10 columns */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .chapters-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+}
+
+/* Tablet landscape - 6-8 columns */
+@media (min-width: 768px) and (max-width: 991px) {
+  .chapters-grid {
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    gap: 8px;
+  }
+  
+  .chapter-button {
+    padding: 10px 6px;
+    min-height: 70px;
+  }
+  
+  .chapter-number {
+    font-size: 16px;
+  }
+}
+
+/* Tablet portrait - 5-6 columns */
+@media (min-width: 576px) and (max-width: 767px) {
+  .chapters-grid {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 8px;
+  }
+  
+  .chapter-button {
+    padding: 10px 6px;
+    min-height: 65px;
+  }
+  
+  .chapter-number {
+    font-size: 16px;
+  }
+  
+  .verse-count {
+    font-size: 11px;
+  }
+}
+
+/* Mobile landscape - 4-5 columns */
+@media (min-width: 480px) and (max-width: 575px) {
+  .chapters-grid {
+    grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+    gap: 6px;
+  }
+  
+  .chapter-button {
+    padding: 8px 4px;
+    min-height: 60px;
+  }
+  
+  .chapter-number {
+    font-size: 14px;
+  }
+  
+  .verse-count {
+    font-size: 10px;
+  }
+  
+  .chapter-header h3 {
+    font-size: 18px;
+  }
+}
+
+/* Mobile portrait - 3-4 columns */
+@media (max-width: 479px) {
+  .chapters-grid {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 5px;
+  }
+  
+  .chapter-button {
+    padding: 8px 4px;
+    min-height: 55px;
+  }
+  
+  .chapter-number {
+    font-size: 14px;
+  }
+  
+  .verse-count {
+    font-size: 10px;
+  }
+  
+  .chapter-header h3 {
+    font-size: 16px;
+  }
+  
+  .chapter-count {
+    font-size: 12px;
+  }
+}

@@ -33,8 +33,13 @@ obs-bible/
 │   ├── book-selection/                 # Bible book selector component
 │   │   ├── index.jsx                   # BibleBookSelector component
 │   │   ├── BibleBookSelector.css       # Component-specific styling
-│   │   ├── BibleBookSelector.test.jsx  # Comprehensive test suite
+│   │   ├── BibleBookSelector.test.jsx  # Comprehensive test suite (21 tests)
 │   │   └── BibleBookSelector.stories.jsx # Storybook stories
+│   ├── chapter-selection/              # Chapter selector component
+│   │   ├── index.jsx                   # ChapterSelector component
+│   │   ├── ChapterSelector.css         # Component-specific styling
+│   │   ├── ChapterSelector.test.jsx    # Comprehensive test suite (20 tests)
+│   │   └── ChapterSelector.stories.jsx # Storybook stories
 │   └── stories/                        # Default Storybook example components
 ├── .storybook/                         # Storybook configuration
 │   ├── main.js                         # Storybook main configuration
@@ -84,6 +89,20 @@ The application uses a two-tier data architecture:
   - `bibleData`: Complete Bible structure object
   - `onBookSelect`: Callback function for book selection
 - **Styling**: Category-based color system with 10 distinct themes
+
+#### ChapterSelector Component (`src/chapter-selection/`)
+- **Purpose**: Interactive grid for selecting chapters within a selected book
+- **Features**:
+  - Chapter buttons with verse counts displayed
+  - Selection state management with visual feedback
+  - Responsive grid layout for chapter navigation
+  - Accessibility support with proper button attributes (`type="button"`)
+  - Automatic state reset when book data changes (via `useEffect`)
+  - Loading states for empty or missing chapter data
+- **Props**:
+  - `bookData`: Selected book object with chapter information
+  - `onChapterSelect`: Callback function for chapter selection
+- **State Management**: Uses `useState` and `useEffect` for selection tracking and prop change handling
 
 ### Styling Architecture
 
@@ -153,22 +172,31 @@ npm run build-storybook
 
 ### Testing Strategy
 
-The project implements comprehensive testing:
+The project implements comprehensive testing with 41 passing tests:
 
-1. **Unit Tests** (`BibleBookSelector.test.jsx`):
-   - Component rendering and behavior
+1. **Unit Tests**:
+   - **BibleBookSelector**: 21 tests covering component rendering, user interactions, accessibility, and edge cases
+   - **ChapterSelector**: 20 tests covering component state management, user events, and error handling
+   - Component rendering and behavior validation
    - User interactions and event handling
    - Edge cases and error conditions
-   - Accessibility features
-   - 90+ test cases covering all functionality
+   - Accessibility features and keyboard navigation
+   - State management and prop changes
 
 2. **Test Configuration**:
    - **Environment**: jsdom for DOM simulation
    - **Setup**: `@testing-library/jest-dom` for enhanced assertions
    - **Coverage**: Excludes Storybook files and setup files
    - **Mocking**: CSS imports mocked for testing
+   - **VS Code Integration**: Enhanced Jest extension settings for test discovery
 
-3. **Storybook Stories**:
+3. **Recent Test Fixes** (Latest):
+   - Fixed missing `type="button"` attributes in ChapterSelector component
+   - Resolved test assertion issues with multiple elements containing same text
+   - Added `useEffect` to reset component state when props change
+   - Enhanced VS Code Jest extension configuration for better test discovery
+
+4. **Storybook Stories**:
    - Component isolation and development
    - Multiple story variants (Default, Complete, Loading, WithInteraction)
    - Mock data for consistent development experience
@@ -222,8 +250,19 @@ Chapter XML files follow OSIS standard:
 - **ESLint** (`eslint.config.js`): React hooks, refresh, and best practices
 
 ### Development Environment
-- **VS Code Settings**: Jest integration, test explorer, file associations
+- **VS Code Settings**: Enhanced Jest integration with improved test discovery
+  - Jest extension configuration with `jest.testExplorer` settings
+  - Test runner commands and auto-run settings
+  - File associations for test files (.test.jsx, .spec.jsx)
+  - Search and watcher exclusions for better performance
 - **Storybook**: React-Vite framework with docs addon
+
+### VS Code Jest Extension Configuration
+The `.vscode/settings.json` includes optimized settings for Jest test discovery:
+- `jest.jestCommandLine`: Uses npm test command
+- `jest.testExplorer.showClassicStatus`: Enables classic test status display  
+- `jest.runMode`: Set to on-demand for better performance
+- `jest.useDashedArgs`: Proper argument passing to Jest
 
 ## Key Features
 
@@ -261,9 +300,11 @@ Chapter XML files follow OSIS standard:
 
 ### Debugging and Development
 - Use React Developer Tools for component inspection
-- Jest watch mode for test-driven development
+- Jest watch mode for test-driven development (`npm run test:watch`)
 - Storybook for isolated component development
 - Browser DevTools for responsive design testing
+- VS Code Jest extension for integrated test running and debugging
+- Clear Jest cache with `npm test -- --clearCache` if test discovery issues occur
 
 ### Code Standards
 - Follow existing naming conventions and file structure
