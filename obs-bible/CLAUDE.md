@@ -17,7 +17,7 @@ The OSB (Open Source Bible) Bible project is a React-based web application for b
 ## Project Structure
 
 ```
-osb-bible/
+obs-bible/
 ├── public/
 │   ├── data/
 │   │   ├── kjv_structure.json          # Bible structure and metadata
