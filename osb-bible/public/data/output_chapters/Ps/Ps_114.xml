@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.114" chapterTitle="PSALM 114.">
+<ns1:title type="chapter">PSALM 114.</ns1:title>
+<ns1:verse osisID="Ps.114.1" sID="Ps.114.1" /><ns1:w lemma="strong:H03478">When Israel</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H03318">went out</ns1:w> <ns1:w lemma="strong:H04714">of Egypt</ns1:w>, <ns1:w lemma="strong:H01004">the house</ns1:w> <ns1:w lemma="strong:H03290">of Jacob</ns1:w> <ns1:w lemma="strong:H05971">from a people</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H03937">of strange language</ns1:w>;<ns1:verse eID="Ps.114.1" />
+<ns1:verse osisID="Ps.114.2" sID="Ps.114.2" /><ns1:w lemma="strong:H03063">Judah</ns1:w> <ns1:w lemma="strong:H06944">was his sanctuary</ns1:w>, <ns1:transChange type="added">and</ns1:transChange> <ns1:w lemma="strong:H03478">Israel</ns1:w> <ns1:w lemma="strong:H04475">his dominion</ns1:w>.<ns1:verse eID="Ps.114.2" />
+<ns1:verse osisID="Ps.114.3" sID="Ps.114.3" /><ns1:w lemma="strong:H03220">The sea</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07200">saw</ns1:w> <ns1:transChange type="added">it</ns1:transChange>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H05127">and fled</ns1:w>: <ns1:w lemma="strong:H03383">Jordan</ns1:w> <ns1:w morph="strongMorph:TH8735" lemma="strong:H05437">was driven</ns1:w> <ns1:w lemma="strong:H0268">back</ns1:w>.<ns1:verse eID="Ps.114.3" />
+<ns1:verse osisID="Ps.114.4" sID="Ps.114.4" /><ns1:w lemma="strong:H02022">The mountains</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07540">skipped</ns1:w> <ns1:w lemma="strong:H0352">like rams</ns1:w>, <ns1:transChange type="added">and</ns1:transChange> <ns1:w lemma="strong:H01389">the little hills</ns1:w> <ns1:w lemma="strong:H06629 strong:H01121">like lambs</ns1:w>.<ns1:verse eID="Ps.114.4" />
+<ns1:verse osisID="Ps.114.5" sID="Ps.114.5" />What <ns1:transChange type="added">ailed</ns1:transChange> <ns1:w lemma="strong:H03220">thee, O thou sea</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H05127">that thou fleddest</ns1:w>? <ns1:w lemma="strong:H03383">thou Jordan</ns1:w>, <ns1:transChange type="added">that</ns1:transChange> <ns1:w morph="strongMorph:TH8735" lemma="strong:H05437">thou wast driven</ns1:w> <ns1:w lemma="strong:H0268">back</ns1:w>?<ns1:verse eID="Ps.114.5" />
+<ns1:verse osisID="Ps.114.6" sID="Ps.114.6" /><ns1:w lemma="strong:H02022">Ye mountains</ns1:w>, <ns1:transChange type="added">that</ns1:transChange> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07540">ye skipped</ns1:w> <ns1:w lemma="strong:H0352">like rams</ns1:w>; <ns1:transChange type="added">and</ns1:transChange> <ns1:w lemma="strong:H01389">ye little hills</ns1:w>, <ns1:w lemma="strong:H06629 strong:H01121">like lambs</ns1:w>?<ns1:verse eID="Ps.114.6" />
+<ns1:verse osisID="Ps.114.7" sID="Ps.114.7" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H02342">Tremble</ns1:w>, <ns1:w lemma="strong:H0776">thou earth</ns1:w>, <ns1:w lemma="strong:H06440">at the presence</ns1:w> <ns1:w lemma="strong:H0113">of the Lord</ns1:w>, <ns1:w lemma="strong:H06440">at the presence</ns1:w> <ns1:w lemma="strong:H0433">of the God</ns1:w> <ns1:w lemma="strong:H03290">of Jacob</ns1:w>;<ns1:verse eID="Ps.114.7" />
+<ns1:verse osisID="Ps.114.8" sID="Ps.114.8" /><ns1:w morph="strongMorph:TH8802" lemma="strong:H02015">Which turned</ns1:w> <ns1:w lemma="strong:H06697">the rock</ns1:w> <ns1:transChange type="added">into</ns1:transChange> <ns1:w lemma="strong:H098">a standing</ns1:w> <ns1:w lemma="strong:H04325">water</ns1:w>, <ns1:w lemma="strong:H02496">the flint</ns1:w> <ns1:w lemma="strong:H04599">into a fountain</ns1:w> <ns1:w lemma="strong:H04325">of waters</ns1:w>.<ns1:verse eID="Ps.114.8" />
+</ns1:chapter>
+</div></osisText></osis>

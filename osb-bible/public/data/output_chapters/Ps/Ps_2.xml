@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.2" chapterTitle="PSALM 2.">
+<ns1:title type="chapter">PSALM 2.</ns1:title>
+<ns1:verse osisID="Ps.2.1" sID="Ps.2.1" /><ns1:w lemma="strong:H01471">Why do the heathen</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07283">rage</ns1:w>, <ns1:w lemma="strong:H03816">and the people</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H01897">imagine</ns1:w> <ns1:w lemma="strong:H07385">a vain thing</ns1:w>?<ns1:note type="study">rage: or, tumultuously assemble</ns1:note><ns1:note type="study">imagine: Heb. meditate</ns1:note><ns1:verse eID="Ps.2.1" />
+<ns1:verse osisID="Ps.2.2" sID="Ps.2.2" /><ns1:w lemma="strong:H04428">The kings</ns1:w> <ns1:w lemma="strong:H0776">of the earth</ns1:w> <ns1:w morph="strongMorph:TH8691" lemma="strong:H03320">set</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H07336">themselves, and the rulers</ns1:w> <ns1:w morph="strongMorph:TH8738" lemma="strong:H03245">take counsel</ns1:w> <ns1:w lemma="strong:H03162">together</ns1:w>, <ns1:w lemma="strong:H03068">against the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H04899">and against his anointed</ns1:w>, <ns1:transChange type="added">saying</ns1:transChange>,<ns1:verse eID="Ps.2.2" />
+<ns1:verse osisID="Ps.2.3" sID="Ps.2.3" /><ns1:w lemma="strong:H05423">Let us break</ns1:w> <ns1:w lemma="strong:H04147">their bands</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H05423">asunder</ns1:w>, <ns1:w morph="strongMorph:TH8686" lemma="strong:H07993">and cast away</ns1:w> <ns1:w lemma="strong:H05688">their cords</ns1:w> from us.<ns1:verse eID="Ps.2.3" />
+<ns1:verse osisID="Ps.2.4" sID="Ps.2.4" /><ns1:w morph="strongMorph:TH8802" lemma="strong:H03427">He that sitteth</ns1:w> <ns1:w lemma="strong:H08064">in the heavens</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07832">shall laugh</ns1:w>: <ns1:w lemma="strong:H0136">the Lord</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H03932">shall have them in derision</ns1:w>.<ns1:verse eID="Ps.2.4" />
+<ns1:verse osisID="Ps.2.5" sID="Ps.2.5" /><ns1:w morph="strongMorph:TH8762" lemma="strong:H01696">Then shall he speak</ns1:w> <ns1:w lemma="strong:H0639">unto them in his wrath</ns1:w>, <ns1:w morph="strongMorph:TH8762" lemma="strong:H0926">and vex</ns1:w> <ns1:w lemma="strong:H02740">them in his sore displeasure</ns1:w>.<ns1:note type="study">vex: or, trouble</ns1:note><ns1:verse eID="Ps.2.5" />
+<ns1:verse osisID="Ps.2.6" sID="Ps.2.6" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H05258">Yet have I set</ns1:w> <ns1:w lemma="strong:H04428">my king</ns1:w> <ns1:w lemma="strong:H06944">upon my holy</ns1:w> <ns1:w lemma="strong:H02022">hill</ns1:w> <ns1:w lemma="strong:H06726">of Zion</ns1:w>.<ns1:note type="study">set: Heb. anointed</ns1:note><ns1:note type="study">upon…: Heb. upon Zion, the hill of my holiness</ns1:note><ns1:verse eID="Ps.2.6" />
+<ns1:verse osisID="Ps.2.7" sID="Ps.2.7" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8762" lemma="strong:H05608">I will declare</ns1:w> <ns1:w lemma="strong:H02706">the decree</ns1:w>: <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H0559">hath said</ns1:w> unto me, Thou <ns1:transChange type="added">art</ns1:transChange> <ns1:w lemma="strong:H01121">my Son</ns1:w>; <ns1:w lemma="strong:H03117">this day</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H03205">have I begotten</ns1:w> thee.<ns1:note type="study">the decree: or, for a decree</ns1:note><ns1:verse eID="Ps.2.7" />
+<ns1:verse osisID="Ps.2.8" sID="Ps.2.8" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H07592">Ask</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H05414">of me, and I shall give</ns1:w> <ns1:transChange type="added">thee</ns1:transChange> <ns1:w lemma="strong:H01471">the heathen</ns1:w> <ns1:transChange type="added">for</ns1:transChange> <ns1:w lemma="strong:H05159">thine inheritance</ns1:w>, <ns1:w lemma="strong:H0657">and the uttermost parts</ns1:w> <ns1:w lemma="strong:H0776">of the earth</ns1:w> <ns1:transChange type="added">for</ns1:transChange> <ns1:w lemma="strong:H0272">thy possession</ns1:w>.<ns1:verse eID="Ps.2.8" />
+<ns1:verse osisID="Ps.2.9" sID="Ps.2.9" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H07489">Thou shalt break</ns1:w> <ns1:w lemma="strong:H07626">them with a rod</ns1:w> <ns1:w lemma="strong:H01270">of iron</ns1:w>; <ns1:w morph="strongMorph:TH8762" lemma="strong:H05310">thou shalt dash them in pieces</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H03335">like a potter's</ns1:w> <ns1:w lemma="strong:H03627">vessel</ns1:w>.<ns1:verse eID="Ps.2.9" />
+<ns1:verse osisID="Ps.2.10" sID="Ps.2.10" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8685" lemma="strong:H07919">Be wise</ns1:w> <ns1:w lemma="strong:H04428">now therefore, O ye kings</ns1:w>: <ns1:w morph="strongMorph:TH8734" lemma="strong:H03256">be instructed</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H08199">ye judges</ns1:w> <ns1:w lemma="strong:H0776">of the earth</ns1:w>.<ns1:verse eID="Ps.2.10" />
+<ns1:verse osisID="Ps.2.11" sID="Ps.2.11" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H05647">Serve</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H03374">with fear</ns1:w>, <ns1:w morph="strongMorph:TH8798" lemma="strong:H01523">and rejoice</ns1:w> <ns1:w lemma="strong:H07461">with trembling</ns1:w>.<ns1:verse eID="Ps.2.11" />
+<ns1:verse osisID="Ps.2.12" sID="Ps.2.12" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H05401">Kiss</ns1:w> <ns1:w lemma="strong:H01248">the Son</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H0599">lest he be angry</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H06">and ye perish</ns1:w> <ns1:transChange type="added">from</ns1:transChange> <ns1:w lemma="strong:H01870">the way</ns1:w>, <ns1:w lemma="strong:H0639">when his wrath</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H01197">is kindled</ns1:w> <ns1:w lemma="strong:H04592">but a little</ns1:w>. <ns1:w lemma="strong:H0835">Blessed</ns1:w> <ns1:transChange type="added">are</ns1:transChange> <ns1:w morph="strongMorph:TH8802" lemma="strong:H02620">all they that put their trust</ns1:w> in him.<ns1:verse eID="Ps.2.12" />
+</ns1:chapter>
+</div></osisText></osis>

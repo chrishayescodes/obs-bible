@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Hos" canonical="true"><ns1:title type="main">HOSEA</ns1:title>
+<ns1:chapter osisID="Hos.3" chapterTitle="CHAPTER 3.">
+<ns1:title type="chapter">CHAPTER 3.</ns1:title>
+<ns1:verse osisID="Hos.3.1" sID="Hos.3.1" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H0559">Then said</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8798" lemma="strong:H03212">unto me, Go</ns1:w> <ns1:w morph="strongMorph:TH8798" lemma="strong:H0157">yet, love</ns1:w> <ns1:w lemma="strong:H0802">a woman</ns1:w> <ns1:w morph="strongMorph:TH8803" lemma="strong:H0157">beloved</ns1:w> of <ns1:transChange type="added">her</ns1:transChange> <ns1:w lemma="strong:H07453">friend</ns1:w>, <ns1:w morph="strongMorph:TH8764" lemma="strong:H05003">yet an adulteress</ns1:w>, <ns1:w lemma="strong:H0160">according to the love</ns1:w> <ns1:w lemma="strong:H03068">of the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H01121">toward the children</ns1:w> <ns1:w lemma="strong:H03478">of Israel</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H06437">who look</ns1:w> <ns1:w lemma="strong:H0312">to other</ns1:w> <ns1:w lemma="strong:H0430">gods</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H0157">and love</ns1:w> <ns1:w lemma="strong:H0809">flagons</ns1:w> <ns1:w lemma="strong:H06025">of wine</ns1:w>.<ns1:note type="study">of wine: Heb. of grapes</ns1:note><ns1:verse eID="Hos.3.1" />
+<ns1:verse osisID="Hos.3.2" sID="Hos.3.2" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H03739">So I bought</ns1:w> <ns1:w lemma="strong:H02568 strong:H06240">her to me for fifteen</ns1:w> <ns1:transChange type="added">pieces</ns1:transChange> <ns1:w lemma="strong:H03701">of silver</ns1:w>, and <ns1:transChange type="added">for</ns1:transChange> <ns1:w lemma="strong:H02563">an homer</ns1:w> <ns1:w lemma="strong:H08184">of barley</ns1:w>, <ns1:w lemma="strong:H03963">and an half homer</ns1:w> <ns1:w lemma="strong:H08184">of barley</ns1:w>:<ns1:note type="study">half…: Heb. lethech</ns1:note><ns1:verse eID="Hos.3.2" />
+<ns1:verse osisID="Hos.3.3" sID="Hos.3.3" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H0559">And I said</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H03427">unto her, Thou shalt abide</ns1:w> <ns1:w lemma="strong:H07227">for me many</ns1:w> <ns1:w lemma="strong:H03117">days</ns1:w>; <ns1:w morph="strongMorph:TH8799" lemma="strong:H02181">thou shalt not play the harlot</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H01961">and thou shalt not be</ns1:w> for <ns1:transChange type="added">another</ns1:transChange> <ns1:w lemma="strong:H0376">man</ns1:w>: so <ns1:transChange type="added">will</ns1:transChange> I also <ns1:transChange type="added">be</ns1:transChange> for thee.<ns1:verse eID="Hos.3.3" />
+<ns1:verse osisID="Hos.3.4" sID="Hos.3.4" /><ns1:w lemma="strong:H01121">For the children</ns1:w> <ns1:w lemma="strong:H03478">of Israel</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H03427">shall abide</ns1:w> <ns1:w lemma="strong:H07227">many</ns1:w> <ns1:w lemma="strong:H03117">days</ns1:w> <ns1:w lemma="strong:H04428">without a king</ns1:w>, <ns1:w lemma="strong:H08269">and without a prince</ns1:w>, <ns1:w lemma="strong:H02077">and without a sacrifice</ns1:w>, <ns1:w lemma="strong:H04676">and without an image</ns1:w>, <ns1:w lemma="strong:H0646">and without an ephod</ns1:w>, and <ns1:transChange type="added">without</ns1:transChange> <ns1:w lemma="strong:H08655">teraphim</ns1:w>:<ns1:note type="study">image: Heb. a standing, or, statue, or, pillar</ns1:note><ns1:verse eID="Hos.3.4" />
+<ns1:verse osisID="Hos.3.5" sID="Hos.3.5" /><ns1:w lemma="strong:H0310">Afterward</ns1:w> <ns1:w lemma="strong:H01121">shall the children</ns1:w> <ns1:w lemma="strong:H03478">of Israel</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07725">return</ns1:w>, <ns1:w morph="strongMorph:TH8765" lemma="strong:H01245">and seek</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H0430">their God</ns1:w>, <ns1:w lemma="strong:H01732">and David</ns1:w> <ns1:w lemma="strong:H04428">their king</ns1:w>; <ns1:w morph="strongMorph:TH8804" lemma="strong:H06342">and shall fear</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H02898">and his goodness</ns1:w> <ns1:w lemma="strong:H0319">in the latter</ns1:w> <ns1:w lemma="strong:H03117">days</ns1:w>.<ns1:verse eID="Hos.3.5" />
+</ns1:chapter>
+</div></osisText></osis>

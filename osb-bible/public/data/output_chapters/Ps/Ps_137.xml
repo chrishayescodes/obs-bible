@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.137" chapterTitle="PSALM 137.">
+<ns1:title type="chapter">PSALM 137.</ns1:title>
+<ns1:verse osisID="Ps.137.1" sID="Ps.137.1" /><ns1:w lemma="strong:H05104">By the rivers</ns1:w> <ns1:w lemma="strong:H0894">of Babylon</ns1:w>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H03427">there we sat down</ns1:w>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H01058">yea, we wept</ns1:w>, <ns1:w morph="strongMorph:TH8800" lemma="strong:H02142">when we remembered</ns1:w> <ns1:w lemma="strong:H06726">Zion</ns1:w>.<ns1:verse eID="Ps.137.1" />
+<ns1:verse osisID="Ps.137.2" sID="Ps.137.2" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H08518">We hanged</ns1:w> <ns1:w lemma="strong:H03658">our harps</ns1:w> <ns1:w lemma="strong:H06155">upon the willows</ns1:w> <ns1:w lemma="strong:H08432">in the midst</ns1:w> thereof.<ns1:verse eID="Ps.137.2" />
+<ns1:verse osisID="Ps.137.3" sID="Ps.137.3" /><ns1:w morph="strongMorph:TH8802" lemma="strong:H07617">For there they that carried us away captive</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07592">required</ns1:w> <ns1:w lemma="strong:H07892 strong:H01697">of us a song</ns1:w>; <ns1:w lemma="strong:H08437">and they that wasted</ns1:w> us <ns1:transChange type="added">required of us</ns1:transChange> <ns1:w lemma="strong:H08057">mirth</ns1:w>, <ns1:transChange type="added">saying</ns1:transChange>, <ns1:w morph="strongMorph:TH8798" lemma="strong:H07891">Sing</ns1:w> us <ns1:transChange type="added">one</ns1:transChange> <ns1:w lemma="strong:H07892">of the songs</ns1:w> <ns1:w lemma="strong:H06726">of Zion</ns1:w>.<ns1:note type="study">a song: Heb. the words of a song</ns1:note><ns1:note type="study">wasted…: Heb. laid us on heaps</ns1:note><ns1:verse eID="Ps.137.3" />
+<ns1:verse osisID="Ps.137.4" sID="Ps.137.4" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H07891">How shall we sing</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord's</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H07892">song</ns1:w> <ns1:w lemma="strong:H05236">in a strange</ns1:w> <ns1:w lemma="strong:H0127">land</ns1:w>?<ns1:note type="study">strange…: Heb. land of a stranger?</ns1:note><ns1:verse eID="Ps.137.4" />
+<ns1:verse osisID="Ps.137.5" sID="Ps.137.5" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H07911">If I forget</ns1:w> <ns1:w lemma="strong:H03389">thee, O Jerusalem</ns1:w>, <ns1:w lemma="strong:H03225">let my right hand</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07911">forget</ns1:w> <ns1:transChange type="added">her cunning</ns1:transChange>.<ns1:verse eID="Ps.137.5" />
+<ns1:verse osisID="Ps.137.6" sID="Ps.137.6" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H02142">If I do not remember</ns1:w> <ns1:w lemma="strong:H03956">thee, let my tongue</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H01692">cleave</ns1:w> <ns1:w lemma="strong:H02441">to the roof of my mouth</ns1:w>; <ns1:w morph="strongMorph:TH8686" lemma="strong:H05927">if I prefer</ns1:w> <ns1:w lemma="strong:H03389">not Jerusalem</ns1:w> <ns1:w lemma="strong:H07218">above my chief</ns1:w> <ns1:w lemma="strong:H08057">joy</ns1:w>.<ns1:note type="study">my chief…: Heb. the head of my joy</ns1:note><ns1:verse eID="Ps.137.6" />
+<ns1:verse osisID="Ps.137.7" sID="Ps.137.7" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H02142">Remember</ns1:w>, <ns1:w lemma="strong:H03068">O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H01121">the children</ns1:w> <ns1:w lemma="strong:H0123">of Edom</ns1:w> <ns1:w lemma="strong:H03117">in the day</ns1:w> <ns1:w lemma="strong:H03389">of Jerusalem</ns1:w>; <ns1:w morph="strongMorph:TH8802" lemma="strong:H0559">who said</ns1:w>, <ns1:w morph="strongMorph:TH8761" lemma="strong:H06168">Rase</ns1:w> <ns1:transChange type="added">it</ns1:transChange>, <ns1:w morph="strongMorph:TH8761" lemma="strong:H06168">rase</ns1:w> <ns1:transChange type="added">it, even</ns1:transChange> <ns1:w lemma="strong:H03247">to the foundation</ns1:w> thereof.<ns1:note type="study">Rase it: Heb. Make bare</ns1:note><ns1:verse eID="Ps.137.7" />
+<ns1:verse osisID="Ps.137.8" sID="Ps.137.8" /><ns1:w lemma="strong:H01323">O daughter</ns1:w> <ns1:w lemma="strong:H0894">of Babylon</ns1:w>, <ns1:w morph="strongMorph:TH8803" lemma="strong:H07703">who art to be destroyed</ns1:w>; <ns1:w lemma="strong:H0835">happy</ns1:w> <ns1:transChange type="added">shall he be</ns1:transChange>, <ns1:w morph="strongMorph:TH8762" lemma="strong:H07999">that rewardeth</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H01576 strong:H01580">thee as thou hast served</ns1:w> us.<ns1:note type="study">destroyed: Heb. wasted</ns1:note><ns1:note type="study">rewardeth…: Heb. recompenseth unto thee thy deed which thou didst to us</ns1:note><ns1:verse eID="Ps.137.8" />
+<ns1:verse osisID="Ps.137.9" sID="Ps.137.9" /><ns1:w lemma="strong:H0835">Happy</ns1:w> <ns1:transChange type="added">shall he be</ns1:transChange>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H0270">that taketh</ns1:w> <ns1:w morph="strongMorph:TH8765" lemma="strong:H05310">and dasheth</ns1:w> <ns1:w lemma="strong:H05768">thy little ones</ns1:w> <ns1:w lemma="strong:H05553">against the stones</ns1:w>.<ns1:note type="study">the stones: Heb. the rock</ns1:note><ns1:verse eID="Ps.137.9" />
+</ns1:chapter>
+</div></osisText></osis>

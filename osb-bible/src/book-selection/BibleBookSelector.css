@@ -1,0 +1,400 @@
+.bible-book-selector {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.testament-section {
+  margin-bottom: 40px;
+}
+
+.testament-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 8px;
+  max-width: 100%;
+}
+
+.book-button {
+  border-radius: 8px;
+  padding: 12px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70px;
+  font-family: inherit;
+  border: 2px solid;
+}
+
+.book-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Category color themes */
+
+/* Pentateuch - Warm brown/orange */
+.book-button.category-pentateuch {
+  background-color: #fed7aa;
+  border-color: #ea580c;
+  color: #9a3412;
+}
+
+.book-button.category-pentateuch:hover {
+  background-color: #fdba74;
+  border-color: #c2410c;
+}
+
+.book-button.category-pentateuch.selected {
+  background-color: #ea580c;
+  color: white;
+  border-color: #c2410c;
+}
+
+.book-button.category-pentateuch.selected:hover {
+  background-color: #c2410c;
+}
+
+/* Historical - Blue */
+.book-button.category-historical {
+  background-color: #bfdbfe;
+  border-color: #2563eb;
+  color: #1e40af;
+}
+
+.book-button.category-historical:hover {
+  background-color: #93c5fd;
+  border-color: #1d4ed8;
+}
+
+.book-button.category-historical.selected {
+  background-color: #2563eb;
+  color: white;
+  border-color: #1d4ed8;
+}
+
+.book-button.category-historical.selected:hover {
+  background-color: #1d4ed8;
+}
+
+/* Poetry - Purple */
+.book-button.category-poetry {
+  background-color: #e9d5ff;
+  border-color: #9333ea;
+  color: #7c3aed;
+}
+
+.book-button.category-poetry:hover {
+  background-color: #ddd6fe;
+  border-color: #7c3aed;
+}
+
+.book-button.category-poetry.selected {
+  background-color: #9333ea;
+  color: white;
+  border-color: #7c3aed;
+}
+
+.book-button.category-poetry.selected:hover {
+  background-color: #7c3aed;
+}
+
+/* Major Prophets - Red */
+.book-button.category-major-prophets {
+  background-color: #fecaca;
+  border-color: #dc2626;
+  color: #b91c1c;
+}
+
+.book-button.category-major-prophets:hover {
+  background-color: #fca5a5;
+  border-color: #b91c1c;
+}
+
+.book-button.category-major-prophets.selected {
+  background-color: #dc2626;
+  color: white;
+  border-color: #b91c1c;
+}
+
+.book-button.category-major-prophets.selected:hover {
+  background-color: #b91c1c;
+}
+
+/* Minor Prophets - Pink */
+.book-button.category-minor-prophets {
+  background-color: #fbcfe8;
+  border-color: #db2777;
+  color: #be185d;
+}
+
+.book-button.category-minor-prophets:hover {
+  background-color: #f9a8d4;
+  border-color: #be185d;
+}
+
+.book-button.category-minor-prophets.selected {
+  background-color: #db2777;
+  color: white;
+  border-color: #be185d;
+}
+
+.book-button.category-minor-prophets.selected:hover {
+  background-color: #be185d;
+}
+
+/* Gospels - Green */
+.book-button.category-gospels {
+  background-color: #bbf7d0;
+  border-color: #16a34a;
+  color: #15803d;
+}
+
+.book-button.category-gospels:hover {
+  background-color: #86efac;
+  border-color: #15803d;
+}
+
+.book-button.category-gospels.selected {
+  background-color: #16a34a;
+  color: white;
+  border-color: #15803d;
+}
+
+.book-button.category-gospels.selected:hover {
+  background-color: #15803d;
+}
+
+/* History (Acts) - Teal */
+.book-button.category-history {
+  background-color: #a7f3d0;
+  border-color: #059669;
+  color: #047857;
+}
+
+.book-button.category-history:hover {
+  background-color: #6ee7b7;
+  border-color: #047857;
+}
+
+.book-button.category-history.selected {
+  background-color: #059669;
+  color: white;
+  border-color: #047857;
+}
+
+.book-button.category-history.selected:hover {
+  background-color: #047857;
+}
+
+/* Pauline Epistles - Indigo */
+.book-button.category-pauline-epistles {
+  background-color: #c7d2fe;
+  border-color: #4f46e5;
+  color: #3730a3;
+}
+
+.book-button.category-pauline-epistles:hover {
+  background-color: #a5b4fc;
+  border-color: #3730a3;
+}
+
+.book-button.category-pauline-epistles.selected {
+  background-color: #4f46e5;
+  color: white;
+  border-color: #3730a3;
+}
+
+.book-button.category-pauline-epistles.selected:hover {
+  background-color: #3730a3;
+}
+
+/* General Epistles - Cyan */
+.book-button.category-general-epistles {
+  background-color: #a5f3fc;
+  border-color: #0891b2;
+  color: #0e7490;
+}
+
+.book-button.category-general-epistles:hover {
+  background-color: #67e8f9;
+  border-color: #0e7490;
+}
+
+.book-button.category-general-epistles.selected {
+  background-color: #0891b2;
+  color: white;
+  border-color: #0e7490;
+}
+
+.book-button.category-general-epistles.selected:hover {
+  background-color: #0e7490;
+}
+
+/* Prophecy (Revelation) - Yellow */
+.book-button.category-prophecy {
+  background-color: #fef3c7;
+  border-color: #d97706;
+  color: #b45309;
+}
+
+.book-button.category-prophecy:hover {
+  background-color: #fde68a;
+  border-color: #b45309;
+}
+
+.book-button.category-prophecy.selected {
+  background-color: #d97706;
+  color: white;
+  border-color: #b45309;
+}
+
+.book-button.category-prophecy.selected:hover {
+  background-color: #b45309;
+}
+
+.book-id {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .testament-section h2 {
+    color: #e2e8f0;
+    border-bottom-color: #4a5568;
+  }
+
+  .loading {
+    color: #a0aec0;
+  }
+
+  /* Dark mode hover effects - slightly darken the colors */
+  .book-button:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Explicit dark mode class support */
+.dark .testament-section h2 {
+  color: #e2e8f0;
+  border-bottom-color: #4a5568;
+}
+
+.dark .loading {
+  color: #a0aec0;
+}
+
+.dark .book-button:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments for different viewport sizes */
+/* Extra large screens - 12+ columns */
+@media (min-width: 1400px) {
+  .books-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+
+/* Large screens - 10-12 columns */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .books-grid {
+    grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+  }
+}
+
+/* Medium screens - 8-10 columns */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .books-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  }
+}
+
+/* Tablet landscape - 6-8 columns */
+@media (min-width: 768px) and (max-width: 991px) {
+  .books-grid {
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+    gap: 8px;
+  }
+  
+  .book-button {
+    padding: 10px 6px;
+    min-height: 65px;
+  }
+}
+
+/* Tablet portrait - 5-6 columns */
+@media (min-width: 576px) and (max-width: 767px) {
+  .books-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 6px;
+  }
+  
+  .book-button {
+    padding: 10px 6px;
+    min-height: 60px;
+  }
+  
+  .book-id {
+    font-size: 18px;
+  }
+}
+
+/* Mobile landscape - 4-5 columns */
+@media (min-width: 480px) and (max-width: 575px) {
+  .books-grid {
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    gap: 6px;
+  }
+  
+  .book-button {
+    padding: 8px 4px;
+    min-height: 55px;
+  }
+  
+  .book-id {
+    font-size: 16px;
+  }
+}
+
+/* Mobile portrait - 3-4 columns */
+@media (max-width: 479px) {
+  .books-grid {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 5px;
+  }
+  
+  .book-button {
+    padding: 8px 4px;
+    min-height: 50px;
+  }
+  
+  .book-id {
+    font-size: 14px;
+  }
+  
+  .testament-section h2 {
+    font-size: 20px;
+  }
+}

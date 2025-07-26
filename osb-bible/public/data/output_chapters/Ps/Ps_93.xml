@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.93" chapterTitle="PSALM 93.">
+<ns1:title type="chapter">PSALM 93.</ns1:title>
+<ns1:verse osisID="Ps.93.1" sID="Ps.93.1" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H04427">reigneth</ns1:w>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H03847">he is clothed</ns1:w> <ns1:w lemma="strong:H01348">with majesty</ns1:w>; <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H03847">is clothed</ns1:w> <ns1:w lemma="strong:H05797">with strength</ns1:w>, <ns1:transChange type="added">wherewith</ns1:transChange> <ns1:w morph="strongMorph:TH8694" lemma="strong:H0247">he hath girded</ns1:w> <ns1:w lemma="strong:H08398">himself: the world</ns1:w> <ns1:w morph="strongMorph:TH8735" lemma="strong:H03559">also is stablished</ns1:w>, <ns1:w morph="strongMorph:TH8735" lemma="strong:H04131">that it cannot be moved</ns1:w>.<ns1:verse eID="Ps.93.1" />
+<ns1:verse osisID="Ps.93.2" sID="Ps.93.2" /><ns1:w lemma="strong:H03678">Thy throne</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w morph="strongMorph:TH8737" lemma="strong:H03559">established</ns1:w> <ns1:w lemma="strong:H0227">of old</ns1:w>: thou <ns1:transChange type="added">art</ns1:transChange> <ns1:w lemma="strong:H05769">from everlasting</ns1:w>.<ns1:note type="study">of old: Heb. from then</ns1:note><ns1:verse eID="Ps.93.2" />
+<ns1:verse osisID="Ps.93.3" sID="Ps.93.3" /><ns1:w lemma="strong:H05104">The floods</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H05375">have lifted up</ns1:w>, <ns1:w lemma="strong:H03068">O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H05104">the floods</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H05375">have lifted up</ns1:w> <ns1:w lemma="strong:H06963">their voice</ns1:w>; <ns1:w lemma="strong:H05104">the floods</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H05375">lift up</ns1:w> <ns1:w lemma="strong:H01796">their waves</ns1:w>.<ns1:verse eID="Ps.93.3" />
+<ns1:verse osisID="Ps.93.4" sID="Ps.93.4" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H04791">on high</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H0117">mightier</ns1:w> <ns1:w lemma="strong:H06963">than the noise</ns1:w> <ns1:w lemma="strong:H07227">of many</ns1:w> <ns1:w lemma="strong:H04325">waters</ns1:w>, <ns1:transChange type="added">yea, than</ns1:transChange> <ns1:w lemma="strong:H0117">the mighty</ns1:w> <ns1:w lemma="strong:H04867">waves</ns1:w> <ns1:w lemma="strong:H03220">of the sea</ns1:w>.<ns1:verse eID="Ps.93.4" />
+<ns1:verse osisID="Ps.93.5" sID="Ps.93.5" /><ns1:w lemma="strong:H05713">Thy testimonies</ns1:w> <ns1:w lemma="strong:H03966">are very</ns1:w> <ns1:w morph="strongMorph:TH8738" lemma="strong:H0539">sure</ns1:w>: <ns1:w lemma="strong:H06944">holiness</ns1:w> <ns1:w morph="strongMorph:TH8773" lemma="strong:H04998">becometh</ns1:w> <ns1:w lemma="strong:H01004">thine house</ns1:w>, <ns1:w lemma="strong:H03068">O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H03117 strong:H0753">for ever</ns1:w>.<ns1:note type="study">for ever: Heb. to length of days</ns1:note><ns1:verse eID="Ps.93.5" />
+</ns1:chapter>
+</div></osisText></osis>

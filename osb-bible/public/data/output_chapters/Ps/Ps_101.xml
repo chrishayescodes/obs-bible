@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.101" chapterTitle="PSALM 101.">
+<ns1:title type="chapter">PSALM 101.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H04210">A Psalm</ns1:w> <ns1:w lemma="strong:H01732">of David</ns1:w>.</ns1:title><ns1:verse osisID="Ps.101.1" sID="Ps.101.1" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H07891">I will sing</ns1:w> <ns1:w lemma="strong:H02617">of mercy</ns1:w> <ns1:w lemma="strong:H04941">and judgment</ns1:w>: <ns1:w lemma="strong:H03068">unto thee, O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w morph="strongMorph:TH8762" lemma="strong:H02167">will I sing</ns1:w>.<ns1:verse eID="Ps.101.1" />
+<ns1:verse osisID="Ps.101.2" sID="Ps.101.2" /><ns1:w morph="strongMorph:TH8686" lemma="strong:H07919">I will behave myself wisely</ns1:w> <ns1:w lemma="strong:H08549">in a perfect</ns1:w> <ns1:w lemma="strong:H01870">way</ns1:w>. <ns1:w morph="strongMorph:TH8799" lemma="strong:H0935">O when wilt thou come</ns1:w> <ns1:w morph="strongMorph:TH8691" lemma="strong:H01980">unto me? I will walk</ns1:w> <ns1:w lemma="strong:H07130">within</ns1:w> <ns1:w lemma="strong:H01004">my house</ns1:w> <ns1:w lemma="strong:H08537">with a perfect</ns1:w> <ns1:w lemma="strong:H03824">heart</ns1:w>.<ns1:verse eID="Ps.101.2" />
+<ns1:verse osisID="Ps.101.3" sID="Ps.101.3" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H07896">I will set</ns1:w> <ns1:w lemma="strong:H01100">no wicked</ns1:w> <ns1:w lemma="strong:H01697">thing</ns1:w> <ns1:w lemma="strong:H05869">before mine eyes</ns1:w>: <ns1:w morph="strongMorph:TH8804" lemma="strong:H08130">I hate</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H06213">the work</ns1:w> <ns1:w lemma="strong:H07750">of them that turn aside</ns1:w>; <ns1:transChange type="added">it</ns1:transChange> <ns1:w morph="strongMorph:TH8799" lemma="strong:H01692">shall not cleave</ns1:w> to me.<ns1:note type="study">wicked…: Heb. thing of Belial</ns1:note><ns1:verse eID="Ps.101.3" />
+<ns1:verse osisID="Ps.101.4" sID="Ps.101.4" /><ns1:w lemma="strong:H06141">A froward</ns1:w> <ns1:w lemma="strong:H03824">heart</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H05493">shall depart</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H03045">from me: I will not know</ns1:w> <ns1:w lemma="strong:H07451">a wicked</ns1:w> <ns1:transChange type="added">person</ns1:transChange>.<ns1:verse eID="Ps.101.4" />
+<ns1:verse osisID="Ps.101.5" sID="Ps.101.5" /><ns1:w lemma="strong:H05643">Whoso privily</ns1:w> <ns1:w morph="strongMorph:TH8781 strongMorph:TH8675 strongMorph:TH8764" lemma="strong:H03960 strong:H03960">slandereth</ns1:w> <ns1:w lemma="strong:H07453">his neighbour</ns1:w>, <ns1:w morph="strongMorph:TH8686" lemma="strong:H06789">him will I cut off</ns1:w>: <ns1:w lemma="strong:H01362">him that hath an high</ns1:w> <ns1:w lemma="strong:H05869">look</ns1:w> <ns1:w lemma="strong:H07342">and a proud</ns1:w> <ns1:w lemma="strong:H03824">heart</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H03201">will not I suffer</ns1:w>.<ns1:verse eID="Ps.101.5" />
+<ns1:verse osisID="Ps.101.6" sID="Ps.101.6" /><ns1:w lemma="strong:H05869">Mine eyes</ns1:w> <ns1:transChange type="added">shall be</ns1:transChange> <ns1:w morph="strongMorph:TH8737" lemma="strong:H0539">upon the faithful</ns1:w> <ns1:w lemma="strong:H0776">of the land</ns1:w>, <ns1:w morph="strongMorph:TH8800" lemma="strong:H03427">that they may dwell</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H01980">with me: he that walketh</ns1:w> <ns1:w lemma="strong:H08549">in a perfect</ns1:w> <ns1:w lemma="strong:H01870">way</ns1:w>, <ns1:w morph="strongMorph:TH8762" lemma="strong:H08334">he shall serve</ns1:w> me.<ns1:note type="study">in a…: or, perfect in the way</ns1:note><ns1:verse eID="Ps.101.6" />
+<ns1:verse osisID="Ps.101.7" sID="Ps.101.7" /><ns1:w morph="strongMorph:TH8802" lemma="strong:H06213">He that worketh</ns1:w> <ns1:w lemma="strong:H07423">deceit</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H03427">shall not dwell</ns1:w> <ns1:w lemma="strong:H07130">within</ns1:w> <ns1:w lemma="strong:H01004">my house</ns1:w>: <ns1:w morph="strongMorph:TH8802" lemma="strong:H01696">he that telleth</ns1:w> <ns1:w lemma="strong:H08267">lies</ns1:w> <ns1:w morph="strongMorph:TH8735" lemma="strong:H03559">shall not tarry</ns1:w> <ns1:w lemma="strong:H05869">in my sight</ns1:w>.<ns1:note type="study">shall not tarry: Heb. shall not be established</ns1:note><ns1:verse eID="Ps.101.7" />
+<ns1:verse osisID="Ps.101.8" sID="Ps.101.8" /><ns1:w lemma="strong:H01242">I will early</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H06789">destroy</ns1:w> <ns1:w lemma="strong:H07563">all the wicked</ns1:w> <ns1:w lemma="strong:H0776">of the land</ns1:w>; <ns1:w morph="strongMorph:TH8687" lemma="strong:H03772">that I may cut off</ns1:w> <ns1:w lemma="strong:H0205">all wicked</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H06466">doers</ns1:w> <ns1:w lemma="strong:H05892">from the city</ns1:w> <ns1:w lemma="strong:H03068">of the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>.<ns1:verse eID="Ps.101.8" />
+</ns1:chapter>
+</div></osisText></osis>

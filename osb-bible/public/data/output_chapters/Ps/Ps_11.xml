@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.11" chapterTitle="PSALM 11.">
+<ns1:title type="chapter">PSALM 11.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w morph="strongMorph:TH8764" lemma="strong:H05329">To the chief Musician</ns1:w>, <ns1:transChange type="added">A Psalm</ns1:transChange> <ns1:w lemma="strong:H01732">of David</ns1:w>.</ns1:title><ns1:verse osisID="Ps.11.1" sID="Ps.11.1" /><ns1:w lemma="strong:H03068">In the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H02620">put I my trust</ns1:w>: <ns1:w morph="strongMorph:TH8799" lemma="strong:H0559">how say</ns1:w> <ns1:w lemma="strong:H05315">ye to my soul</ns1:w>, <ns1:w morph="strongMorph:TH8798" lemma="strong:H05110">Flee</ns1:w> <ns1:transChange type="added">as</ns1:transChange> <ns1:w lemma="strong:H06833">a bird</ns1:w> <ns1:w lemma="strong:H02022">to your mountain</ns1:w>?<ns1:verse eID="Ps.11.1" />
+<ns1:verse osisID="Ps.11.2" sID="Ps.11.2" /><ns1:w lemma="strong:H07563">For, lo, the wicked</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H01869">bend</ns1:w> <ns1:transChange type="added">their</ns1:transChange> <ns1:w lemma="strong:H07198">bow</ns1:w>, <ns1:w morph="strongMorph:TH8790" lemma="strong:H03559">they make ready</ns1:w> <ns1:w lemma="strong:H02671">their arrow</ns1:w> <ns1:w lemma="strong:H03499">upon the string</ns1:w>, <ns1:w morph="strongMorph:TH8676" lemma="strong:H01119 strong:H0652">that they may privily</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H03384">shoot</ns1:w> <ns1:w lemma="strong:H03477">at the upright</ns1:w> <ns1:w lemma="strong:H03820">in heart</ns1:w>.<ns1:note type="study">privily: Heb. in darkness</ns1:note><ns1:verse eID="Ps.11.2" />
+<ns1:verse osisID="Ps.11.3" sID="Ps.11.3" /><ns1:w lemma="strong:H08356">If the foundations</ns1:w> <ns1:w morph="strongMorph:TH8735" lemma="strong:H02040">be destroyed</ns1:w>, <ns1:w lemma="strong:H06662">what can the righteous</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H06466">do</ns1:w>?<ns1:verse eID="Ps.11.3" />
+<ns1:verse osisID="Ps.11.4" sID="Ps.11.4" /><ns1:milestone type="x-extra-p" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H06944">in his holy</ns1:w> <ns1:w lemma="strong:H01964">temple</ns1:w>, <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord's</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H03678">throne</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H08064">in heaven</ns1:w>: <ns1:w lemma="strong:H05869">his eyes</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H02372">behold</ns1:w>, <ns1:w lemma="strong:H06079">his eyelids</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H0974">try</ns1:w>, <ns1:w lemma="strong:H01121">the children</ns1:w> <ns1:w lemma="strong:H0120">of men</ns1:w>.<ns1:verse eID="Ps.11.4" />
+<ns1:verse osisID="Ps.11.5" sID="Ps.11.5" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H0974">trieth</ns1:w> <ns1:w lemma="strong:H06662">the righteous</ns1:w>: <ns1:w lemma="strong:H07563">but the wicked</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H0157">and him that loveth</ns1:w> <ns1:w lemma="strong:H02555">violence</ns1:w> <ns1:w lemma="strong:H05315">his soul</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H08130">hateth</ns1:w>.<ns1:verse eID="Ps.11.5" />
+<ns1:verse osisID="Ps.11.6" sID="Ps.11.6" /><ns1:w lemma="strong:H07563">Upon the wicked</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H04305">he shall rain</ns1:w> <ns1:w lemma="strong:H06341">snares</ns1:w>, <ns1:w lemma="strong:H0784">fire</ns1:w> <ns1:w lemma="strong:H01614">and brimstone</ns1:w>, <ns1:w lemma="strong:H02152">and an horrible</ns1:w> <ns1:w lemma="strong:H07307">tempest</ns1:w>: <ns1:transChange type="added">this shall be</ns1:transChange> <ns1:w lemma="strong:H04521">the portion</ns1:w> <ns1:w lemma="strong:H03563">of their cup</ns1:w>.<ns1:note type="study">an horrible…: or, a burning tempest</ns1:note><ns1:verse eID="Ps.11.6" />
+<ns1:verse osisID="Ps.11.7" sID="Ps.11.7" /><ns1:w lemma="strong:H06662">For the righteous</ns1:w> <ns1:w lemma="strong:H03068"><ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H0157">loveth</ns1:w> <ns1:w lemma="strong:H06666">righteousness</ns1:w>; <ns1:w lemma="strong:H06440">his countenance</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H02372">doth behold</ns1:w> <ns1:w lemma="strong:H03477">the upright</ns1:w>.<ns1:verse eID="Ps.11.7" />
+</ns1:chapter>
+</div></osisText></osis>

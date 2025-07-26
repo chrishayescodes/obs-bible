@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.70" chapterTitle="PSALM 70.">
+<ns1:title type="chapter">PSALM 70.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w morph="strongMorph:TH8764" lemma="strong:H05329">To the chief Musician</ns1:w>, <ns1:transChange type="added">A Psalm</ns1:transChange> <ns1:w lemma="strong:H01732">of David</ns1:w>, <ns1:w morph="strongMorph:TH8687" lemma="strong:H02142">to bring to remembrance</ns1:w>.</ns1:title><ns1:verse osisID="Ps.70.1" sID="Ps.70.1" /><ns1:transChange type="added">Make haste</ns1:transChange>, <ns1:w lemma="strong:H0430">O God</ns1:w>, <ns1:w morph="strongMorph:TH8687" lemma="strong:H05337">to deliver</ns1:w> <ns1:w morph="strongMorph:TH8798" lemma="strong:H02363">me; make haste</ns1:w> <ns1:w lemma="strong:H05833">to help</ns1:w> <ns1:w lemma="strong:H03068">me, O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>.<ns1:note type="study">to help…: Heb. to my help</ns1:note><ns1:verse eID="Ps.70.1" />
+<ns1:verse osisID="Ps.70.2" sID="Ps.70.2" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H0954">Let them be ashamed</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H02659">and confounded</ns1:w> <ns1:w morph="strongMorph:TH8764" lemma="strong:H01245">that seek</ns1:w> <ns1:w lemma="strong:H05315">after my soul</ns1:w>: <ns1:w morph="strongMorph:TH8735" lemma="strong:H05472">let them be turned</ns1:w> <ns1:w lemma="strong:H0268">backward</ns1:w>, <ns1:w morph="strongMorph:TH8735" lemma="strong:H03637">and put to confusion</ns1:w>, <ns1:w lemma="strong:H02655">that desire</ns1:w> <ns1:w lemma="strong:H07451">my hurt</ns1:w>.<ns1:verse eID="Ps.70.2" />
+<ns1:verse osisID="Ps.70.3" sID="Ps.70.3" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H07725">Let them be turned back</ns1:w> <ns1:w lemma="strong:H06118">for a reward</ns1:w> <ns1:w lemma="strong:H01322">of their shame</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H0559">that say</ns1:w>, <ns1:w lemma="strong:H01889">Aha</ns1:w>, <ns1:w lemma="strong:H01889">aha</ns1:w>.<ns1:verse eID="Ps.70.3" />
+<ns1:verse osisID="Ps.70.4" sID="Ps.70.4" /><ns1:w morph="strongMorph:TH8764" lemma="strong:H01245">Let all those that seek</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07797">thee rejoice</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H08055">and be glad</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H0157">in thee: and let such as love</ns1:w> <ns1:w lemma="strong:H03444">thy salvation</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H0559">say</ns1:w> <ns1:w lemma="strong:H08548">continually</ns1:w>, <ns1:w lemma="strong:H0430">Let God</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H01431">be magnified</ns1:w>.<ns1:verse eID="Ps.70.4" />
+<ns1:verse osisID="Ps.70.5" sID="Ps.70.5" />But I <ns1:transChange type="added">am</ns1:transChange> <ns1:w lemma="strong:H06041">poor</ns1:w> <ns1:w lemma="strong:H034">and needy</ns1:w>: <ns1:w morph="strongMorph:TH8798" lemma="strong:H02363">make haste</ns1:w> <ns1:w lemma="strong:H0430">unto me, O God</ns1:w>: thou <ns1:transChange type="added">art</ns1:transChange> <ns1:w lemma="strong:H05828">my help</ns1:w> <ns1:w morph="strongMorph:TH8764" lemma="strong:H06403">and my deliverer</ns1:w>; <ns1:w lemma="strong:H03068">O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w morph="strongMorph:TH8762" lemma="strong:H0309">make no tarrying</ns1:w>.<ns1:verse eID="Ps.70.5" />
+</ns1:chapter>
+</div></osisText></osis>

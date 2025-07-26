@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.142" chapterTitle="PSALM 142.">
+<ns1:title type="chapter">PSALM 142.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w morph="strongMorph:TH8688" lemma="strong:H04905">Maschil</ns1:w> <ns1:w lemma="strong:H01732">of David</ns1:w>; <ns1:w lemma="strong:H08605">A Prayer</ns1:w> <ns1:w lemma="strong:H04631">when he was in the cave</ns1:w>.</ns1:title><ns1:verse osisID="Ps.142.1" sID="Ps.142.1" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H02199">I cried</ns1:w> <ns1:w lemma="strong:H03068">unto the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H06963">with my voice</ns1:w>; <ns1:w lemma="strong:H06963">with my voice</ns1:w> <ns1:w lemma="strong:H03068">unto the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8691" lemma="strong:H02603">did I make my supplication</ns1:w>.<ns1:note type="study">Maschil…: or, A Psalm of David, giving instruction</ns1:note><ns1:verse eID="Ps.142.1" />
+<ns1:verse osisID="Ps.142.2" sID="Ps.142.2" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H08210">I poured out</ns1:w> <ns1:w lemma="strong:H07879">my complaint</ns1:w> <ns1:w lemma="strong:H06440">before</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H05046">him; I shewed</ns1:w> <ns1:w lemma="strong:H06440">before</ns1:w> <ns1:w lemma="strong:H06869">him my trouble</ns1:w>.<ns1:verse eID="Ps.142.2" />
+<ns1:verse osisID="Ps.142.3" sID="Ps.142.3" /><ns1:w lemma="strong:H07307">When my spirit</ns1:w> <ns1:w morph="strongMorph:TH8692" lemma="strong:H05848">was overwhelmed</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H03045">within me, then thou knewest</ns1:w> <ns1:w lemma="strong:H05410">my path</ns1:w>. <ns1:w lemma="strong:H0734">In the way</ns1:w> <ns1:w lemma="strong:H02098">wherein</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H01980">I walked</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H02934">have they privily laid</ns1:w> <ns1:w lemma="strong:H06341">a snare</ns1:w> for me.<ns1:verse eID="Ps.142.3" />
+<ns1:verse osisID="Ps.142.4" sID="Ps.142.4" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8685" lemma="strong:H05027">I looked</ns1:w> on <ns1:transChange type="added">my</ns1:transChange> <ns1:w lemma="strong:H03225">right hand</ns1:w>, <ns1:w morph="strongMorph:TH8798" lemma="strong:H07200">and beheld</ns1:w>, but <ns1:transChange type="added">there was</ns1:transChange> <ns1:w morph="strongMorph:TH8688" lemma="strong:H05234">no man that would know</ns1:w> <ns1:w lemma="strong:H04498">me: refuge</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H06">failed</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H01875">me; no man cared</ns1:w> <ns1:w lemma="strong:H05315">for my soul</ns1:w>.<ns1:note type="study">I looked…: or, Look on the right hand, and see</ns1:note><ns1:note type="study">failed…: Heb. perished from me</ns1:note><ns1:note type="study">cared…: Heb. sought after</ns1:note><ns1:verse eID="Ps.142.4" />
+<ns1:verse osisID="Ps.142.5" sID="Ps.142.5" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H02199">I cried</ns1:w> <ns1:w lemma="strong:H03068">unto thee, O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>: <ns1:w morph="strongMorph:TH8804" lemma="strong:H0559">I said</ns1:w>, Thou <ns1:transChange type="added">art</ns1:transChange> <ns1:w lemma="strong:H04268">my refuge</ns1:w> <ns1:transChange type="added">and</ns1:transChange> <ns1:w lemma="strong:H02506">my portion</ns1:w> <ns1:w lemma="strong:H0776">in the land</ns1:w> <ns1:w lemma="strong:H02416">of the living</ns1:w>.<ns1:verse eID="Ps.142.5" />
+<ns1:verse osisID="Ps.142.6" sID="Ps.142.6" /><ns1:w morph="strongMorph:TH8685" lemma="strong:H07181">Attend</ns1:w> <ns1:w lemma="strong:H07440">unto my cry</ns1:w>; <ns1:w lemma="strong:H01809">for I am brought</ns1:w> <ns1:w lemma="strong:H03966">very</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H01809">low</ns1:w>: <ns1:w morph="strongMorph:TH8685" lemma="strong:H05337">deliver</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H07291">me from my persecutors</ns1:w>; <ns1:w morph="strongMorph:TH8804" lemma="strong:H0553">for they are stronger</ns1:w> than I.<ns1:verse eID="Ps.142.6" />
+<ns1:verse osisID="Ps.142.7" sID="Ps.142.7" /><ns1:w morph="strongMorph:TH8685" lemma="strong:H03318">Bring</ns1:w> <ns1:w lemma="strong:H05315">my soul</ns1:w> <ns1:w lemma="strong:H04525">out of prison</ns1:w>, <ns1:w morph="strongMorph:TH8687" lemma="strong:H03034">that I may praise</ns1:w> <ns1:w lemma="strong:H08034">thy name</ns1:w>: <ns1:w lemma="strong:H06662">the righteous</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H03803">shall compass me about</ns1:w>; <ns1:w morph="strongMorph:TH8799" lemma="strong:H01580">for thou shalt deal bountifully</ns1:w> with me.<ns1:verse eID="Ps.142.7" />
+</ns1:chapter>
+</div></osisText></osis>

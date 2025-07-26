@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Isa" canonical="true"><ns1:title type="main">THE BOOK OF THE PROPHET ISAIAH</ns1:title>
+<ns1:chapter osisID="Isa.12" chapterTitle="CHAPTER 12.">
+<ns1:title type="chapter">CHAPTER 12.</ns1:title>
+<ns1:verse osisID="Isa.12.1" sID="Isa.12.1" /><ns1:w lemma="strong:H03117">And in that day</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H0559">thou shalt say</ns1:w>, <ns1:w lemma="strong:H03068">O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w morph="strongMorph:TH8686" lemma="strong:H03034">I will praise</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H0599">thee: though thou wast angry</ns1:w> <ns1:w lemma="strong:H0639">with me, thine anger</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07725">is turned away</ns1:w>, <ns1:w morph="strongMorph:TH8762" lemma="strong:H05162">and thou comfortedst</ns1:w> me.<ns1:verse eID="Isa.12.1" />
+<ns1:verse osisID="Isa.12.2" sID="Isa.12.2" /><ns1:w lemma="strong:H0410">Behold, God</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H03444">my salvation</ns1:w>; <ns1:w morph="strongMorph:TH8799" lemma="strong:H0982">I will trust</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H06342">and not be afraid</ns1:w>: <ns1:w lemma="strong:H03050">for the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H03068"><ns1:seg><ns1:divineName>Jehovah</ns1:divineName></ns1:seg></ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H05797">my strength</ns1:w> and <ns1:transChange type="added">my</ns1:transChange> <ns1:w lemma="strong:H02176">song</ns1:w>; <ns1:w lemma="strong:H03444">he also is become my salvation</ns1:w>.<ns1:verse eID="Isa.12.2" />
+<ns1:verse osisID="Isa.12.3" sID="Isa.12.3" /><ns1:w lemma="strong:H08342">Therefore with joy</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07579">shall ye draw</ns1:w> <ns1:w lemma="strong:H04325">water</ns1:w> <ns1:w lemma="strong:H04599">out of the wells</ns1:w> <ns1:w lemma="strong:H03444">of salvation</ns1:w>.<ns1:verse eID="Isa.12.3" />
+<ns1:verse osisID="Isa.12.4" sID="Isa.12.4" /><ns1:milestone type="x-extra-p" /><ns1:w lemma="strong:H03117">And in that day</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H0559">shall ye say</ns1:w>, <ns1:w morph="strongMorph:TH8685" lemma="strong:H03034">Praise</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w morph="strongMorph:TH8798" lemma="strong:H07121">call</ns1:w> <ns1:w lemma="strong:H08034">upon his name</ns1:w>, <ns1:w morph="strongMorph:TH8685" lemma="strong:H03045">declare</ns1:w> <ns1:w lemma="strong:H05949">his doings</ns1:w> <ns1:w lemma="strong:H05971">among the people</ns1:w>, <ns1:w morph="strongMorph:TH8685" lemma="strong:H02142">make mention</ns1:w> <ns1:w lemma="strong:H08034">that his name</ns1:w> <ns1:w morph="strongMorph:TH8737" lemma="strong:H07682">is exalted</ns1:w>.<ns1:note type="study">call…: or, proclaim</ns1:note><ns1:verse eID="Isa.12.4" />
+<ns1:verse osisID="Isa.12.5" sID="Isa.12.5" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H02167">Sing</ns1:w> <ns1:w lemma="strong:H03068">unto the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>; <ns1:w morph="strongMorph:TH8804" lemma="strong:H06213">for he hath done</ns1:w> <ns1:w lemma="strong:H01348">excellent things</ns1:w>: this <ns1:transChange type="added">is</ns1:transChange> <ns1:w morph="strongMorph:TH8794 strongMorph:TH8675 strongMorph:TH8716" lemma="strong:H03045 strong:H03045">known</ns1:w> <ns1:w lemma="strong:H0776">in all the earth</ns1:w>.<ns1:verse eID="Isa.12.5" />
+<ns1:verse osisID="Isa.12.6" sID="Isa.12.6" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H06670">Cry out</ns1:w> <ns1:w morph="strongMorph:TH8798" lemma="strong:H07442">and shout</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H03427">thou inhabitant</ns1:w> <ns1:w lemma="strong:H06726">of Zion</ns1:w>: <ns1:w lemma="strong:H01419">for great</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H06918">the Holy One</ns1:w> <ns1:w lemma="strong:H03478">of Israel</ns1:w> <ns1:w lemma="strong:H07130">in the midst</ns1:w> of thee.<ns1:note type="study">inhabitant: Heb. inhabitress</ns1:note><ns1:verse eID="Isa.12.6" />
+</ns1:chapter>
+</div></osisText></osis>

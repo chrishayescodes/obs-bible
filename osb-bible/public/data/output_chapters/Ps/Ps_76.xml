@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.76" chapterTitle="PSALM 76.">
+<ns1:title type="chapter">PSALM 76.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w morph="strongMorph:TH8764" lemma="strong:H05329">To the chief Musician</ns1:w> <ns1:w lemma="strong:H05058">on Neginoth</ns1:w>, <ns1:w lemma="strong:H04210">A Psalm</ns1:w> <ns1:transChange type="added">or</ns1:transChange> <ns1:w lemma="strong:H07892">Song</ns1:w> <ns1:w lemma="strong:H0623">of Asaph</ns1:w>.</ns1:title><ns1:verse osisID="Ps.76.1" sID="Ps.76.1" /><ns1:w lemma="strong:H03063">In Judah</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H0430">God</ns1:w> <ns1:w morph="strongMorph:TH8737" lemma="strong:H03045">known</ns1:w>: <ns1:w lemma="strong:H08034">his name</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H01419">great</ns1:w> <ns1:w lemma="strong:H03478">in Israel</ns1:w>.<ns1:note type="study">chief…: or, overseer</ns1:note><ns1:note type="study">of: or, for</ns1:note><ns1:verse eID="Ps.76.1" />
+<ns1:verse osisID="Ps.76.2" sID="Ps.76.2" /><ns1:w lemma="strong:H08004">In Salem</ns1:w> <ns1:w lemma="strong:H05520">also is his tabernacle</ns1:w>, <ns1:w lemma="strong:H04585">and his dwelling place</ns1:w> <ns1:w lemma="strong:H06726">in Zion</ns1:w>.<ns1:verse eID="Ps.76.2" />
+<ns1:verse osisID="Ps.76.3" sID="Ps.76.3" /><ns1:w morph="strongMorph:TH8765" lemma="strong:H07665">There brake</ns1:w> <ns1:w lemma="strong:H07565">he the arrows</ns1:w> <ns1:w lemma="strong:H07198">of the bow</ns1:w>, <ns1:w lemma="strong:H04043">the shield</ns1:w>, <ns1:w lemma="strong:H02719">and the sword</ns1:w>, <ns1:w lemma="strong:H04421">and the battle</ns1:w>. <ns1:w lemma="strong:H05542">Selah</ns1:w>.<ns1:verse eID="Ps.76.3" />
+<ns1:verse osisID="Ps.76.4" sID="Ps.76.4" />Thou <ns1:transChange type="added">art</ns1:transChange> <ns1:w morph="strongMorph:TH8737" lemma="strong:H0215">more glorious</ns1:w> <ns1:transChange type="added">and</ns1:transChange> <ns1:w lemma="strong:H0117">excellent</ns1:w> <ns1:w lemma="strong:H02042">than the mountains</ns1:w> <ns1:w lemma="strong:H02964">of prey</ns1:w>.<ns1:verse eID="Ps.76.4" />
+<ns1:verse osisID="Ps.76.5" sID="Ps.76.5" /><ns1:w lemma="strong:H03820 strong:H047">The stouthearted</ns1:w> <ns1:w morph="strongMorph:TH8709" lemma="strong:H07997">are spoiled</ns1:w>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H05123">they have slept</ns1:w> <ns1:w lemma="strong:H08142">their sleep</ns1:w>: <ns1:w lemma="strong:H0582">and none of the men</ns1:w> <ns1:w lemma="strong:H02428">of might</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H04672">have found</ns1:w> <ns1:w lemma="strong:H03027">their hands</ns1:w>.<ns1:verse eID="Ps.76.5" />
+<ns1:verse osisID="Ps.76.6" sID="Ps.76.6" /><ns1:w lemma="strong:H01606">At thy rebuke</ns1:w>, <ns1:w lemma="strong:H0430">O God</ns1:w> <ns1:w lemma="strong:H03290">of Jacob</ns1:w>, <ns1:w lemma="strong:H07393">both the chariot</ns1:w> <ns1:w lemma="strong:H05483">and horse</ns1:w> <ns1:w morph="strongMorph:TH8737" lemma="strong:H07290">are cast into a dead sleep</ns1:w>.<ns1:verse eID="Ps.76.6" />
+<ns1:verse osisID="Ps.76.7" sID="Ps.76.7" /><ns1:milestone type="x-extra-p" />Thou, <ns1:transChange type="added">even</ns1:transChange> thou, <ns1:transChange type="added">art</ns1:transChange> <ns1:w morph="strongMorph:TH8737" lemma="strong:H03372">to be feared</ns1:w>: <ns1:w morph="strongMorph:TH8799" lemma="strong:H05975">and who may stand</ns1:w> <ns1:w lemma="strong:H06440">in thy sight</ns1:w> <ns1:w lemma="strong:H0227">when</ns1:w> <ns1:w lemma="strong:H0639">once thou art angry</ns1:w>?<ns1:verse eID="Ps.76.7" />
+<ns1:verse osisID="Ps.76.8" sID="Ps.76.8" /><ns1:w lemma="strong:H01779">Thou didst cause judgment</ns1:w> <ns1:w morph="strongMorph:TH8689" lemma="strong:H08085">to be heard</ns1:w> <ns1:w lemma="strong:H08064">from heaven</ns1:w>; <ns1:w lemma="strong:H0776">the earth</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H03372">feared</ns1:w>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H08252">and was still</ns1:w>,<ns1:verse eID="Ps.76.8" />
+<ns1:verse osisID="Ps.76.9" sID="Ps.76.9" /><ns1:w lemma="strong:H0430">When God</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H06965">arose</ns1:w> <ns1:w lemma="strong:H04941">to judgment</ns1:w>, <ns1:w morph="strongMorph:TH8687" lemma="strong:H03467">to save</ns1:w> <ns1:w lemma="strong:H06035">all the meek</ns1:w> <ns1:w lemma="strong:H0776">of the earth</ns1:w>. <ns1:w lemma="strong:H05542">Selah</ns1:w>.<ns1:verse eID="Ps.76.9" />
+<ns1:verse osisID="Ps.76.10" sID="Ps.76.10" /><ns1:w lemma="strong:H02534">Surely the wrath</ns1:w> <ns1:w lemma="strong:H0120">of man</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H03034">shall praise</ns1:w> <ns1:w lemma="strong:H07611">thee: the remainder</ns1:w> <ns1:w lemma="strong:H02534">of wrath</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H02296">shalt thou restrain</ns1:w>.<ns1:verse eID="Ps.76.10" />
+<ns1:verse osisID="Ps.76.11" sID="Ps.76.11" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H05087">Vow</ns1:w>, <ns1:w morph="strongMorph:TH8761" lemma="strong:H07999">and pay</ns1:w> <ns1:w lemma="strong:H03068">unto the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H0430">your God</ns1:w>: <ns1:w lemma="strong:H05439">let all that be round about</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H02986">him bring</ns1:w> <ns1:w lemma="strong:H07862">presents</ns1:w> <ns1:w lemma="strong:H04172">unto him that ought to be feared</ns1:w>.<ns1:note type="study">unto him…: Heb. to fear</ns1:note><ns1:verse eID="Ps.76.11" />
+<ns1:verse osisID="Ps.76.12" sID="Ps.76.12" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H01219">He shall cut off</ns1:w> <ns1:w lemma="strong:H07307">the spirit</ns1:w> <ns1:w lemma="strong:H05057">of princes</ns1:w>: <ns1:transChange type="added">he is</ns1:transChange> <ns1:w morph="strongMorph:TH8737" lemma="strong:H03372">terrible</ns1:w> <ns1:w lemma="strong:H04428">to the kings</ns1:w> <ns1:w lemma="strong:H0776">of the earth</ns1:w>.<ns1:verse eID="Ps.76.12" />
+</ns1:chapter>
+</div></osisText></osis>

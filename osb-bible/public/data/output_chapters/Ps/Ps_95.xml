@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.95" chapterTitle="PSALM 95.">
+<ns1:title type="chapter">PSALM 95.</ns1:title>
+<ns1:verse osisID="Ps.95.1" sID="Ps.95.1" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H03212">O come</ns1:w>, <ns1:w morph="strongMorph:TH8762" lemma="strong:H07442">let us sing</ns1:w> <ns1:w lemma="strong:H03068">unto the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>: <ns1:w morph="strongMorph:TH8686" lemma="strong:H07321">let us make a joyful noise</ns1:w> <ns1:w lemma="strong:H06697">to the rock</ns1:w> <ns1:w lemma="strong:H03468">of our salvation</ns1:w>.<ns1:verse eID="Ps.95.1" />
+<ns1:verse osisID="Ps.95.2" sID="Ps.95.2" /><ns1:w morph="strongMorph:TH8762" lemma="strong:H06923">Let us come</ns1:w> <ns1:w lemma="strong:H06440">before his presence</ns1:w> <ns1:w lemma="strong:H08426">with thanksgiving</ns1:w>, <ns1:w morph="strongMorph:TH8686" lemma="strong:H07321">and make a joyful noise</ns1:w> <ns1:w lemma="strong:H02158">unto him with psalms</ns1:w>.<ns1:note type="study">come…: Heb. prevent his face</ns1:note><ns1:verse eID="Ps.95.2" />
+<ns1:verse osisID="Ps.95.3" sID="Ps.95.3" /><ns1:w lemma="strong:H03068">For the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H01419">a great</ns1:w> <ns1:w lemma="strong:H0410">God</ns1:w>, <ns1:w lemma="strong:H01419">and a great</ns1:w> <ns1:w lemma="strong:H04428">King</ns1:w> <ns1:w lemma="strong:H0430">above all gods</ns1:w>.<ns1:verse eID="Ps.95.3" />
+<ns1:verse osisID="Ps.95.4" sID="Ps.95.4" /><ns1:w lemma="strong:H03027">In his hand</ns1:w> <ns1:transChange type="added">are</ns1:transChange> <ns1:w lemma="strong:H04278">the deep places</ns1:w> <ns1:w lemma="strong:H0776">of the earth</ns1:w>: <ns1:w lemma="strong:H08443">the strength</ns1:w> <ns1:w lemma="strong:H02022">of the hills</ns1:w> <ns1:transChange type="added">is</ns1:transChange> his also.<ns1:note type="study">In…: Heb. In whose</ns1:note><ns1:note type="study">the strength…: or, the heights of the hills are his</ns1:note><ns1:verse eID="Ps.95.4" />
+<ns1:verse osisID="Ps.95.5" sID="Ps.95.5" /><ns1:w lemma="strong:H03220">The sea</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w morph="strongMorph:TH8804" lemma="strong:H06213">his, and he made</ns1:w> <ns1:w lemma="strong:H03027">it: and his hands</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H03335">formed</ns1:w> <ns1:w lemma="strong:H03006">the dry</ns1:w> <ns1:transChange type="added">land</ns1:transChange>.<ns1:note type="study">The sea…: Heb. Whose the sea is</ns1:note><ns1:verse eID="Ps.95.5" />
+<ns1:verse osisID="Ps.95.6" sID="Ps.95.6" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H0935">O come</ns1:w>, <ns1:w morph="strongMorph:TH8691" lemma="strong:H07812">let us worship</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H03766">and bow down</ns1:w>: <ns1:w morph="strongMorph:TH8799" lemma="strong:H01288">let us kneel</ns1:w> <ns1:w lemma="strong:H06440">before</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H06213">our maker</ns1:w>.<ns1:verse eID="Ps.95.6" />
+<ns1:verse osisID="Ps.95.7" sID="Ps.95.7" /><ns1:milestone type="x-extra-p" />For he <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H0430">our God</ns1:w>; and we <ns1:transChange type="added">are</ns1:transChange> <ns1:w lemma="strong:H05971">the people</ns1:w> <ns1:w lemma="strong:H04830">of his pasture</ns1:w>, <ns1:w lemma="strong:H06629">and the sheep</ns1:w> <ns1:w lemma="strong:H03027">of his hand</ns1:w>. <ns1:w lemma="strong:H03117">To day</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H08085">if ye will hear</ns1:w> <ns1:w lemma="strong:H06963">his voice</ns1:w>,<ns1:verse eID="Ps.95.7" />
+<ns1:verse osisID="Ps.95.8" sID="Ps.95.8" /><ns1:w morph="strongMorph:TH8686" lemma="strong:H07185">Harden</ns1:w> <ns1:w lemma="strong:H03824">not your heart</ns1:w>, <ns1:w lemma="strong:H04808">as in the provocation</ns1:w>, <ns1:transChange type="added">and</ns1:transChange> as <ns1:transChange type="added">in</ns1:transChange> <ns1:w lemma="strong:H03117">the day</ns1:w> <ns1:w lemma="strong:H04531">of temptation</ns1:w> <ns1:w lemma="strong:H04057">in the wilderness</ns1:w>:<ns1:note type="study">provocation: Heb. contention</ns1:note><ns1:verse eID="Ps.95.8" />
+<ns1:verse osisID="Ps.95.9" sID="Ps.95.9" /><ns1:w lemma="strong:H01">When your fathers</ns1:w> <ns1:w morph="strongMorph:TH8765" lemma="strong:H05254">tempted</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H0974">me, proved</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07200">me, and saw</ns1:w> <ns1:w lemma="strong:H06467">my work</ns1:w>.<ns1:verse eID="Ps.95.9" />
+<ns1:verse osisID="Ps.95.10" sID="Ps.95.10" /><ns1:w lemma="strong:H0705">Forty</ns1:w> <ns1:w lemma="strong:H08141">years</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H06962">long was I grieved</ns1:w> with <ns1:transChange type="added">this</ns1:transChange> <ns1:w lemma="strong:H01755">generation</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H0559">and said</ns1:w>, It <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H05971">a people</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H08582">that do err</ns1:w> <ns1:w lemma="strong:H03824">in their heart</ns1:w>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H03045">and they have not known</ns1:w> <ns1:w lemma="strong:H01870">my ways</ns1:w>:<ns1:verse eID="Ps.95.10" />
+<ns1:verse osisID="Ps.95.11" sID="Ps.95.11" /><ns1:w morph="strongMorph:TH8738" lemma="strong:H07650">Unto whom I sware</ns1:w> <ns1:w lemma="strong:H0639">in my wrath</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H0935">that they should not enter</ns1:w> <ns1:w lemma="strong:H04496">into my rest</ns1:w>.<ns1:note type="study">that…: Heb. if they enter into my rest</ns1:note><ns1:verse eID="Ps.95.11" />
+</ns1:chapter>
+</div></osisText></osis>

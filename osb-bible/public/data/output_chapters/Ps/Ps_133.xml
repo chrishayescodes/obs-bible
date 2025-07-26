@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.133" chapterTitle="PSALM 133.">
+<ns1:title type="chapter">PSALM 133.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H07892">A Song</ns1:w> <ns1:w lemma="strong:H04609">of degrees</ns1:w> <ns1:w lemma="strong:H01732">of David</ns1:w>.</ns1:title><ns1:verse osisID="Ps.133.1" sID="Ps.133.1" /><ns1:w lemma="strong:H02896">Behold, how good</ns1:w> <ns1:w lemma="strong:H05273">and how pleasant</ns1:w> <ns1:transChange type="added">it is</ns1:transChange> <ns1:w lemma="strong:H0251">for brethren</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H03427">to dwell</ns1:w> <ns1:w lemma="strong:H03162">together</ns1:w> <ns1:w lemma="strong:H03162">in unity</ns1:w>!<ns1:note type="study">together…: Heb. even together</ns1:note><ns1:verse eID="Ps.133.1" />
+<ns1:verse osisID="Ps.133.2" sID="Ps.133.2" /><ns1:transChange type="added">It is</ns1:transChange> <ns1:w lemma="strong:H02896">like the precious</ns1:w> <ns1:w lemma="strong:H08081">ointment</ns1:w> <ns1:w lemma="strong:H07218">upon the head</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H03381">that ran down</ns1:w> <ns1:w lemma="strong:H02206">upon the beard</ns1:w>, <ns1:transChange type="added">even</ns1:transChange> <ns1:w lemma="strong:H0175">Aaron's</ns1:w> <ns1:w lemma="strong:H02206">beard</ns1:w>: <ns1:w morph="strongMorph:TH8802" lemma="strong:H03381">that went down</ns1:w> <ns1:w lemma="strong:H06310">to the skirts</ns1:w> <ns1:w lemma="strong:H04060">of his garments</ns1:w>;<ns1:verse eID="Ps.133.2" />
+<ns1:verse osisID="Ps.133.3" sID="Ps.133.3" /><ns1:w lemma="strong:H02919">As the dew</ns1:w> <ns1:w lemma="strong:H02768">of Hermon</ns1:w>, <ns1:transChange type="added">and as the dew</ns1:transChange> <ns1:w morph="strongMorph:TH8802" lemma="strong:H03381">that descended</ns1:w> <ns1:w lemma="strong:H02042">upon the mountains</ns1:w> <ns1:w lemma="strong:H06726">of Zion</ns1:w>: <ns1:w lemma="strong:H03068">for there the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8765" lemma="strong:H06680">commanded</ns1:w> <ns1:w lemma="strong:H01293">the blessing</ns1:w>, <ns1:transChange type="added">even</ns1:transChange> <ns1:w lemma="strong:H02416">life</ns1:w> <ns1:w lemma="strong:H05769">for evermore</ns1:w>.<ns1:verse eID="Ps.133.3" />
+</ns1:chapter>
+</div></osisText></osis>

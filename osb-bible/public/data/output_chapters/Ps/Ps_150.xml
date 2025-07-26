@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.150" chapterTitle="PSALM 150.">
+<ns1:title type="chapter">PSALM 150.</ns1:title>
+<ns1:verse osisID="Ps.150.1" sID="Ps.150.1" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H03050">ye the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>. <ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H0410">God</ns1:w> <ns1:w lemma="strong:H06944">in his sanctuary</ns1:w>: <ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">praise</ns1:w> <ns1:w lemma="strong:H07549">him in the firmament</ns1:w> <ns1:w lemma="strong:H05797">of his power</ns1:w>.<ns1:note type="study">Praise ye…: Heb. Hallelujah</ns1:note><ns1:verse eID="Ps.150.1" />
+<ns1:verse osisID="Ps.150.2" sID="Ps.150.2" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H01369">him for his mighty acts</ns1:w>: <ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">praise</ns1:w> <ns1:w lemma="strong:H07230">him according to his excellent</ns1:w> <ns1:w lemma="strong:H01433">greatness</ns1:w>.<ns1:verse eID="Ps.150.2" />
+<ns1:verse osisID="Ps.150.3" sID="Ps.150.3" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H08629">him with the sound</ns1:w> <ns1:w lemma="strong:H07782">of the trumpet</ns1:w>: <ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">praise</ns1:w> <ns1:w lemma="strong:H05035">him with the psaltery</ns1:w> <ns1:w lemma="strong:H03658">and harp</ns1:w>.<ns1:note type="study">trumpet: or, cornet</ns1:note><ns1:verse eID="Ps.150.3" />
+<ns1:verse osisID="Ps.150.4" sID="Ps.150.4" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H08596">him with the timbrel</ns1:w> <ns1:w lemma="strong:H04234">and dance</ns1:w>: <ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">praise</ns1:w> <ns1:w lemma="strong:H04482">him with stringed instruments</ns1:w> <ns1:w lemma="strong:H05748">and organs</ns1:w>.<ns1:note type="study">dance: or, pipe</ns1:note><ns1:verse eID="Ps.150.4" />
+<ns1:verse osisID="Ps.150.5" sID="Ps.150.5" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H08088">him upon the loud</ns1:w> <ns1:w lemma="strong:H06767">cymbals</ns1:w>: <ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">praise</ns1:w> <ns1:w lemma="strong:H08643">him upon the high sounding</ns1:w> <ns1:w lemma="strong:H06767">cymbals</ns1:w>.<ns1:verse eID="Ps.150.5" />
+<ns1:verse osisID="Ps.150.6" sID="Ps.150.6" /><ns1:w lemma="strong:H05397">Let every thing that hath breath</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H01984">praise</ns1:w> <ns1:w lemma="strong:H03050">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>. <ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H03050">ye the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>.<ns1:verse eID="Ps.150.6" />
+</ns1:chapter>
+</div></osisText></osis>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.112" chapterTitle="PSALM 112.">
+<ns1:title type="chapter">PSALM 112.</ns1:title>
+<ns1:verse osisID="Ps.112.1" sID="Ps.112.1" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H03050">ye the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>. <ns1:w lemma="strong:H0835">Blessed</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H0376">the man</ns1:w> <ns1:transChange type="added">that</ns1:transChange> <ns1:w morph="strongMorph:TH8804" lemma="strong:H03372">feareth</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:transChange type="added">that</ns1:transChange> <ns1:w morph="strongMorph:TH8804" lemma="strong:H02654">delighteth</ns1:w> <ns1:w lemma="strong:H03966">greatly</ns1:w> <ns1:w lemma="strong:H04687">in his commandments</ns1:w>.<ns1:note type="study">Praise…: Heb. Hallelujah</ns1:note><ns1:verse eID="Ps.112.1" />
+<ns1:verse osisID="Ps.112.2" sID="Ps.112.2" /><ns1:w lemma="strong:H02233">His seed</ns1:w> <ns1:w lemma="strong:H01368">shall be mighty</ns1:w> <ns1:w lemma="strong:H0776">upon earth</ns1:w>: <ns1:w lemma="strong:H01755">the generation</ns1:w> <ns1:w lemma="strong:H03477">of the upright</ns1:w> <ns1:w morph="strongMorph:TH8792" lemma="strong:H01288">shall be blessed</ns1:w>.<ns1:verse eID="Ps.112.2" />
+<ns1:verse osisID="Ps.112.3" sID="Ps.112.3" /><ns1:w lemma="strong:H01952">Wealth</ns1:w> <ns1:w lemma="strong:H06239">and riches</ns1:w> <ns1:transChange type="added">shall be</ns1:transChange> <ns1:w lemma="strong:H01004">in his house</ns1:w>: <ns1:w lemma="strong:H06666">and his righteousness</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H05975">endureth</ns1:w> <ns1:w lemma="strong:H05703">for ever</ns1:w>.<ns1:verse eID="Ps.112.3" />
+<ns1:verse osisID="Ps.112.4" sID="Ps.112.4" /><ns1:w lemma="strong:H03477">Unto the upright</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H02224">there ariseth</ns1:w> <ns1:w lemma="strong:H0216">light</ns1:w> <ns1:w lemma="strong:H02822">in the darkness</ns1:w>: <ns1:transChange type="added">he is</ns1:transChange> <ns1:w lemma="strong:H02587">gracious</ns1:w>, <ns1:w lemma="strong:H07349">and full of compassion</ns1:w>, <ns1:w lemma="strong:H06662">and righteous</ns1:w>.<ns1:verse eID="Ps.112.4" />
+<ns1:verse osisID="Ps.112.5" sID="Ps.112.5" /><ns1:w lemma="strong:H02896">A good</ns1:w> <ns1:w lemma="strong:H0376">man</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H02603">sheweth favour</ns1:w>, <ns1:w morph="strongMorph:TH8688" lemma="strong:H03867">and lendeth</ns1:w>: <ns1:w morph="strongMorph:TH8770" lemma="strong:H03557">he will guide</ns1:w> <ns1:w lemma="strong:H01697">his affairs</ns1:w> <ns1:w lemma="strong:H04941">with discretion</ns1:w>.<ns1:note type="study">discretion: Heb. judgment</ns1:note><ns1:verse eID="Ps.112.5" />
+<ns1:verse osisID="Ps.112.6" sID="Ps.112.6" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8735" lemma="strong:H04131">Surely he shall not be moved</ns1:w> <ns1:w lemma="strong:H05769">for ever</ns1:w>: <ns1:w lemma="strong:H06662">the righteous</ns1:w> <ns1:w lemma="strong:H05769">shall be in everlasting</ns1:w> <ns1:w lemma="strong:H02143">remembrance</ns1:w>.<ns1:verse eID="Ps.112.6" />
+<ns1:verse osisID="Ps.112.7" sID="Ps.112.7" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H03372">He shall not be afraid</ns1:w> <ns1:w lemma="strong:H07451">of evil</ns1:w> <ns1:w lemma="strong:H08052">tidings</ns1:w>: <ns1:w lemma="strong:H03820">his heart</ns1:w> <ns1:w morph="strongMorph:TH8737" lemma="strong:H03559">is fixed</ns1:w>, <ns1:w morph="strongMorph:TH8803" lemma="strong:H0982">trusting</ns1:w> <ns1:w lemma="strong:H03068">in the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>.<ns1:verse eID="Ps.112.7" />
+<ns1:verse osisID="Ps.112.8" sID="Ps.112.8" /><ns1:w lemma="strong:H03820">His heart</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w morph="strongMorph:TH8803" lemma="strong:H05564">established</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H03372">he shall not be afraid</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H07200">until he see</ns1:w> <ns1:transChange type="added">his desire</ns1:transChange> <ns1:w lemma="strong:H06862">upon his enemies</ns1:w>.<ns1:verse eID="Ps.112.8" />
+<ns1:verse osisID="Ps.112.9" sID="Ps.112.9" /><ns1:w morph="strongMorph:TH8765" lemma="strong:H06340">He hath dispersed</ns1:w>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H05414">he hath given</ns1:w> <ns1:w lemma="strong:H034">to the poor</ns1:w>; <ns1:w lemma="strong:H06666">his righteousness</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H05975">endureth</ns1:w> <ns1:w lemma="strong:H05703">for ever</ns1:w>; <ns1:w lemma="strong:H07161">his horn</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07311">shall be exalted</ns1:w> <ns1:w lemma="strong:H03519">with honour</ns1:w>.<ns1:verse eID="Ps.112.9" />
+<ns1:verse osisID="Ps.112.10" sID="Ps.112.10" /><ns1:w lemma="strong:H07563">The wicked</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07200">shall see</ns1:w> <ns1:transChange type="added">it</ns1:transChange>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H03707">and be grieved</ns1:w>; <ns1:w morph="strongMorph:TH8799" lemma="strong:H02786">he shall gnash</ns1:w> <ns1:w lemma="strong:H08127">with his teeth</ns1:w>, <ns1:w morph="strongMorph:TH8738" lemma="strong:H04549">and melt away</ns1:w>: <ns1:w lemma="strong:H08378">the desire</ns1:w> <ns1:w lemma="strong:H07563">of the wicked</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H06">shall perish</ns1:w>.<ns1:verse eID="Ps.112.10" />
+</ns1:chapter>
+</div></osisText></osis>

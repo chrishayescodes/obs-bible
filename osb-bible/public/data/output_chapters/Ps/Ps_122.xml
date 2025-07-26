@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.122" chapterTitle="PSALM 122.">
+<ns1:title type="chapter">PSALM 122.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H07892">A Song</ns1:w> <ns1:w lemma="strong:H04609">of degrees</ns1:w> <ns1:w lemma="strong:H01732">of David</ns1:w>.</ns1:title><ns1:verse osisID="Ps.122.1" sID="Ps.122.1" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H08055">I was glad</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H0559">when they said</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H03212">unto me, Let us go</ns1:w> <ns1:w lemma="strong:H01004">into the house</ns1:w> <ns1:w lemma="strong:H03068">of the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>.<ns1:verse eID="Ps.122.1" />
+<ns1:verse osisID="Ps.122.2" sID="Ps.122.2" /><ns1:w lemma="strong:H07272">Our feet</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H05975">shall stand</ns1:w> <ns1:w lemma="strong:H08179">within thy gates</ns1:w>, <ns1:w lemma="strong:H03389">O Jerusalem</ns1:w>.<ns1:verse eID="Ps.122.2" />
+<ns1:verse osisID="Ps.122.3" sID="Ps.122.3" /><ns1:w lemma="strong:H03389">Jerusalem</ns1:w> <ns1:w morph="strongMorph:TH8803" lemma="strong:H01129">is builded</ns1:w> <ns1:w lemma="strong:H05892">as a city</ns1:w> <ns1:w morph="strongMorph:TH8795" lemma="strong:H02266">that is compact</ns1:w> <ns1:w lemma="strong:H03162">together</ns1:w>:<ns1:verse eID="Ps.122.3" />
+<ns1:verse osisID="Ps.122.4" sID="Ps.122.4" /><ns1:w lemma="strong:H08033">Whither</ns1:w> <ns1:w lemma="strong:H07626">the tribes</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H05927">go up</ns1:w>, <ns1:w lemma="strong:H07626">the tribes</ns1:w> <ns1:w lemma="strong:H03050">of the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H05715">unto the testimony</ns1:w> <ns1:w lemma="strong:H03478">of Israel</ns1:w>, <ns1:w morph="strongMorph:TH8687" lemma="strong:H03034">to give thanks</ns1:w> <ns1:w lemma="strong:H08034">unto the name</ns1:w> <ns1:w lemma="strong:H03068">of the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>.<ns1:verse eID="Ps.122.4" />
+<ns1:verse osisID="Ps.122.5" sID="Ps.122.5" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H03427">For there are set</ns1:w> <ns1:w lemma="strong:H03678">thrones</ns1:w> <ns1:w lemma="strong:H04941">of judgment</ns1:w>, <ns1:w lemma="strong:H03678">the thrones</ns1:w> <ns1:w lemma="strong:H01004">of the house</ns1:w> <ns1:w lemma="strong:H01732">of David</ns1:w>.<ns1:note type="study">are…: Heb. do sit</ns1:note><ns1:verse eID="Ps.122.5" />
+<ns1:verse osisID="Ps.122.6" sID="Ps.122.6" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H07592">Pray</ns1:w> <ns1:w lemma="strong:H07965">for the peace</ns1:w> <ns1:w lemma="strong:H03389">of Jerusalem</ns1:w>: <ns1:w morph="strongMorph:TH8799" lemma="strong:H07951">they shall prosper</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H0157">that love</ns1:w> thee.<ns1:verse eID="Ps.122.6" />
+<ns1:verse osisID="Ps.122.7" sID="Ps.122.7" /><ns1:w lemma="strong:H07965">Peace</ns1:w> <ns1:w lemma="strong:H02426">be within thy walls</ns1:w>, <ns1:transChange type="added">and</ns1:transChange> <ns1:w lemma="strong:H07962">prosperity</ns1:w> <ns1:w lemma="strong:H0759">within thy palaces</ns1:w>.<ns1:verse eID="Ps.122.7" />
+<ns1:verse osisID="Ps.122.8" sID="Ps.122.8" /><ns1:w lemma="strong:H0251">For my brethren</ns1:w> <ns1:w lemma="strong:H07453">and companions'</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H01696">sakes, I will now say</ns1:w>, <ns1:w lemma="strong:H07965">Peace</ns1:w> <ns1:transChange type="added">be</ns1:transChange> within thee.<ns1:verse eID="Ps.122.8" />
+<ns1:verse osisID="Ps.122.9" sID="Ps.122.9" /><ns1:w lemma="strong:H01004">Because of the house</ns1:w> <ns1:w lemma="strong:H03068">of the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H0430">our God</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H01245">I will seek</ns1:w> <ns1:w lemma="strong:H02896">thy good</ns1:w>.<ns1:verse eID="Ps.122.9" />
+</ns1:chapter>
+</div></osisText></osis>

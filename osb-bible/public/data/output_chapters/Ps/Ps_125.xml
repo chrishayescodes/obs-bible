@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.125" chapterTitle="PSALM 125.">
+<ns1:title type="chapter">PSALM 125.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H07892">A Song</ns1:w> <ns1:w lemma="strong:H04609">of degrees</ns1:w>.</ns1:title><ns1:verse osisID="Ps.125.1" sID="Ps.125.1" /><ns1:w morph="strongMorph:TH8802" lemma="strong:H0982">They that trust</ns1:w> <ns1:w lemma="strong:H03068">in the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:transChange type="added">shall be</ns1:transChange> <ns1:w lemma="strong:H02022">as mount</ns1:w> <ns1:w lemma="strong:H06726">Zion</ns1:w>, <ns1:transChange type="added">which</ns1:transChange> <ns1:w morph="strongMorph:TH8735" lemma="strong:H04131">cannot be removed</ns1:w>, <ns1:transChange type="added">but</ns1:transChange> <ns1:w morph="strongMorph:TH8799" lemma="strong:H03427">abideth</ns1:w> <ns1:w lemma="strong:H05769">for ever</ns1:w>.<ns1:verse eID="Ps.125.1" />
+<ns1:verse osisID="Ps.125.2" sID="Ps.125.2" /><ns1:w lemma="strong:H02022">As the mountains</ns1:w> <ns1:transChange type="added">are</ns1:transChange> <ns1:w lemma="strong:H05439">round about</ns1:w> <ns1:w lemma="strong:H03389">Jerusalem</ns1:w>, <ns1:w lemma="strong:H03068">so the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H05439">round about</ns1:w> <ns1:w lemma="strong:H05971">his people</ns1:w> <ns1:w lemma="strong:H05704">from henceforth even for</ns1:w> <ns1:w lemma="strong:H05769">ever</ns1:w>.<ns1:verse eID="Ps.125.2" />
+<ns1:verse osisID="Ps.125.3" sID="Ps.125.3" /><ns1:w lemma="strong:H07626">For the rod</ns1:w> <ns1:w lemma="strong:H07562">of the wicked</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H05117">shall not rest</ns1:w> <ns1:w lemma="strong:H01486">upon the lot</ns1:w> <ns1:w lemma="strong:H06662">of the righteous</ns1:w>; <ns1:w lemma="strong:H04616">lest</ns1:w> <ns1:w lemma="strong:H06662">the righteous</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07971">put forth</ns1:w> <ns1:w lemma="strong:H03027">their hands</ns1:w> <ns1:w lemma="strong:H05766">unto iniquity</ns1:w>.<ns1:note type="study">the wicked: Heb. wickedness</ns1:note><ns1:verse eID="Ps.125.3" />
+<ns1:verse osisID="Ps.125.4" sID="Ps.125.4" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8685" lemma="strong:H02895">Do good</ns1:w>, <ns1:w lemma="strong:H03068">O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, unto <ns1:transChange type="added">those that be</ns1:transChange> <ns1:w lemma="strong:H02896">good</ns1:w>, and <ns1:transChange type="added">to them that are</ns1:transChange> <ns1:w lemma="strong:H03477">upright</ns1:w> <ns1:w lemma="strong:H03826">in their hearts</ns1:w>.<ns1:verse eID="Ps.125.4" />
+<ns1:verse osisID="Ps.125.5" sID="Ps.125.5" /><ns1:w morph="strongMorph:TH8688" lemma="strong:H05186">As for such as turn aside</ns1:w> <ns1:w lemma="strong:H06128">unto their crooked ways</ns1:w>, <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H03212">shall lead them forth</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H06466">with the workers</ns1:w> <ns1:w lemma="strong:H0205">of iniquity</ns1:w>: <ns1:transChange type="added">but</ns1:transChange> <ns1:w lemma="strong:H07965">peace</ns1:w> <ns1:transChange type="added">shall be</ns1:transChange> <ns1:w lemma="strong:H03478">upon Israel</ns1:w>.<ns1:verse eID="Ps.125.5" />
+</ns1:chapter>
+</div></osisText></osis>

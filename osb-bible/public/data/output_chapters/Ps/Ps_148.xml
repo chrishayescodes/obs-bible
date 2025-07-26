@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.148" chapterTitle="PSALM 148.">
+<ns1:title type="chapter">PSALM 148.</ns1:title>
+<ns1:verse osisID="Ps.148.1" sID="Ps.148.1" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H03050">ye the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>. <ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H03068">ye the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H08064">from the heavens</ns1:w>: <ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">praise</ns1:w> <ns1:w lemma="strong:H04791">him in the heights</ns1:w>.<ns1:note type="study">Praise ye the <ns1:divineName>Lord</ns1:divineName>. Praise: Heb. Hallelujah, etc</ns1:note><ns1:verse eID="Ps.148.1" />
+<ns1:verse osisID="Ps.148.2" sID="Ps.148.2" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H04397">ye him, all his angels</ns1:w>: <ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">praise</ns1:w> <ns1:w lemma="strong:H06635">ye him, all his hosts</ns1:w>.<ns1:verse eID="Ps.148.2" />
+<ns1:verse osisID="Ps.148.3" sID="Ps.148.3" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H08121">ye him, sun</ns1:w> <ns1:w lemma="strong:H03394">and moon</ns1:w>: <ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">praise</ns1:w> <ns1:w lemma="strong:H03556">him, all ye stars</ns1:w> <ns1:w lemma="strong:H0216">of light</ns1:w>.<ns1:verse eID="Ps.148.3" />
+<ns1:verse osisID="Ps.148.4" sID="Ps.148.4" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H08064">him, ye heavens</ns1:w> <ns1:w lemma="strong:H08064">of heavens</ns1:w>, <ns1:w lemma="strong:H04325">and ye waters</ns1:w> that <ns1:transChange type="added">be</ns1:transChange> <ns1:w lemma="strong:H08064">above the heavens</ns1:w>.<ns1:verse eID="Ps.148.4" />
+<ns1:verse osisID="Ps.148.5" sID="Ps.148.5" /><ns1:w morph="strongMorph:TH8762" lemma="strong:H01984">Let them praise</ns1:w> <ns1:w lemma="strong:H08034">the name</ns1:w> <ns1:w lemma="strong:H03068">of the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>: <ns1:w morph="strongMorph:TH8765" lemma="strong:H06680">for he commanded</ns1:w>, <ns1:w morph="strongMorph:TH8738" lemma="strong:H01254">and they were created</ns1:w>.<ns1:verse eID="Ps.148.5" />
+<ns1:verse osisID="Ps.148.6" sID="Ps.148.6" /><ns1:w morph="strongMorph:TH8686" lemma="strong:H05975">He hath also stablished</ns1:w> <ns1:w lemma="strong:H05703">them for ever</ns1:w> <ns1:w lemma="strong:H05769">and ever</ns1:w>: <ns1:w morph="strongMorph:TH8804" lemma="strong:H05414">he hath made</ns1:w> <ns1:w lemma="strong:H02706">a decree</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H05674">which shall not pass</ns1:w>.<ns1:verse eID="Ps.148.6" />
+<ns1:verse osisID="Ps.148.7" sID="Ps.148.7" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H0776">from the earth</ns1:w>, <ns1:w lemma="strong:H08577">ye dragons</ns1:w>, <ns1:w lemma="strong:H08415">and all deeps</ns1:w>:<ns1:verse eID="Ps.148.7" />
+<ns1:verse osisID="Ps.148.8" sID="Ps.148.8" /><ns1:w lemma="strong:H0784">Fire</ns1:w>, <ns1:w lemma="strong:H01259">and hail</ns1:w>; <ns1:w lemma="strong:H07950">snow</ns1:w>, <ns1:w lemma="strong:H07008">and vapour</ns1:w>; <ns1:w lemma="strong:H05591">stormy</ns1:w> <ns1:w lemma="strong:H07307">wind</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H06213">fulfilling</ns1:w> <ns1:w lemma="strong:H01697">his word</ns1:w>:<ns1:verse eID="Ps.148.8" />
+<ns1:verse osisID="Ps.148.9" sID="Ps.148.9" /><ns1:w lemma="strong:H02022">Mountains</ns1:w>, <ns1:w lemma="strong:H01389">and all hills</ns1:w>; <ns1:w lemma="strong:H06529">fruitful</ns1:w> <ns1:w lemma="strong:H06086">trees</ns1:w>, <ns1:w lemma="strong:H0730">and all cedars</ns1:w>:<ns1:verse eID="Ps.148.9" />
+<ns1:verse osisID="Ps.148.10" sID="Ps.148.10" /><ns1:w lemma="strong:H02416">Beasts</ns1:w>, <ns1:w lemma="strong:H0929">and all cattle</ns1:w>; <ns1:w lemma="strong:H07431">creeping things</ns1:w>, <ns1:w lemma="strong:H03671">and flying</ns1:w> <ns1:w lemma="strong:H06833">fowl</ns1:w>:<ns1:note type="study">flying…: Heb. birds of wing</ns1:note><ns1:verse eID="Ps.148.10" />
+<ns1:verse osisID="Ps.148.11" sID="Ps.148.11" /><ns1:w lemma="strong:H04428">Kings</ns1:w> <ns1:w lemma="strong:H0776">of the earth</ns1:w>, <ns1:w lemma="strong:H03816">and all people</ns1:w>; <ns1:w lemma="strong:H08269">princes</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H08199">and all judges</ns1:w> <ns1:w lemma="strong:H0776">of the earth</ns1:w>:<ns1:verse eID="Ps.148.11" />
+<ns1:verse osisID="Ps.148.12" sID="Ps.148.12" /><ns1:w lemma="strong:H0970">Both young men</ns1:w>, <ns1:w lemma="strong:H01330">and maidens</ns1:w>; <ns1:w lemma="strong:H02205">old men</ns1:w>, <ns1:w lemma="strong:H05288">and children</ns1:w>:<ns1:verse eID="Ps.148.12" />
+<ns1:verse osisID="Ps.148.13" sID="Ps.148.13" /><ns1:w morph="strongMorph:TH8762" lemma="strong:H01984">Let them praise</ns1:w> <ns1:w lemma="strong:H08034">the name</ns1:w> <ns1:w lemma="strong:H03068">of the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>: <ns1:w lemma="strong:H08034">for his name</ns1:w> <ns1:w morph="strongMorph:TH8737" lemma="strong:H07682">alone is excellent</ns1:w>; <ns1:w lemma="strong:H01935">his glory</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H0776">above the earth</ns1:w> <ns1:w lemma="strong:H08064">and heaven</ns1:w>.<ns1:note type="study">excellent: Heb. exalted</ns1:note><ns1:verse eID="Ps.148.13" />
+<ns1:verse osisID="Ps.148.14" sID="Ps.148.14" /><ns1:w morph="strongMorph:TH8686" lemma="strong:H07311">He also exalteth</ns1:w> <ns1:w lemma="strong:H07161">the horn</ns1:w> <ns1:w lemma="strong:H05971">of his people</ns1:w>, <ns1:w lemma="strong:H08416">the praise</ns1:w> <ns1:w lemma="strong:H02623">of all his saints</ns1:w>; <ns1:transChange type="added">even</ns1:transChange> <ns1:w lemma="strong:H01121">of the children</ns1:w> <ns1:w lemma="strong:H03478">of Israel</ns1:w>, <ns1:w lemma="strong:H05971">a people</ns1:w> <ns1:w lemma="strong:H07138">near</ns1:w> <ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">unto him. Praise</ns1:w> <ns1:w lemma="strong:H03050">ye the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>.<ns1:verse eID="Ps.148.14" />
+</ns1:chapter>
+</div></osisText></osis>

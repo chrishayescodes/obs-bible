@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.121" chapterTitle="PSALM 121.">
+<ns1:title type="chapter">PSALM 121.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H07892">A Song</ns1:w> <ns1:w lemma="strong:H04609">of degrees</ns1:w>.</ns1:title><ns1:verse osisID="Ps.121.1" sID="Ps.121.1" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H05375">I will lift up</ns1:w> <ns1:w lemma="strong:H05869">mine eyes</ns1:w> <ns1:w lemma="strong:H02022">unto the hills</ns1:w>, <ns1:w lemma="strong:H0370">from whence</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H0935">cometh</ns1:w> <ns1:w lemma="strong:H05828">my help</ns1:w>.<ns1:note type="study">I will…: or, Shall I lift up mine eyes to the hills? whence should my help come?</ns1:note><ns1:verse eID="Ps.121.1" />
+<ns1:verse osisID="Ps.121.2" sID="Ps.121.2" /><ns1:w lemma="strong:H05828">My help</ns1:w> <ns1:transChange type="added">cometh</ns1:transChange> <ns1:w lemma="strong:H03068">from the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H06213">which made</ns1:w> <ns1:w lemma="strong:H08064">heaven</ns1:w> <ns1:w lemma="strong:H0776">and earth</ns1:w>.<ns1:verse eID="Ps.121.2" />
+<ns1:verse osisID="Ps.121.3" sID="Ps.121.3" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H05414">He will not suffer</ns1:w> <ns1:w lemma="strong:H07272">thy foot</ns1:w> <ns1:w lemma="strong:H04132">to be moved</ns1:w>: <ns1:w morph="strongMorph:TH8802" lemma="strong:H08104">he that keepeth</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H05123">thee will not slumber</ns1:w>.<ns1:verse eID="Ps.121.3" />
+<ns1:verse osisID="Ps.121.4" sID="Ps.121.4" /><ns1:w morph="strongMorph:TH8802" lemma="strong:H08104">Behold, he that keepeth</ns1:w> <ns1:w lemma="strong:H03478">Israel</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H05123">shall neither slumber</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H03462">nor sleep</ns1:w>.<ns1:verse eID="Ps.121.4" />
+<ns1:verse osisID="Ps.121.5" sID="Ps.121.5" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w morph="strongMorph:TH8802" lemma="strong:H08104">thy keeper</ns1:w>: <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H06738">thy shade</ns1:w> <ns1:w lemma="strong:H03225">upon thy right</ns1:w> <ns1:w lemma="strong:H03027">hand</ns1:w>.<ns1:verse eID="Ps.121.5" />
+<ns1:verse osisID="Ps.121.6" sID="Ps.121.6" /><ns1:w lemma="strong:H08121">The sun</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H05221">shall not smite</ns1:w> <ns1:w lemma="strong:H03119">thee by day</ns1:w>, <ns1:w lemma="strong:H03394">nor the moon</ns1:w> <ns1:w lemma="strong:H03915">by night</ns1:w>.<ns1:verse eID="Ps.121.6" />
+<ns1:verse osisID="Ps.121.7" sID="Ps.121.7" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H08104">shall preserve</ns1:w> <ns1:w lemma="strong:H07451">thee from all evil</ns1:w>: <ns1:w morph="strongMorph:TH8799" lemma="strong:H08104">he shall preserve</ns1:w> <ns1:w lemma="strong:H05315">thy soul</ns1:w>.<ns1:verse eID="Ps.121.7" />
+<ns1:verse osisID="Ps.121.8" sID="Ps.121.8" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H08104">shall preserve</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H03318">thy going out</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H0935">and thy coming in</ns1:w> <ns1:w lemma="strong:H05704">from this time forth, and even for</ns1:w> <ns1:w lemma="strong:H05769">evermore</ns1:w>.<ns1:verse eID="Ps.121.8" />
+</ns1:chapter>
+</div></osisText></osis>

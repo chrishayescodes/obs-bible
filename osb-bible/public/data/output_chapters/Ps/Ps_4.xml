@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.4" chapterTitle="PSALM 4.">
+<ns1:title type="chapter">PSALM 4.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w morph="strongMorph:TH8764" lemma="strong:H05329">To the chief Musician</ns1:w> <ns1:w lemma="strong:H05058">on Neginoth</ns1:w>, <ns1:w lemma="strong:H04210">A Psalm</ns1:w> <ns1:w lemma="strong:H01732">of David</ns1:w>.</ns1:title><ns1:verse osisID="Ps.4.1" sID="Ps.4.1" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H06030">Hear</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H07121">me when I call</ns1:w>, <ns1:w lemma="strong:H0430">O God</ns1:w> <ns1:w lemma="strong:H06664">of my righteousness</ns1:w>: <ns1:w morph="strongMorph:TH8689" lemma="strong:H07337">thou hast enlarged</ns1:w> me <ns1:transChange type="added">when I was</ns1:transChange> <ns1:w lemma="strong:H06862">in distress</ns1:w>; <ns1:w morph="strongMorph:TH8798" lemma="strong:H02603">have mercy</ns1:w> <ns1:w morph="strongMorph:TH8798" lemma="strong:H08085">upon me, and hear</ns1:w> <ns1:w lemma="strong:H08605">my prayer</ns1:w>.<ns1:note type="study">chief…: or, overseer</ns1:note><ns1:note type="study">have…: or, be gracious unto me</ns1:note><ns1:verse eID="Ps.4.1" />
+<ns1:verse osisID="Ps.4.2" sID="Ps.4.2" /><ns1:w lemma="strong:H01121">O ye sons</ns1:w> <ns1:w lemma="strong:H0376">of men</ns1:w>, <ns1:w lemma="strong:H05704">how long</ns1:w> <ns1:transChange type="added">will ye turn</ns1:transChange> <ns1:w lemma="strong:H03519">my glory</ns1:w> <ns1:w lemma="strong:H03639">into shame</ns1:w>? <ns1:transChange type="added">how long</ns1:transChange> <ns1:w morph="strongMorph:TH8799" lemma="strong:H0157">will ye love</ns1:w> <ns1:w lemma="strong:H07385">vanity</ns1:w>, <ns1:transChange type="added">and</ns1:transChange> <ns1:w morph="strongMorph:TH8762" lemma="strong:H01245">seek</ns1:w> <ns1:w lemma="strong:H03577">after leasing</ns1:w>? <ns1:w lemma="strong:H05542">Selah</ns1:w>.<ns1:verse eID="Ps.4.2" />
+<ns1:verse osisID="Ps.4.3" sID="Ps.4.3" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H03045">But know</ns1:w> <ns1:w lemma="strong:H03068">that the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8689" lemma="strong:H06395">hath set apart</ns1:w> <ns1:w lemma="strong:H02623">him that is godly</ns1:w> <ns1:w lemma="strong:H03068">for himself: the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H08085">will hear</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H07121">when I call</ns1:w> unto him.<ns1:verse eID="Ps.4.3" />
+<ns1:verse osisID="Ps.4.4" sID="Ps.4.4" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H07264">Stand in awe</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H02398">and sin</ns1:w> <ns1:w morph="strongMorph:TH8798" lemma="strong:H0559">not: commune</ns1:w> <ns1:w lemma="strong:H03824">with your own heart</ns1:w> <ns1:w lemma="strong:H04904">upon your bed</ns1:w>, <ns1:w morph="strongMorph:TH8798" lemma="strong:H01826">and be still</ns1:w>. <ns1:w lemma="strong:H05542">Selah</ns1:w>.<ns1:verse eID="Ps.4.4" />
+<ns1:verse osisID="Ps.4.5" sID="Ps.4.5" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H02076">Offer</ns1:w> <ns1:w lemma="strong:H02077">the sacrifices</ns1:w> <ns1:w lemma="strong:H06664">of righteousness</ns1:w>, <ns1:w morph="strongMorph:TH8798" lemma="strong:H0982">and put your trust</ns1:w> <ns1:w lemma="strong:H03068">in the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>.<ns1:verse eID="Ps.4.5" />
+<ns1:verse osisID="Ps.4.6" sID="Ps.4.6" /><ns1:milestone type="x-extra-p" /><ns1:transChange type="added">There be</ns1:transChange> <ns1:w lemma="strong:H07227">many</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H0559">that say</ns1:w>, <ns1:w morph="strongMorph:TH8686" lemma="strong:H07200">Who will shew</ns1:w> us <ns1:transChange type="added">any</ns1:transChange> <ns1:w lemma="strong:H02896">good</ns1:w>? <ns1:w lemma="strong:H03068"><ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w morph="strongMorph:TH8798" lemma="strong:H05375">lift thou up</ns1:w> <ns1:w lemma="strong:H0216">the light</ns1:w> <ns1:w lemma="strong:H06440">of thy countenance</ns1:w> upon us.<ns1:verse eID="Ps.4.6" />
+<ns1:verse osisID="Ps.4.7" sID="Ps.4.7" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H05414">Thou hast put</ns1:w> <ns1:w lemma="strong:H08057">gladness</ns1:w> <ns1:w lemma="strong:H03820">in my heart</ns1:w>, <ns1:w lemma="strong:H06256">more than in the time</ns1:w> <ns1:transChange type="added">that</ns1:transChange> <ns1:w lemma="strong:H01715">their corn</ns1:w> <ns1:w lemma="strong:H08492">and their wine</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07231">increased</ns1:w>.<ns1:verse eID="Ps.4.7" />
+<ns1:verse osisID="Ps.4.8" sID="Ps.4.8" /><ns1:w lemma="strong:H03162">I will both</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07901">lay me down</ns1:w> <ns1:w lemma="strong:H07965">in peace</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H03462">and sleep</ns1:w>: <ns1:w lemma="strong:H03068">for thou, <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H0910">only</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H03427">makest me dwell</ns1:w> <ns1:w lemma="strong:H0983">in safety</ns1:w>.<ns1:verse eID="Ps.4.8" />
+</ns1:chapter>
+</div></osisText></osis>

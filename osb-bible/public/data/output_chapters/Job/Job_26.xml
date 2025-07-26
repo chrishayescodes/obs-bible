@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Job" canonical="true"><ns1:title type="main">THE BOOK OF JOB</ns1:title>
+<ns1:chapter osisID="Job.26" chapterTitle="CHAPTER 26.">
+<ns1:title type="chapter">CHAPTER 26.</ns1:title>
+<ns1:verse osisID="Job.26.1" sID="Job.26.1" /><ns1:w lemma="strong:H0347">But Job</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H06030">answered</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H0559">and said</ns1:w>,<ns1:verse eID="Job.26.1" />
+<ns1:verse osisID="Job.26.2" sID="Job.26.2" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H05826">How hast thou helped</ns1:w> <ns1:transChange type="added">him that is</ns1:transChange> <ns1:w lemma="strong:H03581">without power</ns1:w>? <ns1:transChange type="added">how</ns1:transChange> <ns1:w morph="strongMorph:TH8689" lemma="strong:H03467">savest</ns1:w> <ns1:w lemma="strong:H02220">thou the arm</ns1:w> <ns1:transChange type="added">that hath</ns1:transChange> <ns1:w lemma="strong:H03808">no</ns1:w> <ns1:w lemma="strong:H05797">strength</ns1:w>?<ns1:verse eID="Job.26.2" />
+<ns1:verse osisID="Job.26.3" sID="Job.26.3" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H03289">How hast thou counselled</ns1:w> <ns1:transChange type="added">him that hath</ns1:transChange> <ns1:w lemma="strong:H03808">no</ns1:w> <ns1:w lemma="strong:H02451">wisdom</ns1:w>? and <ns1:transChange type="added">how</ns1:transChange> <ns1:w lemma="strong:H07230">hast thou plentifully</ns1:w> <ns1:w morph="strongMorph:TH8689" lemma="strong:H03045">declared</ns1:w> <ns1:w lemma="strong:H08454">the thing as it is</ns1:w>?<ns1:verse eID="Job.26.3" />
+<ns1:verse osisID="Job.26.4" sID="Job.26.4" /><ns1:w morph="strongMorph:TH8689" lemma="strong:H05046">To whom hast thou uttered</ns1:w> <ns1:w lemma="strong:H04405">words</ns1:w>? <ns1:w lemma="strong:H05397">and whose spirit</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H03318">came</ns1:w> from thee?<ns1:verse eID="Job.26.4" />
+<ns1:verse osisID="Job.26.5" sID="Job.26.5" /><ns1:milestone type="x-extra-p" /><ns1:w lemma="strong:H07496">Dead</ns1:w> <ns1:transChange type="added">things</ns1:transChange> <ns1:w morph="strongMorph:TH8787" lemma="strong:H02342">are formed</ns1:w> <ns1:w lemma="strong:H04325">from under the waters</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H07931">and the inhabitants</ns1:w> thereof.<ns1:note type="study">and the…: or, with the inhabitants</ns1:note><ns1:verse eID="Job.26.5" />
+<ns1:verse osisID="Job.26.6" sID="Job.26.6" /><ns1:w lemma="strong:H07585">Hell</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H06174">naked</ns1:w> <ns1:w lemma="strong:H011">before him, and destruction</ns1:w> <ns1:w lemma="strong:H03682">hath no covering</ns1:w>.<ns1:verse eID="Job.26.6" />
+<ns1:verse osisID="Job.26.7" sID="Job.26.7" /><ns1:w morph="strongMorph:TH8802" lemma="strong:H05186">He stretcheth out</ns1:w> <ns1:w lemma="strong:H06828">the north</ns1:w> <ns1:w lemma="strong:H08414">over the empty place</ns1:w>, <ns1:transChange type="added">and</ns1:transChange> <ns1:w morph="strongMorph:TH8802" lemma="strong:H08518">hangeth</ns1:w> <ns1:w lemma="strong:H0776">the earth</ns1:w> <ns1:w lemma="strong:H01099">upon nothing</ns1:w>.<ns1:verse eID="Job.26.7" />
+<ns1:verse osisID="Job.26.8" sID="Job.26.8" /><ns1:w morph="strongMorph:TH8802" lemma="strong:H06887">He bindeth up</ns1:w> <ns1:w lemma="strong:H04325">the waters</ns1:w> <ns1:w lemma="strong:H05645">in his thick clouds</ns1:w>; <ns1:w lemma="strong:H06051">and the cloud</ns1:w> <ns1:w morph="strongMorph:TH8738" lemma="strong:H01234">is not rent</ns1:w> under them.<ns1:verse eID="Job.26.8" />
+<ns1:verse osisID="Job.26.9" sID="Job.26.9" /><ns1:w morph="strongMorph:TH8764" lemma="strong:H0270">He holdeth back</ns1:w> <ns1:w lemma="strong:H06440">the face</ns1:w> <ns1:w lemma="strong:H03678">of his throne</ns1:w>, <ns1:transChange type="added">and</ns1:transChange> <ns1:w morph="strongMorph:TH8768" lemma="strong:H06576">spreadeth</ns1:w> <ns1:w lemma="strong:H06051">his cloud</ns1:w> upon it.<ns1:verse eID="Job.26.9" />
+<ns1:verse osisID="Job.26.10" sID="Job.26.10" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H02328">He hath compassed</ns1:w> <ns1:w lemma="strong:H04325 strong:H06440">the waters</ns1:w> <ns1:w lemma="strong:H02706">with bounds</ns1:w>, <ns1:w lemma="strong:H0216">until the day</ns1:w> <ns1:w lemma="strong:H02822">and night</ns1:w> <ns1:w lemma="strong:H08503">come to an end</ns1:w>.<ns1:note type="study">until…: Heb. until the end of light with darkness</ns1:note><ns1:verse eID="Job.26.10" />
+<ns1:verse osisID="Job.26.11" sID="Job.26.11" /><ns1:w lemma="strong:H05982">The pillars</ns1:w> <ns1:w lemma="strong:H08064">of heaven</ns1:w> <ns1:w morph="strongMorph:TH8787" lemma="strong:H07322">tremble</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H08539">and are astonished</ns1:w> <ns1:w lemma="strong:H01606">at his reproof</ns1:w>.<ns1:verse eID="Job.26.11" />
+<ns1:verse osisID="Job.26.12" sID="Job.26.12" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H07280">He divideth</ns1:w> <ns1:w lemma="strong:H03220">the sea</ns1:w> <ns1:w lemma="strong:H03581">with his power</ns1:w>, <ns1:w morph="strongMorph:TH8675" lemma="strong:H08394 strong:H08394">and by his understanding</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H04272">he smiteth</ns1:w> <ns1:w lemma="strong:H07293">through the proud</ns1:w>.<ns1:note type="study">the proud: Heb. pride</ns1:note><ns1:verse eID="Job.26.12" />
+<ns1:verse osisID="Job.26.13" sID="Job.26.13" /><ns1:w lemma="strong:H07307">By his spirit</ns1:w> <ns1:w morph="strongMorph:TH8765" lemma="strong:H08235">he hath garnished</ns1:w> <ns1:w lemma="strong:H08064">the heavens</ns1:w>; <ns1:w lemma="strong:H03027">his hand</ns1:w> <ns1:w morph="strongMorph:TH8790" lemma="strong:H02342">hath formed</ns1:w> <ns1:w lemma="strong:H01281">the crooked</ns1:w> <ns1:w lemma="strong:H05175">serpent</ns1:w>.<ns1:verse eID="Job.26.13" />
+<ns1:verse osisID="Job.26.14" sID="Job.26.14" />Lo, these <ns1:transChange type="added">are</ns1:transChange> <ns1:w lemma="strong:H07098">parts</ns1:w> <ns1:w lemma="strong:H01870">of his ways</ns1:w>: <ns1:w lemma="strong:H08102">but how little</ns1:w> <ns1:w lemma="strong:H01697">a portion</ns1:w> <ns1:w morph="strongMorph:TH8738" lemma="strong:H08085">is heard</ns1:w> <ns1:w lemma="strong:H07482">of him? but the thunder</ns1:w> <ns1:w lemma="strong:H01369">of his power</ns1:w> <ns1:w morph="strongMorph:TH8709" lemma="strong:H0995">who can understand</ns1:w>?<ns1:verse eID="Job.26.14" />
+</ns1:chapter>
+</div></osisText></osis>

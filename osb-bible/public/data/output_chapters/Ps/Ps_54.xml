@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.54" chapterTitle="PSALM 54.">
+<ns1:title type="chapter">PSALM 54.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w morph="strongMorph:TH8764" lemma="strong:H05329">To the chief Musician</ns1:w> <ns1:w lemma="strong:H05058">on Neginoth</ns1:w>, <ns1:w morph="strongMorph:TH8688" lemma="strong:H04905">Maschil</ns1:w>, <ns1:transChange type="added">A Psalm</ns1:transChange> <ns1:w lemma="strong:H01732">of David</ns1:w>, <ns1:w lemma="strong:H02130">when the Ziphims</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H0935">came</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H0559">and said</ns1:w> <ns1:w lemma="strong:H07586">to Saul</ns1:w>, <ns1:w lemma="strong:H01732">Doth not David</ns1:w> <ns1:w morph="strongMorph:TH8693" lemma="strong:H05641">hide</ns1:w> himself with us?</ns1:title><ns1:verse osisID="Ps.54.1" sID="Ps.54.1" /><ns1:w morph="strongMorph:TH8685" lemma="strong:H03467">Save</ns1:w> <ns1:w lemma="strong:H0430">me, O God</ns1:w>, <ns1:w lemma="strong:H08034">by thy name</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H01777">and judge</ns1:w> <ns1:w lemma="strong:H01369">me by thy strength</ns1:w>.<ns1:note type="study">chief…: or, overseer</ns1:note><ns1:note type="study">Maschil: or, of instruction</ns1:note><ns1:verse eID="Ps.54.1" />
+<ns1:verse osisID="Ps.54.2" sID="Ps.54.2" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H08085">Hear</ns1:w> <ns1:w lemma="strong:H08605">my prayer</ns1:w>, <ns1:w lemma="strong:H0430">O God</ns1:w>; <ns1:w morph="strongMorph:TH8685" lemma="strong:H0238">give ear</ns1:w> <ns1:w lemma="strong:H0561">to the words</ns1:w> <ns1:w lemma="strong:H06310">of my mouth</ns1:w>.<ns1:verse eID="Ps.54.2" />
+<ns1:verse osisID="Ps.54.3" sID="Ps.54.3" /><ns1:w morph="strongMorph:TH8801" lemma="strong:H02114">For strangers</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H06965">are risen up</ns1:w> <ns1:w lemma="strong:H06184">against me, and oppressors</ns1:w> <ns1:w morph="strongMorph:TH8765" lemma="strong:H01245">seek</ns1:w> <ns1:w lemma="strong:H05315">after my soul</ns1:w>: <ns1:w morph="strongMorph:TH8804" lemma="strong:H07760">they have not set</ns1:w> <ns1:w lemma="strong:H0430">God</ns1:w> <ns1:w lemma="strong:H05542">before them. Selah</ns1:w>.<ns1:verse eID="Ps.54.3" />
+<ns1:verse osisID="Ps.54.4" sID="Ps.54.4" /><ns1:milestone type="x-extra-p" /><ns1:w lemma="strong:H0430">Behold, God</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w morph="strongMorph:TH8802" lemma="strong:H05826">mine helper</ns1:w>: <ns1:w lemma="strong:H0136">the Lord</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w morph="strongMorph:TH8802" lemma="strong:H05564">with them that uphold</ns1:w> <ns1:w lemma="strong:H05315">my soul</ns1:w>.<ns1:verse eID="Ps.54.4" />
+<ns1:verse osisID="Ps.54.5" sID="Ps.54.5" /><ns1:w morph="strongMorph:TH8799 strongMorph:TH8675 strongMorph:TH8686" lemma="strong:H07725 strong:H07725">He shall reward</ns1:w> <ns1:w lemma="strong:H07451">evil</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H08324">unto mine enemies</ns1:w>: <ns1:w morph="strongMorph:TH8685" lemma="strong:H06789">cut them off</ns1:w> <ns1:w lemma="strong:H0571">in thy truth</ns1:w>.<ns1:note type="study">mine…: Heb. those that observe me</ns1:note><ns1:verse eID="Ps.54.5" />
+<ns1:verse osisID="Ps.54.6" sID="Ps.54.6" /><ns1:w lemma="strong:H05071">I will freely</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H02076">sacrifice</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H03034">unto thee: I will praise</ns1:w> <ns1:w lemma="strong:H08034">thy name</ns1:w>, <ns1:w lemma="strong:H03068">O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>; for <ns1:transChange type="added">it is</ns1:transChange> <ns1:w lemma="strong:H02896">good</ns1:w>.<ns1:verse eID="Ps.54.6" />
+<ns1:verse osisID="Ps.54.7" sID="Ps.54.7" /><ns1:w morph="strongMorph:TH8689" lemma="strong:H05337">For he hath delivered</ns1:w> <ns1:w lemma="strong:H06869">me out of all trouble</ns1:w>: <ns1:w lemma="strong:H05869">and mine eye</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07200">hath seen</ns1:w> <ns1:transChange type="added">his desire</ns1:transChange> <ns1:w morph="strongMorph:TH8802" lemma="strong:H0341">upon mine enemies</ns1:w>.<ns1:verse eID="Ps.54.7" />
+</ns1:chapter>
+</div></osisText></osis>

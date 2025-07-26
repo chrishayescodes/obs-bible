@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Mal" canonical="true"><ns1:title type="main">MALACHI</ns1:title>
+<ns1:chapter osisID="Mal.4" chapterTitle="CHAPTER 4.">
+<ns1:title type="chapter">CHAPTER 4.</ns1:title>
+<ns1:verse osisID="Mal.4.1" sID="Mal.4.1" /><ns1:w lemma="strong:H03117">For, behold, the day</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H0935">cometh</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H01197">that shall burn</ns1:w> <ns1:w lemma="strong:H08574">as an oven</ns1:w>; <ns1:w lemma="strong:H02086">and all the proud</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H06213">yea, and all that do</ns1:w> <ns1:w lemma="strong:H07564">wickedly</ns1:w>, <ns1:w lemma="strong:H07179">shall be stubble</ns1:w>: <ns1:w lemma="strong:H03117">and the day</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H0935">that cometh</ns1:w> <ns1:w morph="strongMorph:TH8765" lemma="strong:H03857">shall burn them up</ns1:w>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H0559">saith</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H06635">of hosts</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H05800">that it shall leave</ns1:w> <ns1:w lemma="strong:H08328">them neither root</ns1:w> <ns1:w lemma="strong:H06057">nor branch</ns1:w>.<ns1:verse eID="Mal.4.1" />
+<ns1:verse osisID="Mal.4.2" sID="Mal.4.2" /><ns1:milestone type="x-p" subType="x-added" marker="¶" /><ns1:w lemma="strong:H03373">But unto you that fear</ns1:w> <ns1:w lemma="strong:H08034">my name</ns1:w> <ns1:w lemma="strong:H08121">shall the Sun</ns1:w> <ns1:w lemma="strong:H06666">of righteousness</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H02224">arise</ns1:w> <ns1:w lemma="strong:H04832">with healing</ns1:w> <ns1:w lemma="strong:H03671">in his wings</ns1:w>; <ns1:w morph="strongMorph:TH8804" lemma="strong:H03318">and ye shall go forth</ns1:w>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H06335">and grow up</ns1:w> <ns1:w lemma="strong:H05695">as calves</ns1:w> <ns1:w lemma="strong:H04770">of the stall</ns1:w>.<ns1:verse eID="Mal.4.2" />
+<ns1:verse osisID="Mal.4.3" sID="Mal.4.3" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H06072">And ye shall tread down</ns1:w> <ns1:w lemma="strong:H07563">the wicked</ns1:w>; <ns1:w lemma="strong:H0665">for they shall be ashes</ns1:w> <ns1:w lemma="strong:H03709">under the soles</ns1:w> <ns1:w lemma="strong:H07272">of your feet</ns1:w> <ns1:w lemma="strong:H03117">in the day</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H06213">that I shall do</ns1:w> <ns1:transChange type="added">this</ns1:transChange>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H0559">saith</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H06635">of hosts</ns1:w>.<ns1:verse eID="Mal.4.3" />
+<ns1:verse osisID="Mal.4.4" sID="Mal.4.4" /><ns1:milestone type="x-p" marker="¶" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H02142">Remember</ns1:w> <ns1:w lemma="strong:H08451">ye the law</ns1:w> <ns1:w lemma="strong:H04872">of Moses</ns1:w> <ns1:w lemma="strong:H05650">my servant</ns1:w>, <ns1:w morph="strongMorph:TH8765" lemma="strong:H06680">which I commanded</ns1:w> <ns1:w lemma="strong:H02722">unto him in Horeb</ns1:w> <ns1:w lemma="strong:H03478">for all Israel</ns1:w>, <ns1:transChange type="added">with</ns1:transChange> <ns1:w lemma="strong:H02706">the statutes</ns1:w> <ns1:w lemma="strong:H04941">and judgments</ns1:w>.<ns1:verse eID="Mal.4.4" />
+<ns1:verse osisID="Mal.4.5" sID="Mal.4.5" /><ns1:milestone type="x-p" subType="x-added" marker="¶" /><ns1:w morph="strongMorph:TH8802" lemma="strong:H07971">Behold, I will send</ns1:w> <ns1:w lemma="strong:H0452">you Elijah</ns1:w> <ns1:w lemma="strong:H05030">the prophet</ns1:w> <ns1:w lemma="strong:H06440">before</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H0935">the coming</ns1:w> <ns1:w lemma="strong:H01419">of the great</ns1:w> <ns1:w morph="strongMorph:TH8737" lemma="strong:H03372">and dreadful</ns1:w> <ns1:w lemma="strong:H03117">day</ns1:w> <ns1:w lemma="strong:H03068">of the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>:<ns1:verse eID="Mal.4.5" />
+<ns1:verse osisID="Mal.4.6" sID="Mal.4.6" /><ns1:w morph="strongMorph:TH8689" lemma="strong:H07725">And he shall turn</ns1:w> <ns1:w lemma="strong:H03820">the heart</ns1:w> <ns1:w lemma="strong:H01">of the fathers</ns1:w> <ns1:w lemma="strong:H01121">to the children</ns1:w>, <ns1:w lemma="strong:H03820">and the heart</ns1:w> <ns1:w lemma="strong:H01121">of the children</ns1:w> <ns1:w lemma="strong:H01">to their fathers</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H0935">lest I come</ns1:w> <ns1:w morph="strongMorph:TH8689" lemma="strong:H05221">and smite</ns1:w> <ns1:w lemma="strong:H0776">the earth</ns1:w> <ns1:w lemma="strong:H02764">with a curse</ns1:w>.<ns1:verse eID="Mal.4.6" />
+</ns1:chapter>
+</div></osisText></osis>

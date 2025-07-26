@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.123" chapterTitle="PSALM 123.">
+<ns1:title type="chapter">PSALM 123.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H07892">A Song</ns1:w> <ns1:w lemma="strong:H04609">of degrees</ns1:w>.</ns1:title><ns1:verse osisID="Ps.123.1" sID="Ps.123.1" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H05375">Unto thee lift I up</ns1:w> <ns1:w lemma="strong:H05869">mine eyes</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H03427">O thou that dwellest</ns1:w> <ns1:w lemma="strong:H08064">in the heavens</ns1:w>.<ns1:verse eID="Ps.123.1" />
+<ns1:verse osisID="Ps.123.2" sID="Ps.123.2" /><ns1:w lemma="strong:H05869">Behold, as the eyes</ns1:w> <ns1:w lemma="strong:H05650">of servants</ns1:w> <ns1:transChange type="added">look</ns1:transChange> <ns1:w lemma="strong:H03027">unto the hand</ns1:w> <ns1:w lemma="strong:H0113">of their masters</ns1:w>, <ns1:transChange type="added">and</ns1:transChange> <ns1:w lemma="strong:H05869">as the eyes</ns1:w> <ns1:w lemma="strong:H08198">of a maiden</ns1:w> <ns1:w lemma="strong:H03027">unto the hand</ns1:w> <ns1:w lemma="strong:H01404">of her mistress</ns1:w>; <ns1:w lemma="strong:H05869">so our eyes</ns1:w> <ns1:transChange type="added">wait</ns1:transChange> <ns1:w lemma="strong:H03068">upon the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H0430">our God</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H02603">until that he have mercy</ns1:w> upon us.<ns1:verse eID="Ps.123.2" />
+<ns1:verse osisID="Ps.123.3" sID="Ps.123.3" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H02603">Have mercy</ns1:w> <ns1:w lemma="strong:H03068">upon us, O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w morph="strongMorph:TH8798" lemma="strong:H02603">have mercy</ns1:w> <ns1:w lemma="strong:H07227">upon us: for we are exceedingly</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07646">filled</ns1:w> <ns1:w lemma="strong:H0937">with contempt</ns1:w>.<ns1:verse eID="Ps.123.3" />
+<ns1:verse osisID="Ps.123.4" sID="Ps.123.4" /><ns1:w lemma="strong:H05315">Our soul</ns1:w> <ns1:w lemma="strong:H07227">is exceedingly</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07646">filled</ns1:w> <ns1:w lemma="strong:H03933">with the scorning</ns1:w> <ns1:w lemma="strong:H07600">of those that are at ease</ns1:w>, <ns1:transChange type="added">and</ns1:transChange> <ns1:w lemma="strong:H0937">with the contempt</ns1:w> <ns1:w morph="strongMorph:TH8675 strongMorph:TH8678 strongMorph:TH8802" lemma="strong:H01349 strong:H01343 strong:H03238">of the proud</ns1:w>.<ns1:verse eID="Ps.123.4" />
+</ns1:chapter>
+</div></osisText></osis>

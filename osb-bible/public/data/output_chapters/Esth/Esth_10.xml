@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Esth" canonical="true"><ns1:title type="main">THE BOOK OF ESTHER</ns1:title>
+<ns1:chapter osisID="Esth.10" chapterTitle="CHAPTER 10.">
+<ns1:title type="chapter">CHAPTER 10.</ns1:title>
+<ns1:verse osisID="Esth.10.1" sID="Esth.10.1" /><ns1:w lemma="strong:H04428">And the king</ns1:w> <ns1:w lemma="strong:H0325">Ahasuerus</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07760">laid</ns1:w> <ns1:w lemma="strong:H04522">a tribute</ns1:w> <ns1:w lemma="strong:H0776">upon the land</ns1:w>, and <ns1:transChange type="added">upon</ns1:transChange> <ns1:w lemma="strong:H0339">the isles</ns1:w> <ns1:w lemma="strong:H03220">of the sea</ns1:w>.<ns1:verse eID="Esth.10.1" />
+<ns1:verse osisID="Esth.10.2" sID="Esth.10.2" /><ns1:w lemma="strong:H04639">And all the acts</ns1:w> <ns1:w lemma="strong:H08633">of his power</ns1:w> <ns1:w lemma="strong:H01369">and of his might</ns1:w>, <ns1:w lemma="strong:H06575">and the declaration</ns1:w> <ns1:w lemma="strong:H01420">of the greatness</ns1:w> <ns1:w lemma="strong:H04782">of Mordecai</ns1:w>, <ns1:w lemma="strong:H04428">whereunto the king</ns1:w> <ns1:w morph="strongMorph:TH8765" lemma="strong:H01431">advanced</ns1:w> him, <ns1:transChange type="added">are</ns1:transChange> <ns1:w morph="strongMorph:TH8803" lemma="strong:H03789">they not written</ns1:w> <ns1:w lemma="strong:H05612">in the book</ns1:w> <ns1:w lemma="strong:H03117 strong:H01697">of the chronicles</ns1:w> <ns1:w lemma="strong:H04428">of the kings</ns1:w> <ns1:w lemma="strong:H04074">of Media</ns1:w> <ns1:w lemma="strong:H06539">and Persia</ns1:w>?<ns1:note type="study">advanced…: Heb. made him great</ns1:note><ns1:verse eID="Esth.10.2" />
+<ns1:verse osisID="Esth.10.3" sID="Esth.10.3" /><ns1:w lemma="strong:H04782">For Mordecai</ns1:w> <ns1:w lemma="strong:H03064">the Jew</ns1:w> <ns1:transChange type="added">was</ns1:transChange> <ns1:w lemma="strong:H04932">next</ns1:w> <ns1:w lemma="strong:H04428">unto king</ns1:w> <ns1:w lemma="strong:H0325">Ahasuerus</ns1:w>, <ns1:w lemma="strong:H01419">and great</ns1:w> <ns1:w lemma="strong:H03064">among the Jews</ns1:w>, <ns1:w morph="strongMorph:TH8803" lemma="strong:H07521">and accepted</ns1:w> <ns1:w lemma="strong:H07230">of the multitude</ns1:w> <ns1:w lemma="strong:H0251">of his brethren</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H01875">seeking</ns1:w> <ns1:w lemma="strong:H02896">the wealth</ns1:w> <ns1:w lemma="strong:H05971">of his people</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H01696">and speaking</ns1:w> <ns1:w lemma="strong:H07965">peace</ns1:w> <ns1:w lemma="strong:H02233">to all his seed</ns1:w>.<ns1:verse eID="Esth.10.3" />
+</ns1:chapter>
+</div></osisText></osis>

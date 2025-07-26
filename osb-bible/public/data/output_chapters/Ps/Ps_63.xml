@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.63" chapterTitle="PSALM 63.">
+<ns1:title type="chapter">PSALM 63.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H04210">A Psalm</ns1:w> <ns1:w lemma="strong:H01732">of David</ns1:w>, <ns1:w lemma="strong:H04057">when he was in the wilderness</ns1:w> <ns1:w lemma="strong:H03063">of Judah</ns1:w>.</ns1:title><ns1:verse osisID="Ps.63.1" sID="Ps.63.1" /><ns1:w lemma="strong:H0430">O God</ns1:w>, thou <ns1:transChange type="added">art</ns1:transChange> <ns1:w lemma="strong:H0410">my God</ns1:w>; <ns1:w morph="strongMorph:TH8762" lemma="strong:H07836">early will I seek</ns1:w> <ns1:w lemma="strong:H05315">thee: my soul</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H06770">thirsteth</ns1:w> <ns1:w lemma="strong:H01320">for thee, my flesh</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H03642">longeth</ns1:w> <ns1:w lemma="strong:H06723">for thee in a dry</ns1:w> <ns1:w lemma="strong:H05889">and thirsty</ns1:w> <ns1:w lemma="strong:H0776">land</ns1:w>, <ns1:w lemma="strong:H01097">where no</ns1:w> <ns1:w lemma="strong:H04325">water</ns1:w> is;<ns1:note type="study">thirsty: Heb. weary</ns1:note><ns1:note type="study">where…: without water</ns1:note><ns1:verse eID="Ps.63.1" />
+<ns1:verse osisID="Ps.63.2" sID="Ps.63.2" /><ns1:w morph="strongMorph:TH8800" lemma="strong:H07200">To see</ns1:w> <ns1:w lemma="strong:H05797">thy power</ns1:w> <ns1:w lemma="strong:H03519">and thy glory</ns1:w>, so <ns1:transChange type="added">as</ns1:transChange> <ns1:w morph="strongMorph:TH8804" lemma="strong:H02372">I have seen</ns1:w> <ns1:w lemma="strong:H06944">thee in the sanctuary</ns1:w>.<ns1:verse eID="Ps.63.2" />
+<ns1:verse osisID="Ps.63.3" sID="Ps.63.3" /><ns1:milestone type="x-extra-p" /><ns1:w lemma="strong:H02617">Because thy lovingkindness</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H02896">better</ns1:w> <ns1:w lemma="strong:H02416">than life</ns1:w>, <ns1:w lemma="strong:H08193">my lips</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H07623">shall praise</ns1:w> thee.<ns1:verse eID="Ps.63.3" />
+<ns1:verse osisID="Ps.63.4" sID="Ps.63.4" /><ns1:w morph="strongMorph:TH8762" lemma="strong:H01288">Thus will I bless</ns1:w> <ns1:w lemma="strong:H02416">thee while I live</ns1:w>: <ns1:w morph="strongMorph:TH8799" lemma="strong:H05375">I will lift up</ns1:w> <ns1:w lemma="strong:H03709">my hands</ns1:w> <ns1:w lemma="strong:H08034">in thy name</ns1:w>.<ns1:verse eID="Ps.63.4" />
+<ns1:verse osisID="Ps.63.5" sID="Ps.63.5" /><ns1:w lemma="strong:H05315">My soul</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07646">shall be satisfied</ns1:w> as <ns1:transChange type="added">with</ns1:transChange> <ns1:w lemma="strong:H02459">marrow</ns1:w> <ns1:w lemma="strong:H01880">and fatness</ns1:w>; <ns1:w lemma="strong:H06310">and my mouth</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H01984">shall praise</ns1:w> <ns1:transChange type="added">thee</ns1:transChange> <ns1:w lemma="strong:H07445">with joyful</ns1:w> <ns1:w lemma="strong:H08193">lips</ns1:w>:<ns1:note type="study">marrow: Heb. fatness</ns1:note><ns1:verse eID="Ps.63.5" />
+<ns1:verse osisID="Ps.63.6" sID="Ps.63.6" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H02142">When I remember</ns1:w> <ns1:w lemma="strong:H03326">thee upon my bed</ns1:w>, <ns1:transChange type="added">and</ns1:transChange> <ns1:w morph="strongMorph:TH8799" lemma="strong:H01897">meditate</ns1:w> on thee in the <ns1:transChange type="added">night</ns1:transChange> <ns1:w lemma="strong:H0821">watches</ns1:w>.<ns1:verse eID="Ps.63.6" />
+<ns1:verse osisID="Ps.63.7" sID="Ps.63.7" /><ns1:milestone type="x-extra-p" /><ns1:w lemma="strong:H05833">Because thou hast been my help</ns1:w>, <ns1:w lemma="strong:H06738">therefore in the shadow</ns1:w> <ns1:w lemma="strong:H03671">of thy wings</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H07442">will I rejoice</ns1:w>.<ns1:verse eID="Ps.63.7" />
+<ns1:verse osisID="Ps.63.8" sID="Ps.63.8" /><ns1:w lemma="strong:H05315">My soul</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H01692">followeth hard</ns1:w> <ns1:w lemma="strong:H0310">after</ns1:w> <ns1:w lemma="strong:H03225">thee: thy right hand</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H08551">upholdeth</ns1:w> me.<ns1:verse eID="Ps.63.8" />
+<ns1:verse osisID="Ps.63.9" sID="Ps.63.9" />But those <ns1:transChange type="added">that</ns1:transChange> <ns1:w morph="strongMorph:TH8762" lemma="strong:H01245">seek</ns1:w> <ns1:w lemma="strong:H05315">my soul</ns1:w>, <ns1:w lemma="strong:H07722">to destroy</ns1:w> <ns1:transChange type="added">it</ns1:transChange>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H0935">shall go</ns1:w> <ns1:w lemma="strong:H08482">into the lower parts</ns1:w> <ns1:w lemma="strong:H0776">of the earth</ns1:w>.<ns1:verse eID="Ps.63.9" />
+<ns1:verse osisID="Ps.63.10" sID="Ps.63.10" /><ns1:w morph="strongMorph:TH8686" lemma="strong:H05064">They shall fall</ns1:w> <ns1:w lemma="strong:H02719 strong:H03027">by the sword</ns1:w>: <ns1:w lemma="strong:H04521">they shall be a portion</ns1:w> <ns1:w lemma="strong:H07776">for foxes</ns1:w>.<ns1:note type="study">They shall fall…: Heb. They shall make him run out like water by the hands of</ns1:note><ns1:verse eID="Ps.63.10" />
+<ns1:verse osisID="Ps.63.11" sID="Ps.63.11" /><ns1:w lemma="strong:H04428">But the king</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H08055">shall rejoice</ns1:w> <ns1:w lemma="strong:H0430">in God</ns1:w>; <ns1:w morph="strongMorph:TH8737" lemma="strong:H07650">every one that sweareth</ns1:w> <ns1:w morph="strongMorph:TH8691" lemma="strong:H01984">by him shall glory</ns1:w>: <ns1:w lemma="strong:H06310">but the mouth</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H01696">of them that speak</ns1:w> <ns1:w lemma="strong:H08267">lies</ns1:w> <ns1:w morph="strongMorph:TH8735" lemma="strong:H05534">shall be stopped</ns1:w>.<ns1:verse eID="Ps.63.11" />
+</ns1:chapter>
+</div></osisText></osis>

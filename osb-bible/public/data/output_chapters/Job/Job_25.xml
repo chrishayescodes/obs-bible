@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Job" canonical="true"><ns1:title type="main">THE BOOK OF JOB</ns1:title>
+<ns1:chapter osisID="Job.25" chapterTitle="CHAPTER 25.">
+<ns1:title type="chapter">CHAPTER 25.</ns1:title>
+<ns1:verse osisID="Job.25.1" sID="Job.25.1" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H06030">Then answered</ns1:w> <ns1:w lemma="strong:H01085">Bildad</ns1:w> <ns1:w lemma="strong:H07747">the Shuhite</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H0559">and said</ns1:w>,<ns1:verse eID="Job.25.1" />
+<ns1:verse osisID="Job.25.2" sID="Job.25.2" /><ns1:w morph="strongMorph:TH8687" lemma="strong:H04910">Dominion</ns1:w> <ns1:w lemma="strong:H06343">and fear</ns1:w> <ns1:transChange type="added">are</ns1:transChange> <ns1:w morph="strongMorph:TH8802" lemma="strong:H06213">with him, he maketh</ns1:w> <ns1:w lemma="strong:H07965">peace</ns1:w> <ns1:w lemma="strong:H04791">in his high places</ns1:w>.<ns1:verse eID="Job.25.2" />
+<ns1:verse osisID="Job.25.3" sID="Job.25.3" /><ns1:w lemma="strong:H03426">Is there</ns1:w> <ns1:w lemma="strong:H04557">any number</ns1:w> <ns1:w lemma="strong:H01416">of his armies</ns1:w>? <ns1:w lemma="strong:H0216">and upon whom doth not his light</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H06965">arise</ns1:w>?<ns1:verse eID="Job.25.3" />
+<ns1:verse osisID="Job.25.4" sID="Job.25.4" /><ns1:w lemma="strong:H0582">How then can man</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H06663">be justified</ns1:w> <ns1:w lemma="strong:H0410">with God</ns1:w>? <ns1:w morph="strongMorph:TH8799" lemma="strong:H02135">or how can he be clean</ns1:w> <ns1:transChange type="added">that is</ns1:transChange> <ns1:w morph="strongMorph:TH8803" lemma="strong:H03205">born</ns1:w> <ns1:w lemma="strong:H0802">of a woman</ns1:w>?<ns1:verse eID="Job.25.4" />
+<ns1:verse osisID="Job.25.5" sID="Job.25.5" /><ns1:w lemma="strong:H03394">Behold even to the moon</ns1:w>, <ns1:w morph="strongMorph:TH8686" lemma="strong:H0166">and it shineth</ns1:w> <ns1:w lemma="strong:H03556">not; yea, the stars</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H02141">are not pure</ns1:w> <ns1:w lemma="strong:H05869">in his sight</ns1:w>.<ns1:verse eID="Job.25.5" />
+<ns1:verse osisID="Job.25.6" sID="Job.25.6" /><ns1:w lemma="strong:H0582">How much less man</ns1:w>, <ns1:transChange type="added">that is</ns1:transChange> <ns1:w lemma="strong:H07415">a worm</ns1:w>? <ns1:w lemma="strong:H01121">and the son</ns1:w> <ns1:w lemma="strong:H0120">of man</ns1:w>, <ns1:transChange type="added">which is</ns1:transChange> <ns1:w lemma="strong:H08438">a worm</ns1:w>?<ns1:verse eID="Job.25.6" />
+</ns1:chapter>
+</div></osisText></osis>

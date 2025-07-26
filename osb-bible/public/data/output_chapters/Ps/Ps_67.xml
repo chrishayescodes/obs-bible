@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.67" chapterTitle="PSALM 67.">
+<ns1:title type="chapter">PSALM 67.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w morph="strongMorph:TH8764" lemma="strong:H05329">To the chief Musician</ns1:w> <ns1:w lemma="strong:H05058">on Neginoth</ns1:w>, <ns1:w lemma="strong:H04210">A Psalm</ns1:w> <ns1:transChange type="added">or</ns1:transChange> <ns1:w lemma="strong:H07892">Song</ns1:w>.</ns1:title><ns1:verse osisID="Ps.67.1" sID="Ps.67.1" /><ns1:w lemma="strong:H0430">God</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H02603">be merciful</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H01288">unto us, and bless</ns1:w> us; <ns1:transChange type="added">and</ns1:transChange> <ns1:w lemma="strong:H06440">cause his face</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H0215">to shine</ns1:w> <ns1:w lemma="strong:H05542">upon us; Selah</ns1:w>.<ns1:note type="study">chief…: or, overseer</ns1:note><ns1:note type="study">upon: Heb. with</ns1:note><ns1:verse eID="Ps.67.1" />
+<ns1:verse osisID="Ps.67.2" sID="Ps.67.2" /><ns1:w lemma="strong:H01870">That thy way</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H03045">may be known</ns1:w> <ns1:w lemma="strong:H0776">upon earth</ns1:w>, <ns1:w lemma="strong:H03444">thy saving health</ns1:w> <ns1:w lemma="strong:H01471">among all nations</ns1:w>.<ns1:verse eID="Ps.67.2" />
+<ns1:verse osisID="Ps.67.3" sID="Ps.67.3" /><ns1:w lemma="strong:H05971">Let the people</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H03034">praise</ns1:w> <ns1:w lemma="strong:H0430">thee, O God</ns1:w>; <ns1:w lemma="strong:H05971">let all the people</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H03034">praise</ns1:w> thee.<ns1:verse eID="Ps.67.3" />
+<ns1:verse osisID="Ps.67.4" sID="Ps.67.4" /><ns1:w lemma="strong:H03816">O let the nations</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H08055">be glad</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H07442">and sing for joy</ns1:w>: <ns1:w morph="strongMorph:TH8799" lemma="strong:H08199">for thou shalt judge</ns1:w> <ns1:w lemma="strong:H05971">the people</ns1:w> <ns1:w lemma="strong:H04334">righteously</ns1:w>, <ns1:w morph="strongMorph:TH8686" lemma="strong:H05148">and govern</ns1:w> <ns1:w lemma="strong:H03816">the nations</ns1:w> <ns1:w lemma="strong:H0776">upon earth</ns1:w>. <ns1:w lemma="strong:H05542">Selah</ns1:w>.<ns1:note type="study">govern: Heb. lead</ns1:note><ns1:verse eID="Ps.67.4" />
+<ns1:verse osisID="Ps.67.5" sID="Ps.67.5" /><ns1:w lemma="strong:H05971">Let the people</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H03034">praise</ns1:w> <ns1:w lemma="strong:H0430">thee, O God</ns1:w>; <ns1:w lemma="strong:H05971">let all the people</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H03034">praise</ns1:w> thee.<ns1:verse eID="Ps.67.5" />
+<ns1:verse osisID="Ps.67.6" sID="Ps.67.6" /><ns1:transChange type="added">Then</ns1:transChange> <ns1:w lemma="strong:H0776">shall the earth</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H05414">yield</ns1:w> <ns1:w lemma="strong:H02981">her increase</ns1:w>; <ns1:transChange type="added">and</ns1:transChange> <ns1:w lemma="strong:H0430">God</ns1:w>, <ns1:transChange type="added">even</ns1:transChange> <ns1:w lemma="strong:H0430">our own God</ns1:w>, <ns1:w morph="strongMorph:TH8762" lemma="strong:H01288">shall bless</ns1:w> us.<ns1:verse eID="Ps.67.6" />
+<ns1:verse osisID="Ps.67.7" sID="Ps.67.7" /><ns1:w lemma="strong:H0430">God</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H01288">shall bless</ns1:w> <ns1:w lemma="strong:H0657">us; and all the ends</ns1:w> <ns1:w lemma="strong:H0776">of the earth</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H03372">shall fear</ns1:w> him.<ns1:verse eID="Ps.67.7" />
+</ns1:chapter>
+</div></osisText></osis>

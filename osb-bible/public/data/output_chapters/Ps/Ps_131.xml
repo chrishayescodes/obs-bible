@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.131" chapterTitle="PSALM 131.">
+<ns1:title type="chapter">PSALM 131.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H07892">A Song</ns1:w> <ns1:w lemma="strong:H04609">of degrees</ns1:w> <ns1:w lemma="strong:H01732">of David</ns1:w>.</ns1:title><ns1:verse osisID="Ps.131.1" sID="Ps.131.1" /><ns1:w lemma="strong:H03068"><ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H03820">my heart</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H01361">is not haughty</ns1:w>, <ns1:w lemma="strong:H05869">nor mine eyes</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07311">lofty</ns1:w>: <ns1:w morph="strongMorph:TH8765" lemma="strong:H01980">neither do I exercise</ns1:w> <ns1:w lemma="strong:H01419">myself in great matters</ns1:w>, <ns1:w morph="strongMorph:TH8737" lemma="strong:H06381">or in things too high</ns1:w> for me.<ns1:note type="study">exercise…: Heb. walk</ns1:note><ns1:note type="study">high: Heb. wonderful</ns1:note><ns1:verse eID="Ps.131.1" />
+<ns1:verse osisID="Ps.131.2" sID="Ps.131.2" /><ns1:w morph="strongMorph:TH8765" lemma="strong:H07737">Surely I have behaved</ns1:w> <ns1:w morph="strongMorph:TH8776" lemma="strong:H01826">and quieted</ns1:w> <ns1:w lemma="strong:H05315">myself</ns1:w>, <ns1:w morph="strongMorph:TH8803" lemma="strong:H01580">as a child that is weaned</ns1:w> <ns1:w lemma="strong:H0517">of his mother</ns1:w>: <ns1:w lemma="strong:H05315">my soul</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w morph="strongMorph:TH8803" lemma="strong:H01580">even as a weaned child</ns1:w>.<ns1:note type="study">myself: Heb. my soul</ns1:note><ns1:verse eID="Ps.131.2" />
+<ns1:verse osisID="Ps.131.3" sID="Ps.131.3" /><ns1:w lemma="strong:H03478">Let Israel</ns1:w> <ns1:w morph="strongMorph:TH8761" lemma="strong:H03176">hope</ns1:w> <ns1:w lemma="strong:H03068">in the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H05704">from henceforth and for</ns1:w> <ns1:w lemma="strong:H05769">ever</ns1:w>.<ns1:note type="study">henceforth: Heb. now</ns1:note><ns1:verse eID="Ps.131.3" />
+</ns1:chapter>
+</div></osisText></osis>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.43" chapterTitle="PSALM 43.">
+<ns1:title type="chapter">PSALM 43.</ns1:title>
+<ns1:verse osisID="Ps.43.1" sID="Ps.43.1" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H08199">Judge</ns1:w> <ns1:w lemma="strong:H0430">me, O God</ns1:w>, <ns1:w morph="strongMorph:TH8798" lemma="strong:H07378">and plead</ns1:w> <ns1:w lemma="strong:H07379">my cause</ns1:w> <ns1:w lemma="strong:H02623 strong:H03808">against an ungodly</ns1:w> <ns1:w lemma="strong:H01471">nation</ns1:w>: <ns1:w morph="strongMorph:TH8762" lemma="strong:H06403">O deliver</ns1:w> <ns1:w lemma="strong:H04820">me from the deceitful</ns1:w> <ns1:w lemma="strong:H05766">and unjust</ns1:w> <ns1:w lemma="strong:H0376">man</ns1:w>.<ns1:note type="study">ungodly: or, unmerciful</ns1:note><ns1:note type="study">the deceitful…: Heb. a man of deceit and iniquity</ns1:note><ns1:verse eID="Ps.43.1" />
+<ns1:verse osisID="Ps.43.2" sID="Ps.43.2" />For thou <ns1:transChange type="added">art</ns1:transChange> <ns1:w lemma="strong:H0430">the God</ns1:w> <ns1:w lemma="strong:H04581">of my strength</ns1:w>: <ns1:w morph="strongMorph:TH8804" lemma="strong:H02186">why dost thou cast me off</ns1:w>? <ns1:w morph="strongMorph:TH8691" lemma="strong:H01980">why go</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H06937">I mourning</ns1:w> <ns1:w lemma="strong:H03906">because of the oppression</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H0341">of the enemy</ns1:w>?<ns1:verse eID="Ps.43.2" />
+<ns1:verse osisID="Ps.43.3" sID="Ps.43.3" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H07971">O send out</ns1:w> <ns1:w lemma="strong:H0216">thy light</ns1:w> <ns1:w lemma="strong:H0571">and thy truth</ns1:w>: <ns1:w morph="strongMorph:TH8686" lemma="strong:H05148">let them lead</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H0935">me; let them bring</ns1:w> <ns1:w lemma="strong:H06944">me unto thy holy</ns1:w> <ns1:w lemma="strong:H02022">hill</ns1:w>, <ns1:w lemma="strong:H04908">and to thy tabernacles</ns1:w>.<ns1:verse eID="Ps.43.3" />
+<ns1:verse osisID="Ps.43.4" sID="Ps.43.4" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H0935">Then will I go</ns1:w> <ns1:w lemma="strong:H04196">unto the altar</ns1:w> <ns1:w lemma="strong:H0430">of God</ns1:w>, <ns1:w lemma="strong:H0410">unto God</ns1:w> <ns1:w lemma="strong:H08057">my exceeding</ns1:w> <ns1:w lemma="strong:H01524">joy</ns1:w>: <ns1:w lemma="strong:H03658">yea, upon the harp</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H03034">will I praise</ns1:w> <ns1:w lemma="strong:H0430">thee, O God</ns1:w> <ns1:w lemma="strong:H0430">my God</ns1:w>.<ns1:note type="study">my exceeding…: Heb. the gladness of my joy</ns1:note><ns1:verse eID="Ps.43.4" />
+<ns1:verse osisID="Ps.43.5" sID="Ps.43.5" /><ns1:w morph="strongMorph:TH8709" lemma="strong:H07817">Why art thou cast down</ns1:w>, <ns1:w lemma="strong:H05315">O my soul</ns1:w>? <ns1:w morph="strongMorph:TH8799" lemma="strong:H01993">and why art thou disquieted</ns1:w> <ns1:w morph="strongMorph:TH8685" lemma="strong:H03176">within me? hope</ns1:w> <ns1:w lemma="strong:H0430">in God</ns1:w>: <ns1:w morph="strongMorph:TH8686" lemma="strong:H03034">for I shall yet praise</ns1:w> him, <ns1:transChange type="added">who is</ns1:transChange> <ns1:w lemma="strong:H03444">the health</ns1:w> <ns1:w lemma="strong:H06440">of my countenance</ns1:w>, <ns1:w lemma="strong:H0430">and my God</ns1:w>.<ns1:verse eID="Ps.43.5" />
+</ns1:chapter>
+</div></osisText></osis>

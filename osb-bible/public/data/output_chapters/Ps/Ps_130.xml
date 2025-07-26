@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.130" chapterTitle="PSALM 130.">
+<ns1:title type="chapter">PSALM 130.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H07892">A Song</ns1:w> <ns1:w lemma="strong:H04609">of degrees</ns1:w>.</ns1:title><ns1:verse osisID="Ps.130.1" sID="Ps.130.1" /><ns1:w lemma="strong:H04615">Out of the depths</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07121">have I cried</ns1:w> <ns1:w lemma="strong:H03068">unto thee, O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>.<ns1:verse eID="Ps.130.1" />
+<ns1:verse osisID="Ps.130.2" sID="Ps.130.2" /><ns1:w lemma="strong:H0136">Lord</ns1:w>, <ns1:w morph="strongMorph:TH8798" lemma="strong:H08085">hear</ns1:w> <ns1:w lemma="strong:H06963">my voice</ns1:w>: <ns1:w lemma="strong:H0241">let thine ears</ns1:w> <ns1:w lemma="strong:H07183">be attentive</ns1:w> <ns1:w lemma="strong:H06963">to the voice</ns1:w> <ns1:w lemma="strong:H08469">of my supplications</ns1:w>.<ns1:verse eID="Ps.130.2" />
+<ns1:verse osisID="Ps.130.3" sID="Ps.130.3" /><ns1:w lemma="strong:H03050">If thou, <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H08104">shouldest mark</ns1:w> <ns1:w lemma="strong:H05771">iniquities</ns1:w>, <ns1:w lemma="strong:H0136">O Lord</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H05975">who shall stand</ns1:w>?<ns1:verse eID="Ps.130.3" />
+<ns1:verse osisID="Ps.130.4" sID="Ps.130.4" />But <ns1:transChange type="added">there is</ns1:transChange> <ns1:w lemma="strong:H05547">forgiveness</ns1:w> <ns1:w morph="strongMorph:TH8735" lemma="strong:H03372">with thee, that thou mayest be feared</ns1:w>.<ns1:verse eID="Ps.130.4" />
+<ns1:verse osisID="Ps.130.5" sID="Ps.130.5" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8765" lemma="strong:H06960">I wait</ns1:w> <ns1:w lemma="strong:H03068">for the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H05315">my soul</ns1:w> <ns1:w morph="strongMorph:TH8765" lemma="strong:H06960">doth wait</ns1:w>, <ns1:w lemma="strong:H01697">and in his word</ns1:w> <ns1:w morph="strongMorph:TH8689" lemma="strong:H03176">do I hope</ns1:w>.<ns1:verse eID="Ps.130.5" />
+<ns1:verse osisID="Ps.130.6" sID="Ps.130.6" /><ns1:w lemma="strong:H05315">My soul</ns1:w> <ns1:transChange type="added">waiteth</ns1:transChange> <ns1:w lemma="strong:H0136">for the Lord</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H08104">more than they that watch</ns1:w> <ns1:w lemma="strong:H01242">for the morning</ns1:w>: <ns1:transChange type="added">I say, more than</ns1:transChange> <ns1:w morph="strongMorph:TH8802" lemma="strong:H08104">they that watch</ns1:w> <ns1:w lemma="strong:H01242">for the morning</ns1:w>.<ns1:note type="study">I say…: or, which watch unto</ns1:note><ns1:verse eID="Ps.130.6" />
+<ns1:verse osisID="Ps.130.7" sID="Ps.130.7" /><ns1:w lemma="strong:H03478">Let Israel</ns1:w> <ns1:w morph="strongMorph:TH8761" lemma="strong:H03176">hope</ns1:w> <ns1:w lemma="strong:H03068">in the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>: <ns1:w lemma="strong:H03068">for with the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:transChange type="added">there is</ns1:transChange> <ns1:w lemma="strong:H02617">mercy</ns1:w>, and with him <ns1:transChange type="added">is</ns1:transChange> <ns1:w morph="strongMorph:TH8687" lemma="strong:H07235">plenteous</ns1:w> <ns1:w lemma="strong:H06304">redemption</ns1:w>.<ns1:verse eID="Ps.130.7" />
+<ns1:verse osisID="Ps.130.8" sID="Ps.130.8" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H06299">And he shall redeem</ns1:w> <ns1:w lemma="strong:H03478">Israel</ns1:w> <ns1:w lemma="strong:H05771">from all his iniquities</ns1:w>.<ns1:verse eID="Ps.130.8" />
+</ns1:chapter>
+</div></osisText></osis>

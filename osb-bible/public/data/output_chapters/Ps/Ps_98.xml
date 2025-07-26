@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.98" chapterTitle="PSALM 98.">
+<ns1:title type="chapter">PSALM 98.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H04210">A Psalm</ns1:w>.</ns1:title><ns1:verse osisID="Ps.98.1" sID="Ps.98.1" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H07891">O sing</ns1:w> <ns1:w lemma="strong:H03068">unto the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H02319">a new</ns1:w> <ns1:w lemma="strong:H07892">song</ns1:w>; <ns1:w morph="strongMorph:TH8804" lemma="strong:H06213">for he hath done</ns1:w> <ns1:w morph="strongMorph:TH8737" lemma="strong:H06381">marvellous things</ns1:w>: <ns1:w lemma="strong:H03225">his right hand</ns1:w>, <ns1:w lemma="strong:H06944">and his holy</ns1:w> <ns1:w lemma="strong:H02220">arm</ns1:w>, <ns1:w morph="strongMorph:TH8689" lemma="strong:H03467">hath gotten him the victory</ns1:w>.<ns1:verse eID="Ps.98.1" />
+<ns1:verse osisID="Ps.98.2" sID="Ps.98.2" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8689" lemma="strong:H03045">hath made known</ns1:w> <ns1:w lemma="strong:H03444">his salvation</ns1:w>: <ns1:w lemma="strong:H06666">his righteousness</ns1:w> <ns1:w morph="strongMorph:TH8765" lemma="strong:H01540">hath he openly shewed</ns1:w> <ns1:w lemma="strong:H05869">in the sight</ns1:w> <ns1:w lemma="strong:H01471">of the heathen</ns1:w>.<ns1:note type="study">openly…: or, revealed</ns1:note><ns1:verse eID="Ps.98.2" />
+<ns1:verse osisID="Ps.98.3" sID="Ps.98.3" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H02142">He hath remembered</ns1:w> <ns1:w lemma="strong:H02617">his mercy</ns1:w> <ns1:w lemma="strong:H0530">and his truth</ns1:w> <ns1:w lemma="strong:H01004">toward the house</ns1:w> <ns1:w lemma="strong:H03478">of Israel</ns1:w>: <ns1:w lemma="strong:H0657">all the ends</ns1:w> <ns1:w lemma="strong:H0776">of the earth</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07200">have seen</ns1:w> <ns1:w lemma="strong:H03444">the salvation</ns1:w> <ns1:w lemma="strong:H0430">of our God</ns1:w>.<ns1:verse eID="Ps.98.3" />
+<ns1:verse osisID="Ps.98.4" sID="Ps.98.4" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8685" lemma="strong:H07321">Make a joyful noise</ns1:w> <ns1:w lemma="strong:H03068">unto the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H0776">all the earth</ns1:w>: <ns1:w morph="strongMorph:TH8798" lemma="strong:H06476">make a loud noise</ns1:w>, <ns1:w morph="strongMorph:TH8761" lemma="strong:H07442">and rejoice</ns1:w>, <ns1:w morph="strongMorph:TH8761" lemma="strong:H02167">and sing</ns1:w> praise.<ns1:verse eID="Ps.98.4" />
+<ns1:verse osisID="Ps.98.5" sID="Ps.98.5" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H02167">Sing</ns1:w> <ns1:w lemma="strong:H03068">unto the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H03658">with the harp</ns1:w>; <ns1:w lemma="strong:H03658">with the harp</ns1:w>, <ns1:w lemma="strong:H06963">and the voice</ns1:w> <ns1:w lemma="strong:H02172">of a psalm</ns1:w>.<ns1:verse eID="Ps.98.5" />
+<ns1:verse osisID="Ps.98.6" sID="Ps.98.6" /><ns1:w lemma="strong:H02689">With trumpets</ns1:w> <ns1:w lemma="strong:H06963">and sound</ns1:w> <ns1:w lemma="strong:H07782">of cornet</ns1:w> <ns1:w morph="strongMorph:TH8685" lemma="strong:H07321">make a joyful noise</ns1:w> <ns1:w lemma="strong:H06440">before</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H04428">the King</ns1:w>.<ns1:verse eID="Ps.98.6" />
+<ns1:verse osisID="Ps.98.7" sID="Ps.98.7" /><ns1:w lemma="strong:H03220">Let the sea</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07481">roar</ns1:w>, <ns1:w lemma="strong:H04393">and the fulness</ns1:w> <ns1:w lemma="strong:H08398">thereof; the world</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H03427">and they that dwell</ns1:w> therein.<ns1:note type="study">the fulness…: or, all it containeth</ns1:note><ns1:verse eID="Ps.98.7" />
+<ns1:verse osisID="Ps.98.8" sID="Ps.98.8" /><ns1:w lemma="strong:H05104">Let the floods</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H04222">clap</ns1:w> <ns1:transChange type="added">their</ns1:transChange> <ns1:w lemma="strong:H03709">hands</ns1:w>: <ns1:w lemma="strong:H02022">let the hills</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H07442">be joyful</ns1:w> <ns1:w lemma="strong:H03162">together</ns1:w><ns1:verse eID="Ps.98.8" />
+<ns1:verse osisID="Ps.98.9" sID="Ps.98.9" /><ns1:w lemma="strong:H06440">Before</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>; <ns1:w morph="strongMorph:TH8804" lemma="strong:H0935">for he cometh</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H08199">to judge</ns1:w> <ns1:w lemma="strong:H0776">the earth</ns1:w>: <ns1:w lemma="strong:H06664">with righteousness</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H08199">shall he judge</ns1:w> <ns1:w lemma="strong:H08398">the world</ns1:w>, <ns1:w lemma="strong:H05971">and the people</ns1:w> <ns1:w lemma="strong:H04339">with equity</ns1:w>.<ns1:verse eID="Ps.98.9" />
+</ns1:chapter>
+</div></osisText></osis>

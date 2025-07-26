@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Jer" canonical="true"><ns1:title type="main">THE BOOK OF THE PROPHET JEREMIAH</ns1:title>
+<ns1:chapter osisID="Jer.45" chapterTitle="CHAPTER 45.">
+<ns1:title type="chapter">CHAPTER 45.</ns1:title>
+<ns1:verse osisID="Jer.45.1" sID="Jer.45.1" /><ns1:w lemma="strong:H01697">The word</ns1:w> <ns1:w lemma="strong:H03414">that Jeremiah</ns1:w> <ns1:w lemma="strong:H05030">the prophet</ns1:w> <ns1:w morph="strongMorph:TH8765" lemma="strong:H01696">spake</ns1:w> <ns1:w lemma="strong:H01263">unto Baruch</ns1:w> <ns1:w lemma="strong:H01121">the son</ns1:w> <ns1:w lemma="strong:H05374">of Neriah</ns1:w>, <ns1:w morph="strongMorph:TH8800" lemma="strong:H03789">when he had written</ns1:w> <ns1:w lemma="strong:H01697">these words</ns1:w> <ns1:w lemma="strong:H05612">in a book</ns1:w> <ns1:w lemma="strong:H06310">at the mouth</ns1:w> <ns1:w lemma="strong:H03414">of Jeremiah</ns1:w>, <ns1:w lemma="strong:H07243">in the fourth</ns1:w> <ns1:w lemma="strong:H08141">year</ns1:w> <ns1:w lemma="strong:H03079">of Jehoiakim</ns1:w> <ns1:w lemma="strong:H01121">the son</ns1:w> <ns1:w lemma="strong:H02977">of Josiah</ns1:w> <ns1:w lemma="strong:H04428">king</ns1:w> <ns1:w lemma="strong:H03063">of Judah</ns1:w>, <ns1:w morph="strongMorph:TH8800" lemma="strong:H0559">saying</ns1:w>,<ns1:verse eID="Jer.45.1" />
+<ns1:verse osisID="Jer.45.2" sID="Jer.45.2" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H0559">Thus saith</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H0430">the God</ns1:w> <ns1:w lemma="strong:H03478">of Israel</ns1:w>, <ns1:w lemma="strong:H01263">unto thee, O Baruch</ns1:w>;<ns1:verse eID="Jer.45.2" />
+<ns1:verse osisID="Jer.45.3" sID="Jer.45.3" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H0559">Thou didst say</ns1:w>, <ns1:w lemma="strong:H0188">Woe</ns1:w> <ns1:w lemma="strong:H03068">is me now! for the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H03254">hath added</ns1:w> <ns1:w lemma="strong:H03015">grief</ns1:w> <ns1:w lemma="strong:H04341">to my sorrow</ns1:w>; <ns1:w morph="strongMorph:TH8804" lemma="strong:H03021">I fainted</ns1:w> <ns1:w lemma="strong:H0585">in my sighing</ns1:w>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H04672">and I find</ns1:w> <ns1:w lemma="strong:H04496">no rest</ns1:w>.<ns1:verse eID="Jer.45.3" />
+<ns1:verse osisID="Jer.45.4" sID="Jer.45.4" /><ns1:milestone type="x-p" subType="x-added" marker="¶" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H0559">Thus shalt thou say</ns1:w> <ns1:w lemma="strong:H03068">unto him, The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H0559">saith</ns1:w> thus; Behold, <ns1:transChange type="added">that</ns1:transChange> <ns1:w morph="strongMorph:TH8804" lemma="strong:H01129">which I have built</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H02040">will I break down</ns1:w>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H05193">and that which I have planted</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H05428">I will pluck up</ns1:w>, <ns1:w lemma="strong:H0776">even this whole land</ns1:w>.<ns1:verse eID="Jer.45.4" />
+<ns1:verse osisID="Jer.45.5" sID="Jer.45.5" /><ns1:w morph="strongMorph:TH8762" lemma="strong:H01245">And seekest</ns1:w> <ns1:w lemma="strong:H01419">thou great things</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H01245">for thyself? seek</ns1:w> <ns1:transChange type="added">them</ns1:transChange> <ns1:w morph="strongMorph:TH8688" lemma="strong:H0935">not: for, behold, I will bring</ns1:w> <ns1:w lemma="strong:H07451">evil</ns1:w> <ns1:w lemma="strong:H01320">upon all flesh</ns1:w>, <ns1:w morph="strongMorph:TH8803" lemma="strong:H05002">saith</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>: <ns1:w lemma="strong:H05315">but thy life</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H05414">will I give</ns1:w> <ns1:w lemma="strong:H07998">unto thee for a prey</ns1:w> <ns1:w lemma="strong:H04725">in all places</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H03212">whither thou goest</ns1:w>.<ns1:verse eID="Jer.45.5" />
+</ns1:chapter>
+</div></osisText></osis>

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.120" chapterTitle="PSALM 120.">
+<ns1:title type="chapter">PSALM 120.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H07892">A Song</ns1:w> <ns1:w lemma="strong:H04609">of degrees</ns1:w>.</ns1:title><ns1:verse osisID="Ps.120.1" sID="Ps.120.1" /><ns1:w lemma="strong:H06869">In my distress</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07121">I cried</ns1:w> <ns1:w lemma="strong:H03068">unto the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H06030">and he heard</ns1:w> me.<ns1:verse eID="Ps.120.1" />
+<ns1:verse osisID="Ps.120.2" sID="Ps.120.2" /><ns1:w morph="strongMorph:TH8685" lemma="strong:H05337">Deliver</ns1:w> <ns1:w lemma="strong:H05315">my soul</ns1:w>, <ns1:w lemma="strong:H03068">O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H08267">from lying</ns1:w> <ns1:w lemma="strong:H08193">lips</ns1:w>, <ns1:transChange type="added">and</ns1:transChange> <ns1:w lemma="strong:H07423">from a deceitful</ns1:w> <ns1:w lemma="strong:H03956">tongue</ns1:w>.<ns1:verse eID="Ps.120.2" />
+<ns1:verse osisID="Ps.120.3" sID="Ps.120.3" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H05414">What shall be given</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H03254">unto thee? or what shall be done</ns1:w> <ns1:w lemma="strong:H07423">unto thee, thou false</ns1:w> <ns1:w lemma="strong:H03956">tongue</ns1:w>?<ns1:note type="study">What shall be given…: or, What shall the deceitful tongue give unto thee? or, what shall is profit thee?</ns1:note><ns1:note type="study">done: Heb. added</ns1:note><ns1:verse eID="Ps.120.3" />
+<ns1:verse osisID="Ps.120.4" sID="Ps.120.4" /><ns1:w morph="strongMorph:TH8802" lemma="strong:H08150">Sharp</ns1:w> <ns1:w lemma="strong:H02671">arrows</ns1:w> <ns1:w lemma="strong:H01368">of the mighty</ns1:w>, <ns1:w lemma="strong:H01513">with coals</ns1:w> <ns1:w lemma="strong:H07574">of juniper</ns1:w>.<ns1:note type="study">Sharp…: or, It is as the sharp arrows of the mighty man, with coals of juniper</ns1:note><ns1:verse eID="Ps.120.4" />
+<ns1:verse osisID="Ps.120.5" sID="Ps.120.5" /><ns1:milestone type="x-extra-p" /><ns1:w lemma="strong:H0190">Woe</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H01481">is me, that I sojourn</ns1:w> <ns1:w lemma="strong:H04902">in Mesech</ns1:w>, <ns1:transChange type="added">that</ns1:transChange> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07931">I dwell</ns1:w> <ns1:w lemma="strong:H0168">in the tents</ns1:w> <ns1:w lemma="strong:H06938">of Kedar</ns1:w>!<ns1:verse eID="Ps.120.5" />
+<ns1:verse osisID="Ps.120.6" sID="Ps.120.6" /><ns1:w lemma="strong:H05315">My soul</ns1:w> <ns1:w lemma="strong:H07227">hath long</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H07931">dwelt</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H08130">with him that hateth</ns1:w> <ns1:w lemma="strong:H07965">peace</ns1:w>.<ns1:verse eID="Ps.120.6" />
+<ns1:verse osisID="Ps.120.7" sID="Ps.120.7" />I <ns1:transChange type="added">am for</ns1:transChange> <ns1:w lemma="strong:H07965">peace</ns1:w>: <ns1:w morph="strongMorph:TH8762" lemma="strong:H01696">but when I speak</ns1:w>, they <ns1:transChange type="added">are</ns1:transChange> <ns1:w lemma="strong:H04421">for war</ns1:w>.<ns1:note type="study">for peace: or, a man of peace</ns1:note><ns1:verse eID="Ps.120.7" />
+</ns1:chapter>
+</div></osisText></osis>

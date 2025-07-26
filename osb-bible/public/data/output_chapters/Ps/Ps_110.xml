@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.110" chapterTitle="PSALM 110.">
+<ns1:title type="chapter">PSALM 110.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H04210">A Psalm</ns1:w> <ns1:w lemma="strong:H01732">of David</ns1:w>.</ns1:title><ns1:verse osisID="Ps.110.1" sID="Ps.110.1" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8803" lemma="strong:H05002">said</ns1:w> <ns1:w lemma="strong:H0113">unto my Lord</ns1:w>, <ns1:w morph="strongMorph:TH8798" lemma="strong:H03427">Sit</ns1:w> <ns1:w lemma="strong:H03225">thou at my right hand</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H07896">until I make</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H0341">thine enemies</ns1:w> <ns1:w lemma="strong:H07272 strong:H01916">thy footstool</ns1:w>.<ns1:verse eID="Ps.110.1" />
+<ns1:verse osisID="Ps.110.2" sID="Ps.110.2" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07971">shall send</ns1:w> <ns1:w lemma="strong:H04294">the rod</ns1:w> <ns1:w lemma="strong:H05797">of thy strength</ns1:w> <ns1:w lemma="strong:H06726">out of Zion</ns1:w>: <ns1:w morph="strongMorph:TH8798" lemma="strong:H07287">rule</ns1:w> <ns1:w lemma="strong:H07130">thou in the midst</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H0341">of thine enemies</ns1:w>.<ns1:verse eID="Ps.110.2" />
+<ns1:verse osisID="Ps.110.3" sID="Ps.110.3" /><ns1:w lemma="strong:H05971">Thy people</ns1:w> <ns1:transChange type="added">shall be</ns1:transChange> <ns1:w lemma="strong:H05071">willing</ns1:w> <ns1:w lemma="strong:H03117">in the day</ns1:w> <ns1:w lemma="strong:H02428">of thy power</ns1:w>, <ns1:w lemma="strong:H01926">in the beauties</ns1:w> <ns1:w lemma="strong:H06944">of holiness</ns1:w> <ns1:w lemma="strong:H07358">from the womb</ns1:w> <ns1:w lemma="strong:H04891">of the morning</ns1:w>: <ns1:w lemma="strong:H02919">thou hast the dew</ns1:w> <ns1:w lemma="strong:H03208">of thy youth</ns1:w>.<ns1:note type="study">from…: or, more than the womb of the morning: thou shalt have, etc</ns1:note><ns1:verse eID="Ps.110.3" />
+<ns1:verse osisID="Ps.110.4" sID="Ps.110.4" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8738" lemma="strong:H07650">hath sworn</ns1:w>, <ns1:w morph="strongMorph:TH8735" lemma="strong:H05162">and will not repent</ns1:w>, Thou <ns1:transChange type="added">art</ns1:transChange> <ns1:w lemma="strong:H03548">a priest</ns1:w> <ns1:w lemma="strong:H05769">for ever</ns1:w> <ns1:w lemma="strong:H01700">after the order</ns1:w> <ns1:w lemma="strong:H04442">of Melchizedek</ns1:w>.<ns1:verse eID="Ps.110.4" />
+<ns1:verse osisID="Ps.110.5" sID="Ps.110.5" /><ns1:milestone type="x-extra-p" /><ns1:w lemma="strong:H0136">The Lord</ns1:w> <ns1:w lemma="strong:H03225">at thy right hand</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H04272">shall strike</ns1:w> <ns1:w lemma="strong:H04428">through kings</ns1:w> <ns1:w lemma="strong:H03117">in the day</ns1:w> <ns1:w lemma="strong:H0639">of his wrath</ns1:w>.<ns1:verse eID="Ps.110.5" />
+<ns1:verse osisID="Ps.110.6" sID="Ps.110.6" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H01777">He shall judge</ns1:w> <ns1:w lemma="strong:H01471">among the heathen</ns1:w>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H04390">he shall fill</ns1:w> <ns1:transChange type="added">the places</ns1:transChange> <ns1:w lemma="strong:H01472">with the dead bodies</ns1:w>; <ns1:w morph="strongMorph:TH8804" lemma="strong:H04272">he shall wound</ns1:w> <ns1:w lemma="strong:H07218">the heads</ns1:w> <ns1:w lemma="strong:H07227">over many</ns1:w> <ns1:w lemma="strong:H0776">countries</ns1:w>.<ns1:note type="study">many: or, great</ns1:note><ns1:verse eID="Ps.110.6" />
+<ns1:verse osisID="Ps.110.7" sID="Ps.110.7" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H08354">He shall drink</ns1:w> <ns1:w lemma="strong:H05158">of the brook</ns1:w> <ns1:w lemma="strong:H01870">in the way</ns1:w>: <ns1:w morph="strongMorph:TH8686" lemma="strong:H07311">therefore shall he lift up</ns1:w> <ns1:w lemma="strong:H07218">the head</ns1:w>.<ns1:verse eID="Ps.110.7" />
+</ns1:chapter>
+</div></osisText></osis>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.117" chapterTitle="PSALM 117.">
+<ns1:title type="chapter">PSALM 117.</ns1:title>
+<ns1:verse osisID="Ps.117.1" sID="Ps.117.1" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">O praise</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H01471">all ye nations</ns1:w>: <ns1:w morph="strongMorph:TH8761" lemma="strong:H07623">praise</ns1:w> <ns1:w lemma="strong:H0523">him, all ye people</ns1:w>.<ns1:verse eID="Ps.117.1" />
+<ns1:verse osisID="Ps.117.2" sID="Ps.117.2" /><ns1:w lemma="strong:H02617">For his merciful</ns1:w> <ns1:w lemma="strong:H02617">kindness</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H01396">is great</ns1:w> <ns1:w lemma="strong:H0571">toward us: and the truth</ns1:w> <ns1:w lemma="strong:H03068">of the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:transChange type="added">endureth</ns1:transChange> <ns1:w lemma="strong:H05769">for ever</ns1:w>. <ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H03050">ye the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>.<ns1:verse eID="Ps.117.2" />
+</ns1:chapter>
+</div></osisText></osis>

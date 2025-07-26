@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.134" chapterTitle="PSALM 134.">
+<ns1:title type="chapter">PSALM 134.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H07892">A Song</ns1:w> <ns1:w lemma="strong:H04609">of degrees</ns1:w>.</ns1:title><ns1:verse osisID="Ps.134.1" sID="Ps.134.1" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H01288">Behold, bless</ns1:w> <ns1:w lemma="strong:H03068">ye the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, all <ns1:transChange type="added">ye</ns1:transChange> <ns1:w lemma="strong:H05650">servants</ns1:w> <ns1:w lemma="strong:H03068">of the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H03915">which by night</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H05975">stand</ns1:w> <ns1:w lemma="strong:H01004">in the house</ns1:w> <ns1:w lemma="strong:H03068">of the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>.<ns1:verse eID="Ps.134.1" />
+<ns1:verse osisID="Ps.134.2" sID="Ps.134.2" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H05375">Lift up</ns1:w> <ns1:w lemma="strong:H03027">your hands</ns1:w> <ns1:transChange type="added">in</ns1:transChange> <ns1:w lemma="strong:H06944">the sanctuary</ns1:w>, <ns1:w morph="strongMorph:TH8761" lemma="strong:H01288">and bless</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>.<ns1:note type="study">the sanctuary: or, holiness</ns1:note><ns1:verse eID="Ps.134.2" />
+<ns1:verse osisID="Ps.134.3" sID="Ps.134.3" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H06213">that made</ns1:w> <ns1:w lemma="strong:H08064">heaven</ns1:w> <ns1:w lemma="strong:H0776">and earth</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H01288">bless</ns1:w> <ns1:w lemma="strong:H06726">thee out of Zion</ns1:w>.<ns1:verse eID="Ps.134.3" />
+</ns1:chapter>
+</div></osisText></osis>

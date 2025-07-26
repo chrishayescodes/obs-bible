@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.149" chapterTitle="PSALM 149.">
+<ns1:title type="chapter">PSALM 149.</ns1:title>
+<ns1:verse osisID="Ps.149.1" sID="Ps.149.1" /><ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H03050">ye the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>. <ns1:w morph="strongMorph:TH8798" lemma="strong:H07891">Sing</ns1:w> <ns1:w lemma="strong:H03068">unto the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H02319">a new</ns1:w> <ns1:w lemma="strong:H07892">song</ns1:w>, <ns1:transChange type="added">and</ns1:transChange> <ns1:w lemma="strong:H08416">his praise</ns1:w> <ns1:w lemma="strong:H06951">in the congregation</ns1:w> <ns1:w lemma="strong:H02623">of saints</ns1:w>.<ns1:note type="study">Praise…: Heb. Hallelujah</ns1:note><ns1:verse eID="Ps.149.1" />
+<ns1:verse osisID="Ps.149.2" sID="Ps.149.2" /><ns1:w lemma="strong:H03478">Let Israel</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H08055">rejoice</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H06213">in him that made</ns1:w> <ns1:w lemma="strong:H01121">him: let the children</ns1:w> <ns1:w lemma="strong:H06726">of Zion</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H01523">be joyful</ns1:w> <ns1:w lemma="strong:H04428">in their King</ns1:w>.<ns1:note type="study">in him…: Heb. in his Makers</ns1:note><ns1:verse eID="Ps.149.2" />
+<ns1:verse osisID="Ps.149.3" sID="Ps.149.3" /><ns1:w morph="strongMorph:TH8762" lemma="strong:H01984">Let them praise</ns1:w> <ns1:w lemma="strong:H08034">his name</ns1:w> <ns1:w lemma="strong:H04234">in the dance</ns1:w>: <ns1:w morph="strongMorph:TH8762" lemma="strong:H02167">let them sing praises</ns1:w> <ns1:w lemma="strong:H08596">unto him with the timbrel</ns1:w> <ns1:w lemma="strong:H03658">and harp</ns1:w>.<ns1:note type="study">in…: or, with the pipe</ns1:note><ns1:verse eID="Ps.149.3" />
+<ns1:verse osisID="Ps.149.4" sID="Ps.149.4" /><ns1:w lemma="strong:H03068">For the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H07521">taketh pleasure</ns1:w> <ns1:w lemma="strong:H05971">in his people</ns1:w>: <ns1:w morph="strongMorph:TH8762" lemma="strong:H06286">he will beautify</ns1:w> <ns1:w lemma="strong:H06035">the meek</ns1:w> <ns1:w lemma="strong:H03444">with salvation</ns1:w>.<ns1:verse eID="Ps.149.4" />
+<ns1:verse osisID="Ps.149.5" sID="Ps.149.5" /><ns1:w lemma="strong:H02623">Let the saints</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H05937">be joyful</ns1:w> <ns1:w lemma="strong:H03519">in glory</ns1:w>: <ns1:w morph="strongMorph:TH8762" lemma="strong:H07442">let them sing aloud</ns1:w> <ns1:w lemma="strong:H04904">upon their beds</ns1:w>.<ns1:verse eID="Ps.149.5" />
+<ns1:verse osisID="Ps.149.6" sID="Ps.149.6" /><ns1:milestone type="x-extra-p" /><ns1:transChange type="added">Let</ns1:transChange> <ns1:w lemma="strong:H07319">the high</ns1:w> <ns1:transChange type="added">praises</ns1:transChange> <ns1:w lemma="strong:H0410">of God</ns1:w> <ns1:transChange type="added">be</ns1:transChange> <ns1:w lemma="strong:H01627">in their mouth</ns1:w>, <ns1:w lemma="strong:H06374">and a twoedged</ns1:w> <ns1:w lemma="strong:H02719">sword</ns1:w> <ns1:w lemma="strong:H03027">in their hand</ns1:w>;<ns1:note type="study">mouth: Heb. throat</ns1:note><ns1:verse eID="Ps.149.6" />
+<ns1:verse osisID="Ps.149.7" sID="Ps.149.7" /><ns1:w morph="strongMorph:TH8800" lemma="strong:H06213">To execute</ns1:w> <ns1:w lemma="strong:H05360">vengeance</ns1:w> <ns1:w lemma="strong:H01471">upon the heathen</ns1:w>, <ns1:transChange type="added">and</ns1:transChange> <ns1:w lemma="strong:H08433">punishments</ns1:w> <ns1:w lemma="strong:H03816">upon the people</ns1:w>;<ns1:verse eID="Ps.149.7" />
+<ns1:verse osisID="Ps.149.8" sID="Ps.149.8" /><ns1:w morph="strongMorph:TH8800" lemma="strong:H0631">To bind</ns1:w> <ns1:w lemma="strong:H04428">their kings</ns1:w> <ns1:w lemma="strong:H02131">with chains</ns1:w>, <ns1:w morph="strongMorph:TH8737" lemma="strong:H03513">and their nobles</ns1:w> <ns1:w lemma="strong:H03525">with fetters</ns1:w> <ns1:w lemma="strong:H01270">of iron</ns1:w>;<ns1:verse eID="Ps.149.8" />
+<ns1:verse osisID="Ps.149.9" sID="Ps.149.9" /><ns1:w morph="strongMorph:TH8800" lemma="strong:H06213">To execute</ns1:w> <ns1:w lemma="strong:H04941">upon them the judgment</ns1:w> <ns1:w morph="strongMorph:TH8803" lemma="strong:H03789">written</ns1:w>: <ns1:w lemma="strong:H01926">this honour</ns1:w> <ns1:w lemma="strong:H02623">have all his saints</ns1:w>. <ns1:w morph="strongMorph:TH8761" lemma="strong:H01984">Praise</ns1:w> <ns1:w lemma="strong:H03050">ye the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>.<ns1:verse eID="Ps.149.9" />
+</ns1:chapter>
+</div></osisText></osis>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.126" chapterTitle="PSALM 126.">
+<ns1:title type="chapter">PSALM 126.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H07892">A Song</ns1:w> <ns1:w lemma="strong:H04609">of degrees</ns1:w>.</ns1:title><ns1:verse osisID="Ps.126.1" sID="Ps.126.1" /><ns1:w lemma="strong:H03068">When the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H07725">turned again</ns1:w> <ns1:w lemma="strong:H07870">the captivity</ns1:w> <ns1:w lemma="strong:H06726">of Zion</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H02492">we were like them that dream</ns1:w>.<ns1:note type="study">turned…: Heb. returned the returning</ns1:note><ns1:verse eID="Ps.126.1" />
+<ns1:verse osisID="Ps.126.2" sID="Ps.126.2" /><ns1:w lemma="strong:H06310">Then was our mouth</ns1:w> <ns1:w morph="strongMorph:TH8735" lemma="strong:H04390">filled</ns1:w> <ns1:w lemma="strong:H07814">with laughter</ns1:w>, <ns1:w lemma="strong:H03956">and our tongue</ns1:w> <ns1:w lemma="strong:H07440">with singing</ns1:w>: <ns1:w morph="strongMorph:TH8799" lemma="strong:H0559">then said</ns1:w> <ns1:w lemma="strong:H01471">they among the heathen</ns1:w>, <ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H06213">hath done</ns1:w> <ns1:w morph="strongMorph:TH8689" lemma="strong:H01431">great things</ns1:w> for them.<ns1:note type="study">hath…: Heb. hath magnified to do with them</ns1:note><ns1:verse eID="Ps.126.2" />
+<ns1:verse osisID="Ps.126.3" sID="Ps.126.3" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H06213">hath done</ns1:w> <ns1:w morph="strongMorph:TH8689" lemma="strong:H01431">great things</ns1:w> for us; <ns1:transChange type="added">whereof</ns1:transChange> <ns1:w lemma="strong:H08056">we are glad</ns1:w>.<ns1:verse eID="Ps.126.3" />
+<ns1:verse osisID="Ps.126.4" sID="Ps.126.4" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H07725">Turn again</ns1:w> <ns1:w morph="strongMorph:TH8675" lemma="strong:H07622 strong:H07622">our captivity</ns1:w>, <ns1:w lemma="strong:H03068">O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H0650">as the streams</ns1:w> <ns1:w lemma="strong:H05045">in the south</ns1:w>.<ns1:verse eID="Ps.126.4" />
+<ns1:verse osisID="Ps.126.5" sID="Ps.126.5" /><ns1:w morph="strongMorph:TH8802" lemma="strong:H02232">They that sow</ns1:w> <ns1:w lemma="strong:H01832">in tears</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H07114">shall reap</ns1:w> <ns1:w lemma="strong:H07440">in joy</ns1:w>.<ns1:note type="study">joy: or, singing</ns1:note><ns1:verse eID="Ps.126.5" />
+<ns1:verse osisID="Ps.126.6" sID="Ps.126.6" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H03212">He that goeth</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H01980">forth</ns1:w> <ns1:w morph="strongMorph:TH8800" lemma="strong:H01058">and weepeth</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H05375">bearing</ns1:w> <ns1:w lemma="strong:H04901">precious</ns1:w> <ns1:w lemma="strong:H02233">seed</ns1:w>, <ns1:w morph="strongMorph:TH8800" lemma="strong:H0935">shall doubtless</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H0935">come</ns1:w> <ns1:w lemma="strong:H07440">again with rejoicing</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H05375">bringing</ns1:w> <ns1:w lemma="strong:H0485">his sheaves</ns1:w> <ns1:transChange type="added">with him</ns1:transChange>.<ns1:note type="study">precious…: or, seed basket</ns1:note><ns1:verse eID="Ps.126.6" />
+</ns1:chapter>
+</div></osisText></osis>

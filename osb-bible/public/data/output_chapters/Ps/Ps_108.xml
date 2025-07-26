@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.108" chapterTitle="PSALM 108.">
+<ns1:title type="chapter">PSALM 108.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H07892">A Song</ns1:w> <ns1:transChange type="added">or</ns1:transChange> <ns1:w lemma="strong:H04210">Psalm</ns1:w> <ns1:w lemma="strong:H01732">of David</ns1:w>.</ns1:title><ns1:verse osisID="Ps.108.1" sID="Ps.108.1" /><ns1:w lemma="strong:H0430">O God</ns1:w>, <ns1:w lemma="strong:H03820">my heart</ns1:w> <ns1:w morph="strongMorph:TH8737" lemma="strong:H03559">is fixed</ns1:w>; <ns1:w morph="strongMorph:TH8799" lemma="strong:H07891">I will sing</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H02167">and give praise</ns1:w>, <ns1:w lemma="strong:H03519">even with my glory</ns1:w>.<ns1:verse eID="Ps.108.1" />
+<ns1:verse osisID="Ps.108.2" sID="Ps.108.2" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H05782">Awake</ns1:w>, <ns1:w lemma="strong:H05035">psaltery</ns1:w> <ns1:w lemma="strong:H03658">and harp</ns1:w>: I <ns1:transChange type="added">myself</ns1:transChange> <ns1:w morph="strongMorph:TH8686" lemma="strong:H05782">will awake</ns1:w> <ns1:w lemma="strong:H07837">early</ns1:w>.<ns1:verse eID="Ps.108.2" />
+<ns1:verse osisID="Ps.108.3" sID="Ps.108.3" /><ns1:w morph="strongMorph:TH8686" lemma="strong:H03034">I will praise</ns1:w> <ns1:w lemma="strong:H03068">thee, O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H05971">among the people</ns1:w>: <ns1:w morph="strongMorph:TH8762" lemma="strong:H02167">and I will sing praises</ns1:w> <ns1:w lemma="strong:H03816">unto thee among the nations</ns1:w>.<ns1:verse eID="Ps.108.3" />
+<ns1:verse osisID="Ps.108.4" sID="Ps.108.4" /><ns1:w lemma="strong:H02617">For thy mercy</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H01419">great</ns1:w> <ns1:w lemma="strong:H08064">above the heavens</ns1:w>: <ns1:w lemma="strong:H0571">and thy truth</ns1:w> <ns1:transChange type="added">reacheth</ns1:transChange> <ns1:w lemma="strong:H07834">unto the clouds</ns1:w>.<ns1:note type="study">clouds: or, skies</ns1:note><ns1:verse eID="Ps.108.4" />
+<ns1:verse osisID="Ps.108.5" sID="Ps.108.5" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H07311">Be thou exalted</ns1:w>, <ns1:w lemma="strong:H0430">O God</ns1:w>, <ns1:w lemma="strong:H08064">above the heavens</ns1:w>: <ns1:w lemma="strong:H03519">and thy glory</ns1:w> <ns1:w lemma="strong:H0776">above all the earth</ns1:w>;<ns1:verse eID="Ps.108.5" />
+<ns1:verse osisID="Ps.108.6" sID="Ps.108.6" /><ns1:milestone type="x-extra-p" /><ns1:w lemma="strong:H03039">That thy beloved</ns1:w> <ns1:w morph="strongMorph:TH8735" lemma="strong:H02502">may be delivered</ns1:w>: <ns1:w morph="strongMorph:TH8685" lemma="strong:H03467">save</ns1:w> <ns1:transChange type="added">with</ns1:transChange> <ns1:w lemma="strong:H03225">thy right hand</ns1:w>, <ns1:w morph="strongMorph:TH8798" lemma="strong:H06030">and answer</ns1:w> me.<ns1:verse eID="Ps.108.6" />
+<ns1:verse osisID="Ps.108.7" sID="Ps.108.7" /><ns1:w lemma="strong:H0430">God</ns1:w> <ns1:w morph="strongMorph:TH8765" lemma="strong:H01696">hath spoken</ns1:w> <ns1:w lemma="strong:H06944">in his holiness</ns1:w>; <ns1:w morph="strongMorph:TH8799" lemma="strong:H05937">I will rejoice</ns1:w>, <ns1:w morph="strongMorph:TH8762" lemma="strong:H02505">I will divide</ns1:w> <ns1:w lemma="strong:H07927">Shechem</ns1:w>, <ns1:w morph="strongMorph:TH8762" lemma="strong:H04058">and mete out</ns1:w> <ns1:w lemma="strong:H06010">the valley</ns1:w> <ns1:w lemma="strong:H05523">of Succoth</ns1:w>.<ns1:verse eID="Ps.108.7" />
+<ns1:verse osisID="Ps.108.8" sID="Ps.108.8" /><ns1:w lemma="strong:H01568">Gilead</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H04519">mine; Manasseh</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H0669">mine; Ephraim</ns1:w> also <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H04581">the strength</ns1:w> <ns1:w lemma="strong:H07218">of mine head</ns1:w>; <ns1:w lemma="strong:H03063">Judah</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w morph="strongMorph:TH8781" lemma="strong:H02710">my lawgiver</ns1:w>;<ns1:verse eID="Ps.108.8" />
+<ns1:verse osisID="Ps.108.9" sID="Ps.108.9" /><ns1:w lemma="strong:H04124">Moab</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H05518 strong:H07366">my washpot</ns1:w>; <ns1:w lemma="strong:H0123">over Edom</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H07993">will I cast out</ns1:w> <ns1:w lemma="strong:H05275">my shoe</ns1:w>; <ns1:w lemma="strong:H06429">over Philistia</ns1:w> <ns1:w morph="strongMorph:TH8709" lemma="strong:H07321">will I triumph</ns1:w>.<ns1:verse eID="Ps.108.9" />
+<ns1:verse osisID="Ps.108.10" sID="Ps.108.10" /><ns1:w morph="strongMorph:TH8686" lemma="strong:H02986">Who will bring</ns1:w> <ns1:w lemma="strong:H04013">me into the strong</ns1:w> <ns1:w lemma="strong:H05892">city</ns1:w>? <ns1:w morph="strongMorph:TH8804" lemma="strong:H05148">who will lead</ns1:w> <ns1:w lemma="strong:H0123">me into Edom</ns1:w>?<ns1:verse eID="Ps.108.10" />
+<ns1:verse osisID="Ps.108.11" sID="Ps.108.11" /><ns1:transChange type="added">Wilt</ns1:transChange> not <ns1:transChange type="added">thou</ns1:transChange>, <ns1:w lemma="strong:H0430">O God</ns1:w>, <ns1:transChange type="added">who</ns1:transChange> <ns1:w morph="strongMorph:TH8804" lemma="strong:H02186">hast cast us off</ns1:w>? <ns1:w lemma="strong:H0430">and wilt not thou, O God</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H03318">go forth</ns1:w> <ns1:w lemma="strong:H06635">with our hosts</ns1:w>?<ns1:verse eID="Ps.108.11" />
+<ns1:verse osisID="Ps.108.12" sID="Ps.108.12" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H03051">Give</ns1:w> <ns1:w lemma="strong:H05833">us help</ns1:w> <ns1:w lemma="strong:H06862">from trouble</ns1:w>: <ns1:w lemma="strong:H07723">for vain</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H08668">the help</ns1:w> <ns1:w lemma="strong:H0120">of man</ns1:w>.<ns1:verse eID="Ps.108.12" />
+<ns1:verse osisID="Ps.108.13" sID="Ps.108.13" /><ns1:w lemma="strong:H0430">Through God</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H06213">we shall do</ns1:w> <ns1:w lemma="strong:H02428">valiantly</ns1:w>: for he <ns1:transChange type="added">it is that</ns1:transChange> <ns1:w morph="strongMorph:TH8799" lemma="strong:H0947">shall tread down</ns1:w> <ns1:w lemma="strong:H06862">our enemies</ns1:w>.<ns1:verse eID="Ps.108.13" />
+</ns1:chapter>
+</div></osisText></osis>

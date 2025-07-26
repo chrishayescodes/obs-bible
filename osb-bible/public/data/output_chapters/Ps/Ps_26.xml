@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.26" chapterTitle="PSALM 26.">
+<ns1:title type="chapter">PSALM 26.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:transChange type="added">A Psalm</ns1:transChange> <ns1:w lemma="strong:H01732">of David</ns1:w>.</ns1:title><ns1:verse osisID="Ps.26.1" sID="Ps.26.1" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H08199">Judge</ns1:w> <ns1:w lemma="strong:H03068">me, O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>; <ns1:w morph="strongMorph:TH8804" lemma="strong:H01980">for I have walked</ns1:w> <ns1:w lemma="strong:H08537">in mine integrity</ns1:w>: <ns1:w morph="strongMorph:TH8804" lemma="strong:H0982">I have trusted</ns1:w> <ns1:w lemma="strong:H03068">also in the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>; <ns1:transChange type="added">therefore</ns1:transChange> <ns1:w morph="strongMorph:TH8799" lemma="strong:H04571">I shall not slide</ns1:w>.<ns1:verse eID="Ps.26.1" />
+<ns1:verse osisID="Ps.26.2" sID="Ps.26.2" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H0974">Examine</ns1:w> <ns1:w lemma="strong:H03068">me, O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w morph="strongMorph:TH8761" lemma="strong:H05254">and prove</ns1:w> <ns1:w morph="strongMorph:TH8798" lemma="strong:H06884">me; try</ns1:w> <ns1:w lemma="strong:H03629">my reins</ns1:w> <ns1:w lemma="strong:H03820">and my heart</ns1:w>.<ns1:verse eID="Ps.26.2" />
+<ns1:verse osisID="Ps.26.3" sID="Ps.26.3" /><ns1:w lemma="strong:H02617">For thy lovingkindness</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H05869">before mine eyes</ns1:w>: <ns1:w morph="strongMorph:TH8694" lemma="strong:H01980">and I have walked</ns1:w> <ns1:w lemma="strong:H0571">in thy truth</ns1:w>.<ns1:verse eID="Ps.26.3" />
+<ns1:verse osisID="Ps.26.4" sID="Ps.26.4" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H03427">I have not sat</ns1:w> <ns1:w lemma="strong:H07723">with vain</ns1:w> <ns1:w lemma="strong:H04962">persons</ns1:w>, <ns1:w morph="strongMorph:TH8799" lemma="strong:H0935">neither will I go in</ns1:w> <ns1:w morph="strongMorph:TH8737" lemma="strong:H05956">with dissemblers</ns1:w>.<ns1:verse eID="Ps.26.4" />
+<ns1:verse osisID="Ps.26.5" sID="Ps.26.5" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H08130">I have hated</ns1:w> <ns1:w lemma="strong:H06951">the congregation</ns1:w> <ns1:w morph="strongMorph:TH8688" lemma="strong:H07489">of evil doers</ns1:w>; <ns1:w morph="strongMorph:TH8799" lemma="strong:H03427">and will not sit</ns1:w> <ns1:w lemma="strong:H07563">with the wicked</ns1:w>.<ns1:verse eID="Ps.26.5" />
+<ns1:verse osisID="Ps.26.6" sID="Ps.26.6" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H07364">I will wash</ns1:w> <ns1:w lemma="strong:H03709">mine hands</ns1:w> <ns1:w lemma="strong:H05356">in innocency</ns1:w>: <ns1:w morph="strongMorph:TH8779" lemma="strong:H05437">so will I compass</ns1:w> <ns1:w lemma="strong:H04196">thine altar</ns1:w>, <ns1:w lemma="strong:H03068">O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>:<ns1:verse eID="Ps.26.6" />
+<ns1:verse osisID="Ps.26.7" sID="Ps.26.7" /><ns1:w morph="strongMorph:TH8687" lemma="strong:H08085">That I may publish</ns1:w> <ns1:w lemma="strong:H06963">with the voice</ns1:w> <ns1:w lemma="strong:H08426">of thanksgiving</ns1:w>, <ns1:w morph="strongMorph:TH8763" lemma="strong:H05608">and tell</ns1:w> <ns1:w morph="strongMorph:TH8737" lemma="strong:H06381">of all thy wondrous works</ns1:w>.<ns1:verse eID="Ps.26.7" />
+<ns1:verse osisID="Ps.26.8" sID="Ps.26.8" /><ns1:w lemma="strong:H03068"><ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w morph="strongMorph:TH8804" lemma="strong:H0157">I have loved</ns1:w> <ns1:w lemma="strong:H04583">the habitation</ns1:w> <ns1:w lemma="strong:H01004">of thy house</ns1:w>, <ns1:w lemma="strong:H04725">and the place</ns1:w> <ns1:w lemma="strong:H03519">where thine honour</ns1:w> <ns1:w lemma="strong:H04908">dwelleth</ns1:w>.<ns1:note type="study">where…: Heb. of the tabernacle of thy honour</ns1:note><ns1:verse eID="Ps.26.8" />
+<ns1:verse osisID="Ps.26.9" sID="Ps.26.9" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H0622">Gather</ns1:w> <ns1:w lemma="strong:H05315">not my soul</ns1:w> <ns1:w lemma="strong:H02400">with sinners</ns1:w>, <ns1:w lemma="strong:H02416">nor my life</ns1:w> <ns1:w lemma="strong:H01818">with bloody</ns1:w> <ns1:w lemma="strong:H0582">men</ns1:w>:<ns1:note type="study">Gather…: or, Take not away</ns1:note><ns1:note type="study">bloody…: Heb. men of blood</ns1:note><ns1:verse eID="Ps.26.9" />
+<ns1:verse osisID="Ps.26.10" sID="Ps.26.10" /><ns1:w lemma="strong:H03027">In whose hands</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H02154">mischief</ns1:w>, <ns1:w lemma="strong:H03225">and their right hand</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H04390">is full</ns1:w> <ns1:w lemma="strong:H07810">of bribes</ns1:w>.<ns1:note type="study">full…: Heb. filled with</ns1:note><ns1:verse eID="Ps.26.10" />
+<ns1:verse osisID="Ps.26.11" sID="Ps.26.11" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H03212">But as for me, I will walk</ns1:w> <ns1:w lemma="strong:H08537">in mine integrity</ns1:w>: <ns1:w morph="strongMorph:TH8798" lemma="strong:H06299">redeem</ns1:w> <ns1:w morph="strongMorph:TH8798" lemma="strong:H02603">me, and be merciful</ns1:w> unto me.<ns1:verse eID="Ps.26.11" />
+<ns1:verse osisID="Ps.26.12" sID="Ps.26.12" /><ns1:w lemma="strong:H07272">My foot</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H05975">standeth</ns1:w> <ns1:w lemma="strong:H04334">in an even place</ns1:w>: <ns1:w lemma="strong:H04721">in the congregations</ns1:w> <ns1:w morph="strongMorph:TH8762" lemma="strong:H01288">will I bless</ns1:w> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>.<ns1:verse eID="Ps.26.12" />
+</ns1:chapter>
+</div></osisText></osis>

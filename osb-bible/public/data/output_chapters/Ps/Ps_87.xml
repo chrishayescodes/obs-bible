@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.87" chapterTitle="PSALM 87.">
+<ns1:title type="chapter">PSALM 87.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H04210">A Psalm</ns1:w> <ns1:transChange type="added">or</ns1:transChange> <ns1:w lemma="strong:H07892">Song</ns1:w> <ns1:w lemma="strong:H01121">for the sons</ns1:w> <ns1:w lemma="strong:H07141">of Korah</ns1:w>.</ns1:title><ns1:verse osisID="Ps.87.1" sID="Ps.87.1" /><ns1:w lemma="strong:H03248">His foundation</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H06944">in the holy</ns1:w> <ns1:w lemma="strong:H02042">mountains</ns1:w>.<ns1:note type="study">for the sons: or, of the sons</ns1:note><ns1:verse eID="Ps.87.1" />
+<ns1:verse osisID="Ps.87.2" sID="Ps.87.2" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H0157">loveth</ns1:w> <ns1:w lemma="strong:H08179">the gates</ns1:w> <ns1:w lemma="strong:H06726">of Zion</ns1:w> <ns1:w lemma="strong:H04908">more than all the dwellings</ns1:w> <ns1:w lemma="strong:H03290">of Jacob</ns1:w>.<ns1:verse eID="Ps.87.2" />
+<ns1:verse osisID="Ps.87.3" sID="Ps.87.3" /><ns1:w morph="strongMorph:TH8737" lemma="strong:H03513">Glorious things</ns1:w> <ns1:w morph="strongMorph:TH8794" lemma="strong:H01696">are spoken</ns1:w> <ns1:w lemma="strong:H05892">of thee, O city</ns1:w> <ns1:w lemma="strong:H0430">of God</ns1:w>. <ns1:w lemma="strong:H05542">Selah</ns1:w>.<ns1:verse eID="Ps.87.3" />
+<ns1:verse osisID="Ps.87.4" sID="Ps.87.4" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8686" lemma="strong:H02142">I will make mention</ns1:w> <ns1:w lemma="strong:H07294">of Rahab</ns1:w> <ns1:w lemma="strong:H0894">and Babylon</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H03045">to them that know</ns1:w> <ns1:w lemma="strong:H06429">me: behold Philistia</ns1:w>, <ns1:w lemma="strong:H06865">and Tyre</ns1:w>, <ns1:w lemma="strong:H03568">with Ethiopia</ns1:w>; this <ns1:transChange type="added">man</ns1:transChange> <ns1:w morph="strongMorph:TH8795" lemma="strong:H03205">was born</ns1:w> there.<ns1:verse eID="Ps.87.4" />
+<ns1:verse osisID="Ps.87.5" sID="Ps.87.5" /><ns1:w lemma="strong:H06726">And of Zion</ns1:w> <ns1:w morph="strongMorph:TH8735" lemma="strong:H0559">it shall be said</ns1:w>, <ns1:w lemma="strong:H0376">This and that man</ns1:w> <ns1:w morph="strongMorph:TH8795" lemma="strong:H03205">was born</ns1:w> <ns1:w lemma="strong:H05945">in her: and the highest</ns1:w> <ns1:w morph="strongMorph:TH8787" lemma="strong:H03559">himself shall establish</ns1:w> her.<ns1:verse eID="Ps.87.5" />
+<ns1:verse osisID="Ps.87.6" sID="Ps.87.6" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H05608">shall count</ns1:w>, <ns1:w morph="strongMorph:TH8800" lemma="strong:H03789">when he writeth up</ns1:w> <ns1:w lemma="strong:H05971">the people</ns1:w>, <ns1:transChange type="added">that</ns1:transChange> this <ns1:transChange type="added">man</ns1:transChange> <ns1:w morph="strongMorph:TH8795" lemma="strong:H03205">was born</ns1:w> <ns1:w lemma="strong:H05542">there. Selah</ns1:w>.<ns1:verse eID="Ps.87.6" />
+<ns1:verse osisID="Ps.87.7" sID="Ps.87.7" /><ns1:w morph="strongMorph:TH8802" lemma="strong:H07891">As well the singers</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H02490">as the players</ns1:w> on instruments <ns1:transChange type="added">shall be there</ns1:transChange>: <ns1:w lemma="strong:H04599">all my springs</ns1:w> <ns1:transChange type="added">are</ns1:transChange> in thee.<ns1:verse eID="Ps.87.7" />
+</ns1:chapter>
+</div></osisText></osis>

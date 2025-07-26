@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.24" chapterTitle="PSALM 24.">
+<ns1:title type="chapter">PSALM 24.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w lemma="strong:H04210">A Psalm</ns1:w> <ns1:w lemma="strong:H01732">of David</ns1:w>.</ns1:title><ns1:verse osisID="Ps.24.1" sID="Ps.24.1" /><ns1:w lemma="strong:H0776">The earth</ns1:w> <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord's</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H04393">and the fulness</ns1:w> <ns1:w lemma="strong:H08398">thereof; the world</ns1:w>, <ns1:w morph="strongMorph:TH8802" lemma="strong:H03427">and they that dwell</ns1:w> therein.<ns1:verse eID="Ps.24.1" />
+<ns1:verse osisID="Ps.24.2" sID="Ps.24.2" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H03245">For he hath founded</ns1:w> <ns1:w lemma="strong:H03220">it upon the seas</ns1:w>, <ns1:w morph="strongMorph:TH8787" lemma="strong:H03559">and established</ns1:w> <ns1:w lemma="strong:H05104">it upon the floods</ns1:w>.<ns1:verse eID="Ps.24.2" />
+<ns1:verse osisID="Ps.24.3" sID="Ps.24.3" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H05927">Who shall ascend</ns1:w> <ns1:w lemma="strong:H02022">into the hill</ns1:w> <ns1:w lemma="strong:H03068">of the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>? <ns1:w morph="strongMorph:TH8799" lemma="strong:H06965">or who shall stand</ns1:w> <ns1:w lemma="strong:H06944">in his holy</ns1:w> <ns1:w lemma="strong:H04725">place</ns1:w>?<ns1:verse eID="Ps.24.3" />
+<ns1:verse osisID="Ps.24.4" sID="Ps.24.4" /><ns1:w lemma="strong:H05355">He that hath clean</ns1:w> <ns1:w lemma="strong:H03709">hands</ns1:w>, <ns1:w lemma="strong:H01249">and a pure</ns1:w> <ns1:w lemma="strong:H03824">heart</ns1:w>; <ns1:w morph="strongMorph:TH8804" lemma="strong:H05375">who hath not lifted up</ns1:w> <ns1:w lemma="strong:H05315">his soul</ns1:w> <ns1:w lemma="strong:H07723">unto vanity</ns1:w>, <ns1:w morph="strongMorph:TH8738" lemma="strong:H07650">nor sworn</ns1:w> <ns1:w lemma="strong:H04820">deceitfully</ns1:w>.<ns1:note type="study">He…: Heb. The clean of hands</ns1:note><ns1:verse eID="Ps.24.4" />
+<ns1:verse osisID="Ps.24.5" sID="Ps.24.5" /><ns1:w morph="strongMorph:TH8799" lemma="strong:H05375">He shall receive</ns1:w> <ns1:w lemma="strong:H01293">the blessing</ns1:w> <ns1:w lemma="strong:H03068">from the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w lemma="strong:H06666">and righteousness</ns1:w> <ns1:w lemma="strong:H0430">from the God</ns1:w> <ns1:w lemma="strong:H03468">of his salvation</ns1:w>.<ns1:verse eID="Ps.24.5" />
+<ns1:verse osisID="Ps.24.6" sID="Ps.24.6" />This <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H01755">the generation</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H01875">of them that seek</ns1:w> <ns1:w morph="strongMorph:TH8764" lemma="strong:H01245">him, that seek</ns1:w> <ns1:w lemma="strong:H06440">thy face</ns1:w>, <ns1:w lemma="strong:H03290">O Jacob</ns1:w>. <ns1:w lemma="strong:H05542">Selah</ns1:w>.<ns1:note type="study">O Jacob: or, O God of Jacob</ns1:note><ns1:verse eID="Ps.24.6" />
+<ns1:verse osisID="Ps.24.7" sID="Ps.24.7" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H05375">Lift up</ns1:w> <ns1:w lemma="strong:H07218">your heads</ns1:w>, <ns1:w lemma="strong:H08179">O ye gates</ns1:w>; <ns1:w morph="strongMorph:TH8734" lemma="strong:H05375">and be ye lift up</ns1:w>, <ns1:w lemma="strong:H05769">ye everlasting</ns1:w> <ns1:w lemma="strong:H06607">doors</ns1:w>; <ns1:w lemma="strong:H04428">and the King</ns1:w> <ns1:w lemma="strong:H03519">of glory</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H0935">shall come in</ns1:w>.<ns1:verse eID="Ps.24.7" />
+<ns1:verse osisID="Ps.24.8" sID="Ps.24.8" />Who <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H04428">this King</ns1:w> <ns1:w lemma="strong:H03519">of glory</ns1:w>? <ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H05808">strong</ns1:w> <ns1:w lemma="strong:H01368">and mighty</ns1:w>, <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H01368">mighty</ns1:w> <ns1:w lemma="strong:H04421">in battle</ns1:w>.<ns1:verse eID="Ps.24.8" />
+<ns1:verse osisID="Ps.24.9" sID="Ps.24.9" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H05375">Lift up</ns1:w> <ns1:w lemma="strong:H07218">your heads</ns1:w>, <ns1:w lemma="strong:H08179">O ye gates</ns1:w>; even lift <ns1:transChange type="added">them</ns1:transChange> <ns1:w morph="strongMorph:TH8798" lemma="strong:H05375">up</ns1:w>, <ns1:w lemma="strong:H05769">ye everlasting</ns1:w> <ns1:w lemma="strong:H06607">doors</ns1:w>; <ns1:w lemma="strong:H04428">and the King</ns1:w> <ns1:w lemma="strong:H03519">of glory</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H0935">shall come in</ns1:w>.<ns1:verse eID="Ps.24.9" />
+<ns1:verse osisID="Ps.24.10" sID="Ps.24.10" /><ns1:w lemma="strong:H04428">Who is this King</ns1:w> <ns1:w lemma="strong:H03519">of glory</ns1:w>? <ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w lemma="strong:H06635">of hosts</ns1:w>, he <ns1:transChange type="added">is</ns1:transChange> <ns1:w lemma="strong:H04428">the King</ns1:w> <ns1:w lemma="strong:H03519">of glory</ns1:w>. <ns1:w lemma="strong:H05542">Selah</ns1:w>.<ns1:verse eID="Ps.24.10" />
+</ns1:chapter>
+</div></osisText></osis>

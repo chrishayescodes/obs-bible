@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osis xmlns:ns1="http://www.bibletechnologies.net/2003/OSIS/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bibletechnologies.net/2003/OSIS/namespace http://www.bibletechnologies.net/osisCore.2.1.1.xsd"><osisText osisIDWork="KJV" osisRefWork="defaultReferenceScheme" xml:lang="en"><ns1:header>
+  <ns1:work osisWork="KJV">
+    <ns1:title>King James Version (1769) with Strongs Numbers and Morphology</ns1:title>
+    <ns1:identifier type="OSIS">Bible.KJV</ns1:identifier>
+    <ns1:scope>Gen-Rev</ns1:scope>
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="defaultReferenceScheme">
+    <ns1:refSystem>Bible.KJV</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strong">
+    <ns1:refSystem>Dict.Strongs</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="robinson">
+    <ns1:refSystem>Dict.Robinsons</ns1:refSystem>
+  </ns1:work>
+  <ns1:work osisWork="strongMorph">
+    <ns1:refSystem>Dict.strongMorph</ns1:refSystem>
+  </ns1:work>
+</ns1:header>
+<div type="book" osisID="Ps" canonical="true"><ns1:title type="main">THE BOOK OF PSALMS</ns1:title>
+<ns1:chapter osisID="Ps.6" chapterTitle="PSALM 6.">
+<ns1:title type="chapter">PSALM 6.</ns1:title>
+<ns1:title type="psalm" canonical="true"><ns1:w morph="strongMorph:TH8764" lemma="strong:H05329">To the chief Musician</ns1:w> <ns1:w lemma="strong:H05058">on Neginoth</ns1:w> <ns1:w lemma="strong:H08067">upon Sheminith</ns1:w>, <ns1:w lemma="strong:H04210">A Psalm</ns1:w> <ns1:w lemma="strong:H01732">of David</ns1:w>.</ns1:title><ns1:verse osisID="Ps.6.1" sID="Ps.6.1" /><ns1:w lemma="strong:H03068">O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w morph="strongMorph:TH8686" lemma="strong:H03198">rebuke</ns1:w> <ns1:w lemma="strong:H0639">me not in thine anger</ns1:w>, <ns1:w morph="strongMorph:TH8762" lemma="strong:H03256">neither chasten</ns1:w> <ns1:w lemma="strong:H02534">me in thy hot displeasure</ns1:w>.<ns1:note type="study">chief…: or, overseer</ns1:note><ns1:note type="study">Sheminith: or, the eighth</ns1:note><ns1:verse eID="Ps.6.1" />
+<ns1:verse osisID="Ps.6.2" sID="Ps.6.2" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H02603">Have mercy</ns1:w> <ns1:w lemma="strong:H03068">upon me, O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>; for I <ns1:transChange type="added">am</ns1:transChange> <ns1:w lemma="strong:H0536">weak</ns1:w>: <ns1:w lemma="strong:H03068">O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w morph="strongMorph:TH8798" lemma="strong:H07495">heal</ns1:w> <ns1:w lemma="strong:H06106">me; for my bones</ns1:w> <ns1:w morph="strongMorph:TH8738" lemma="strong:H0926">are vexed</ns1:w>.<ns1:verse eID="Ps.6.2" />
+<ns1:verse osisID="Ps.6.3" sID="Ps.6.3" /><ns1:w lemma="strong:H05315">My soul</ns1:w> <ns1:w lemma="strong:H03966">is also sore</ns1:w> <ns1:w morph="strongMorph:TH8738" lemma="strong:H0926">vexed</ns1:w>: <ns1:w lemma="strong:H03068">but thou, O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, how long?<ns1:verse eID="Ps.6.3" />
+<ns1:verse osisID="Ps.6.4" sID="Ps.6.4" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H07725">Return</ns1:w>, <ns1:w lemma="strong:H03068">O <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w>, <ns1:w morph="strongMorph:TH8761" lemma="strong:H02502">deliver</ns1:w> <ns1:w lemma="strong:H05315">my soul</ns1:w>: <ns1:w morph="strongMorph:TH8685" lemma="strong:H03467">oh save</ns1:w> <ns1:w lemma="strong:H02617">me for thy mercies'</ns1:w> sake.<ns1:verse eID="Ps.6.4" />
+<ns1:verse osisID="Ps.6.5" sID="Ps.6.5" /><ns1:w lemma="strong:H04194">For in death</ns1:w> <ns1:transChange type="added">there is</ns1:transChange> <ns1:w lemma="strong:H02143">no remembrance</ns1:w> <ns1:w lemma="strong:H07585">of thee: in the grave</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H03034">who shall give thee thanks</ns1:w>?<ns1:verse eID="Ps.6.5" />
+<ns1:verse osisID="Ps.6.6" sID="Ps.6.6" /><ns1:w morph="strongMorph:TH8804" lemma="strong:H03021">I am weary</ns1:w> <ns1:w lemma="strong:H0585">with my groaning</ns1:w>; <ns1:w lemma="strong:H03915">all the night</ns1:w> <ns1:w lemma="strong:H04296">make I my bed</ns1:w> <ns1:w morph="strongMorph:TH8686" lemma="strong:H07811">to swim</ns1:w>; <ns1:w morph="strongMorph:TH8686" lemma="strong:H04529">I water</ns1:w> <ns1:w lemma="strong:H06210">my couch</ns1:w> <ns1:w lemma="strong:H01832">with my tears</ns1:w>.<ns1:note type="study">all…: or, every night</ns1:note><ns1:verse eID="Ps.6.6" />
+<ns1:verse osisID="Ps.6.7" sID="Ps.6.7" /><ns1:w lemma="strong:H05869">Mine eye</ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H06244">is consumed</ns1:w> <ns1:w lemma="strong:H03708">because of grief</ns1:w>; <ns1:w morph="strongMorph:TH8804" lemma="strong:H06275">it waxeth old</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H06887">because of all mine enemies</ns1:w>.<ns1:verse eID="Ps.6.7" />
+<ns1:verse osisID="Ps.6.8" sID="Ps.6.8" /><ns1:milestone type="x-extra-p" /><ns1:w morph="strongMorph:TH8798" lemma="strong:H05493">Depart</ns1:w> <ns1:w morph="strongMorph:TH8802" lemma="strong:H06466">from me, all ye workers</ns1:w> <ns1:w lemma="strong:H0205">of iniquity</ns1:w>; <ns1:w lemma="strong:H03068">for the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H08085">hath heard</ns1:w> <ns1:w lemma="strong:H06963">the voice</ns1:w> <ns1:w lemma="strong:H01065">of my weeping</ns1:w>.<ns1:verse eID="Ps.6.8" />
+<ns1:verse osisID="Ps.6.9" sID="Ps.6.9" /><ns1:w lemma="strong:H03068">The <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8804" lemma="strong:H08085">hath heard</ns1:w> <ns1:w lemma="strong:H08467">my supplication</ns1:w>; <ns1:w lemma="strong:H03068">the <ns1:seg><ns1:divineName>Lord</ns1:divineName></ns1:seg></ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H03947">will receive</ns1:w> <ns1:w lemma="strong:H08605">my prayer</ns1:w>.<ns1:verse eID="Ps.6.9" />
+<ns1:verse osisID="Ps.6.10" sID="Ps.6.10" /><ns1:w morph="strongMorph:TH8802" lemma="strong:H0341">Let all mine enemies</ns1:w> <ns1:w morph="strongMorph:TH8799" lemma="strong:H0954">be ashamed</ns1:w> <ns1:w lemma="strong:H03966">and sore</ns1:w> <ns1:w morph="strongMorph:TH8735" lemma="strong:H0926">vexed</ns1:w>: <ns1:w morph="strongMorph:TH8799" lemma="strong:H07725">let them return</ns1:w> <ns1:transChange type="added">and</ns1:transChange> <ns1:w morph="strongMorph:TH8799" lemma="strong:H0954">be ashamed</ns1:w> <ns1:w lemma="strong:H07281">suddenly</ns1:w>.<ns1:verse eID="Ps.6.10" />
+</ns1:chapter>
+</div></osisText></osis>
