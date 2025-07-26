@@ -35,6 +35,12 @@ obs-bible/
 ├── src/
 │   ├── App.jsx                         # Main application component
 │   ├── main.jsx                        # React application entry point
+│   ├── bible-nav/                      # Bible content display components folder
+│   │   └── verse-display/              # Verse display component
+│   │       ├── index.jsx               # VerseDisplay component
+│   │       ├── VerseDisplay.css        # Component-specific styling
+│   │       ├── VerseDisplay.test.jsx   # Comprehensive test suite (25 tests)
+│   │       └── VerseDisplay.stories.jsx # Storybook stories
 │   ├── ref-nav/                        # Reference navigation components folder
 │   │   ├── book-selection/             # Bible book selector component
 │   │   │   ├── index.jsx               # BibleBookSelector component
@@ -228,6 +234,27 @@ The application uses a three-tier data architecture:
   - No verse display element - navigation stops at chapter level for clean UI
 - **State Management**: Purely controlled component with no internal state
 
+#### VerseDisplay Component (`src/bible-nav/verse-display/`)
+- **Purpose**: Display and interact with actual verse content from JSON chapter files
+- **Features**:
+  - Column layout with scrollable verse buttons
+  - Full verse text display with verse numbers
+  - Auto-scroll to selected verse when `selectedVerse` prop changes
+  - Visual selection highlighting with blue theme
+  - Responsive design for different screen sizes
+  - Dark mode support with system preference detection
+  - Accessibility support with proper ARIA labels and keyboard navigation
+  - Loading and empty states handling
+- **Props**:
+  - `verseData`: JSON object with OSIS IDs as keys and verse text as values
+  - `selectedVerse`: OSIS ID of currently selected verse (e.g., "Gen.1.15")
+  - `onVerseSelect`: Callback function that receives OSIS ID when verse is clicked
+  - `bookName`: Optional book name for display header
+  - `chapterNumber`: Optional chapter number for display header
+- **Data Integration**: Works with JSON chapter files from `output_chapters_json/`
+- **OSIS ID Handling**: Extracts verse numbers from OSIS IDs (e.g., "Gen.1.15" → "15")
+- **State Management**: Uses `useState` and `useEffect` for selection tracking and auto-scroll functionality
+
 ### Styling Architecture
 
 The application uses a comprehensive CSS architecture:
@@ -276,6 +303,14 @@ The application uses a comprehensive CSS architecture:
      - View containers for chapter and verse selection states
      - Minimal styling focused on layout and spacing
      - Delegates visual design to child components
+   - **VerseDisplay** (`src/bible-nav/verse-display/VerseDisplay.css`):
+     - Column layout with scrollable container and verse buttons
+     - Blue selection theme with smooth transitions
+     - Responsive design adapting button sizes and spacing
+     - Dark mode support with proper contrast ratios
+     - Custom scrollbar styling for better UX
+     - Proper text wrapping for long verses
+     - Header styling for book and chapter display
 
 ### Category Color System
 
@@ -325,7 +360,7 @@ npm run build-storybook
 
 ### Testing Strategy
 
-The project implements comprehensive testing with 110 passing tests:
+The project implements comprehensive testing with 135 passing tests:
 
 1. **Unit Tests**:
    - **BibleBookSelector**: 21 tests covering component rendering, user interactions, accessibility, and edge cases
@@ -333,6 +368,7 @@ The project implements comprehensive testing with 110 passing tests:
    - **VerseSelect**: 22 tests covering verse selection, edge cases (0-176 verses), and prop changes
    - **Breadcrumb**: 22 tests covering navigation states, user interactions, accessibility, and edge cases
    - **Navigation**: 25 tests covering complete navigation flow, state management, integration, callback functionality, and edge cases
+   - **VerseDisplay**: 25 tests covering verse rendering, selection, auto-scroll, accessibility, and edge cases
    - Component rendering and behavior validation
    - User interactions and event handling
    - Edge cases and error conditions (including zero verses, invalid data)
@@ -377,8 +413,9 @@ The project implements comprehensive testing with 110 passing tests:
    - Mock data for consistent development experience
    - Breadcrumb stories covering all navigation states and edge cases
    - Navigation stories covering complete navigation flow and edge cases
+   - VerseDisplay stories demonstrating verse content display, selection, and scrolling behavior
    - Interactive examples demonstrating navigation callbacks
-   - Comprehensive documentation for all navigation components
+   - Comprehensive documentation for all navigation and content display components
 
 ## Data Processing
 
@@ -481,16 +518,17 @@ The application provides a complete three-level navigation system with minimalis
 1. **Clean Architecture**: Navigation logic extracted into dedicated component with clear separation of concerns
 2. **Minimalist Breadcrumb Navigation**: Clean navigation path (Books › Book › Chapter) with smart contextual controls, stops at chapter level
 3. **Comprehensive Verse Selection**: Handles all verse counts from 0 (rare) to 176 (Psalm 119)  
-4. **Responsive Design**: Adapts from mobile to desktop with proper button wrapping and breadcrumb collapse
-5. **Cascading State Management**: Automatic state reset with proper hierarchy via centralized breadcrumb handlers
-6. **Contextual Navigation Intelligence**: Current location disabled, all previous levels clickable for backward traversal
-7. **Ultra-Clean UI**: No redundant verse reference or chapter info displays - purely functional navigation
-8. **Dark Mode Support**: System preference detection and manual override for all components including breadcrumb
-9. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
-10. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy
-11. **Testability**: Each component fully testable in isolation with comprehensive test coverage
-12. **Developer Experience**: Hot reload, comprehensive testing (110 tests), component isolation, Storybook documentation
-13. **Callback Integration**: Verse selection callback system enabling custom navigation actions and application extensions
+4. **Verse Content Display**: VerseDisplay component shows actual verse text from JSON files with selection and auto-scroll
+5. **Responsive Design**: Adapts from mobile to desktop with proper button wrapping and breadcrumb collapse
+6. **Cascading State Management**: Automatic state reset with proper hierarchy via centralized breadcrumb handlers
+7. **Contextual Navigation Intelligence**: Current location disabled, all previous levels clickable for backward traversal
+8. **Ultra-Clean UI**: No redundant verse reference or chapter info displays - purely functional navigation
+9. **Dark Mode Support**: System preference detection and manual override for all components including breadcrumb
+10. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
+11. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy
+12. **Testability**: Each component fully testable in isolation with comprehensive test coverage
+13. **Developer Experience**: Hot reload, comprehensive testing (135 tests), component isolation, Storybook documentation
+14. **Callback Integration**: Verse selection callback system enabling custom navigation actions and application extensions
 
 ## Future Development Considerations
 
