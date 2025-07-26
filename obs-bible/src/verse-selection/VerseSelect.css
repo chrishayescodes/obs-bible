@@ -1,0 +1,163 @@
+.verse-select {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.verse-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.verse-header h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.verse-count {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.verses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 6px;
+  width: 100%;
+}
+
+.verse-button {
+  background-color: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 10px 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  font-family: inherit;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.verse-button:hover {
+  background-color: #e2e8f0;
+  border-color: #64748b;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.verse-button.selected {
+  background-color: #3b82f6;
+  border-color: #2563eb;
+  color: white;
+}
+
+.verse-button.selected:hover {
+  background-color: #2563eb;
+  border-color: #1d4ed8;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .verse-header h3 {
+    color: #e2e8f0;
+  }
+
+  .verse-count {
+    color: #a0aec0;
+  }
+
+  .verse-button {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #e5e7eb;
+  }
+
+  .verse-button:hover {
+    background-color: #4b5563;
+    border-color: #6b7280;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .loading {
+    color: #a0aec0;
+  }
+}
+
+/* Explicit dark mode class support */
+.dark .verse-header h3 {
+  color: #e2e8f0;
+}
+
+.dark .verse-count {
+  color: #a0aec0;
+}
+
+.dark .verse-button {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #e5e7eb;
+}
+
+.dark .verse-button:hover {
+  background-color: #4b5563;
+  border-color: #6b7280;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark .loading {
+  color: #a0aec0;
+}
+
+/* Responsive adjustments for different viewport sizes */
+/* Tablet and smaller - smaller buttons */
+@media (max-width: 768px) {
+  .verses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    gap: 5px;
+  }
+  
+  .verse-button {
+    height: 55px;
+    font-size: 13px;
+    padding: 8px 5px;
+  }
+}
+
+/* Mobile - very small buttons */
+@media (max-width: 480px) {
+  .verses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: 4px;
+  }
+  
+  .verse-button {
+    height: 50px;
+    font-size: 12px;
+    padding: 6px 4px;
+  }
+  
+  .verse-header h3 {
+    font-size: 16px;
+  }
+  
+  .verse-count {
+    font-size: 12px;
+  }
+}

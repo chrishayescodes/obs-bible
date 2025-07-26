@@ -40,6 +40,11 @@ obs-bible/
 │   │   ├── ChapterSelector.css         # Component-specific styling
 │   │   ├── ChapterSelector.test.jsx    # Comprehensive test suite (20 tests)
 │   │   └── ChapterSelector.stories.jsx # Storybook stories
+│   ├── verse-selection/                # Verse selector component
+│   │   ├── index.jsx                   # VerseSelect component
+│   │   ├── VerseSelect.css             # Component-specific styling
+│   │   ├── VerseSelect.test.jsx        # Comprehensive test suite (22 tests)
+│   │   └── VerseSelect.stories.jsx     # Storybook stories
 │   └── stories/                        # Default Storybook example components
 ├── .storybook/                         # Storybook configuration
 │   ├── main.js                         # Storybook main configuration
@@ -72,17 +77,19 @@ The application uses a two-tier data architecture:
 ### Component Architecture
 
 #### Main Application (`App.jsx`)
-- **State Management**: Manages `selectedBook`, `selectedChapter`, and `bibleData` state
+- **State Management**: Manages `selectedBook`, `selectedChapter`, `selectedVerse`, and `bibleData` state
 - **Data Fetching**: Loads Bible structure from `/data/kjv_structure.json`
-- **Navigation Flow**: Implements book → chapter selection with back navigation
+- **Three-Level Navigation Flow**: Implements book → chapter → verse selection with hierarchical back navigation
 - **User Interface**: 
-  - Shows BibleBookSelector when no book is selected
-  - Shows ChapterSelector when book is selected
-  - Displays selected chapter information (book + chapter + verse count)
-  - Provides "Back to Books" button for navigation
+  - Shows BibleBookSelector when no selections made
+  - Shows ChapterSelector when book selected (no chapter)
+  - Shows VerseSelect when book + chapter selected
+  - Displays selected verse information (Book Chapter:Verse format)
+  - Provides contextual back navigation ("Back to Books", "Back to Chapters")
 - **Event Handling**: 
-  - `handleBookSelect`: Sets selected book and resets chapter selection
-  - `handleChapterSelect`: Sets selected chapter for display
+  - `handleBookSelect`: Sets selected book, resets chapter + verse selection
+  - `handleChapterSelect`: Sets selected chapter, resets verse selection  
+  - `handleVerseSelect`: Sets selected verse for display
 - **Loading States**: Handles loading and error states during data fetch
 
 #### BibleBookSelector Component (`src/book-selection/`)
@@ -101,7 +108,7 @@ The application uses a two-tier data architecture:
 #### ChapterSelector Component (`src/chapter-selection/`)
 - **Purpose**: Interactive grid for selecting chapters within a selected book
 - **Features**:
-  - Chapter buttons with verse counts displayed
+  - Chapter buttons with verse counts in title attributes
   - Selection state management with visual feedback
   - Responsive grid layout for chapter navigation
   - Accessibility support with proper button attributes (`type="button"`)
@@ -110,6 +117,21 @@ The application uses a two-tier data architecture:
 - **Props**:
   - `bookData`: Selected book object with chapter information
   - `onChapterSelect`: Callback function for chapter selection
+- **State Management**: Uses `useState` and `useEffect` for selection tracking and prop change handling
+
+#### VerseSelect Component (`src/verse-selection/`)
+- **Purpose**: Interactive grid for selecting verses within a selected chapter
+- **Features**:
+  - Verse buttons numbered sequentially (1, 2, 3, ...)
+  - Selection state management with visual feedback
+  - Responsive grid layout optimized for many verses (up to 176 in Psalm 119)
+  - Accessibility support with proper button attributes and titles
+  - Automatic state reset when book or chapter data changes (via `useEffect`)
+  - Handles edge cases (0 verses, invalid data, missing chapters)
+- **Props**:
+  - `bookData`: Selected book object with chapter information
+  - `chapterNumber`: Selected chapter number as string
+  - `onVerseSelect`: Callback function for verse selection
 - **State Management**: Uses `useState` and `useEffect` for selection tracking and prop change handling
 
 ### Styling Architecture
@@ -123,9 +145,9 @@ The application uses a comprehensive CSS architecture:
 
 2. **Application Styles** (`src/App.css`):
    - Layout for main application components
-   - Selected chapter information display (`.selected-info`)
-   - Chapter view container (`.chapter-view`)
-   - Back navigation button (`.back-button`) with hover effects
+   - Selected verse information display (`.selected-info`) showing "Book Chapter:Verse"
+   - Navigation view containers (`.chapter-view`, `.verse-view`)
+   - Back navigation buttons (`.back-button`) with contextual text and hover effects
    - Loading state styling
    - Dark mode support for all navigation elements
 
@@ -139,6 +161,11 @@ The application uses a comprehensive CSS architecture:
      - Simplified button styling with consistent sizing
      - Responsive breakpoints for different screen sizes
      - Fixed button heights to prevent size variations
+   - **VerseSelect** (`src/verse-selection/VerseSelect.css`):
+     - CSS Grid layout optimized for many verses (minmax 50px-40px responsive)
+     - Smaller button sizing suitable for verse numbers
+     - Enhanced responsive design for mobile verse selection
+     - Proper handling of chapters with 0-176 verses
 
 ### Category Color System
 
@@ -188,14 +215,15 @@ npm run build-storybook
 
 ### Testing Strategy
 
-The project implements comprehensive testing with 41 passing tests:
+The project implements comprehensive testing with 63 passing tests:
 
 1. **Unit Tests**:
    - **BibleBookSelector**: 21 tests covering component rendering, user interactions, accessibility, and edge cases
    - **ChapterSelector**: 20 tests covering component state management, user events, and error handling
+   - **VerseSelect**: 22 tests covering verse selection, edge cases (0-176 verses), and prop changes
    - Component rendering and behavior validation
    - User interactions and event handling
-   - Edge cases and error conditions
+   - Edge cases and error conditions (including zero verses, invalid data)
    - Accessibility features and keyboard navigation
    - State management and prop changes
 
@@ -207,12 +235,12 @@ The project implements comprehensive testing with 41 passing tests:
    - **VS Code Integration**: Enhanced Jest extension settings for test discovery
 
 3. **Recent Updates** (Latest):
-   - **Test Fixes**: Fixed missing `type="button"` attributes and test assertion issues
-   - **CSS Grid Layout**: Implemented proper row wrapping with `auto-fill` grid
-   - **App Integration**: Added complete navigation flow from books to chapters
-   - **State Management**: Integrated chapter selection with automatic state reset
-   - **UI Enhancement**: Added back navigation and selected chapter display
-   - **Responsive Design**: Fixed button overflow and wrapping issues
+   - **Complete Navigation System**: Added VerseSelect component for three-level navigation (Book → Chapter → Verse)
+   - **Enhanced State Management**: Implemented cascading state reset across all navigation levels
+   - **Contextual Back Navigation**: Added "Back to Chapters" and "Back to Books" with proper state handling
+   - **Comprehensive Testing**: Expanded to 63 tests covering all edge cases (0-176 verses)
+   - **Verse Selection UI**: Optimized grid layout for verse selection with responsive design
+   - **App Integration**: Complete integration of all three components with proper conditional rendering
 
 4. **Storybook Stories**:
    - Component isolation and development
@@ -285,38 +313,42 @@ The `.vscode/settings.json` includes optimized settings for Jest test discovery:
 ## Application Flow
 
 ### User Navigation Experience
-The application provides a seamless navigation experience:
+The application provides a complete three-level navigation system:
 
 1. **Initial State**: User sees the BibleBookSelector with all 66 Bible books organized by testament
 2. **Book Selection**: User clicks a book → ChapterSelector appears with "Back to Books" button
-3. **Chapter Selection**: User clicks a chapter → Selected chapter info displays (Book - Chapter X, verse count)
-4. **Navigation**: User can return to book selection using the back button
+3. **Chapter Selection**: User clicks a chapter → VerseSelect appears with "Back to Chapters" button  
+4. **Verse Selection**: User clicks a verse → Selected verse info displays (Book Chapter:Verse format)
+5. **Hierarchical Navigation**: Back buttons provide contextual navigation to previous levels
 
 ### State Management Architecture
-- **App-level State**: `selectedBook`, `selectedChapter`, `bibleData`
-- **Automatic Reset**: Chapter selection resets when book changes
-- **Conditional Rendering**: Components render based on selection state
-- **Event Propagation**: Child components communicate via callback props
+- **App-level State**: `selectedBook`, `selectedChapter`, `selectedVerse`, `bibleData`
+- **Cascading Reset**: Verse selection resets when chapter changes; both reset when book changes
+- **Conditional Rendering**: Three-level conditional logic determines which component renders
+- **Event Propagation**: Child components communicate via callback props with automatic state management
 
 ## Key Features
 
-1. **Complete Navigation Flow**: Book selection → Chapter selection with back navigation
-2. **Responsive Design**: Adapts from mobile to desktop with proper button wrapping
-3. **State Management**: Integrated book and chapter selection with automatic state reset
-4. **Dark Mode Support**: System preference detection and manual override for all components
-5. **Accessibility**: Keyboard navigation, screen reader support, meaningful titles
-6. **Performance**: Component-level CSS, efficient rendering, lazy loading ready
-7. **Developer Experience**: Hot reload, comprehensive testing, component isolation
+1. **Complete Three-Level Navigation**: Book → Chapter → Verse selection with hierarchical back navigation
+2. **Comprehensive Verse Selection**: Handles all verse counts from 0 (rare) to 176 (Psalm 119)
+3. **Responsive Design**: Adapts from mobile to desktop with proper button wrapping across all levels
+4. **Cascading State Management**: Automatic state reset with proper hierarchy (verse resets on chapter change, etc.)
+5. **Contextual Navigation**: Smart back buttons ("Back to Books", "Back to Chapters") with proper state management
+6. **Dark Mode Support**: System preference detection and manual override for all components
+7. **Accessibility**: Keyboard navigation, screen reader support, meaningful titles across all navigation levels
+8. **Performance**: Component-level CSS, efficient rendering, lazy loading ready
+9. **Developer Experience**: Hot reload, comprehensive testing (63 tests), component isolation
 
 ## Future Development Considerations
 
 ### Potential Enhancements
-- Chapter and verse navigation components
-- Search functionality across Bible text
-- Bookmarking and note-taking features
-- Cross-reference system
-- Audio Bible integration
-- Multiple translation support
+- **Verse Content Display**: Show actual verse text content when verse is selected
+- **Search functionality**: Full-text search across Bible content with verse-level results
+- **Bookmarking System**: Save and manage favorite verses with personal notes
+- **Cross-Reference System**: Display related verses and biblical cross-references
+- **Audio Bible Integration**: Play audio for selected chapters/verses
+- **Multiple Translation Support**: Compare different Bible translations side-by-side
+- **Study Tools**: Concordance, Strong's numbers, commentary integration
 
 ### Technical Improvements
 - TypeScript migration for better type safety
