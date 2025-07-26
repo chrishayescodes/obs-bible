@@ -215,11 +215,13 @@ describe('VerseSelect', () => {
       });
     });
 
-    test('proper semantic structure without headings', () => {
+    test('proper semantic structure with screen-reader-only heading', () => {
       render(<VerseSelect bookData={mockBookData} chapterNumber="1" />);
 
-      // No headings anymore, just verse buttons
-      expect(screen.queryByRole('heading')).not.toBeInTheDocument();
+      // Should have screen-reader-only heading for accessibility
+      const heading = screen.getByRole('heading', { name: 'Select Verse' });
+      expect(heading).toBeInTheDocument();
+      expect(heading).toHaveClass('sr-only');
       expect(screen.getByText('1')).toBeInTheDocument();
     });
   });

@@ -34,24 +34,22 @@ const VerseSelect = ({ bookData, chapterNumber, onVerseSelect }) => {
   const verses = Array.from({ length: verseCount }, (_, i) => i + 1);
 
   return (
-    <>
-      <h2>Verse</h2>
-      <div className="verse-select">
-        <div className="verses-grid">
-          {verses.map((verseNumber) => (
-            <button
-              key={verseNumber}
-              type="button"
-              className={`verse-button ${selectedVerse === verseNumber ? 'selected' : ''}`}
-              onClick={() => handleVerseClick(verseNumber)}
-              title={`Verse ${verseNumber}`}
-            >
-              {verseNumber}
-            </button>
-          ))}
-        </div>
+    <div className="verse-select">
+      <h2 className="sr-only">Select Verse</h2>
+      <div className="verses-grid">
+        {verses.map((verseNumber) => (
+          <button
+            key={verseNumber}
+            type="button"
+            className={`verse-button ${selectedVerse === verseNumber ? 'selected' : ''}`}
+            onClick={() => handleVerseClick(verseNumber)}
+            title={`Verse ${verseNumber}`}
+          >
+            {verseNumber}
+          </button>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 

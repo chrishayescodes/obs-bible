@@ -195,11 +195,13 @@ describe('ChapterSelector', () => {
       });
     });
 
-    test('proper semantic structure without headings', () => {
+    test('proper semantic structure with screen-reader-only heading', () => {
       render(<ChapterSelector bookData={mockBookData} />);
 
-      // No headings anymore, just chapter buttons
-      expect(screen.queryByRole('heading')).not.toBeInTheDocument();
+      // Should have screen-reader-only heading for accessibility
+      const heading = screen.getByRole('heading', { name: 'Select Chapter' });
+      expect(heading).toBeInTheDocument();
+      expect(heading).toHaveClass('sr-only');
       expect(screen.getByText('1')).toBeInTheDocument();
     });
   });

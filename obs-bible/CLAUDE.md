@@ -225,6 +225,8 @@ The application uses a comprehensive CSS architecture:
    - Simplified structure with breadcrumb handling all navigation UI
 
 3. **Component Styles**:
+   - **Global Accessibility** (`src/index.css`):
+     - `.sr-only` class for screen-reader-only content that's visually hidden but accessible
    - **BibleBookSelector** (`src/book-selection/BibleBookSelector.css`):
      - Responsive grid system with category-based color theming
      - Interactive states (hover, focus, selected)
@@ -234,11 +236,13 @@ The application uses a comprehensive CSS architecture:
      - Simplified button styling with consistent sizing
      - Responsive breakpoints for different screen sizes
      - Fixed button heights to prevent size variations
+     - Screen-reader-only heading for accessibility without visual clutter
    - **VerseSelect** (`src/verse-selection/VerseSelect.css`):
      - CSS Grid layout optimized for many verses (minmax 50px-40px responsive)
      - Smaller button sizing suitable for verse numbers
      - Enhanced responsive design for mobile verse selection
      - Proper handling of chapters with 0-176 verses
+     - Screen-reader-only heading for accessibility without visual clutter
    - **Breadcrumb** (`src/breadcrumb/Breadcrumb.css`):
      - Flexible navigation layout with semantic HTML (nav, ol, li structure)
      - Contextual button styling with hover states and disabled states
@@ -325,13 +329,15 @@ The project implements comprehensive testing with 110 passing tests:
    - **VS Code Integration**: Enhanced Jest extension settings for test discovery
 
 3. **Recent Updates** (Latest):
+   - **Accessibility Enhancements**: Added screen-reader-only headings to ChapterSelector and VerseSelect components for improved accessibility
+   - **Screen Reader Support**: Implemented `sr-only` CSS class to provide semantic headings without visual clutter
    - **Minimalist UI Design**: Removed all navigation help displays from individual components (book/chapter/verse headers removed)
    - **Ultra-Clean Breadcrumb**: Removed verse display and chapter info from breadcrumb - navigation stops at chapter level
    - **Streamlined Navigation**: Breadcrumb shows only Books › Book › Chapter (no verse reference or "Chapter has X verses" display)
    - **Verse Selection Callback System**: Added `onVerseSelected` callback to Navigation component for scripture reference handling
    - **Scripture Reference Integration**: Complete scripture reference object passed to callback with book, chapter, verse details
    - **Component Organization**: Moved all navigation components to `src/ref-nav/` folder for better organization
-   - **Enhanced Testing**: Expanded to 110 tests with callback functionality testing (25 Navigation tests)
+   - **Enhanced Testing**: Expanded to 110 tests with callback functionality testing (25 Navigation tests) - all tests passing
    - **Extensible Architecture**: Callback system enables custom navigation actions (content loading, URL updates, etc.)
    - **Navigation Component Extraction**: Extracted all navigation logic from App.jsx into dedicated Navigation component
    - **Clean Architecture**: App.jsx now focuses solely on data loading, Navigation handles all Bible browsing

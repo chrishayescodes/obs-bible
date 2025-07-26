@@ -27,24 +27,22 @@ const ChapterSelector = ({ bookData, onChapterSelect }) => {
   const chapters = Object.entries(bookData.chapters);
 
   return (
-    <>
-      <h2>Chapter</h2>
-      <div className="chapter-selector">
-        <div className="chapters-grid">
-          {chapters.map(([chapterNumber, verseCount]) => (
-            <button
-              key={chapterNumber}
-              type="button"
-              className={`chapter-button ${selectedChapter === chapterNumber ? 'selected' : ''}`}
-              onClick={() => handleChapterClick(chapterNumber)}
-              title={`Chapter ${chapterNumber} - ${verseCount} verses`}
-            >
-              {chapterNumber}
-            </button>
-          ))}
-        </div>
+    <div className="chapter-selector">
+      <h2 className="sr-only">Select Chapter</h2>
+      <div className="chapters-grid">
+        {chapters.map(([chapterNumber, verseCount]) => (
+          <button
+            key={chapterNumber}
+            type="button"
+            className={`chapter-button ${selectedChapter === chapterNumber ? 'selected' : ''}`}
+            onClick={() => handleChapterClick(chapterNumber)}
+            title={`Chapter ${chapterNumber} - ${verseCount} verses`}
+          >
+            {chapterNumber}
+          </button>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 
