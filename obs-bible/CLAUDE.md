@@ -50,6 +50,11 @@ obs-bible/
 │   │   ├── Breadcrumb.css              # Component-specific styling
 │   │   ├── Breadcrumb.test.jsx         # Comprehensive test suite (22 tests)
 │   │   └── Breadcrumb.stories.jsx      # Storybook stories
+│   ├── navigation/                     # Navigation container component
+│   │   ├── index.jsx                   # Navigation component
+│   │   ├── Navigation.css              # Component-specific styling
+│   │   ├── Navigation.test.jsx         # Comprehensive test suite (23 tests)
+│   │   └── Navigation.stories.jsx      # Storybook stories
 │   └── stories/                        # Default Storybook example components
 ├── .storybook/                         # Storybook configuration
 │   ├── main.js                         # Storybook main configuration
@@ -82,8 +87,19 @@ The application uses a two-tier data architecture:
 ### Component Architecture
 
 #### Main Application (`App.jsx`)
-- **State Management**: Manages `selectedBook`, `selectedChapter`, `selectedVerse`, and `bibleData` state
+- **State Management**: Manages `bibleData` state and loading state only
 - **Data Fetching**: Loads Bible structure from `/data/kjv_structure.json`
+- **Simple Architecture**: Clean separation of concerns with Navigation component handling all navigation logic
+- **User Interface**: 
+  - Shows loading state while Bible data loads
+  - Renders Navigation component with Bible data once loaded
+  - Minimal, focused responsibility for data loading and high-level layout
+- **Loading States**: Handles loading and error states during data fetch
+- **Component Integration**: Delegates all navigation functionality to Navigation component
+
+#### Navigation Component (`src/navigation/`)
+- **Purpose**: Centralized navigation system managing all Bible browsing functionality
+- **State Management**: Manages `selectedBook`, `selectedChapter`, `selectedVerse` state internally
 - **Three-Level Navigation Flow**: Implements book → chapter → verse selection with unified breadcrumb navigation
 - **User Interface**: 
   - Shows BibleBookSelector when no selections made
@@ -98,7 +114,13 @@ The application uses a two-tier data architecture:
   - `handleBreadcrumbReset`: Resets all selections to return to book view
   - `handleBreadcrumbBookSelect`: Resets to chapter view for selected book
   - `handleBreadcrumbChapterSelect`: Resets to verse view for selected chapter
-- **Loading States**: Handles loading and error states during data fetch
+- **Props**:
+  - `bibleData`: Complete Bible structure object passed from App
+- **Benefits**:
+  - Encapsulates all navigation logic in one place
+  - Reusable and testable in isolation
+  - Clean separation from data loading concerns
+  - Maintainable single responsibility architecture
 
 #### BibleBookSelector Component (`src/book-selection/`)
 - **Purpose**: Interactive grid for selecting Bible books
@@ -206,6 +228,11 @@ The application uses a comprehensive CSS architecture:
      - Comprehensive responsive design (desktop, tablet, mobile breakpoints)
      - Complete dark mode support with system preference and explicit class support
      - Accessibility-focused design with proper focus states and ARIA support
+   - **Navigation** (`src/navigation/Navigation.css`):
+     - Simple container styling for navigation wrapper
+     - View containers for chapter and verse selection states
+     - Minimal styling focused on layout and spacing
+     - Delegates visual design to child components
 
 ### Category Color System
 
@@ -255,19 +282,21 @@ npm run build-storybook
 
 ### Testing Strategy
 
-The project implements comprehensive testing with 85 passing tests:
+The project implements comprehensive testing with 108 passing tests:
 
 1. **Unit Tests**:
    - **BibleBookSelector**: 21 tests covering component rendering, user interactions, accessibility, and edge cases
    - **ChapterSelector**: 20 tests covering component state management, user events, and error handling
    - **VerseSelect**: 22 tests covering verse selection, edge cases (0-176 verses), and prop changes
    - **Breadcrumb**: 22 tests covering navigation states, user interactions, accessibility, and edge cases
+   - **Navigation**: 23 tests covering complete navigation flow, state management, integration, and edge cases
    - Component rendering and behavior validation
    - User interactions and event handling
    - Edge cases and error conditions (including zero verses, invalid data)
    - Accessibility features and keyboard navigation
    - State management and prop changes
    - Navigation flow testing across all breadcrumb states
+   - Integration testing between navigation components
 
 2. **Test Configuration**:
    - **Environment**: jsdom for DOM simulation
@@ -277,21 +306,27 @@ The project implements comprehensive testing with 85 passing tests:
    - **VS Code Integration**: Enhanced Jest extension settings for test discovery
 
 3. **Recent Updates** (Latest):
+   - **Navigation Component Extraction**: Extracted all navigation logic from App.jsx into dedicated Navigation component
+   - **Clean Architecture**: App.jsx now focuses solely on data loading, Navigation handles all Bible browsing
+   - **Enhanced Testability**: Navigation component fully testable in isolation with comprehensive 23-test suite
+   - **Component Reusability**: Navigation can be reused independently of data loading concerns
    - **Unified Breadcrumb Navigation**: Replaced individual back buttons and selected info displays with comprehensive Breadcrumb component
    - **Enhanced Navigation UX**: Smart contextual navigation with disabled current view indicators and clickable backward traversal
    - **Complete Navigation System**: Book → Chapter → Verse with unified breadcrumb showing full path
    - **Enhanced State Management**: Implemented cascading state reset with centralized breadcrumb handlers
-   - **Comprehensive Testing**: Expanded to 85 tests covering all navigation states and edge cases
+   - **Comprehensive Testing**: Expanded to 108 tests covering all navigation states, integration, and edge cases
    - **Accessibility Improvements**: Full ARIA support, keyboard navigation, and meaningful titles throughout breadcrumb
    - **Responsive Breadcrumb Design**: Mobile-optimized navigation with collapsing elements and touch-friendly targets
-   - **App Integration Cleanup**: Removed redundant UI elements, streamlined component hierarchy
+   - **Separation of Concerns**: Clear architectural boundaries between data loading and navigation functionality
 
 4. **Storybook Stories**:
    - Component isolation and development
    - Multiple story variants (Default, Complete, Loading, WithInteraction, ResponsiveTest, DarkModePreview)
    - Mock data for consistent development experience
    - Breadcrumb stories covering all navigation states and edge cases
+   - Navigation stories covering complete navigation flow and edge cases
    - Interactive examples demonstrating navigation callbacks
+   - Comprehensive documentation for all navigation components
 
 ## Data Processing
 
@@ -380,16 +415,18 @@ The application provides a complete three-level navigation system with unified b
 
 ## Key Features
 
-1. **Unified Breadcrumb Navigation**: Complete navigation path (Books › Book › Chapter › Verse) with smart contextual controls
-2. **Comprehensive Verse Selection**: Handles all verse counts from 0 (rare) to 176 (Psalm 119)
-3. **Responsive Design**: Adapts from mobile to desktop with proper button wrapping and breadcrumb collapse
-4. **Cascading State Management**: Automatic state reset with proper hierarchy via centralized breadcrumb handlers
-5. **Contextual Navigation Intelligence**: Current location disabled, all previous levels clickable for backward traversal
-6. **Enhanced Verse Reference Display**: Full verse reference (Book Chapter:Verse) and chapter information integrated into breadcrumb
-7. **Dark Mode Support**: System preference detection and manual override for all components including breadcrumb
-8. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
-9. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy
-10. **Developer Experience**: Hot reload, comprehensive testing (85 tests), component isolation, Storybook documentation
+1. **Clean Architecture**: Navigation logic extracted into dedicated component with clear separation of concerns
+2. **Unified Breadcrumb Navigation**: Complete navigation path (Books › Book › Chapter › Verse) with smart contextual controls
+3. **Comprehensive Verse Selection**: Handles all verse counts from 0 (rare) to 176 (Psalm 119)
+4. **Responsive Design**: Adapts from mobile to desktop with proper button wrapping and breadcrumb collapse
+5. **Cascading State Management**: Automatic state reset with proper hierarchy via centralized breadcrumb handlers
+6. **Contextual Navigation Intelligence**: Current location disabled, all previous levels clickable for backward traversal
+7. **Enhanced Verse Reference Display**: Full verse reference (Book Chapter:Verse) and chapter information integrated into breadcrumb
+8. **Dark Mode Support**: System preference detection and manual override for all components including breadcrumb
+9. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
+10. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy
+11. **Testability**: Each component fully testable in isolation with comprehensive test coverage
+12. **Developer Experience**: Hot reload, comprehensive testing (108 tests), component isolation, Storybook documentation
 
 ## Future Development Considerations
 
@@ -433,4 +470,4 @@ The application provides a complete three-level navigation system with unified b
 - Implement responsive design for all UI components
 - Document component props and behavior in Storybook stories
 
-This codebase represents a well-structured, tested, and documented React application with unified navigation architecture and clear patterns for extension and maintenance. The breadcrumb navigation system provides a modern, accessible, and intuitive user experience while maintaining clean separation of concerns and comprehensive test coverage.
+This codebase represents a well-structured, tested, and documented React application with clean architectural separation and unified navigation system. The Navigation component encapsulates all Bible browsing functionality while the breadcrumb navigation system provides a modern, accessible, and intuitive user experience. The architecture maintains clear separation of concerns with comprehensive test coverage and excellent developer experience.
