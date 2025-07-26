@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import Navigation from './navigation'
+import Navigation from './ref-nav/navigation'
 
 function App() {
   const [bibleData, setBibleData] = useState(null)
