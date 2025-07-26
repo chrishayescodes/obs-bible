@@ -45,6 +45,11 @@ obs-bible/
 │   │   ├── VerseSelect.css             # Component-specific styling
 │   │   ├── VerseSelect.test.jsx        # Comprehensive test suite (22 tests)
 │   │   └── VerseSelect.stories.jsx     # Storybook stories
+│   ├── breadcrumb/                     # Breadcrumb navigation component
+│   │   ├── index.jsx                   # Breadcrumb component
+│   │   ├── Breadcrumb.css              # Component-specific styling
+│   │   ├── Breadcrumb.test.jsx         # Comprehensive test suite (22 tests)
+│   │   └── Breadcrumb.stories.jsx      # Storybook stories
 │   └── stories/                        # Default Storybook example components
 ├── .storybook/                         # Storybook configuration
 │   ├── main.js                         # Storybook main configuration
@@ -79,17 +84,20 @@ The application uses a two-tier data architecture:
 #### Main Application (`App.jsx`)
 - **State Management**: Manages `selectedBook`, `selectedChapter`, `selectedVerse`, and `bibleData` state
 - **Data Fetching**: Loads Bible structure from `/data/kjv_structure.json`
-- **Three-Level Navigation Flow**: Implements book → chapter → verse selection with hierarchical back navigation
+- **Three-Level Navigation Flow**: Implements book → chapter → verse selection with unified breadcrumb navigation
 - **User Interface**: 
   - Shows BibleBookSelector when no selections made
   - Shows ChapterSelector when book selected (no chapter)
   - Shows VerseSelect when book + chapter selected
-  - Displays selected verse information (Book Chapter:Verse format)
-  - Provides contextual back navigation ("Back to Books", "Back to Chapters")
+  - Unified Breadcrumb component provides all navigation and verse reference display
+  - Clean component hierarchy without redundant back buttons or selected info displays
 - **Event Handling**: 
   - `handleBookSelect`: Sets selected book, resets chapter + verse selection
   - `handleChapterSelect`: Sets selected chapter, resets verse selection  
   - `handleVerseSelect`: Sets selected verse for display
+  - `handleBreadcrumbReset`: Resets all selections to return to book view
+  - `handleBreadcrumbBookSelect`: Resets to chapter view for selected book
+  - `handleBreadcrumbChapterSelect`: Resets to verse view for selected chapter
 - **Loading States**: Handles loading and error states during data fetch
 
 #### BibleBookSelector Component (`src/book-selection/`)
@@ -134,6 +142,31 @@ The application uses a two-tier data architecture:
   - `onVerseSelect`: Callback function for verse selection
 - **State Management**: Uses `useState` and `useEffect` for selection tracking and prop change handling
 
+#### Breadcrumb Component (`src/breadcrumb/`)
+- **Purpose**: Unified navigation system replacing individual back buttons and selected info displays
+- **Features**:
+  - Smart contextual navigation (Books → Book → Chapter → Verse)
+  - Current location highlighting with disabled buttons for current view
+  - Clickable navigation elements for backward traversal
+  - Verse reference display (Book Chapter:Verse) when fully selected
+  - Chapter information display (verse count) when verse is selected
+  - Accessibility support with meaningful titles, ARIA labels, and keyboard navigation
+  - Responsive design adapting to different screen sizes
+  - Dark mode support with system preference detection
+- **Props**:
+  - `selectedBook`: Currently selected book object
+  - `selectedChapter`: Currently selected chapter number (string)
+  - `selectedVerse`: Currently selected verse number (string)
+  - `onReset`: Callback to reset all selections (return to books)
+  - `onBookSelect`: Callback to navigate to book's chapters
+  - `onChapterSelect`: Callback to navigate to chapter's verses
+- **Navigation Logic**: 
+  - Books button always clickable (unless no selections)
+  - Book button clickable when chapter/verse selected, disabled when only book selected
+  - Chapter button clickable when verse selected, disabled when only chapter selected
+  - Verse element is non-interactive display element
+- **State Management**: Purely controlled component with no internal state
+
 ### Styling Architecture
 
 The application uses a comprehensive CSS architecture:
@@ -145,11 +178,10 @@ The application uses a comprehensive CSS architecture:
 
 2. **Application Styles** (`src/App.css`):
    - Layout for main application components
-   - Selected verse information display (`.selected-info`) showing "Book Chapter:Verse"
-   - Navigation view containers (`.chapter-view`, `.verse-view`)
-   - Back navigation buttons (`.back-button`) with contextual text and hover effects
+   - Navigation view containers (`.chapter-view`, `.verse-view`) with clean layouts
    - Loading state styling
    - Dark mode support for all navigation elements
+   - Simplified structure with breadcrumb handling all navigation UI
 
 3. **Component Styles**:
    - **BibleBookSelector** (`src/book-selection/BibleBookSelector.css`):
@@ -166,6 +198,14 @@ The application uses a comprehensive CSS architecture:
      - Smaller button sizing suitable for verse numbers
      - Enhanced responsive design for mobile verse selection
      - Proper handling of chapters with 0-176 verses
+   - **Breadcrumb** (`src/breadcrumb/Breadcrumb.css`):
+     - Flexible navigation layout with semantic HTML (nav, ol, li structure)
+     - Contextual button styling with hover states and disabled states
+     - Visual separators between navigation levels
+     - Verse reference and chapter info display styling
+     - Comprehensive responsive design (desktop, tablet, mobile breakpoints)
+     - Complete dark mode support with system preference and explicit class support
+     - Accessibility-focused design with proper focus states and ARIA support
 
 ### Category Color System
 
@@ -215,17 +255,19 @@ npm run build-storybook
 
 ### Testing Strategy
 
-The project implements comprehensive testing with 63 passing tests:
+The project implements comprehensive testing with 85 passing tests:
 
 1. **Unit Tests**:
    - **BibleBookSelector**: 21 tests covering component rendering, user interactions, accessibility, and edge cases
    - **ChapterSelector**: 20 tests covering component state management, user events, and error handling
    - **VerseSelect**: 22 tests covering verse selection, edge cases (0-176 verses), and prop changes
+   - **Breadcrumb**: 22 tests covering navigation states, user interactions, accessibility, and edge cases
    - Component rendering and behavior validation
    - User interactions and event handling
    - Edge cases and error conditions (including zero verses, invalid data)
    - Accessibility features and keyboard navigation
    - State management and prop changes
+   - Navigation flow testing across all breadcrumb states
 
 2. **Test Configuration**:
    - **Environment**: jsdom for DOM simulation
@@ -235,17 +277,21 @@ The project implements comprehensive testing with 63 passing tests:
    - **VS Code Integration**: Enhanced Jest extension settings for test discovery
 
 3. **Recent Updates** (Latest):
-   - **Complete Navigation System**: Added VerseSelect component for three-level navigation (Book → Chapter → Verse)
-   - **Enhanced State Management**: Implemented cascading state reset across all navigation levels
-   - **Contextual Back Navigation**: Added "Back to Chapters" and "Back to Books" with proper state handling
-   - **Comprehensive Testing**: Expanded to 63 tests covering all edge cases (0-176 verses)
-   - **Verse Selection UI**: Optimized grid layout for verse selection with responsive design
-   - **App Integration**: Complete integration of all three components with proper conditional rendering
+   - **Unified Breadcrumb Navigation**: Replaced individual back buttons and selected info displays with comprehensive Breadcrumb component
+   - **Enhanced Navigation UX**: Smart contextual navigation with disabled current view indicators and clickable backward traversal
+   - **Complete Navigation System**: Book → Chapter → Verse with unified breadcrumb showing full path
+   - **Enhanced State Management**: Implemented cascading state reset with centralized breadcrumb handlers
+   - **Comprehensive Testing**: Expanded to 85 tests covering all navigation states and edge cases
+   - **Accessibility Improvements**: Full ARIA support, keyboard navigation, and meaningful titles throughout breadcrumb
+   - **Responsive Breadcrumb Design**: Mobile-optimized navigation with collapsing elements and touch-friendly targets
+   - **App Integration Cleanup**: Removed redundant UI elements, streamlined component hierarchy
 
 4. **Storybook Stories**:
    - Component isolation and development
-   - Multiple story variants (Default, Complete, Loading, WithInteraction)
+   - Multiple story variants (Default, Complete, Loading, WithInteraction, ResponsiveTest, DarkModePreview)
    - Mock data for consistent development experience
+   - Breadcrumb stories covering all navigation states and edge cases
+   - Interactive examples demonstrating navigation callbacks
 
 ## Data Processing
 
@@ -313,31 +359,37 @@ The `.vscode/settings.json` includes optimized settings for Jest test discovery:
 ## Application Flow
 
 ### User Navigation Experience
-The application provides a complete three-level navigation system:
+The application provides a complete three-level navigation system with unified breadcrumb:
 
-1. **Initial State**: User sees the BibleBookSelector with all 66 Bible books organized by testament
-2. **Book Selection**: User clicks a book → ChapterSelector appears with "Back to Books" button
-3. **Chapter Selection**: User clicks a chapter → VerseSelect appears with "Back to Chapters" button  
-4. **Verse Selection**: User clicks a verse → Selected verse info displays (Book Chapter:Verse format)
-5. **Hierarchical Navigation**: Back buttons provide contextual navigation to previous levels
+1. **Initial State**: User sees BibleBookSelector with breadcrumb showing "📖 Books" button
+2. **Book Selection**: User clicks a book → ChapterSelector appears with breadcrumb "📖 Books › Genesis" (Genesis disabled, Books clickable)
+3. **Chapter Selection**: User clicks a chapter → VerseSelect appears with breadcrumb "📖 Books › Genesis › Chapter 1" (Chapter 1 disabled, Books and Genesis clickable)
+4. **Verse Selection**: User clicks a verse → Breadcrumb shows "📖 Books › Genesis › Chapter 1 › Verse 5" with verse reference "Genesis 1:5" and chapter info "Chapter has 31 verses" below
+5. **Hierarchical Navigation**: Breadcrumb provides contextual navigation - any previous level is clickable, current level is highlighted and disabled
 
 ### State Management Architecture
 - **App-level State**: `selectedBook`, `selectedChapter`, `selectedVerse`, `bibleData`
 - **Cascading Reset**: Verse selection resets when chapter changes; both reset when book changes
 - **Conditional Rendering**: Three-level conditional logic determines which component renders
 - **Event Propagation**: Child components communicate via callback props with automatic state management
+- **Breadcrumb Navigation Handlers**:
+  - `handleBreadcrumbReset`: Clears all selections (returns to books view)
+  - `handleBreadcrumbBookSelect`: Clears chapter/verse selections (returns to chapters view for selected book)
+  - `handleBreadcrumbChapterSelect`: Clears verse selection (returns to verses view for selected chapter)
+- **Centralized Navigation**: All navigation logic flows through breadcrumb component with clean handler delegation
 
 ## Key Features
 
-1. **Complete Three-Level Navigation**: Book → Chapter → Verse selection with hierarchical back navigation
+1. **Unified Breadcrumb Navigation**: Complete navigation path (Books › Book › Chapter › Verse) with smart contextual controls
 2. **Comprehensive Verse Selection**: Handles all verse counts from 0 (rare) to 176 (Psalm 119)
-3. **Responsive Design**: Adapts from mobile to desktop with proper button wrapping across all levels
-4. **Cascading State Management**: Automatic state reset with proper hierarchy (verse resets on chapter change, etc.)
-5. **Contextual Navigation**: Smart back buttons ("Back to Books", "Back to Chapters") with proper state management
-6. **Dark Mode Support**: System preference detection and manual override for all components
-7. **Accessibility**: Keyboard navigation, screen reader support, meaningful titles across all navigation levels
-8. **Performance**: Component-level CSS, efficient rendering, lazy loading ready
-9. **Developer Experience**: Hot reload, comprehensive testing (63 tests), component isolation
+3. **Responsive Design**: Adapts from mobile to desktop with proper button wrapping and breadcrumb collapse
+4. **Cascading State Management**: Automatic state reset with proper hierarchy via centralized breadcrumb handlers
+5. **Contextual Navigation Intelligence**: Current location disabled, all previous levels clickable for backward traversal
+6. **Enhanced Verse Reference Display**: Full verse reference (Book Chapter:Verse) and chapter information integrated into breadcrumb
+7. **Dark Mode Support**: System preference detection and manual override for all components including breadcrumb
+8. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
+9. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy
+10. **Developer Experience**: Hot reload, comprehensive testing (85 tests), component isolation, Storybook documentation
 
 ## Future Development Considerations
 
@@ -381,4 +433,4 @@ The application provides a complete three-level navigation system:
 - Implement responsive design for all UI components
 - Document component props and behavior in Storybook stories
 
-This codebase represents a well-structured, tested, and documented React application with clear patterns for extension and maintenance.
+This codebase represents a well-structured, tested, and documented React application with unified navigation architecture and clear patterns for extension and maintenance. The breadcrumb navigation system provides a modern, accessible, and intuitive user experience while maintaining clean separation of concerns and comprehensive test coverage.

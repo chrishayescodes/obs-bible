@@ -3,6 +3,7 @@ import './App.css'
 import BibleBookSelector from './book-selection'
 import ChapterSelector from './chapter-selection'
 import VerseSelect from './verse-selection'
+import Breadcrumb from './breadcrumb'
 
 function App() {
   const [selectedBook, setSelectedBook] = useState(null)
@@ -52,25 +53,36 @@ function App() {
     )
   }
 
+  const handleBreadcrumbReset = () => {
+    setSelectedBook(null)
+    setSelectedChapter(null)
+    setSelectedVerse(null)
+  }
+
+  const handleBreadcrumbBookSelect = () => {
+    setSelectedChapter(null)
+    setSelectedVerse(null)
+  }
+
+  const handleBreadcrumbChapterSelect = () => {
+    setSelectedVerse(null)
+  }
+
   return (
     <div className="app">
       <h1>OSB Bible</h1>
       
-      {selectedBook && selectedChapter && selectedVerse && (
-        <div className="selected-info">
-          <h2>{selectedBook.title} {selectedChapter}:{selectedVerse}</h2>
-          <p>Chapter {selectedChapter} has {selectedBook.chapters[selectedChapter]} verses</p>
-        </div>
-      )}
+      <Breadcrumb 
+        selectedBook={selectedBook}
+        selectedChapter={selectedChapter}
+        selectedVerse={selectedVerse}
+        onReset={handleBreadcrumbReset}
+        onBookSelect={handleBreadcrumbBookSelect}
+        onChapterSelect={handleBreadcrumbChapterSelect}
+      />
       
       {selectedBook && selectedChapter ? (
         <div className="verse-view">
-          <button 
-            className="back-button" 
-            onClick={() => setSelectedChapter(null)}
-          >
-            ← Back to Chapters
-          </button>
           <VerseSelect 
             bookData={selectedBook} 
             chapterNumber={selectedChapter}
@@ -79,12 +91,6 @@ function App() {
         </div>
       ) : selectedBook ? (
         <div className="chapter-view">
-          <button 
-            className="back-button" 
-            onClick={() => setSelectedBook(null)}
-          >
-            ← Back to Books
-          </button>
           <ChapterSelector 
             bookData={selectedBook} 
             onChapterSelect={handleChapterSelect}

@@ -1,0 +1,274 @@
+.breadcrumb {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 16px 20px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-button {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.breadcrumb-button:hover:not(:disabled) {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.breadcrumb-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.breadcrumb-button.home-button {
+  color: #059669;
+  font-weight: 600;
+}
+
+.breadcrumb-button.home-button:hover {
+  background-color: #d1fae5;
+  color: #047857;
+}
+
+.breadcrumb-button.current {
+  color: #374151;
+  cursor: default;
+  font-weight: 600;
+}
+
+.breadcrumb-button:disabled {
+  color: #374151;
+  cursor: default;
+  font-weight: 600;
+}
+
+.breadcrumb-separator {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 400;
+  user-select: none;
+}
+
+.breadcrumb-current {
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+}
+
+.breadcrumb-info {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.verse-reference {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.chapter-info {
+  font-size: 13px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .breadcrumb {
+    background-color: #374151;
+    border-color: #4b5563;
+  }
+
+  .breadcrumb-button {
+    color: #60a5fa;
+  }
+
+  .breadcrumb-button:hover:not(:disabled) {
+    background-color: #1e3a8a;
+    color: #93c5fd;
+  }
+
+  .breadcrumb-button.home-button {
+    color: #34d399;
+  }
+
+  .breadcrumb-button.home-button:hover {
+    background-color: #064e3b;
+    color: #6ee7b7;
+  }
+
+  .breadcrumb-button.current,
+  .breadcrumb-button:disabled {
+    color: #e5e7eb;
+  }
+
+  .breadcrumb-separator {
+    color: #9ca3af;
+  }
+
+  .breadcrumb-current {
+    color: #e5e7eb;
+  }
+
+  .breadcrumb-info {
+    border-top-color: #4b5563;
+  }
+
+  .verse-reference {
+    color: #f3f4f6;
+  }
+
+  .chapter-info {
+    color: #9ca3af;
+  }
+}
+
+/* Explicit dark mode class support */
+.dark .breadcrumb {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+
+.dark .breadcrumb-button {
+  color: #60a5fa;
+}
+
+.dark .breadcrumb-button:hover:not(:disabled) {
+  background-color: #1e3a8a;
+  color: #93c5fd;
+}
+
+.dark .breadcrumb-button.home-button {
+  color: #34d399;
+}
+
+.dark .breadcrumb-button.home-button:hover {
+  background-color: #064e3b;
+  color: #6ee7b7;
+}
+
+.dark .breadcrumb-button.current,
+.dark .breadcrumb-button:disabled {
+  color: #e5e7eb;
+}
+
+.dark .breadcrumb-separator {
+  color: #9ca3af;
+}
+
+.dark .breadcrumb-current {
+  color: #e5e7eb;
+}
+
+.dark .breadcrumb-info {
+  border-top-color: #4b5563;
+}
+
+.dark .verse-reference {
+  color: #f3f4f6;
+}
+
+.dark .chapter-info {
+  color: #9ca3af;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .breadcrumb {
+    padding: 12px 16px;
+  }
+
+  .breadcrumb-list {
+    gap: 6px;
+  }
+
+  .breadcrumb-button {
+    font-size: 13px;
+    padding: 3px 6px;
+  }
+
+  .breadcrumb-separator {
+    font-size: 13px;
+  }
+
+  .breadcrumb-current {
+    font-size: 13px;
+    padding: 3px 6px;
+  }
+
+  .verse-reference {
+    font-size: 15px;
+  }
+
+  .chapter-info {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumb {
+    padding: 10px 12px;
+  }
+
+  .breadcrumb-list {
+    gap: 4px;
+  }
+
+  .breadcrumb-button {
+    font-size: 12px;
+    padding: 2px 4px;
+  }
+
+  .breadcrumb-separator {
+    font-size: 12px;
+  }
+
+  .breadcrumb-current {
+    font-size: 12px;
+    padding: 2px 4px;
+  }
+
+  .verse-reference {
+    font-size: 14px;
+  }
+
+  .chapter-info {
+    font-size: 11px;
+  }
+
+  .breadcrumb-info {
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+}
