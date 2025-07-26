@@ -248,6 +248,40 @@ describe('Navigation', () => {
       
       consoleSpy.mockRestore();
     });
+
+    test('calls onVerseSelected callback with scripture reference', async () => {
+      const mockOnVerseSelected = jest.fn();
+      const user = userEvent.setup();
+      render(<Navigation bibleData={mockBibleData} onVerseSelected={mockOnVerseSelected} />);
+      
+      await user.click(screen.getByText('Gen'));
+      await user.click(screen.getByText('1'));
+      await user.click(screen.getByText('15'));
+      
+      expect(mockOnVerseSelected).toHaveBeenCalledWith({
+        book: 'Genesis',
+        bookId: 'Gen',
+        chapter: '1',
+        verse: 15,
+        reference: 'Genesis 1:15'
+      });
+    });
+
+    test('does not call onVerseSelected when callback not provided', async () => {
+      const user = userEvent.setup();
+      
+      // Should not throw error when onVerseSelected is not provided
+      expect(() => {
+        render(<Navigation bibleData={mockBibleData} />);
+      }).not.toThrow();
+      
+      await user.click(screen.getByText('Gen'));
+      await user.click(screen.getByText('1'));
+      await user.click(screen.getByText('5'));
+      
+      // Should complete without errors
+      expect(screen.getByText('Genesis 1:5')).toBeInTheDocument();
+    });
   });
 
   describe('Breadcrumb Navigation', () => {

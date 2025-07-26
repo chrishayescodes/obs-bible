@@ -30,31 +30,32 @@ obs-bible/
 ├── src/
 │   ├── App.jsx                         # Main application component
 │   ├── main.jsx                        # React application entry point
-│   ├── book-selection/                 # Bible book selector component
-│   │   ├── index.jsx                   # BibleBookSelector component
-│   │   ├── BibleBookSelector.css       # Component-specific styling
-│   │   ├── BibleBookSelector.test.jsx  # Comprehensive test suite (21 tests)
-│   │   └── BibleBookSelector.stories.jsx # Storybook stories
-│   ├── chapter-selection/              # Chapter selector component
-│   │   ├── index.jsx                   # ChapterSelector component
-│   │   ├── ChapterSelector.css         # Component-specific styling
-│   │   ├── ChapterSelector.test.jsx    # Comprehensive test suite (20 tests)
-│   │   └── ChapterSelector.stories.jsx # Storybook stories
-│   ├── verse-selection/                # Verse selector component
-│   │   ├── index.jsx                   # VerseSelect component
-│   │   ├── VerseSelect.css             # Component-specific styling
-│   │   ├── VerseSelect.test.jsx        # Comprehensive test suite (22 tests)
-│   │   └── VerseSelect.stories.jsx     # Storybook stories
-│   ├── breadcrumb/                     # Breadcrumb navigation component
-│   │   ├── index.jsx                   # Breadcrumb component
-│   │   ├── Breadcrumb.css              # Component-specific styling
-│   │   ├── Breadcrumb.test.jsx         # Comprehensive test suite (22 tests)
-│   │   └── Breadcrumb.stories.jsx      # Storybook stories
-│   ├── navigation/                     # Navigation container component
-│   │   ├── index.jsx                   # Navigation component
-│   │   ├── Navigation.css              # Component-specific styling
-│   │   ├── Navigation.test.jsx         # Comprehensive test suite (23 tests)
-│   │   └── Navigation.stories.jsx      # Storybook stories
+│   ├── ref-nav/                        # Reference navigation components folder
+│   │   ├── book-selection/             # Bible book selector component
+│   │   │   ├── index.jsx               # BibleBookSelector component
+│   │   │   ├── BibleBookSelector.css   # Component-specific styling
+│   │   │   ├── BibleBookSelector.test.jsx # Comprehensive test suite (21 tests)
+│   │   │   └── BibleBookSelector.stories.jsx # Storybook stories
+│   │   ├── chapter-selection/          # Chapter selector component
+│   │   │   ├── index.jsx               # ChapterSelector component
+│   │   │   ├── ChapterSelector.css     # Component-specific styling
+│   │   │   ├── ChapterSelector.test.jsx # Comprehensive test suite (20 tests)
+│   │   │   └── ChapterSelector.stories.jsx # Storybook stories
+│   │   ├── verse-selection/            # Verse selector component
+│   │   │   ├── index.jsx               # VerseSelect component
+│   │   │   ├── VerseSelect.css         # Component-specific styling
+│   │   │   ├── VerseSelect.test.jsx    # Comprehensive test suite (22 tests)
+│   │   │   └── VerseSelect.stories.jsx # Storybook stories
+│   │   ├── breadcrumb/                 # Breadcrumb navigation component
+│   │   │   ├── index.jsx               # Breadcrumb component
+│   │   │   ├── Breadcrumb.css          # Component-specific styling
+│   │   │   ├── Breadcrumb.test.jsx     # Comprehensive test suite (22 tests)
+│   │   │   └── Breadcrumb.stories.jsx  # Storybook stories
+│   │   └── navigation/                 # Navigation container component
+│   │       ├── index.jsx               # Navigation component
+│   │       ├── Navigation.css          # Component-specific styling
+│   │       ├── Navigation.test.jsx     # Comprehensive test suite (25 tests)
+│   │       └── Navigation.stories.jsx  # Storybook stories
 │   └── stories/                        # Default Storybook example components
 ├── .storybook/                         # Storybook configuration
 │   ├── main.js                         # Storybook main configuration
@@ -96,8 +97,12 @@ The application uses a two-tier data architecture:
   - Minimal, focused responsibility for data loading and high-level layout
 - **Loading States**: Handles loading and error states during data fetch
 - **Component Integration**: Delegates all navigation functionality to Navigation component
+- **Verse Selection Callback**: Implements `handleVerseSelected` callback to receive scripture references
+  - Receives complete scripture reference object when verses are selected
+  - Provides extension point for custom navigation logic (content loading, URL updates, etc.)
+  - Currently logs selections for debugging and can be extended for application features
 
-#### Navigation Component (`src/navigation/`)
+#### Navigation Component (`src/ref-nav/navigation/`)
 - **Purpose**: Centralized navigation system managing all Bible browsing functionality
 - **State Management**: Manages `selectedBook`, `selectedChapter`, `selectedVerse` state internally
 - **Three-Level Navigation Flow**: Implements book → chapter → verse selection with unified breadcrumb navigation
@@ -110,19 +115,34 @@ The application uses a two-tier data architecture:
 - **Event Handling**: 
   - `handleBookSelect`: Sets selected book, resets chapter + verse selection
   - `handleChapterSelect`: Sets selected chapter, resets verse selection  
-  - `handleVerseSelect`: Sets selected verse for display
+  - `handleVerseSelect`: Sets selected verse for display, triggers callback with scripture reference
   - `handleBreadcrumbReset`: Resets all selections to return to book view
   - `handleBreadcrumbBookSelect`: Resets to chapter view for selected book
   - `handleBreadcrumbChapterSelect`: Resets to verse view for selected chapter
 - **Props**:
   - `bibleData`: Complete Bible structure object passed from App
+  - `onVerseSelected`: Optional callback function triggered when verse is selected
+- **Callback Integration**:
+  - Calls `onVerseSelected` with complete scripture reference object:
+    ```javascript
+    {
+      book: 'Genesis',           // Full book title
+      bookId: 'Gen',            // Book abbreviation/ID
+      chapter: '1',             // Chapter number (string)
+      verse: 15,                // Verse number (number)
+      reference: 'Genesis 1:15' // Formatted reference string
+    }
+    ```
+  - Gracefully handles missing callback (no errors when undefined)
+  - Enables extensible architecture for custom navigation actions
 - **Benefits**:
   - Encapsulates all navigation logic in one place
   - Reusable and testable in isolation
   - Clean separation from data loading concerns
   - Maintainable single responsibility architecture
+  - Extensible callback system for application integration
 
-#### BibleBookSelector Component (`src/book-selection/`)
+#### BibleBookSelector Component (`src/ref-nav/book-selection/`)
 - **Purpose**: Interactive grid for selecting Bible books
 - **Features**:
   - Color-coded categories with consistent theming
@@ -135,7 +155,7 @@ The application uses a two-tier data architecture:
   - `onBookSelect`: Callback function for book selection
 - **Styling**: Category-based color system with 10 distinct themes
 
-#### ChapterSelector Component (`src/chapter-selection/`)
+#### ChapterSelector Component (`src/ref-nav/chapter-selection/`)
 - **Purpose**: Interactive grid for selecting chapters within a selected book
 - **Features**:
   - Chapter buttons with verse counts in title attributes
@@ -149,7 +169,7 @@ The application uses a two-tier data architecture:
   - `onChapterSelect`: Callback function for chapter selection
 - **State Management**: Uses `useState` and `useEffect` for selection tracking and prop change handling
 
-#### VerseSelect Component (`src/verse-selection/`)
+#### VerseSelect Component (`src/ref-nav/verse-selection/`)
 - **Purpose**: Interactive grid for selecting verses within a selected chapter
 - **Features**:
   - Verse buttons numbered sequentially (1, 2, 3, ...)
@@ -164,7 +184,7 @@ The application uses a two-tier data architecture:
   - `onVerseSelect`: Callback function for verse selection
 - **State Management**: Uses `useState` and `useEffect` for selection tracking and prop change handling
 
-#### Breadcrumb Component (`src/breadcrumb/`)
+#### Breadcrumb Component (`src/ref-nav/breadcrumb/`)
 - **Purpose**: Unified navigation system replacing individual back buttons and selected info displays
 - **Features**:
   - Smart contextual navigation (Books → Book → Chapter → Verse)
@@ -282,14 +302,14 @@ npm run build-storybook
 
 ### Testing Strategy
 
-The project implements comprehensive testing with 108 passing tests:
+The project implements comprehensive testing with 110 passing tests:
 
 1. **Unit Tests**:
    - **BibleBookSelector**: 21 tests covering component rendering, user interactions, accessibility, and edge cases
    - **ChapterSelector**: 20 tests covering component state management, user events, and error handling
    - **VerseSelect**: 22 tests covering verse selection, edge cases (0-176 verses), and prop changes
    - **Breadcrumb**: 22 tests covering navigation states, user interactions, accessibility, and edge cases
-   - **Navigation**: 23 tests covering complete navigation flow, state management, integration, and edge cases
+   - **Navigation**: 25 tests covering complete navigation flow, state management, integration, callback functionality, and edge cases
    - Component rendering and behavior validation
    - User interactions and event handling
    - Edge cases and error conditions (including zero verses, invalid data)
@@ -306,15 +326,19 @@ The project implements comprehensive testing with 108 passing tests:
    - **VS Code Integration**: Enhanced Jest extension settings for test discovery
 
 3. **Recent Updates** (Latest):
+   - **Verse Selection Callback System**: Added `onVerseSelected` callback to Navigation component for scripture reference handling
+   - **Scripture Reference Integration**: Complete scripture reference object passed to callback with book, chapter, verse details
+   - **Component Organization**: Moved all navigation components to `src/ref-nav/` folder for better organization
+   - **Enhanced Testing**: Expanded to 110 tests with callback functionality testing (25 Navigation tests)
+   - **Extensible Architecture**: Callback system enables custom navigation actions (content loading, URL updates, etc.)
    - **Navigation Component Extraction**: Extracted all navigation logic from App.jsx into dedicated Navigation component
    - **Clean Architecture**: App.jsx now focuses solely on data loading, Navigation handles all Bible browsing
-   - **Enhanced Testability**: Navigation component fully testable in isolation with comprehensive 23-test suite
+   - **Enhanced Testability**: Navigation component fully testable in isolation with comprehensive test suite
    - **Component Reusability**: Navigation can be reused independently of data loading concerns
    - **Unified Breadcrumb Navigation**: Replaced individual back buttons and selected info displays with comprehensive Breadcrumb component
    - **Enhanced Navigation UX**: Smart contextual navigation with disabled current view indicators and clickable backward traversal
    - **Complete Navigation System**: Book → Chapter → Verse with unified breadcrumb showing full path
    - **Enhanced State Management**: Implemented cascading state reset with centralized breadcrumb handlers
-   - **Comprehensive Testing**: Expanded to 108 tests covering all navigation states, integration, and edge cases
    - **Accessibility Improvements**: Full ARIA support, keyboard navigation, and meaningful titles throughout breadcrumb
    - **Responsive Breadcrumb Design**: Mobile-optimized navigation with collapsing elements and touch-friendly targets
    - **Separation of Concerns**: Clear architectural boundaries between data loading and navigation functionality
@@ -426,7 +450,8 @@ The application provides a complete three-level navigation system with unified b
 9. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
 10. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy
 11. **Testability**: Each component fully testable in isolation with comprehensive test coverage
-12. **Developer Experience**: Hot reload, comprehensive testing (108 tests), component isolation, Storybook documentation
+12. **Developer Experience**: Hot reload, comprehensive testing (110 tests), component isolation, Storybook documentation
+13. **Callback Integration**: Verse selection callback system enabling custom navigation actions and application extensions
 
 ## Future Development Considerations
 
@@ -470,4 +495,4 @@ The application provides a complete three-level navigation system with unified b
 - Implement responsive design for all UI components
 - Document component props and behavior in Storybook stories
 
-This codebase represents a well-structured, tested, and documented React application with clean architectural separation and unified navigation system. The Navigation component encapsulates all Bible browsing functionality while the breadcrumb navigation system provides a modern, accessible, and intuitive user experience. The architecture maintains clear separation of concerns with comprehensive test coverage and excellent developer experience.
+This codebase represents a well-structured, tested, and documented React application with clean architectural separation and unified navigation system. The Navigation component encapsulates all Bible browsing functionality with extensible callback integration for scripture reference handling. The breadcrumb navigation system provides a modern, accessible, and intuitive user experience while the callback system enables custom application features like content loading, URL management, and navigation actions. The architecture maintains clear separation of concerns with comprehensive test coverage and excellent developer experience.

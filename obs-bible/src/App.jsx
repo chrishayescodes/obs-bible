@@ -20,6 +20,15 @@ function App() {
       })
   }, [])
 
+  const handleVerseSelected = (scriptureRef) => {
+    console.log('Verse selected:', scriptureRef)
+    // You can add additional logic here, such as:
+    // - Navigate to verse content
+    // - Update URL with scripture reference
+    // - Load verse text content
+    // - Update browser history
+  }
+
   if (loading) {
     return (
       <div className="app">
@@ -30,7 +39,7 @@ function App() {
 
   return (
     <div className="app">
-      <Navigation bibleData={bibleData} />
+      <Navigation bibleData={bibleData} onVerseSelected={handleVerseSelected} />
     </div>
   )
 }

@@ -5,7 +5,7 @@ import VerseSelect from '../verse-selection'
 import Breadcrumb from '../breadcrumb'
 import './Navigation.css'
 
-const Navigation = ({ bibleData }) => {
+const Navigation = ({ bibleData, onVerseSelected }) => {
   const [selectedBook, setSelectedBook] = useState(null)
   const [selectedChapter, setSelectedChapter] = useState(null)
   const [selectedVerse, setSelectedVerse] = useState(null)
@@ -26,6 +26,18 @@ const Navigation = ({ bibleData }) => {
   const handleVerseSelect = (verseNumber) => {
     setSelectedVerse(verseNumber)
     console.log('Selected verse:', verseNumber)
+    
+    // Call the callback with scripture reference
+    if (onVerseSelected && selectedBook && selectedChapter) {
+      const scriptureRef = {
+        book: selectedBook.title,
+        bookId: selectedBook.id,
+        chapter: selectedChapter,
+        verse: verseNumber,
+        reference: `${selectedBook.title} ${selectedChapter}:${verseNumber}`
+      }
+      onVerseSelected(scriptureRef)
+    }
   }
 
   const handleBreadcrumbReset = () => {
