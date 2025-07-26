@@ -137,11 +137,11 @@ describe('Breadcrumb', () => {
       expect(screen.getByText('📖 Books')).toBeInTheDocument();
       expect(screen.getByText('Genesis')).toBeInTheDocument();
       expect(screen.getByText('Chapter 1')).toBeInTheDocument();
-      expect(screen.getByText('Verse 5')).toBeInTheDocument();
-      expect(screen.getAllByText('›')).toHaveLength(3);
+      // Verse breadcrumb item removed
+      expect(screen.getAllByText('›')).toHaveLength(2);
     });
 
-    test('displays verse reference and chapter info', () => {
+    test('stops at chapter level when verse selected', () => {
       render(
         <Breadcrumb 
           selectedBook={mockBookData} 
@@ -150,8 +150,10 @@ describe('Breadcrumb', () => {
         />
       );
       
-      expect(screen.getByText('Genesis 1:5')).toBeInTheDocument();
-      expect(screen.getByText('Chapter has 31 verses')).toBeInTheDocument();
+      // Should only show up to chapter level (no verse info displayed)
+      expect(screen.getByText('Chapter 1')).toBeInTheDocument();
+      expect(screen.queryByText('Genesis 1:5')).not.toBeInTheDocument();
+      expect(screen.queryByText('Chapter has 31 verses')).not.toBeInTheDocument();
     });
 
     test('all navigation buttons are clickable when verse selected', () => {
@@ -183,18 +185,21 @@ describe('Breadcrumb', () => {
       expect(mockOnChapterSelect).toHaveBeenCalledTimes(1);
     });
 
-    test('verse element is not clickable', () => {
+    test('chapter element remains clickable when verse selected', () => {
+      const mockOnChapterSelect = jest.fn();
       render(
         <Breadcrumb 
           selectedBook={mockBookData} 
           selectedChapter="1" 
           selectedVerse="5"
+          onChapterSelect={mockOnChapterSelect}
         />
       );
       
-      const verseElement = screen.getByText('Verse 5');
-      expect(verseElement.tagName).toBe('SPAN');
-      expect(verseElement).toHaveClass('breadcrumb-current');
+      // Chapter button should still be clickable when verse is selected
+      const chapterButton = screen.getByText('Chapter 1');
+      expect(chapterButton.tagName).toBe('BUTTON');
+      expect(chapterButton).not.toHaveClass('current');
     });
   });
 
@@ -282,7 +287,7 @@ describe('Breadcrumb', () => {
       expect(screen.getByText('📖 Books')).toHaveAttribute('title', 'Go to book selection');
       expect(screen.getByText('Genesis')).toHaveAttribute('title', 'Go to Genesis chapters');
       expect(screen.getByText('Chapter 1')).toHaveAttribute('title', 'Go to Genesis 1 verses');
-      expect(screen.getByText('Verse 5')).toHaveAttribute('title', 'Currently viewing Genesis 1:5');
+      // Verse element removed - no longer displayed
     });
 
     test('disabled buttons have appropriate titles', () => {
@@ -322,9 +327,10 @@ describe('Breadcrumb', () => {
       
       expect(screen.getByText('Matthew')).toBeInTheDocument();
       expect(screen.getByText('Chapter 26')).toBeInTheDocument();
-      expect(screen.getByText('Verse 1')).toBeInTheDocument();
-      expect(screen.getByText('Matthew 26:1')).toBeInTheDocument();
-      expect(screen.getByText('Chapter has 75 verses')).toBeInTheDocument();
+      // Verse info removed - should only show up to chapter level
+      expect(screen.getByText('Chapter 26')).toBeInTheDocument();
+      expect(screen.queryByText('Matthew 26:1')).not.toBeInTheDocument();
+      expect(screen.queryByText('Chapter has 75 verses')).not.toBeInTheDocument();
     });
 
     test('handles books with single chapters', () => {
@@ -346,8 +352,10 @@ describe('Breadcrumb', () => {
       
       expect(screen.getByText('Obadiah')).toBeInTheDocument();
       expect(screen.getByText('Chapter 1')).toBeInTheDocument();
-      expect(screen.getByText('Obadiah 1:10')).toBeInTheDocument();
-      expect(screen.getByText('Chapter has 21 verses')).toBeInTheDocument();
+      // Verse info removed - should only show up to chapter level
+      expect(screen.getByText('Chapter 1')).toBeInTheDocument();
+      expect(screen.queryByText('Obadiah 1:10')).not.toBeInTheDocument();
+      expect(screen.queryByText('Chapter has 21 verses')).not.toBeInTheDocument();
     });
 
     test('handles chapters with zero verses', () => {
@@ -367,7 +375,8 @@ describe('Breadcrumb', () => {
         />
       );
       
-      expect(screen.getByText('Chapter has 0 verses')).toBeInTheDocument();
+      // Chapter info removed
+      expect(screen.queryByText('Chapter has 0 verses')).not.toBeInTheDocument();
     });
   });
 
@@ -395,8 +404,9 @@ describe('Breadcrumb', () => {
           selectedVerse="5"
         />
       );
-      expect(screen.getByText('Verse 5')).toBeInTheDocument();
-      expect(screen.getByText('Genesis 1:5')).toBeInTheDocument();
+      // Verse info removed - should only show up to chapter level
+      expect(screen.getByText('Chapter 1')).toBeInTheDocument();
+      expect(screen.queryByText('Genesis 1:5')).not.toBeInTheDocument();
     });
   });
 });

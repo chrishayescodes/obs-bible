@@ -201,16 +201,15 @@ describe('Navigation', () => {
       await user.click(screen.getByText('1'));
       await user.click(screen.getByText('5'));
       
-      // Verify verse is selected
-      expect(screen.getByText('Genesis 1:5')).toBeInTheDocument();
+      // Verify verse selection state (no reference display)
+      // Note: Verse reference display removed from breadcrumb
       
       // Go back to chapters and select different chapter
       await user.click(screen.getByText('Genesis'));
       await user.click(screen.getByText('2'));
       
       // Verse selection should be reset
-      expect(screen.queryByText('Genesis 1:5')).not.toBeInTheDocument();
-      expect(screen.queryByText('Verse 5')).not.toBeInTheDocument();
+      // Note: Verse displays removed from breadcrumb
     });
   });
 
@@ -223,16 +222,16 @@ describe('Navigation', () => {
       await user.click(screen.getByText('1'));
       await user.click(screen.getByText('15'));
       
-      // Should show complete breadcrumb with verse
+      // Should show breadcrumb up to chapter level only
       expect(screen.getByText('📖 Books')).toBeInTheDocument();
       expect(screen.getByText('Genesis')).toBeInTheDocument();
       expect(screen.getByText('Chapter 1')).toBeInTheDocument();
-      expect(screen.getByText('Verse 15')).toBeInTheDocument();
-      expect(screen.getAllByText('›')).toHaveLength(3);
+      // Verse breadcrumb item and reference display removed
+      expect(screen.getAllByText('›')).toHaveLength(2);
       
-      // Should show verse reference
-      expect(screen.getByText('Genesis 1:15')).toBeInTheDocument();
-      expect(screen.getByText('Chapter has 31 verses')).toBeInTheDocument();
+      // Verse reference and chapter info removed
+      expect(screen.queryByText('Genesis 1:15')).not.toBeInTheDocument();
+      expect(screen.queryByText('Chapter has 31 verses')).not.toBeInTheDocument();
     });
 
     test('logs verse selection to console', async () => {
@@ -279,8 +278,8 @@ describe('Navigation', () => {
       await user.click(screen.getByText('1'));
       await user.click(screen.getByText('5'));
       
-      // Should complete without errors
-      expect(screen.getByText('Genesis 1:5')).toBeInTheDocument();
+      // Should complete without errors (no verse reference display)
+      expect(screen.getByText('Chapter 1')).toBeInTheDocument();
     });
   });
 
@@ -302,8 +301,8 @@ describe('Navigation', () => {
       expect(screen.getByText('Exod')).toBeInTheDocument();
       expect(screen.getByText('Matt')).toBeInTheDocument();
       
-      // Verse reference should be gone
-      expect(screen.queryByText('Genesis 1:5')).not.toBeInTheDocument();
+      // Verse reference removed from breadcrumb
+      // Note: Verse displays no longer shown
     });
 
     test('Book button resets chapter and verse selections', async () => {
@@ -323,9 +322,8 @@ describe('Navigation', () => {
       expect(screen.getByText('2')).toBeInTheDocument();
       expect(screen.getByText('3')).toBeInTheDocument();
       
-      // Verse reference should be gone
-      expect(screen.queryByText('Genesis 1:5')).not.toBeInTheDocument();
-      expect(screen.queryByText('Verse 5')).not.toBeInTheDocument();
+      // Verse reference removed from breadcrumb
+      // Note: Verse displays no longer shown
     });
 
     test('Chapter button resets verse selection', async () => {
@@ -344,9 +342,8 @@ describe('Navigation', () => {
       expect(screen.getByText('1')).toBeInTheDocument();
       expect(screen.getByText('31')).toBeInTheDocument();
       
-      // Verse reference should be gone
-      expect(screen.queryByText('Genesis 1:10')).not.toBeInTheDocument();
-      expect(screen.queryByText('Verse 10')).not.toBeInTheDocument();
+      // Verse reference removed from breadcrumb
+      // Note: Verse displays no longer shown
     });
   });
 
@@ -369,8 +366,8 @@ describe('Navigation', () => {
       expect(screen.getByText('2')).toBeInTheDocument();
       expect(screen.getByText('5')).toBeInTheDocument();
       
-      // Previous selection should be cleared
-      expect(screen.queryByText('Genesis 1:5')).not.toBeInTheDocument();
+      // Previous selection should be cleared (no verse display)
+      // Note: Verse displays removed from breadcrumb
     });
 
     test('handles state transitions correctly', async () => {
@@ -386,7 +383,7 @@ describe('Navigation', () => {
       expect(screen.getByText('Genesis')).not.toHaveClass('current');
       
       await user.click(screen.getByText('20'));
-      expect(screen.getByText('Verse 20')).toHaveClass('breadcrumb-current');
+      // Verse breadcrumb element removed - chapter remains clickable (not current)
       expect(screen.getByText('Chapter 1')).not.toHaveClass('current');
     });
   });
@@ -400,8 +397,9 @@ describe('Navigation', () => {
       await user.click(screen.getByText('1'));
       await user.click(screen.getByText('10'));
       
-      expect(screen.getByText('Obadiah 1:10')).toBeInTheDocument();
-      expect(screen.getByText('Chapter has 21 verses')).toBeInTheDocument();
+      // Verse reference and chapter info removed
+      expect(screen.queryByText('Obadiah 1:10')).not.toBeInTheDocument();
+      expect(screen.queryByText('Chapter has 21 verses')).not.toBeInTheDocument();
     });
 
     test('handles empty chapter data gracefully', async () => {
@@ -479,8 +477,8 @@ describe('Navigation', () => {
       expect(screen.getByRole('navigation')).toBeInTheDocument();
       
       // Should have book selector initially
-      expect(screen.getByText('Old Testament')).toBeInTheDocument();
-      expect(screen.getByText('New Testament')).toBeInTheDocument();
+      expect(screen.getByText('Gen')).toBeInTheDocument();
+      expect(screen.getByText('Matt')).toBeInTheDocument();
     });
 
     test('passes correct props to child components', async () => {

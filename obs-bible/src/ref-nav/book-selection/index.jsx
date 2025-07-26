@@ -37,14 +37,12 @@ const BibleBookSelector = ({ bibleData, onBookSelect }) => {
   return (
     <div className="bible-book-selector">
       <div className="testament-section">
-        <h2>Old Testament</h2>
         <div className="books-grid">
           {oldTestamentBooks.map(renderBookButton)}
         </div>
       </div>
       
       <div className="testament-section">
-        <h2>New Testament</h2>
         <div className="books-grid">
           {newTestamentBooks.map(renderBookButton)}
         </div>

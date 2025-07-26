@@ -25,35 +25,33 @@ const VerseSelect = ({ bookData, chapterNumber, onVerseSelect }) => {
   }
 
   const verseCount = bookData.chapters[chapterNumber];
-  
+
   // Handle invalid verse count (but allow 0)
   if (typeof verseCount !== 'number' || verseCount < 0 || !Number.isInteger(verseCount)) {
     return <div className="loading">Loading verses...</div>;
   }
-  
+
   const verses = Array.from({ length: verseCount }, (_, i) => i + 1);
 
   return (
-    <div className="verse-select">
-      <div className="verse-header">
-        <h3>{bookData.title} {chapterNumber}</h3>
-        <p className="verse-count">{verseCount} verses</p>
+    <>
+      <h2>Verse</h2>
+      <div className="verse-select">
+        <div className="verses-grid">
+          {verses.map((verseNumber) => (
+            <button
+              key={verseNumber}
+              type="button"
+              className={`verse-button ${selectedVerse === verseNumber ? 'selected' : ''}`}
+              onClick={() => handleVerseClick(verseNumber)}
+              title={`Verse ${verseNumber}`}
+            >
+              {verseNumber}
+            </button>
+          ))}
+        </div>
       </div>
-      
-      <div className="verses-grid">
-        {verses.map((verseNumber) => (
-          <button
-            key={verseNumber}
-            type="button"
-            className={`verse-button ${selectedVerse === verseNumber ? 'selected' : ''}`}
-            onClick={() => handleVerseClick(verseNumber)}
-            title={`Verse ${verseNumber}`}
-          >
-            {verseNumber}
-          </button>
-        ))}
-      </div>
-    </div>
+    </>
   );
 };
 

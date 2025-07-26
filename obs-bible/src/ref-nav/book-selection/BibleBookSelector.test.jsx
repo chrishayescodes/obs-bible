@@ -81,11 +81,12 @@ describe('BibleBookSelector', () => {
   });
 
   describe('Rendering with Data', () => {
-    test('renders Old Testament and New Testament sections', () => {
+    test('renders Old Testament and New Testament books', () => {
       render(<BibleBookSelector bibleData={mockBibleData} onBookSelect={mockOnBookSelect} />);
       
-      expect(screen.getByText('Old Testament')).toBeInTheDocument();
-      expect(screen.getByText('New Testament')).toBeInTheDocument();
+      // Should render books from both testaments
+      expect(screen.getByText('Gen')).toBeInTheDocument();
+      expect(screen.getByText('Matt')).toBeInTheDocument();
     });
 
     test('renders all Old Testament books', () => {
@@ -298,8 +299,8 @@ describe('BibleBookSelector', () => {
 
       render(<BibleBookSelector bibleData={emptyData} onBookSelect={mockOnBookSelect} />);
       
-      expect(screen.getByText('Old Testament')).toBeInTheDocument();
-      expect(screen.getByText('New Testament')).toBeInTheDocument();
+      // Should still render testament sections (just without headers)
+      expect(document.querySelectorAll('.testament-section')).toHaveLength(2);
       expect(screen.queryByRole('button')).not.toBeInTheDocument();
     });
 

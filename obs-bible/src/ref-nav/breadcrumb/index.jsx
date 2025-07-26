@@ -72,28 +72,7 @@ const Breadcrumb = ({
           </>
         )}
         
-        {selectedBook && selectedChapter && selectedVerse && (
-          <>
-            <li className="breadcrumb-separator" aria-hidden="true">›</li>
-            <li className="breadcrumb-item">
-              <span className="breadcrumb-current" title={`Currently viewing ${selectedBook.title} ${selectedChapter}:${selectedVerse}`}>
-                Verse {selectedVerse}
-              </span>
-            </li>
-          </>
-        )}
       </ol>
-      
-      {selectedBook && selectedChapter && selectedVerse && (
-        <div className="breadcrumb-info">
-          <span className="verse-reference">
-            {selectedBook.title} {selectedChapter}:{selectedVerse}
-          </span>
-          <span className="chapter-info">
-            Chapter has {selectedBook.chapters[selectedChapter]} verses
-          </span>
-        </div>
-      )}
     </nav>
   );
 };

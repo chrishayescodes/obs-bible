@@ -47,10 +47,11 @@ describe('VerseSelect', () => {
       expect(screen.getByText('Loading verses...')).toBeInTheDocument();
     });
 
-    test('renders book title and chapter number in header', () => {
+    test('renders verse buttons without header', () => {
       render(<VerseSelect bookData={mockBookData} chapterNumber="1" />);
-      expect(screen.getByText('Genesis 1')).toBeInTheDocument();
-      expect(screen.getByText('31 verses')).toBeInTheDocument();
+      // Should render verse buttons without header
+      expect(screen.getByText('1')).toBeInTheDocument();
+      expect(screen.getByText('31')).toBeInTheDocument();
     });
 
     test('renders all verses as buttons', () => {
@@ -214,11 +215,12 @@ describe('VerseSelect', () => {
       });
     });
 
-    test('proper semantic structure with headings', () => {
+    test('proper semantic structure without headings', () => {
       render(<VerseSelect bookData={mockBookData} chapterNumber="1" />);
 
-      const heading = screen.getByRole('heading', { level: 3 });
-      expect(heading).toHaveTextContent('Genesis 1');
+      // No headings anymore, just verse buttons
+      expect(screen.queryByRole('heading')).not.toBeInTheDocument();
+      expect(screen.getByText('1')).toBeInTheDocument();
     });
   });
 
@@ -234,8 +236,7 @@ describe('VerseSelect', () => {
 
       render(<VerseSelect bookData={singleVerseChapter} chapterNumber="1" />);
 
-      expect(screen.getByText('Test Book 1')).toBeInTheDocument();
-      expect(screen.getByText('1 verses')).toBeInTheDocument();
+      // Should render single verse button without header
       expect(screen.getByText('1')).toBeInTheDocument();
       
       const verseButtons = screen.getAllByRole('button');
@@ -245,8 +246,7 @@ describe('VerseSelect', () => {
     test('handles chapter with many verses', () => {
       render(<VerseSelect bookData={mockBookDataWithManyVerses} chapterNumber="119" />);
 
-      expect(screen.getByText('Psalms 119')).toBeInTheDocument();
-      expect(screen.getByText('176 verses')).toBeInTheDocument();
+      // Should render first and last verse buttons without header
       
       // Check first and last verses
       expect(screen.getByText('1')).toBeInTheDocument();
@@ -267,8 +267,8 @@ describe('VerseSelect', () => {
 
       render(<VerseSelect bookData={emptyChapter} chapterNumber="1" />);
 
-      expect(screen.getByText('Empty Chapter 1')).toBeInTheDocument();
-      expect(screen.getByText('0 verses')).toBeInTheDocument();
+      // Should render empty grid (no verse buttons) without header
+      expect(document.querySelector('.verses-grid')).toBeInTheDocument();
       
       // Should not have any verse buttons
       expect(screen.queryByRole('button')).not.toBeInTheDocument();
@@ -290,9 +290,9 @@ describe('VerseSelect', () => {
         <VerseSelect bookData={mockBookData} chapterNumber="2" />
       );
       
-      // Should now show chapter 2 verses, and no selection
-      expect(screen.getByText('Genesis 2')).toBeInTheDocument();
-      expect(screen.getByText('25 verses')).toBeInTheDocument();
+      // Should now show chapter 2 verses, and no selection without header
+      expect(screen.getByText('1')).toBeInTheDocument();
+      expect(screen.getByText('25')).toBeInTheDocument();
       
       const newVerse1Button = screen.getByText('1').closest('button');
       expect(newVerse1Button).not.toHaveClass('selected');
@@ -320,9 +320,9 @@ describe('VerseSelect', () => {
         <VerseSelect bookData={differentBookData} chapterNumber="1" />
       );
       
-      // Should show new book and no selection
-      expect(screen.getByText('Exodus 1')).toBeInTheDocument();
-      expect(screen.getByText('22 verses')).toBeInTheDocument();
+      // Should show new book verse buttons and no selection without header
+      expect(screen.getByText('1')).toBeInTheDocument();
+      expect(screen.getByText('22')).toBeInTheDocument();
       
       const newVerse1Button = screen.getByText('1').closest('button');
       expect(newVerse1Button).not.toHaveClass('selected');

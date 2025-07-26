@@ -43,10 +43,11 @@ describe('ChapterSelector', () => {
       expect(screen.getByText('Loading chapters...')).toBeInTheDocument();
     });
 
-    test('renders book title and chapter count in header', () => {
+    test('renders chapter buttons without header', () => {
       render(<ChapterSelector bookData={mockBookData} />);
-      expect(screen.getByText('Genesis')).toBeInTheDocument();
-      expect(screen.getByText('50 chapters')).toBeInTheDocument();
+      // Should render chapter buttons without header
+      expect(screen.getByText('1')).toBeInTheDocument();
+      expect(screen.getByText('5')).toBeInTheDocument();
     });
 
     test('renders all chapters as buttons', () => {
@@ -194,11 +195,12 @@ describe('ChapterSelector', () => {
       });
     });
 
-    test('proper semantic structure with headings', () => {
+    test('proper semantic structure without headings', () => {
       render(<ChapterSelector bookData={mockBookData} />);
 
-      const heading = screen.getByRole('heading', { level: 3 });
-      expect(heading).toHaveTextContent('Genesis');
+      // No headings anymore, just chapter buttons
+      expect(screen.queryByRole('heading')).not.toBeInTheDocument();
+      expect(screen.getByText('1')).toBeInTheDocument();
     });
   });
 
@@ -214,8 +216,7 @@ describe('ChapterSelector', () => {
 
       render(<ChapterSelector bookData={singleChapterBook} />);
 
-      expect(screen.getByText('Obadiah')).toBeInTheDocument();
-      expect(screen.getByText('1 chapters')).toBeInTheDocument();
+      // Should render the single chapter button without header
       expect(screen.getByText('1')).toBeInTheDocument();
       
       // Verse count should be in title attribute, not displayed as text
@@ -226,8 +227,7 @@ describe('ChapterSelector', () => {
     test('handles book with many chapters', () => {
       render(<ChapterSelector bookData={mockBookDataWithManyChapters} />);
 
-      expect(screen.getByText('Psalms')).toBeInTheDocument();
-      expect(screen.getByText('150 chapters')).toBeInTheDocument();
+      // Should render first and last chapter buttons without header
       
       // Check first and last chapters
       expect(screen.getByText('1')).toBeInTheDocument();
@@ -245,8 +245,8 @@ describe('ChapterSelector', () => {
 
       render(<ChapterSelector bookData={emptyChaptersBook} />);
 
-      expect(screen.getByText('Empty Book')).toBeInTheDocument();
-      expect(screen.getByText('0 chapters')).toBeInTheDocument();
+      // Should render empty grid (no chapter buttons) without header
+      expect(document.querySelector('.chapters-grid')).toBeInTheDocument();
       
       // Should not have any chapter buttons
       expect(screen.queryByRole('button')).not.toBeInTheDocument();
