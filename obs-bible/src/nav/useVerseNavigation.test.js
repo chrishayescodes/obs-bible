@@ -1,6 +1,7 @@
 import { renderHook, act } from '@testing-library/react'
 import { useVerseNavigation } from './useVerseNavigation'
 import { verseHistoryUtils } from '../utils/verseHistory'
+import { verseSyncUtils } from '../utils/broadcastChannel'
 
 // Mock the verseHistory utility
 jest.mock('../utils/verseHistory', () => ({
@@ -9,6 +10,14 @@ jest.mock('../utils/verseHistory', () => ({
     setCurrentVerse: jest.fn(),
     getCurrentVerse: jest.fn(),
     clearCurrentVerse: jest.fn(),
+  }
+}))
+
+// Mock the broadcastChannel utility
+jest.mock('../utils/broadcastChannel', () => ({
+  verseSyncUtils: {
+    broadcastVerseSelection: jest.fn(),
+    broadcastVerseClear: jest.fn(),
   }
 }))
 
@@ -68,9 +77,9 @@ describe('useVerseNavigation', () => {
         await result.current.handleVerseSelected(mockScriptureRef)
       })
 
-      // Should add to history and set current verse
-      expect(verseHistoryUtils.addToHistory).toHaveBeenCalledWith(mockScriptureRef)
-      expect(verseHistoryUtils.setCurrentVerse).toHaveBeenCalledWith(mockScriptureRef)
+      // Should NOT add to history or set current verse (navigation only)
+      expect(verseHistoryUtils.addToHistory).not.toHaveBeenCalled()
+      expect(verseHistoryUtils.setCurrentVerse).not.toHaveBeenCalled()
 
       // Should update state
       expect(result.current.selectedScripture).toEqual({
@@ -246,6 +255,63 @@ describe('useVerseNavigation', () => {
       expect(verseHistoryUtils.getCurrentVerse).toHaveBeenCalled()
       expect(result.current.selectedScripture).toBeNull()
       expect(fetch).not.toHaveBeenCalled()
+    })
+  })
+
+  describe('handleVerseDisplaySelect', () => {
+    const mockBibleData = {
+      old_testament: {
+        books: {
+          Gen: {
+            title: 'Genesis'
+          }
+        }
+      }
+    }
+
+    it('should handle verse selection with broadcasting and history updates', () => {
+      const { result } = renderHook(() => useVerseNavigation(mockBibleData))
+
+      act(() => {
+        result.current.handleVerseDisplaySelect('Gen.1.5')
+      })
+
+      const expectedScriptureRef = {
+        book: 'Genesis',
+        bookId: 'Gen',
+        chapter: '1',
+        verse: 5,
+        reference: 'Genesis 1:5'
+      }
+
+      // Should add to history and set current verse (selection behavior)
+      expect(verseHistoryUtils.addToHistory).toHaveBeenCalledWith(expectedScriptureRef)
+      expect(verseHistoryUtils.setCurrentVerse).toHaveBeenCalledWith(expectedScriptureRef)
+
+      // Should broadcast verse selection
+      expect(verseSyncUtils.broadcastVerseSelection).toHaveBeenCalledWith(expectedScriptureRef)
+
+      // Should update selected verse state
+      expect(result.current.selectedVerse).toBe('Gen.1.5')
+    })
+
+    it('should handle verse selection without bibleData (fallback to bookId)', () => {
+      const { result } = renderHook(() => useVerseNavigation())
+
+      act(() => {
+        result.current.handleVerseDisplaySelect('Matt.5.3')
+      })
+
+      const expectedScriptureRef = {
+        book: 'Matt', // Falls back to bookId when no bibleData
+        bookId: 'Matt',
+        chapter: '5',
+        verse: 3,
+        reference: 'Matt 5:3'
+      }
+
+      expect(verseHistoryUtils.addToHistory).toHaveBeenCalledWith(expectedScriptureRef)
+      expect(verseSyncUtils.broadcastVerseSelection).toHaveBeenCalledWith(expectedScriptureRef)
     })
   })
 

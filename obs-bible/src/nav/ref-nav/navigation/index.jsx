@@ -36,7 +36,14 @@ const Navigation = ({ bibleData, onVerseSelected }) => {
         verse: verseNumber,
         reference: `${selectedBook.title} ${selectedChapter}:${verseNumber}`
       }
+      console.log('🚀 Navigation calling onVerseSelected with OSIS:', `${scriptureRef.bookId}.${scriptureRef.chapter}.${scriptureRef.verse}`, scriptureRef)
       onVerseSelected(scriptureRef)
+    } else {
+      console.log('⚠️ Cannot call onVerseSelected:', {
+        hasCallback: !!onVerseSelected,
+        hasBook: !!selectedBook,
+        hasChapter: !!selectedChapter
+      })
     }
   }
 

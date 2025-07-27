@@ -4,6 +4,7 @@ import VerseDisplay from './bible-nav/verse-display'
 import { useVerseNavigation } from './useVerseNavigation'
 
 const AppNavigation = ({ bibleData }) => {
+  
   // Extract all verse navigation logic into custom hook
   const {
     selectedScripture,
@@ -18,7 +19,7 @@ const AppNavigation = ({ bibleData }) => {
     handlePreviousChapter,
     handleNextChapter,
     getAdjacentChapterInfo
-  } = useVerseNavigation()
+  } = useVerseNavigation(bibleData)
 
   // Restore current verse when bibleData is loaded
   React.useEffect(() => {
@@ -82,7 +83,10 @@ const AppNavigation = ({ bibleData }) => {
       ) : (
         // Show navigation
         <div className="navigation-view">
-          <Navigation bibleData={bibleData} onVerseSelected={handleVerseSelected} />
+          <Navigation 
+            bibleData={bibleData} 
+            onVerseSelected={handleVerseSelected} 
+          />
         </div>
       )}
     </>

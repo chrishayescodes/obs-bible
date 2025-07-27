@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { verseHistoryUtils } from '../utils/verseHistory'
+import { verseSyncUtils, MessageTypes } from '../utils/broadcastChannel'
 import './SelectedVerseDisplay.css'
 
 const SelectedVerseDisplay = () => {
@@ -14,6 +15,26 @@ const SelectedVerseDisplay = () => {
     if (verse) {
       setCurrentVerse(verse)
       loadVerseText(verse)
+    }
+
+    // Subscribe to broadcast messages for cross-tab synchronization
+    const unsubscribe = verseSyncUtils.subscribe((message) => {
+        
+      if (message.type === MessageTypes.VERSE_SELECTED && message.data) {
+        // Update display with the new verse
+        setCurrentVerse(message.data)
+        loadVerseText(message.data)
+      } else if (message.type === MessageTypes.VERSE_CLEARED) {
+        // Clear the display when verse is cleared
+        setCurrentVerse(null)
+        setVerseText('')
+        setError(null)
+      }
+    })
+
+    // Cleanup subscription on unmount
+    return () => {
+      unsubscribe()
     }
   }, [])
 

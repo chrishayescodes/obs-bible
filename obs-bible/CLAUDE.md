@@ -81,7 +81,10 @@ obs-bible/
 │   │           └── Navigation.stories.jsx # Storybook stories
 │   ├── utils/                          # Utility modules
 │   │   ├── verseHistory.js             # Verse history localStorage utility
-│   │   └── verseHistory.test.js        # Comprehensive test suite (27 tests)
+│   │   ├── verseHistory.test.js        # Comprehensive test suite (27 tests)
+│   │   ├── broadcastChannel.js         # Cross-tab communication utility with BroadcastChannel API
+│   │   ├── broadcastChannel.test.js    # Comprehensive test suite (22 tests)
+│   │   └── broadcastChannelDebug.js    # Debug utilities for broadcast channel development
 │   └── stories/                        # Default Storybook example components
 ├── .storybook/                         # Storybook configuration
 │   ├── main.js                         # Storybook main configuration
@@ -163,13 +166,22 @@ The application uses a three-tier data architecture:
 #### Navigation Hook (`src/nav/useVerseNavigation.js`)
 - **State Management**: Manages all verse navigation state internally
   - `selectedScripture`, `verseData`, `loadingVerses`, `navigatedVerse`, `selectedVerse`, `loadedChapters`
-- **Verse Selection Logic**: `handleVerseSelected` callback implementation
-  - Receives complete scripture reference object when verses are selected
+- **Architecture Separation**: Clear distinction between navigation and selection
+  - `handleVerseSelected`: Navigation-only function (visual feedback, no persistent state changes)
+  - `handleVerseDisplaySelect`: Selection function (history updates, cross-tab broadcasting)
+- **Verse Navigation Logic**: `handleVerseSelected` callback implementation
+  - Receives complete scripture reference object when verses are navigated to
   - Loads corresponding JSON chapter file for verse content
   - Creates OSIS ID for verse highlighting and auto-scroll
   - Switches interface to verse display mode
   - Handles loading states and error conditions during verse fetch
-  - Integrates with verse history system automatically
+  - **Does NOT update history or broadcast** - navigation is visual-only
+- **Verse Selection Logic**: `handleVerseDisplaySelect` callback implementation
+  - Receives OSIS ID when verses are explicitly selected (clicked in display)
+  - Parses OSIS ID and creates scripture reference with proper book titles from bibleData
+  - Updates verse history and localStorage current verse
+  - Broadcasts selection to other browser tabs/windows via BroadcastChannel API
+  - Updates selected verse highlighting state
 - **Chapter Navigation Logic**: Multi-chapter loading and management
   - `loadAdjacentChapter()`: Core function for loading previous/next chapters
   - `handlePreviousChapter()`: Loads previous chapter and scrolls to first verse
@@ -438,6 +450,107 @@ Each Bible book category has a distinct color theme:
 - **General Epistles**: Cyan
 - **Prophecy**: Yellow
 
+## Cross-Tab Communication System
+
+The application includes a comprehensive cross-tab communication system using the BroadcastChannel API that enables real-time synchronization of verse selections across multiple browser tabs or windows. This system operates independently while integrating seamlessly with the navigation architecture.
+
+### BroadcastChannel Features
+
+1. **Real-Time Synchronization**: Verse selections are instantly synchronized across all open tabs
+2. **Automatic Fallback**: Uses localStorage events when BroadcastChannel API is not supported
+3. **Origin Filtering**: Messages are filtered to prevent self-triggering loops
+4. **Message Types**: Supports VERSE_SELECTED, VERSE_CLEARED, and other message types
+5. **Error Resilience**: Graceful handling of API failures and unsupported browsers
+6. **Selective Broadcasting**: Only verse selections (not navigation) trigger broadcasts
+
+### Implementation Architecture
+
+#### Utility Module (`src/utils/broadcastChannel.js`)
+Comprehensive utility providing:
+- `verseSyncUtils.broadcastVerseSelection(scriptureRef)`: Broadcast verse selection to other tabs
+- `verseSyncUtils.broadcastVerseClear()`: Broadcast verse clearing to other tabs  
+- `verseSyncUtils.subscribe(callback)`: Subscribe to messages from other tabs
+- `verseSyncUtils.cleanup()`: Clean up resources and close channels
+- **BroadcastChannel Support**: Primary implementation using modern BroadcastChannel API
+- **localStorage Fallback**: Automatic fallback for older browsers using storage events
+- **Message Filtering**: Prevents tabs from processing their own messages
+- **Error Handling**: Comprehensive error catching and logging
+
+#### Integration Points
+- **useVerseNavigation Hook**: `handleVerseDisplaySelect` broadcasts selections (not navigation)
+- **SelectedVerseDisplay Component**: Subscribes to broadcasts and updates display automatically
+- **Architecture Separation**: Only explicit verse selections trigger broadcasts, navigation is local-only
+- **Book Title Integration**: Uses actual Bible data structure for proper book titles in broadcasts
+
+### Broadcasting Architecture
+
+#### When Broadcasting Occurs
+- **Verse Selection**: When users click on verses in the VerseDisplay component
+- **Verse Clearing**: When users clear current verse selection
+- **NOT on Navigation**: Navigation highlighting does not trigger broadcasts
+
+#### Message Structure
+Broadcast messages contain:
+```javascript
+{
+  type: 'verse-selected',          // Message type
+  data: {                          // Scripture reference object
+    book: 'Genesis',               // Full book title from Bible data
+    bookId: 'Gen',                 // Book abbreviation
+    chapter: '1',                  // Chapter number
+    verse: 1,                      // Verse number
+    reference: 'Genesis 1:1'       // Formatted reference
+  },
+  timestamp: 1234567890,           // Unix timestamp
+  origin: '/navigation'            // Source tab pathname
+}
+```
+
+#### Cross-Tab Behavior
+1. **Source Tab**: User selects verse → broadcasts message → updates local state
+2. **Listening Tabs**: Receive message → update display if on `/display` route → no local state changes
+3. **Filter Prevention**: Tabs ignore messages with their own origin pathname
+4. **Automatic Updates**: Display component automatically loads verse text when receiving broadcasts
+
+### Testing Coverage
+
+Comprehensive test suite with **22 tests** covering:
+- **broadcastChannel.test.js**: BroadcastChannel API functionality
+  - Message broadcasting and subscription
+  - localStorage fallback behavior  
+  - Origin filtering and error handling
+  - Message type validation
+- **useVerseNavigation.test.js**: Integration testing
+  - Verse selection broadcasting (handleVerseDisplaySelect)
+  - Navigation non-broadcasting (handleVerseSelected)
+  - Book title mapping from Bible data
+- **SelectedVerseDisplay.test.jsx**: Display component integration
+  - Message subscription and verse loading
+  - Cross-tab update behavior
+
+### Usage Examples
+
+```javascript
+// Broadcast verse selection (automatic in useVerseNavigation)
+verseSyncUtils.broadcastVerseSelection({
+  book: 'Genesis',
+  bookId: 'Gen', 
+  chapter: '1',
+  verse: 1,
+  reference: 'Genesis 1:1'
+});
+
+// Subscribe to broadcasts (automatic in SelectedVerseDisplay)
+const unsubscribe = verseSyncUtils.subscribe((message) => {
+  if (message.type === 'verse-selected') {
+    updateDisplay(message.data);
+  }
+});
+
+// Cleanup subscription
+unsubscribe();
+```
+
 ## Verse History System
 
 The application includes a comprehensive verse history tracking system that automatically saves and restores selected verses using localStorage. This system operates independently of existing components, providing persistent verse selection across browser sessions.
@@ -555,7 +668,7 @@ npm run build-storybook
 
 ### Testing Strategy
 
-The project implements comprehensive testing with 226 total tests (all passing):
+The project implements comprehensive testing with 248 total tests (all passing):
 
 1. **Unit Tests**:
    - **BibleBookSelector**: 21 tests covering component rendering, user interactions, accessibility, and edge cases
@@ -566,6 +679,7 @@ The project implements comprehensive testing with 226 total tests (all passing):
    - **VerseDisplay**: 25 tests covering verse rendering, navigation highlighting, persistent reminders, selection clearing, auto-scroll, accessibility, and edge cases
    - **SelectedVerseDisplay**: 22 tests covering localStorage integration, verse loading, error handling, user interactions, accessibility, and component lifecycle
    - **verseHistory**: 27 tests covering localStorage functionality, history management, error handling, and data integrity
+   - **broadcastChannel**: 22 tests covering BroadcastChannel API functionality, localStorage fallback, message filtering, and cross-tab communication
    - **App**: 15 tests covering routing architecture, Bible data loading, AppNavigation integration, SelectedVerseDisplay routing, and error handling
    - **AppNavigation**: 35 tests covering navigation orchestration, hook integration, component rendering states, and user interactions
    - **useVerseNavigation**: 35 tests covering custom hook state management, verse selection logic, history integration, and memoization
@@ -587,6 +701,14 @@ The project implements comprehensive testing with 226 total tests (all passing):
    - **VS Code Integration**: Enhanced Jest extension settings for test discovery
 
 3. **Recent Updates** (Latest):
+   - **Cross-Tab Communication System**: Implemented comprehensive BroadcastChannel API for real-time verse synchronization across browser tabs
+   - **Architecture Refinement**: Fixed navigation vs selection architecture - only explicit verse selections broadcast, navigation is visual-only
+   - **Book Title Integration**: Enhanced verse selection to use actual Bible data structure for proper book titles instead of hardcoded mapping
+   - **Selective Broadcasting**: Clear separation between handleVerseSelected (navigation, no broadcast) and handleVerseDisplaySelect (selection, broadcasts)
+   - **localStorage Fallback**: Automatic fallback to localStorage events for older browsers without BroadcastChannel support
+   - **Message Filtering**: Prevents tabs from processing their own broadcast messages using origin pathname filtering
+   - **Comprehensive Testing**: Added 22 new tests for BroadcastChannel functionality, expanding total to 248 tests
+   - **Debug Cleanup**: Removed all debug logging from production code while maintaining comprehensive error handling
    - **Multi-Chapter Reading Experience**: Added seamless chapter navigation with previous/next chapter buttons
    - **Dynamic Chapter Loading**: Implemented on-demand loading of adjacent chapters into the same verse display
    - **Smart Chapter Navigation**: Previous/Next buttons only appear when adjacent chapters exist
@@ -601,7 +723,7 @@ The project implements comprehensive testing with 226 total tests (all passing):
    - **Component Separation**: App.jsx reduced from 94 to 39 lines, focusing solely on Bible data loading
    - **Custom Hook Architecture**: Created `useVerseNavigation` hook to encapsulate all navigation state and logic
    - **AppNavigation Component**: New orchestration component handling navigation UI with hook integration
-   - **Comprehensive Testing**: Expanded to 226 tests including new AppNavigation (35 tests), useVerseNavigation (35 tests), and SelectedVerseDisplay (22 tests) suites
+   - **Comprehensive Testing**: Expanded to 248 tests including new AppNavigation (35 tests), useVerseNavigation (35 tests), SelectedVerseDisplay (22 tests), and broadcastChannel (22 tests) suites
    - **Clean Architecture**: Complete separation of concerns between data loading, navigation orchestration, and UI components
    - **Folder Reorganization**: Consolidated all navigation components under `src/nav/` folder with proper subfolders
    - **File Movement Tracking**: Used git commands to properly track file movements as renames rather than deletions/additions
@@ -738,25 +860,26 @@ The application provides a simple two-view system with complete Bible navigation
 ## Key Features
 
 1. **Client-Side Routing**: React Router integration with clean URL-based navigation including dedicated `/display` route for verse viewing
-2. **Standalone Verse Display**: Independent SelectedVerseDisplay component at `/display` route for viewing selected verses from localStorage
-3. **Minimalist Navigation**: Clean navigation path (Books › Book › Chapter) with smart contextual controls
-4. **Comprehensive Verse Selection**: Handles all verse counts from 0 (rare) to 176 (Psalm 119)  
-5. **Navigation-Only Verse Display**: Bible reference navigation shows verse content with visual highlighting but no automatic selection - users must explicitly click verses to select them
-6. **Simple Back Navigation**: Prominent back button to return to Bible navigation from any verse display
-7. **Single-View Interface**: Either navigation OR verse content - never both simultaneously for focused experience
-8. **Responsive Design**: Adapts from mobile to desktop with proper button and layout scaling
-9. **Multi-Chapter Reading Experience**: Load adjacent chapters into the same view for seamless reading
-10. **Smart Chapter Navigation**: Previous/Next chapter buttons with intelligent visibility based on book structure
-11. **Dynamic Content Loading**: On-demand loading of chapter content when verses are selected or chapters are navigated
-12. **Optimized Chapter Loading**: Prevents duplicate chapter fetches and intelligently merges content
-13. **Cross-Chapter Functionality**: All verse highlighting, selection, and navigation works seamlessly across multiple chapters
-14. **Dark Mode Support**: System preference detection and manual override for all components including breadcrumb
-15. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
-16. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy
-17. **Testability**: Each component fully testable in isolation with comprehensive test coverage
-18. **Developer Experience**: Hot reload, comprehensive testing (226 tests), component isolation, Storybook documentation
-19. **Advanced Navigation System**: Fast orange pulse animation (0.6s) plus persistent subtle reminders for navigated verses, with global clearing on selection
-20. **Callback Integration**: Verse selection callback system enabling custom navigation actions and application extensions
+2. **Cross-Tab Synchronization**: Real-time verse selection synchronization across multiple browser tabs using BroadcastChannel API with localStorage fallback
+3. **Standalone Verse Display**: Independent SelectedVerseDisplay component at `/display` route for viewing selected verses from localStorage
+4. **Minimalist Navigation**: Clean navigation path (Books › Book › Chapter) with smart contextual controls
+5. **Comprehensive Verse Selection**: Handles all verse counts from 0 (rare) to 176 (Psalm 119)  
+6. **Navigation-Only Verse Display**: Bible reference navigation shows verse content with visual highlighting but no automatic selection - users must explicitly click verses to select them
+7. **Simple Back Navigation**: Prominent back button to return to Bible navigation from any verse display
+8. **Single-View Interface**: Either navigation OR verse content - never both simultaneously for focused experience
+9. **Responsive Design**: Adapts from mobile to desktop with proper button and layout scaling
+10. **Multi-Chapter Reading Experience**: Load adjacent chapters into the same view for seamless reading
+11. **Smart Chapter Navigation**: Previous/Next chapter buttons with intelligent visibility based on book structure
+12. **Dynamic Content Loading**: On-demand loading of chapter content when verses are selected or chapters are navigated
+13. **Optimized Chapter Loading**: Prevents duplicate chapter fetches and intelligently merges content
+14. **Cross-Chapter Functionality**: All verse highlighting, selection, and navigation works seamlessly across multiple chapters
+15. **Dark Mode Support**: System preference detection and manual override for all components including breadcrumb
+16. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
+17. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy
+18. **Testability**: Each component fully testable in isolation with comprehensive test coverage
+19. **Developer Experience**: Hot reload, comprehensive testing (248 tests), component isolation, Storybook documentation
+20. **Advanced Navigation System**: Fast orange pulse animation (0.6s) plus persistent subtle reminders for navigated verses, with global clearing on selection
+21. **Callback Integration**: Verse selection callback system enabling custom navigation actions and application extensions
 
 ## Future Development Considerations
 

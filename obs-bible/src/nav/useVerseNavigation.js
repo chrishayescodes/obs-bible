@@ -1,7 +1,10 @@
 import { useState, useCallback } from 'react'
 import { verseHistoryUtils } from '../utils/verseHistory'
+import { verseSyncUtils } from '../utils/broadcastChannel'
 
-export const useVerseNavigation = () => {
+// Debug logging removed - implementation working correctly
+
+export const useVerseNavigation = (bibleData) => {
   const [selectedScripture, setSelectedScripture] = useState(null)
   const [verseData, setVerseData] = useState(null)
   const [loadingVerses, setLoadingVerses] = useState(false)
@@ -10,11 +13,9 @@ export const useVerseNavigation = () => {
   const [loadedChapters, setLoadedChapters] = useState(new Set())
 
   const handleVerseSelected = useCallback(async (scriptureRef) => {
-    console.log('Verse navigated to:', scriptureRef)
     
-    // Add to history and save as current verse
-    verseHistoryUtils.addToHistory(scriptureRef)
-    verseHistoryUtils.setCurrentVerse(scriptureRef)
+    // Navigation only - do NOT update history or broadcast
+    // This is just for visual navigation/highlighting
     
     // Create the navigated verse OSIS ID from the scripture reference
     const navigatedVerseId = `${scriptureRef.bookId}.${scriptureRef.chapter}.${scriptureRef.verse}`
@@ -50,13 +51,46 @@ export const useVerseNavigation = () => {
   }, [])
 
   const handleVerseDisplaySelect = useCallback((osisId) => {
+    
     // Update the selected verse for highlighting when clicking in verse display
     setSelectedVerse(osisId)
-  }, [])
+    
+    // Parse the OSIS ID to create a scripture reference
+    const [bookId, chapter, verse] = osisId.split('.')
+    
+    // Get the book title from bibleData
+    let bookTitle = bookId // fallback to bookId if not found
+    if (bibleData) {
+      const oldTestamentBook = bibleData.old_testament?.books?.[bookId]
+      const newTestamentBook = bibleData.new_testament?.books?.[bookId]
+      const bookInfo = oldTestamentBook || newTestamentBook
+      if (bookInfo && bookInfo.title) {
+        bookTitle = bookInfo.title
+      }
+    }
+    
+    const scriptureRef = {
+      book: bookTitle,
+      bookId: bookId,
+      chapter: chapter,
+      verse: parseInt(verse),
+      reference: `${bookTitle} ${chapter}:${verse}`
+    }
+    
+    // Add to history and save as current verse
+    verseHistoryUtils.addToHistory(scriptureRef)
+    verseHistoryUtils.setCurrentVerse(scriptureRef)
+    
+    // Broadcast verse selection to other tabs/windows
+    verseSyncUtils.broadcastVerseSelection(scriptureRef)
+  }, [bibleData])
 
   const handleBackToBooks = useCallback(() => {
     // Clear current verse from localStorage and all selections
     verseHistoryUtils.clearCurrentVerse()
+    
+    // Broadcast verse clearing to other tabs/windows
+    verseSyncUtils.broadcastVerseClear()
     
     // Clear all selections and return to navigation
     setSelectedScripture(null)
