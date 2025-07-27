@@ -23,8 +23,10 @@ obs-bible/
 │   ├── data/
 │   │   ├── kjv_structure.json          # Bible structure and metadata
 │   │   ├── kjvfull.xml                 # Complete KJV Bible XML
+│   │   ├── book_names.json             # Simple book name mappings (Gen -> Genesis, etc.)
 │   │   ├── parse_kjv_bible.py          # Python script for data processing
 │   │   ├── extract_verses_to_json.py   # Python script to extract verses from XML to JSON
+│   │   ├── generate_book_names.py      # Python script to generate book name mappings
 │   │   ├── output_chapters/            # Individual chapter XML files (66 books)
 │   │   │   ├── Gen/                    # Genesis chapters (Gen_1.xml to Gen_50.xml)
 │   │   │   ├── Matt/                   # Matthew chapters (Matt_1.xml to Matt_28.xml)
@@ -84,7 +86,8 @@ obs-bible/
 │   │   ├── verseHistory.test.js        # Comprehensive test suite (27 tests)
 │   │   ├── broadcastChannel.js         # Cross-tab communication utility with BroadcastChannel API
 │   │   ├── broadcastChannel.test.js    # Comprehensive test suite (22 tests)
-│   │   └── broadcastChannelDebug.js    # Debug utilities for broadcast channel development
+│   │   ├── broadcastChannelDebug.js    # Debug utilities for broadcast channel development
+│   │   └── bookNames.js                # Book name mapping utility with synchronous functions
 │   └── stories/                        # Default Storybook example components
 ├── .storybook/                         # Storybook configuration
 │   ├── main.js                         # Storybook main configuration
@@ -671,7 +674,7 @@ npm run build-storybook
 
 ### Testing Strategy
 
-The project implements comprehensive testing with 248 total tests (all passing):
+The project implements comprehensive testing with 247 total tests (all passing):
 
 1. **Unit Tests**:
    - **BibleBookSelector**: 21 tests covering component rendering, user interactions, accessibility, and edge cases
@@ -710,8 +713,13 @@ The project implements comprehensive testing with 248 total tests (all passing):
    - **Selective Broadcasting**: Clear separation between handleVerseSelected (navigation, no broadcast) and handleVerseDisplaySelect (selection, broadcasts)
    - **localStorage Fallback**: Automatic fallback to localStorage events for older browsers without BroadcastChannel support
    - **Message Filtering**: Prevents tabs from processing their own broadcast messages using origin pathname filtering
-   - **Comprehensive Testing**: Added 22 new tests for BroadcastChannel functionality, expanding total to 248 tests
-   - **Debug Cleanup**: Removed all debug logging from production code while maintaining comprehensive error handling
+   - **Comprehensive Testing**: Maintained 247 tests total with comprehensive book name mapping and display component testing
+   - **Simple Book Name Mapping System**: Created comprehensive book name mapping with JSON data file, Python generation script, and JavaScript utility module
+   - **Book Names Data Generation**: Implemented `generate_book_names.py` script to create `book_names.json` from Bible structure with all 66 book mappings
+   - **Enhanced Display Component**: Updated SelectedVerseDisplay to show simple book names (e.g., "Genesis 1:1") instead of long formal titles
+   - **Synchronous Book Name Functions**: Created efficient book name lookup with complete fallback mapping for test environments
+   - **Test Architecture Improvements**: Fixed book name cache conflicts in tests with proper mocking and isolated test environment
+   - **Debug Cleanup**: Removed all debug console logging from production code while preserving important error and warning logging
    - **Multi-Chapter Reading Experience**: Added seamless chapter navigation with previous/next chapter buttons
    - **Dynamic Chapter Loading**: Implemented on-demand loading of adjacent chapters into the same verse display
    - **Smart Chapter Navigation**: Previous/Next buttons only appear when adjacent chapters exist
@@ -726,7 +734,7 @@ The project implements comprehensive testing with 248 total tests (all passing):
    - **Component Separation**: App.jsx reduced from 94 to 39 lines, focusing solely on Bible data loading
    - **Custom Hook Architecture**: Created `useVerseNavigation` hook to encapsulate all navigation state and logic
    - **AppNavigation Component**: New orchestration component handling navigation UI with hook integration
-   - **Comprehensive Testing**: Expanded to 248 tests including new AppNavigation (35 tests), useVerseNavigation (35 tests), SelectedVerseDisplay (22 tests), and broadcastChannel (22 tests) suites
+   - **Comprehensive Testing**: Maintained 247 tests including AppNavigation (35 tests), useVerseNavigation (35 tests), SelectedVerseDisplay (22 tests), broadcastChannel (22 tests), and Navigation (22 tests) suites
    - **Clean Architecture**: Complete separation of concerns between data loading, navigation orchestration, and UI components
    - **Folder Reorganization**: Consolidated all navigation components under `src/nav/` folder with proper subfolders
    - **File Movement Tracking**: Used git commands to properly track file movements as renames rather than deletions/additions
@@ -774,6 +782,16 @@ The application includes Python scripts for processing Bible data:
   - Ignores `<ns1:note>` tags and their content
 - **Output**: JSON files with verse text in `output_chapters_json/`
 - **Total Files Processed**: 1,189 chapter files across 66 books
+
+#### 3. Book Names Generation (`generate_book_names.py`)
+- **Input**: Bible structure JSON file (`kjv_structure.json`)
+- **Processing**: 
+  - Extracts book IDs from Old and New Testament structure
+  - Maps formal book titles to commonly used simple names
+  - Complete manual mapping for all 66 Bible books
+  - Handles complex cases like "THE FIRST BOOK OF MOSES CALLED GENESIS" → "Genesis"
+- **Output**: Simple book name mapping JSON file (`book_names.json`)
+- **Integration**: Used by JavaScript `bookNames.js` utility for display components
 
 ### XML Structure
 

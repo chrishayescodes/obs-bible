@@ -12,11 +12,54 @@ jest.mock('../utils/verseHistory', () => ({
   }
 }));
 
+// Mock the bookNames utility to avoid cache issues
+jest.mock('../utils/bookNames', () => {
+  let mockCache = null;
+  
+  return {
+    getSimpleBookName: jest.fn((bookId) => {
+      const fallback = {
+        'Gen': 'Genesis',
+        'Exod': 'Exodus',
+        'Matt': 'Matthew'
+      };
+      return fallback[bookId] || bookId;
+    }),
+    createSimpleReference: jest.fn((bookId, chapter, verse) => {
+      const fallback = {
+        'Gen': 'Genesis',
+        'Exod': 'Exodus', 
+        'Matt': 'Matthew'
+      };
+      const bookName = fallback[bookId] || bookId;
+      return `${bookName} ${chapter}:${verse}`;
+    }),
+    loadBookNames: jest.fn(() => Promise.resolve()),
+    __clearCache: jest.fn(() => { mockCache = null; })
+  };
+});
+
 // Mock CSS imports
 jest.mock('./SelectedVerseDisplay.css', () => ({}));
 
-// Mock fetch for verse data
-global.fetch = jest.fn();
+// Mock fetch for verse data and book names
+global.fetch = jest.fn((url) => {
+  // Mock book names JSON response
+  if (url === '/data/book_names.json') {
+    return Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({
+        'Gen': 'Genesis',
+        'Exod': 'Exodus',
+        'Matt': 'Matthew',
+        // Add other book names as needed for tests
+      })
+    });
+  }
+  
+  // Default mock behavior for other requests
+  return Promise.reject(new Error('Unmocked fetch request'));
+});
 
 describe('SelectedVerseDisplay Component', () => {
   const mockVerseData = {
@@ -37,6 +80,25 @@ describe('SelectedVerseDisplay Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     fetch.mockClear();
+    
+    // Reset fetch to default behavior
+    fetch.mockImplementation((url) => {
+      // Mock book names JSON response
+      if (url === '/data/book_names.json') {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve({
+            'Gen': 'Genesis',
+            'Exod': 'Exodus',
+            'Matt': 'Matthew',
+            // Add other book names as needed for tests
+          })
+        });
+      }
+      
+      // Default mock behavior for other requests
+      return Promise.reject(new Error('Unmocked fetch request'));
+    });
   });
 
   describe('Component initialization', () => {

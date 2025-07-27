@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { verseHistoryUtils } from '../utils/verseHistory'
 import { verseSyncUtils, MessageTypes } from '../utils/broadcastChannel'
+import { createSimpleReference, loadBookNames } from '../utils/bookNames'
 import './SelectedVerseDisplay.css'
 
 const SelectedVerseDisplay = () => {
@@ -8,6 +9,11 @@ const SelectedVerseDisplay = () => {
   const [verseText, setVerseText] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+
+  useEffect(() => {
+    // Optionally load book names from JSON to enhance the mapping
+    loadBookNames()
+  }, [])
 
   useEffect(() => {
     // Load current verse from localStorage on component mount
@@ -91,12 +97,23 @@ const SelectedVerseDisplay = () => {
   return (
     <div className="selected-verse-display">
       <div className="verse-header">
-        <h3 className="verse-reference">{currentVerse.reference}</h3>
+        <h3 className="verse-reference">
+          {(() => {
+            if (currentVerse.bookId && currentVerse.chapter && currentVerse.verse !== undefined) {
+              return createSimpleReference(currentVerse.bookId, currentVerse.chapter, currentVerse.verse)
+            }
+            return currentVerse.reference
+          })()}
+        </h3>
         <button 
           type="button"
           className="clear-verse-button"
           onClick={handleClearVerse}
-          aria-label={`Clear selected verse ${currentVerse.reference}`}
+          aria-label={`Clear selected verse ${
+            currentVerse.bookId && currentVerse.chapter && currentVerse.verse !== undefined
+              ? createSimpleReference(currentVerse.bookId, currentVerse.chapter, currentVerse.verse)
+              : currentVerse.reference
+          }`}
         >
           ✕
         </button>

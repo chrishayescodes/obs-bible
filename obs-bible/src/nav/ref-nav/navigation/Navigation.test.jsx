@@ -136,21 +136,6 @@ describe('Navigation', () => {
       expect(screen.queryByText('Matt')).not.toBeInTheDocument();
     });
 
-    test('logs book selection to console', async () => {
-      const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
-      const user = userEvent.setup();
-      render(<Navigation bibleData={mockBibleData} />);
-      
-      const genesisButton = screen.getByText('Gen');
-      await user.click(genesisButton);
-      
-      expect(consoleSpy).toHaveBeenCalledWith('Selected book:', 'Gen', expect.objectContaining({
-        title: 'Genesis',
-        category: 'Pentateuch'
-      }));
-      
-      consoleSpy.mockRestore();
-    });
   });
 
   describe('Chapter Selection Flow', () => {
@@ -179,18 +164,6 @@ describe('Navigation', () => {
       expect(screen.queryByTitle('Chapter 3 - 24 verses')).not.toBeInTheDocument();
     });
 
-    test('logs chapter selection to console', async () => {
-      const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
-      const user = userEvent.setup();
-      render(<Navigation bibleData={mockBibleData} />);
-      
-      await user.click(screen.getByText('Gen'));
-      await user.click(screen.getByText('1'));
-      
-      expect(consoleSpy).toHaveBeenCalledWith('Selected chapter:', '1');
-      
-      consoleSpy.mockRestore();
-    });
 
     test('resets verse selection when different chapter is selected', async () => {
       const user = userEvent.setup();
@@ -234,19 +207,6 @@ describe('Navigation', () => {
       expect(screen.queryByText('Chapter has 31 verses')).not.toBeInTheDocument();
     });
 
-    test('logs verse selection to console', async () => {
-      const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
-      const user = userEvent.setup();
-      render(<Navigation bibleData={mockBibleData} />);
-      
-      await user.click(screen.getByText('Gen'));
-      await user.click(screen.getByText('1'));
-      await user.click(screen.getByText('10'));
-      
-      expect(consoleSpy).toHaveBeenCalledWith('Selected verse:', 10);
-      
-      consoleSpy.mockRestore();
-    });
 
     test('calls onVerseSelected callback with scripture reference', async () => {
       const mockOnVerseSelected = jest.fn();

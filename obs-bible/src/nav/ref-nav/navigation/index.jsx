@@ -14,18 +14,15 @@ const Navigation = ({ bibleData, onVerseSelected }) => {
     setSelectedBook({ id: bookId, ...bookInfo })
     setSelectedChapter(null) // Reset chapter selection when book changes
     setSelectedVerse(null) // Reset verse selection when book changes
-    console.log('Selected book:', bookId, bookInfo)
   }
 
   const handleChapterSelect = (chapterNumber) => {
     setSelectedChapter(chapterNumber)
     setSelectedVerse(null) // Reset verse selection when chapter changes
-    console.log('Selected chapter:', chapterNumber)
   }
 
   const handleVerseSelect = (verseNumber) => {
     setSelectedVerse(verseNumber)
-    console.log('Selected verse:', verseNumber)
     
     // Call the callback with scripture reference
     if (onVerseSelected && selectedBook && selectedChapter) {
@@ -36,14 +33,7 @@ const Navigation = ({ bibleData, onVerseSelected }) => {
         verse: verseNumber,
         reference: `${selectedBook.title} ${selectedChapter}:${verseNumber}`
       }
-      console.log('🚀 Navigation calling onVerseSelected with OSIS:', `${scriptureRef.bookId}.${scriptureRef.chapter}.${scriptureRef.verse}`, scriptureRef)
       onVerseSelected(scriptureRef)
-    } else {
-      console.log('⚠️ Cannot call onVerseSelected:', {
-        hasCallback: !!onVerseSelected,
-        hasBook: !!selectedBook,
-        hasChapter: !!selectedChapter
-      })
     }
   }
 
