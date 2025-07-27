@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import AppNavigation from './nav/AppNavigation'
+import SelectedVerseDisplay from './display'
 
 function App() {
   const [bibleData, setBibleData] = useState(null)
@@ -35,6 +36,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<MainApp />} />
+      <Route path="/display" element={<SelectedVerseDisplay />} />
       {/* Default route - redirect to home */}
       <Route path="*" element={<MainApp />} />
     </Routes>

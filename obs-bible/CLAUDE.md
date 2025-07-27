@@ -37,6 +37,11 @@ obs-bible/
 │   ├── App.jsx                         # Main application component with React Router integration
 │   ├── main.jsx                        # React application entry point with BrowserRouter setup
 │   ├── testSetup.js                    # Jest test environment polyfills for React Router
+│   ├── display/                        # Verse display components
+│   │   ├── index.jsx                   # SelectedVerseDisplay component
+│   │   ├── SelectedVerseDisplay.css    # Component-specific styling
+│   │   ├── SelectedVerseDisplay.test.jsx # Comprehensive test suite (22 tests)
+│   │   └── SelectedVerseDisplay.stories.jsx # Storybook stories
 │   ├── nav/                            # Navigation architecture folder
 │   │   ├── AppNavigation.jsx           # Navigation orchestration component
 │   │   ├── AppNavigation.test.jsx      # AppNavigation test suite
@@ -127,6 +132,7 @@ The application uses a three-tier data architecture:
 - **Routing Architecture**: React Router integration with client-side navigation
 - **Route Structure**: 
   - `/` - Main application with navigation and loading states (default route)
+  - `/display` - SelectedVerseDisplay component for viewing selected verses from localStorage
   - `*` - Fallback route redirects to main application
 - **Data Fetching**: 
   - Loads Bible structure from `/data/kjv_structure.json`
@@ -136,6 +142,7 @@ The application uses a three-tier data architecture:
 - **Component Integration**: 
   - Uses React Router's Routes and Route components
   - Renders `AppNavigation` component after data loads
+  - Renders `SelectedVerseDisplay` component independently on `/display` route
   - Passes `bibleData` prop to navigation system
   - Conditional rendering with ternary operator within MainApp component (loading ? LoadingScreen : AppNavigation)
 - **Error Handling**: Graceful error logging with fallback rendering
@@ -283,6 +290,25 @@ The application uses a three-tier data architecture:
   - Chapter button clickable when verse selected, disabled when only chapter selected
   - No verse display element - navigation stops at chapter level for clean UI
 - **State Management**: Purely controlled component with no internal state
+
+#### SelectedVerseDisplay Component (`src/display/`)
+- **Purpose**: Display the currently selected verse from localStorage with full text content and user interactions
+- **Features**:
+  - **LocalStorage Integration**: Automatically loads and displays current verse from localStorage using verseHistory utility
+  - **Dynamic Content Loading**: Fetches verse text from JSON chapter files on component mount
+  - **Loading States**: Shows spinner and loading message while fetching verse content
+  - **Error Handling**: Graceful handling of network errors, missing verses, 404 responses, and invalid JSON
+  - **User Interactions**: Clear button to remove selected verse from localStorage
+  - **No Verse State**: Displays helpful message when no verse is selected
+  - **Verse Metadata**: Shows formatted timestamp of when verse was selected
+  - **Responsive Design**: Adapts to mobile, tablet, and desktop screens with proper layout scaling
+  - **Dark Mode Support**: Both system preference detection and explicit class support
+  - **Accessibility**: Proper ARIA labels, semantic HTML structure, keyboard navigation, and screen reader support
+- **Props**: Self-contained component with no required props (manages state through localStorage)
+- **Integration**: Works independently of main navigation system, perfect for bookmarking or sharing specific verses
+- **Data Loading**: Fetches chapter JSON files using same API pattern as main verse display
+- **State Management**: Uses useState and useEffect for component-level state (loading, error, verse data)
+- **Route Usage**: Available at `/display` route, works independently of main app loading state
 
 #### VerseDisplay Component (`src/nav/bible-nav/verse-display/`)
 - **Purpose**: Display and interact with actual verse content from JSON chapter files with multi-chapter support and chapter navigation
@@ -529,7 +555,7 @@ npm run build-storybook
 
 ### Testing Strategy
 
-The project implements comprehensive testing with 200 total tests (all passing):
+The project implements comprehensive testing with 226 total tests (all passing):
 
 1. **Unit Tests**:
    - **BibleBookSelector**: 21 tests covering component rendering, user interactions, accessibility, and edge cases
@@ -538,8 +564,9 @@ The project implements comprehensive testing with 200 total tests (all passing):
    - **Breadcrumb**: 22 tests covering navigation states, user interactions, accessibility, and edge cases
    - **Navigation**: 25 tests covering complete navigation flow, state management, integration, callback functionality, and edge cases
    - **VerseDisplay**: 25 tests covering verse rendering, navigation highlighting, persistent reminders, selection clearing, auto-scroll, accessibility, and edge cases
+   - **SelectedVerseDisplay**: 22 tests covering localStorage integration, verse loading, error handling, user interactions, accessibility, and component lifecycle
    - **verseHistory**: 27 tests covering localStorage functionality, history management, error handling, and data integrity
-   - **App**: 13 tests covering simplified architecture, Bible data loading, AppNavigation integration, and error handling
+   - **App**: 15 tests covering routing architecture, Bible data loading, AppNavigation integration, SelectedVerseDisplay routing, and error handling
    - **AppNavigation**: 35 tests covering navigation orchestration, hook integration, component rendering states, and user interactions
    - **useVerseNavigation**: 35 tests covering custom hook state management, verse selection logic, history integration, and memoization
    - Component rendering and behavior validation
@@ -574,7 +601,7 @@ The project implements comprehensive testing with 200 total tests (all passing):
    - **Component Separation**: App.jsx reduced from 94 to 39 lines, focusing solely on Bible data loading
    - **Custom Hook Architecture**: Created `useVerseNavigation` hook to encapsulate all navigation state and logic
    - **AppNavigation Component**: New orchestration component handling navigation UI with hook integration
-   - **Comprehensive Testing**: Expanded to 200 tests including new AppNavigation (35 tests) and useVerseNavigation (35 tests) suites
+   - **Comprehensive Testing**: Expanded to 226 tests including new AppNavigation (35 tests), useVerseNavigation (35 tests), and SelectedVerseDisplay (22 tests) suites
    - **Clean Architecture**: Complete separation of concerns between data loading, navigation orchestration, and UI components
    - **Folder Reorganization**: Consolidated all navigation components under `src/nav/` folder with proper subfolders
    - **File Movement Tracking**: Used git commands to properly track file movements as renames rather than deletions/additions
@@ -583,6 +610,10 @@ The project implements comprehensive testing with 200 total tests (all passing):
    - **Enhanced Testability**: All components fully testable in isolation with comprehensive test suites
    - **Component Reusability**: Navigation architecture can be reused independently of data loading concerns
    - **Verse History System**: Comprehensive localStorage-based history tracking with automatic persistence and restoration
+   - **SelectedVerseDisplay Component**: New standalone component for displaying selected verses from localStorage at `/display` route
+   - **Independent Verse Display**: Component works independently of main navigation system with its own loading states and error handling
+   - **Enhanced Routing**: Added `/display` route for dedicated verse viewing with React Router integration
+   - **Comprehensive Component Testing**: Full test coverage for new display component including localStorage integration and error scenarios
    - **Performance Optimization**: All callback functions memoized with useCallback for optimal rendering performance
 
 4. **Storybook Stories**:
@@ -592,6 +623,7 @@ The project implements comprehensive testing with 200 total tests (all passing):
    - Breadcrumb stories covering all navigation states and edge cases
    - Navigation stories covering complete navigation flow and edge cases
    - VerseDisplay stories demonstrating verse content display, selection, and scrolling behavior
+   - SelectedVerseDisplay stories covering localStorage integration, loading states, error scenarios, and user interactions
    - Interactive examples demonstrating navigation callbacks
    - Comprehensive documentation for all navigation and content display components
 
@@ -705,25 +737,26 @@ The application provides a simple two-view system with complete Bible navigation
 
 ## Key Features
 
-1. **Client-Side Routing**: React Router integration with clean URL-based navigation
-2. **Minimalist Navigation**: Clean navigation path (Books › Book › Chapter) with smart contextual controls
-3. **Comprehensive Verse Selection**: Handles all verse counts from 0 (rare) to 176 (Psalm 119)  
-4. **Navigation-Only Verse Display**: Bible reference navigation shows verse content with visual highlighting but no automatic selection - users must explicitly click verses to select them
-5. **Simple Back Navigation**: Prominent back button to return to Bible navigation from any verse display
-6. **Single-View Interface**: Either navigation OR verse content - never both simultaneously for focused experience
-7. **Responsive Design**: Adapts from mobile to desktop with proper button and layout scaling
-8. **Multi-Chapter Reading Experience**: Load adjacent chapters into the same view for seamless reading
-9. **Smart Chapter Navigation**: Previous/Next chapter buttons with intelligent visibility based on book structure
-10. **Dynamic Content Loading**: On-demand loading of chapter content when verses are selected or chapters are navigated
-11. **Optimized Chapter Loading**: Prevents duplicate chapter fetches and intelligently merges content
-12. **Cross-Chapter Functionality**: All verse highlighting, selection, and navigation works seamlessly across multiple chapters
-13. **Dark Mode Support**: System preference detection and manual override for all components including breadcrumb
-14. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
-15. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy
-16. **Testability**: Each component fully testable in isolation with comprehensive test coverage
-17. **Developer Experience**: Hot reload, comprehensive testing (200 tests), component isolation, Storybook documentation
-18. **Advanced Navigation System**: Fast orange pulse animation (0.6s) plus persistent subtle reminders for navigated verses, with global clearing on selection
-19. **Callback Integration**: Verse selection callback system enabling custom navigation actions and application extensions
+1. **Client-Side Routing**: React Router integration with clean URL-based navigation including dedicated `/display` route for verse viewing
+2. **Standalone Verse Display**: Independent SelectedVerseDisplay component at `/display` route for viewing selected verses from localStorage
+3. **Minimalist Navigation**: Clean navigation path (Books › Book › Chapter) with smart contextual controls
+4. **Comprehensive Verse Selection**: Handles all verse counts from 0 (rare) to 176 (Psalm 119)  
+5. **Navigation-Only Verse Display**: Bible reference navigation shows verse content with visual highlighting but no automatic selection - users must explicitly click verses to select them
+6. **Simple Back Navigation**: Prominent back button to return to Bible navigation from any verse display
+7. **Single-View Interface**: Either navigation OR verse content - never both simultaneously for focused experience
+8. **Responsive Design**: Adapts from mobile to desktop with proper button and layout scaling
+9. **Multi-Chapter Reading Experience**: Load adjacent chapters into the same view for seamless reading
+10. **Smart Chapter Navigation**: Previous/Next chapter buttons with intelligent visibility based on book structure
+11. **Dynamic Content Loading**: On-demand loading of chapter content when verses are selected or chapters are navigated
+12. **Optimized Chapter Loading**: Prevents duplicate chapter fetches and intelligently merges content
+13. **Cross-Chapter Functionality**: All verse highlighting, selection, and navigation works seamlessly across multiple chapters
+14. **Dark Mode Support**: System preference detection and manual override for all components including breadcrumb
+15. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
+16. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy
+17. **Testability**: Each component fully testable in isolation with comprehensive test coverage
+18. **Developer Experience**: Hot reload, comprehensive testing (226 tests), component isolation, Storybook documentation
+19. **Advanced Navigation System**: Fast orange pulse animation (0.6s) plus persistent subtle reminders for navigated verses, with global clearing on selection
+20. **Callback Integration**: Verse selection callback system enabling custom navigation actions and application extensions
 
 ## Future Development Considerations
 

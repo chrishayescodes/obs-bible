@@ -21,6 +21,13 @@ jest.mock('./nav/AppNavigation', () => {
   };
 });
 
+// Mock SelectedVerseDisplay component
+jest.mock('./display', () => {
+  return function MockSelectedVerseDisplay() {
+    return <div data-testid="selected-verse-display">Selected Verse Display</div>;
+  };
+});
+
 describe('App Component - Routing Architecture', () => {
   const mockBibleData = {
     old_testament: {
@@ -234,15 +241,17 @@ describe('App Component - Routing Architecture', () => {
       });
     });
 
-    it('should render loading screen on /loading path', () => {
+    it('should render SelectedVerseDisplay on /display path', () => {
+      // Mock fetch for the useEffect in App component
       fetch.mockResolvedValueOnce({
         ok: true,
         json: () => Promise.resolve(mockBibleData)
       });
 
-      renderWithRouter(['/loading']);
+      renderWithRouter(['/display']);
 
-      expect(screen.getByText('Loading Bible data...')).toBeInTheDocument();
+      expect(screen.getByTestId('selected-verse-display')).toBeInTheDocument();
+      expect(screen.getByText('Selected Verse Display')).toBeInTheDocument();
     });
 
     it('should render AppNavigation on unknown paths (fallback)', async () => {
@@ -258,12 +267,13 @@ describe('App Component - Routing Architecture', () => {
       });
     });
 
-    it('should prioritize loading state over route when data is loading', () => {
+    it('should render SelectedVerseDisplay independently of loading state', () => {
       fetch.mockImplementationOnce(() => new Promise(() => {})); // Never resolves
 
-      renderWithRouter(['/loading']);
+      renderWithRouter(['/display']);
 
-      expect(screen.getByText('Loading Bible data...')).toBeInTheDocument();
+      expect(screen.getByTestId('selected-verse-display')).toBeInTheDocument();
+      expect(screen.queryByText('Loading Bible data...')).not.toBeInTheDocument();
       expect(screen.queryByTestId('app-navigation')).not.toBeInTheDocument();
     });
   });
