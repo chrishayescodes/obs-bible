@@ -352,6 +352,89 @@ Each Bible book category has a distinct color theme:
 - **General Epistles**: Cyan
 - **Prophecy**: Yellow
 
+## Verse History System
+
+The application includes a comprehensive verse history tracking system that automatically saves and restores selected verses using localStorage. This system operates independently of existing components, providing persistent verse selection across browser sessions.
+
+### Verse History Features
+
+1. **Automatic History Tracking**: Every verse navigation is automatically saved to history with timestamps
+2. **Current Verse Persistence**: The last selected verse is restored when the app loads
+3. **Duplicate Management**: Re-selecting verses moves them to the top of history
+4. **Storage Limits**: Maintains up to 50 recent verses in history
+5. **Error Resilience**: Graceful handling of localStorage failures
+6. **Data Integrity**: Validates scripture references before storage
+
+### Implementation Architecture
+
+#### Utility Module (`src/utils/verseHistory.js`)
+Standalone utility providing:
+- `getHistory()`: Retrieve complete verse history
+- `addToHistory(scriptureRef)`: Add verse to history
+- `getCurrentVerse()`: Get currently selected verse
+- `setCurrentVerse(scriptureRef)`: Save current verse
+- `clearCurrentVerse()`: Remove current verse
+- `clearHistory()`: Clear all history
+- `getRecentVerses(limit)`: Get limited recent verses
+- `removeFromHistory(osisId)`: Remove specific verse
+
+#### Integration Points
+- **App.jsx**: Integrated into existing `handleVerseSelected` and `handleBackToBooks` functions
+- **No Component Changes**: Existing Navigation, VerseDisplay, and other components remain unchanged
+- **Automatic Restoration**: App restores last verse on load if valid data exists
+- **Clean State Management**: History cleared when returning to navigation
+
+### Data Structure
+
+History items contain:
+```javascript
+{
+  book: 'Genesis',           // Full book title
+  bookId: 'Gen',            // Book abbreviation
+  chapter: '1',             // Chapter number (string)
+  verse: 1,                 // Verse number (number)
+  reference: 'Genesis 1:1', // Formatted reference
+  timestamp: 1234567890,    // Unix timestamp
+  osisId: 'Gen.1.1'        // OSIS identifier
+}
+```
+
+### Testing Coverage
+
+Comprehensive test suite with **36 tests** covering:
+- **verseHistory.test.js**: 27 tests for utility functions
+  - localStorage functionality and error handling
+  - History management operations
+  - Input validation and edge cases
+  - Error resilience testing
+- **App.test.jsx**: 9 tests for integration (all passing)
+  - Verse selection tracking
+  - Current verse restoration
+  - State management integration
+  - Error handling scenarios
+
+### Usage Examples
+
+```javascript
+// Add verse to history (automatic in App.jsx)
+verseHistoryUtils.addToHistory({
+  book: 'Genesis',
+  bookId: 'Gen',
+  chapter: '1',
+  verse: 1,
+  reference: 'Genesis 1:1'
+});
+
+// Get recent verses
+const recent = verseHistoryUtils.getRecentVerses(5);
+
+// Check current verse
+const current = verseHistoryUtils.getCurrentVerse();
+
+// Clear history
+verseHistoryUtils.clearHistory();
+```
+
 ## Development Commands
 
 ### Essential Commands
@@ -386,7 +469,7 @@ npm run build-storybook
 
 ### Testing Strategy
 
-The project implements comprehensive testing with 139 passing tests:
+The project implements comprehensive testing with 171 total tests (all passing):
 
 1. **Unit Tests**:
    - **BibleBookSelector**: 21 tests covering component rendering, user interactions, accessibility, and edge cases
@@ -395,6 +478,8 @@ The project implements comprehensive testing with 139 passing tests:
    - **Breadcrumb**: 22 tests covering navigation states, user interactions, accessibility, and edge cases
    - **Navigation**: 25 tests covering complete navigation flow, state management, integration, callback functionality, and edge cases
    - **VerseDisplay**: 25 tests covering verse rendering, navigation highlighting, persistent reminders, selection clearing, auto-scroll, accessibility, and edge cases
+   - **verseHistory**: 27 tests covering localStorage functionality, history management, error handling, and data integrity
+   - **App**: 9 tests covering verse history integration, state restoration, and error scenarios (all passing)
    - Component rendering and behavior validation
    - User interactions and event handling
    - Edge cases and error conditions (including zero verses, invalid data)
@@ -402,6 +487,7 @@ The project implements comprehensive testing with 139 passing tests:
    - State management and prop changes
    - Navigation flow testing across all breadcrumb states
    - Integration testing between navigation components
+   - Verse history persistence and localStorage functionality
 
 2. **Test Configuration**:
    - **Environment**: jsdom for DOM simulation
@@ -419,7 +505,7 @@ The project implements comprehensive testing with 139 passing tests:
    - **Verse Selection Callback System**: Added `onVerseSelected` callback to Navigation component for scripture reference handling
    - **Scripture Reference Integration**: Complete scripture reference object passed to callback with book, chapter, verse details
    - **Component Organization**: Moved all navigation components to `src/ref-nav/` folder for better organization
-   - **Enhanced Testing**: Expanded to 110 tests with callback functionality testing (25 Navigation tests) - all tests passing
+   - **Enhanced Testing**: Expanded to 171 tests with verse history functionality (27 verseHistory tests, 9 App integration tests)
    - **Extensible Architecture**: Callback system enables custom navigation actions (content loading, URL updates, etc.)
    - **Navigation Component Extraction**: Extracted all navigation logic from App.jsx into dedicated Navigation component
    - **Clean Architecture**: App.jsx now focuses solely on data loading, Navigation handles all Bible browsing
@@ -432,6 +518,9 @@ The project implements comprehensive testing with 139 passing tests:
    - **Accessibility Improvements**: Full ARIA support, keyboard navigation, and meaningful titles throughout breadcrumb
    - **Responsive Breadcrumb Design**: Mobile-optimized navigation with collapsing elements and touch-friendly targets
    - **Separation of Concerns**: Clear architectural boundaries between data loading and navigation functionality
+   - **Verse History System**: Comprehensive localStorage-based history tracking with automatic persistence and restoration
+   - **Independent Implementation**: Verse history added without modifying existing navigation components
+   - **Comprehensive Testing**: 36 new tests covering utility functions and integration scenarios
 
 4. **Storybook Stories**:
    - Component isolation and development

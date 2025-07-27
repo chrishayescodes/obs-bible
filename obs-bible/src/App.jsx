@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import Navigation from './ref-nav/navigation'
 import VerseDisplay from './bible-nav/verse-display'
+import { verseHistoryUtils } from './utils/verseHistory'
 
 function App() {
   const [bibleData, setBibleData] = useState(null)
@@ -19,6 +20,13 @@ function App() {
       .then(data => {
         setBibleData(data)
         setLoading(false)
+        
+        // Restore current verse from localStorage if it exists
+        const savedVerse = verseHistoryUtils.getCurrentVerse()
+        if (savedVerse && savedVerse.bookId && savedVerse.chapter && savedVerse.verse) {
+          // Only restore if we have complete verse data
+          handleVerseSelected(savedVerse)
+        }
       })
       .catch(error => {
         console.error('Error loading Bible data:', error)
@@ -28,6 +36,10 @@ function App() {
 
   const handleVerseSelected = async (scriptureRef) => {
     console.log('Verse navigated to:', scriptureRef)
+    
+    // Add to history and save as current verse
+    verseHistoryUtils.addToHistory(scriptureRef)
+    verseHistoryUtils.setCurrentVerse(scriptureRef)
     
     // Create the navigated verse OSIS ID from the scripture reference
     const navigatedVerseId = `${scriptureRef.bookId}.${scriptureRef.chapter}.${scriptureRef.verse}`
@@ -67,6 +79,9 @@ function App() {
   }
 
   const handleBackToBooks = () => {
+    // Clear current verse from localStorage and all selections
+    verseHistoryUtils.clearCurrentVerse()
+    
     // Clear all selections and return to navigation
     setSelectedScripture(null)
     setVerseData(null)
