@@ -2,7 +2,7 @@
 
 /* OBS Studio overlay body styling */
 body.obs-overlay {
-  background: transparent !important;
+  background:green !important;
   margin: 0;
   padding: 0;
   overflow: hidden; /* Hide scrollbars for clean overlay */
@@ -10,7 +10,7 @@ body.obs-overlay {
 
 /* Remove any potential background from root element when in overlay mode */
 body.obs-overlay #root {
-  background: transparent !important;
+  background: green !important;
   height: 100vh;
   overflow: hidden;
 }
@@ -22,7 +22,7 @@ body.obs-overlay #root {
   left: 0;
   right: 0;
   width: 100vw;
-  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  background: rgba(0, 0, 0, 0); /* Semi-transparent black background */
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   padding: 30px 60px;
@@ -40,7 +40,7 @@ body.obs-overlay #root {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.4;
   margin: 0;
   background: transparent;
   padding: 0;
@@ -54,7 +54,7 @@ body.obs-overlay #root {
 /* Media queries for different video resolutions */
 @media (max-width: 1280px) {
   .selected-verse-display .verse-text {
-    font-size: 2.0rem;
+    font-size: 2.5rem;
   }
   
   .selected-verse-display {
