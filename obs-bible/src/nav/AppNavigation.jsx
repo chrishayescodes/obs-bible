@@ -1,5 +1,5 @@
 import React from 'react'
-import Navigation from './ref-nav/navigation'
+import TabbedNavigation from './ref-nav/tabbed-nav'
 import VerseDisplay from './bible-nav/verse-display'
 import { useVerseNavigation } from './useVerseNavigation'
 
@@ -42,54 +42,21 @@ const AppNavigation = ({ bibleData }) => {
   const selectedBookData = getSelectedBookData()
 
   return (
-    <>
-      {selectedScripture ? (
-        // Show verse display with back button
-        <div className="verse-view">
-          <div className="verse-header">
-            <button 
-              className="back-button" 
-              onClick={handleBackToBooks}
-              type="button"
-            >
-              ← Back to Books
-            </button>
-          </div>
-          
-          {loadingVerses ? (
-            <div className="verse-loading">
-              <div className="loading">Loading verses...</div>
-            </div>
-          ) : verseData ? (
-            <VerseDisplay
-              verseData={verseData}
-              selectedVerse={selectedVerse}
-              navigateToVerse={navigatedVerse}
-              onVerseSelect={handleVerseDisplaySelect}
-              bookName={selectedScripture.book}
-              chapterNumber={selectedScripture.chapter}
-              bookData={selectedBookData}
-              onPreviousChapter={handlePreviousChapter}
-              onNextChapter={handleNextChapter}
-              getAdjacentChapterInfo={getAdjacentChapterInfo}
-              loadingVerses={loadingVerses}
-            />
-          ) : (
-            <div className="verse-error">
-              <div className="loading">Failed to load verses</div>
-            </div>
-          )}
-        </div>
-      ) : (
-        // Show navigation
-        <div className="navigation-view">
-          <Navigation 
-            bibleData={bibleData} 
-            onVerseSelected={handleVerseSelected} 
-          />
-        </div>
-      )}
-    </>
+    <TabbedNavigation 
+      bibleData={bibleData} 
+      onVerseSelected={handleVerseSelected}
+      selectedScripture={selectedScripture}
+      verseData={verseData}
+      loadingVerses={loadingVerses}
+      navigatedVerse={navigatedVerse}
+      selectedVerse={selectedVerse}
+      handleVerseDisplaySelect={handleVerseDisplaySelect}
+      handleBackToBooks={handleBackToBooks}
+      selectedBookData={selectedBookData}
+      handlePreviousChapter={handlePreviousChapter}
+      handleNextChapter={handleNextChapter}
+      getAdjacentChapterInfo={getAdjacentChapterInfo}
+    />
   )
 }
 

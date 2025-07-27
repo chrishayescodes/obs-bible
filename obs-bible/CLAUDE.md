@@ -82,6 +82,9 @@ obs-bible/
 │   │       │   ├── SearchHistory.test.jsx # Comprehensive test suite (23 tests)
 │   │       │   ├── SearchHistory.integration.test.jsx # Integration test suite (7 tests)
 │   │       │   └── SearchHistory.stories.jsx # Storybook stories
+│   │       ├── tabbed-nav/             # Tabbed navigation wrapper component
+│   │       │   ├── index.jsx           # TabbedNavigation component
+│   │       │   └── TabbedNavigation.css # Component-specific styling
 │   │       └── navigation/             # Navigation container component
 │   │           ├── index.jsx           # Navigation component
 │   │           ├── Navigation.css      # Component-specific styling
@@ -163,15 +166,15 @@ The application uses a three-tier data architecture:
 - **Error Handling**: Graceful error logging with fallback rendering
 
 #### AppNavigation Component (`src/nav/AppNavigation.jsx`)
-- **Navigation Orchestration**: Centralized navigation UI management using custom hook
+- **Navigation Orchestration**: Centralized navigation UI management using custom hook with tabbed interface
 - **Hook Integration**: Uses `useVerseNavigation` for all navigation state and logic
-- **View Management**: Conditional rendering between navigation and verse display modes
+- **Tabbed Interface**: Renders `TabbedNavigation` component instead of direct Navigation/VerseDisplay switching
 - **State Restoration**: Automatically restores current verse when Bible data loads
 - **Component Architecture**: 
-  - Renders `Navigation` component for Bible browsing
-  - Switches to `VerseDisplay` component when verses are selected
-  - Includes back button to return to navigation
-  - Handles loading and error states for verse content
+  - Renders `TabbedNavigation` component wrapping all navigation functionality
+  - Passes all navigation state and callbacks to tabbed interface
+  - Tabbed component handles view switching between navigation and verse display
+  - Manages tab state and cross-tab navigation coordination
 - **Props**:
   - `bibleData`: Complete Bible structure object passed from App
 
@@ -318,6 +321,54 @@ The application uses a three-tier data architecture:
   - Chapter button clickable when verse selected, disabled when only chapter selected
   - No verse display element - navigation stops at chapter level for clean UI
 - **State Management**: Purely controlled component with no internal state
+
+#### TabbedNavigation Component (`src/ref-nav/tabbed-nav/`)
+- **Purpose**: Tabbed interface wrapper that organizes reference navigation and history into separate tabs with unified navigation flow
+- **Features**:
+  - **Dual-Tab Interface**: Reference tab (🔍) for Bible browsing and History tab (🕐) for verse history
+  - **Always-Visible Tabs**: Tab bar remains visible in all navigation states for consistent access
+  - **Automatic Tab Switching**: History selections automatically switch to reference tab and navigate to verse
+  - **Seamless Integration**: Wraps existing Navigation and SearchHistory components without modification
+  - **Unified Verse Display**: Reference tab shows either navigation interface OR verse content with back button
+  - **State Management**: Internal tab state management with cross-tab navigation coordination
+  - **Responsive Design**: Mobile-optimized tab layout with adaptive sizing and stacked icons on small screens
+  - **Dark Mode Support**: Both system preference detection and explicit `.dark` class support
+  - **Full Accessibility**: Complete ARIA tablist/tab/tabpanel structure with proper keyboard navigation
+  - **Smooth Transitions**: Fade transitions between tab content with proper visibility management
+- **Props**:
+  - `bibleData`: Complete Bible structure object for navigation
+  - `onVerseSelected`: Callback function triggered when verses are navigated to from either tab
+  - `selectedScripture`: Current scripture reference object for verse display state
+  - `verseData`: JSON object with verse content for display
+  - `loadingVerses`: Boolean indicating verse loading state
+  - `navigatedVerse`: OSIS ID for navigation highlighting
+  - `selectedVerse`: OSIS ID for selection highlighting
+  - `handleVerseDisplaySelect`: Callback for explicit verse selection within content
+  - `handleBackToBooks`: Callback to return to navigation from verse display
+  - `selectedBookData`: Book metadata for chapter navigation
+  - `handlePreviousChapter`: Callback for loading previous chapter
+  - `handleNextChapter`: Callback for loading next chapter
+  - `getAdjacentChapterInfo`: Function to determine chapter navigation button visibility
+- **Tab Architecture**:
+  - **Reference Tab**: Contains Navigation component for browsing OR VerseDisplay component when verse selected
+  - **History Tab**: Contains SearchHistory component for viewing and navigating to previous verses
+  - **Tab State**: Uses `useState` for active tab management with 'reference' as default
+  - **Cross-Tab Navigation**: History selections trigger tab switch and verse navigation automatically
+- **Navigation Flow Integration**:
+  - **History to Reference**: Selecting verses from history automatically switches to reference tab and navigates
+  - **Verse Display**: Reference tab shows full verse display with chapter navigation when verses are selected
+  - **Back Navigation**: Back button in reference tab returns to navigation interface while staying on reference tab
+  - **State Preservation**: Tab switching preserves navigation state and verse display state
+- **Responsive Layout**:
+  - **Desktop**: Horizontal tab layout with icons and labels side-by-side
+  - **Tablet**: Maintains horizontal layout with reduced padding and smaller fonts
+  - **Mobile**: Stacked icon-over-label layout for compact display on small screens
+- **Accessibility Features**:
+  - **Semantic Structure**: Proper `role="tablist"`, `role="tab"`, `role="tabpanel"` attributes
+  - **ARIA Attributes**: `aria-selected`, `aria-controls`, `aria-labelledby` for screen readers
+  - **Keyboard Navigation**: Full keyboard accessibility with proper focus management
+  - **Hidden Panels**: Inactive panels properly hidden with `hidden` attribute
+  - **Focus Management**: Tab switching maintains proper focus states
 
 #### SearchHistory Component (`src/ref-nav/search-history/`)
 - **Purpose**: Display and manage verse search history with clickable navigation links and history management features
@@ -483,6 +534,16 @@ The application uses a comprehensive CSS architecture:
      - Comprehensive responsive design (desktop, tablet, mobile breakpoints)
      - Complete dark mode support with system preference and explicit class support
      - Accessibility-focused design with proper focus states and ARIA support
+   - **TabbedNavigation** (`src/tabbed-nav/TabbedNavigation.css`):
+     - Flexbox layout with tab bar at top and content area below
+     - Tab bar styling with equal-width tabs, icons, and labels
+     - Active tab highlighting with bottom border and color changes
+     - Smooth transitions for tab switching and hover effects
+     - Absolute positioning for tab panels with fade transitions
+     - Responsive breakpoints for mobile (768px, 480px) with stacked icon/label layout
+     - Dark mode support with proper contrast ratios and themed colors
+     - Accessibility-focused styling with proper focus states and ARIA support
+     - Verse view integration ensuring proper scrolling within tab content
    - **SearchHistory** (`src/search-history/SearchHistory.css`):
      - Card-based layout with individual history items as interactive buttons
      - Two-column layout per item: verse information and remove button
@@ -624,6 +685,58 @@ const unsubscribe = verseSyncUtils.subscribe((message) => {
 
 // Cleanup subscription
 unsubscribe();
+```
+
+### TabbedNavigation Component Usage Examples
+
+```javascript
+// Basic TabbedNavigation component usage
+import TabbedNavigation from '../src/nav/ref-nav/tabbed-nav'
+
+// Full integration with useVerseNavigation hook
+const NavigationApp = () => {
+  const navigation = useVerseNavigation(bibleData)
+  
+  return (
+    <TabbedNavigation
+      bibleData={bibleData}
+      onVerseSelected={navigation.handleVerseSelected}
+      selectedScripture={navigation.selectedScripture}
+      verseData={navigation.verseData}
+      loadingVerses={navigation.loadingVerses}
+      navigatedVerse={navigation.navigatedVerse}
+      selectedVerse={navigation.selectedVerse}
+      handleVerseDisplaySelect={navigation.handleVerseDisplaySelect}
+      handleBackToBooks={navigation.handleBackToBooks}
+      selectedBookData={navigation.selectedBookData}
+      handlePreviousChapter={navigation.handlePreviousChapter}
+      handleNextChapter={navigation.handleNextChapter}
+      getAdjacentChapterInfo={navigation.getAdjacentChapterInfo}
+    />
+  )
+}
+
+// Tab behavior examples:
+// 1. User starts on Reference tab, navigates through books/chapters/verses
+// 2. User switches to History tab, sees previously selected verses
+// 3. User clicks verse in History tab → automatically switches to Reference tab and navigates
+// 4. Reference tab shows either navigation interface OR verse display with back button
+// 5. Tab bar remains visible in all states for consistent access
+
+// Responsive design - tabs automatically adapt:
+// Desktop: Horizontal icon+label layout with full padding
+// Tablet: Reduced padding and smaller fonts
+// Mobile: Stacked icon-over-label layout for compact display
+
+// Dark mode support - automatically enabled via:
+// System preference: @media (prefers-color-scheme: dark)  
+// Manual override: <div className="dark"><TabbedNavigation /></div>
+
+// Accessibility features:
+// - Full ARIA tablist/tab/tabpanel structure
+// - Keyboard navigation between tabs with arrow keys
+// - Screen reader announces tab changes and content
+// - Proper focus management during tab switching
 ```
 
 ### SearchHistory Component Usage Examples
@@ -1043,17 +1156,22 @@ The `.vscode/settings.json` includes optimized settings for Jest test discovery:
 ## Application Flow
 
 ### User Navigation Experience
-The application provides a simple two-view system with complete Bible navigation and verse content display:
+The application provides a tabbed interface system with organized Bible navigation and verse history access:
 
-1. **Initial State**: User sees BibleBookSelector for Bible navigation
-2. **Book Selection**: User clicks a book → ChapterSelector appears with breadcrumb "📖 Books › Genesis"
-3. **Chapter Selection**: User clicks a chapter → VerseSelect appears with breadcrumb "📖 Books › Genesis › Chapter 1"
-4. **Verse Navigation**: User clicks a verse → Interface switches to VerseDisplay showing full chapter content with orange navigation highlight
-5. **Navigation Feedback**: Navigated verse gets fast orange pulse animation (0.6s) that auto-clears after 0.8s without selection
-6. **Explicit Selection**: Users must click verses within VerseDisplay to select them (blue highlight)
-7. **Verse Interaction**: Clear distinction between navigation (orange, temporary) and selection (blue, persistent)
-8. **Back Navigation**: Prominent "← Back to Books" button returns to navigation, clearing all selections
-9. **Hierarchical Navigation**: Breadcrumb provides contextual navigation within the navigation view
+1. **Initial State**: User sees TabbedNavigation with Reference tab active, showing BibleBookSelector for Bible navigation
+2. **Tab Access**: Two always-visible tabs - Reference (🔍) for browsing and History (🕐) for verse history
+3. **Reference Tab Navigation**:
+   - Book selection → ChapterSelector appears with breadcrumb "📖 Books › Genesis"
+   - Chapter selection → VerseSelect appears with breadcrumb "📖 Books › Genesis › Chapter 1"
+   - Verse navigation → Interface switches to VerseDisplay with orange navigation highlight
+4. **History Tab Access**: Users can switch to History tab to view and navigate to previously selected verses
+5. **Cross-Tab Navigation**: Selecting verses from History tab automatically switches to Reference tab and navigates
+6. **Navigation Feedback**: Navigated verse gets fast orange pulse animation (0.6s) that auto-clears after 0.8s without selection
+7. **Explicit Selection**: Users must click verses within VerseDisplay to select them (blue highlight)
+8. **Verse Interaction**: Clear distinction between navigation (orange, temporary) and selection (blue, persistent)
+9. **Back Navigation**: Prominent "← Back to Books" button returns to navigation while staying on Reference tab
+10. **Hierarchical Navigation**: Breadcrumb provides contextual navigation within the Reference tab interface
+11. **Tab Persistence**: Tab bar remains visible in all states for consistent access to both navigation and history
 
 ### State Management Architecture
 - **App-level State**: `bibleData`, `selectedScripture`, `verseData`, `loadingVerses`, `navigatedVerse`, `selectedVerse`
@@ -1079,27 +1197,30 @@ The application provides a simple two-view system with complete Bible navigation
 1. **Client-Side Routing**: React Router integration with clean URL-based navigation including dedicated `/display` route for verse viewing
 2. **Cross-Tab Synchronization**: Real-time verse selection synchronization across multiple browser tabs using BroadcastChannel API with localStorage fallback
 3. **Standalone Verse Display**: Independent SelectedVerseDisplay component at `/display` route that remains unaffected by navigation changes
-4. **Minimalist Navigation**: Clean navigation path (Books › Book › Chapter) with smart contextual controls
-5. **Comprehensive Verse Selection**: Handles all verse counts from 0 (rare) to 176 (Psalm 119)  
-6. **Navigation-Only Verse Display**: Bible reference navigation shows verse content with visual highlighting but no automatic selection - users must explicitly click verses to select them
-7. **Simple Back Navigation**: Prominent back button to return to Bible navigation from any verse display
-8. **Single-View Interface**: Either navigation OR verse content - never both simultaneously for focused experience
-9. **Responsive Design**: Adapts from mobile to desktop with proper button and layout scaling
-10. **Multi-Chapter Reading Experience**: Load adjacent chapters into the same view for seamless reading
-11. **Smart Chapter Navigation**: Previous/Next chapter buttons with intelligent visibility based on book structure
-12. **Dynamic Content Loading**: On-demand loading of chapter content when verses are selected or chapters are navigated
-13. **Optimized Chapter Loading**: Prevents duplicate chapter fetches and intelligently merges content
-14. **Cross-Chapter Functionality**: All verse highlighting, selection, and navigation works seamlessly across multiple chapters
-15. **Dark Mode Support**: System preference detection and manual override for all components including breadcrumb
-16. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
-17. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy
-18. **Testability**: Each component fully testable in isolation with comprehensive test coverage
-19. **Developer Experience**: Hot reload, comprehensive testing (248 tests), component isolation, Storybook documentation
-20. **Advanced Navigation System**: Fast orange pulse animation (0.6s) plus persistent subtle reminders for navigated verses, with global clearing on selection
-21. **Callback Integration**: Verse selection callback system enabling custom navigation actions and application extensions
-22. **Search History Management**: Comprehensive verse history display with clickable navigation, individual item removal, and complete history clearing
-23. **Split Verse History Support**: Intelligent handling of split verse parts (9a, 9b) in history with automatic navigation to base verses
-24. **History Accessibility**: Full screen reader support with ARIA labels, semantic structure, and keyboard navigation for history management
+4. **Tabbed Navigation Interface**: Organized navigation with Reference tab (🔍) for Bible browsing and History tab (🕐) for verse history
+5. **Always-Visible Tab Access**: Tab bar remains visible in all navigation states for consistent access to both browsing and history
+6. **Cross-Tab Navigation Flow**: History selections automatically switch to reference tab and navigate to verses seamlessly
+7. **Minimalist Navigation**: Clean navigation path (Books › Book › Chapter) with smart contextual controls within Reference tab
+8. **Comprehensive Verse Selection**: Handles all verse counts from 0 (rare) to 176 (Psalm 119)  
+9. **Navigation-Only Verse Display**: Bible reference navigation shows verse content with visual highlighting but no automatic selection - users must explicitly click verses to select them
+10. **Simple Back Navigation**: Prominent back button to return to Bible navigation while staying within Reference tab
+11. **Unified Interface**: Tabbed organization maintains context while providing easy access to both navigation and history
+12. **Responsive Design**: Adapts from mobile to desktop with proper button and layout scaling including mobile-optimized tab layout
+13. **Multi-Chapter Reading Experience**: Load adjacent chapters into the same view for seamless reading
+14. **Smart Chapter Navigation**: Previous/Next chapter buttons with intelligent visibility based on book structure
+15. **Dynamic Content Loading**: On-demand loading of chapter content when verses are selected or chapters are navigated
+16. **Optimized Chapter Loading**: Prevents duplicate chapter fetches and intelligently merges content
+17. **Cross-Chapter Functionality**: All verse highlighting, selection, and navigation works seamlessly across multiple chapters
+18. **Dark Mode Support**: System preference detection and manual override for all components including tabbed interface
+19. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure with proper tab/tabpanel relationships
+20. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy with smooth tab transitions
+21. **Testability**: Each component fully testable in isolation with comprehensive test coverage
+22. **Developer Experience**: Hot reload, comprehensive testing (248 tests), component isolation, Storybook documentation
+23. **Advanced Navigation System**: Fast orange pulse animation (0.6s) plus persistent subtle reminders for navigated verses, with global clearing on selection
+24. **Callback Integration**: Verse selection callback system enabling custom navigation actions and application extensions
+25. **Search History Management**: Comprehensive verse history display with clickable navigation, individual item removal, and complete history clearing
+26. **Split Verse History Support**: Intelligent handling of split verse parts (9a, 9b) in history with automatic navigation to base verses
+27. **History Accessibility**: Full screen reader support with ARIA labels, semantic structure, and keyboard navigation for history management
 
 ## Future Development Considerations
 

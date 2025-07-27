@@ -1,0 +1,186 @@
+/* Tabbed Navigation Component Styles */
+
+.tabbed-navigation {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+/* Tab Bar */
+.tabbed-navigation__tabs {
+  display: flex;
+  background-color: var(--background-secondary, #f8f9fa);
+  border-bottom: 2px solid var(--border-color, #e9ecef);
+  flex-shrink: 0;
+}
+
+.tabbed-navigation__tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary, #6c757d);
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+  min-height: 60px;
+}
+
+.tabbed-navigation__tab:hover {
+  background-color: var(--background-hover, #e9ecef);
+  color: var(--text-primary, #212529);
+}
+
+.tabbed-navigation__tab:focus {
+  outline: 2px solid var(--primary-color, #007bff);
+  outline-offset: -2px;
+}
+
+.tabbed-navigation__tab--active {
+  color: var(--primary-color, #007bff);
+  border-bottom-color: var(--primary-color, #007bff);
+  background-color: var(--background-primary, #ffffff);
+}
+
+.tabbed-navigation__tab-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.tabbed-navigation__tab-label {
+  font-weight: inherit;
+}
+
+/* Content Area */
+.tabbed-navigation__content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.tabbed-navigation__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  overflow: auto;
+}
+
+.tabbed-navigation__panel--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Verse view styling - ensure proper scrolling */
+.tabbed-navigation .verse-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tabbed-navigation .verse-header {
+  flex-shrink: 0;
+}
+
+.tabbed-navigation .verse-loading,
+.tabbed-navigation .verse-error {
+  flex: 1;
+  overflow: auto;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .tabbed-navigation__tabs {
+    background-color: var(--dark-background-secondary, #1e1e1e);
+    border-bottom-color: var(--dark-border-color, #404040);
+  }
+
+  .tabbed-navigation__tab {
+    color: var(--dark-text-secondary, #9ca3af);
+  }
+
+  .tabbed-navigation__tab:hover {
+    background-color: var(--dark-background-hover, #374151);
+    color: var(--dark-text-primary, #f9fafb);
+  }
+
+  .tabbed-navigation__tab--active {
+    color: var(--dark-primary-color, #60a5fa);
+    border-bottom-color: var(--dark-primary-color, #60a5fa);
+    background-color: var(--dark-background-primary, #111827);
+  }
+}
+
+/* Explicit dark mode class support */
+.dark .tabbed-navigation__tabs {
+  background-color: var(--dark-background-secondary, #1e1e1e);
+  border-bottom-color: var(--dark-border-color, #404040);
+}
+
+.dark .tabbed-navigation__tab {
+  color: var(--dark-text-secondary, #9ca3af);
+}
+
+.dark .tabbed-navigation__tab:hover {
+  background-color: var(--dark-background-hover, #374151);
+  color: var(--dark-text-primary, #f9fafb);
+}
+
+.dark .tabbed-navigation__tab--active {
+  color: var(--dark-primary-color, #60a5fa);
+  border-bottom-color: var(--dark-primary-color, #60a5fa);
+  background-color: var(--dark-background-primary, #111827);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tabbed-navigation__tab {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+    gap: 0.25rem;
+    min-height: 50px;
+  }
+
+  .tabbed-navigation__tab-icon {
+    font-size: 1rem;
+  }
+
+  .tabbed-navigation__tab-label {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabbed-navigation__tab {
+    flex-direction: column;
+    padding: 0.5rem 0.25rem;
+    gap: 0.125rem;
+    min-height: 45px;
+  }
+
+  .tabbed-navigation__tab-icon {
+    font-size: 1.1rem;
+  }
+
+  .tabbed-navigation__tab-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+}
