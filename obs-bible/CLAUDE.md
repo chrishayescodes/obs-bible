@@ -713,11 +713,12 @@ The project implements comprehensive testing with 247 total tests (all passing):
    - **VS Code Integration**: Enhanced Jest extension settings for test discovery
 
 3. **Recent Updates** (Latest):
-   - **Automatic Verse Splitting System**: Implemented intelligent verse splitting for long verses (>200 characters) into readable parts with letter suffixes (e.g., 9a, 9b)
-   - **Smart Navigation for Split Verses**: When users click verse 9, system automatically navigates to 9a while preserving exact selection (9a, 9b) for history and display
+   - **Intelligent Verse Splitting System**: Implemented advanced verse splitting for long verses (>200 characters) with optimal size distribution into 2, 3, or more parts as needed
+   - **Multi-Part Verse Support**: Enhanced algorithm creates evenly-sized parts (e.g., 9a, 9b, 9c) using sentence boundaries and smart distribution for maximum readability
+   - **Smart Navigation for Split Verses**: When users click verse 9, system automatically navigates to 9a while preserving exact selection (9a, 9b, 9c) for history and display
    - **Split Verse Architecture**: Clear separation between navigation (guides to first part) and selection (saves exact part), maintaining backward compatibility
-   - **Data Processing Enhancement**: Updated extract_verses_to_json.py with sentence-boundary splitting and word-boundary fallback for optimal readability
-   - **Cross-Component Support**: All components (navigation, display, history, broadcasting) now handle split verses seamlessly
+   - **Advanced Data Processing**: Updated extract_verses_to_json.py with intelligent part calculation, sentence-boundary splitting, and word-boundary fallback for optimal readability
+   - **Cross-Component Support**: All components (navigation, display, history, broadcasting) now handle multi-part split verses seamlessly
    - **Enhanced OBS Studio Text Readability**: Increased display text size by 33% (2.4rem desktop, 2.0rem tablet, 1.6rem mobile) and added 50% more padding for better video streaming visibility
    - **Continuous Chapter Navigation**: Fixed chapter navigation to work continuously in both directions, tracking loaded chapter range instead of original chapter for seamless multi-chapter reading
    - **Complete Simple Book Name Integration**: Updated breadcrumb component to use simple book names (Genesis, Matthew) instead of formal titles throughout entire navigation system
@@ -802,10 +803,12 @@ The application includes Python scripts for processing Bible data:
   - Extracts OSIS IDs from verse markers
   - Extracts plain text from `<ns1:w>` and `<ns1:transChange>` tags
   - Ignores `<ns1:note>` tags and their content
-  - **Automatic Verse Splitting**: Splits verses longer than 200 characters into parts (e.g., 9a, 9b)
-  - **Smart Splitting**: Splits at sentence boundaries when possible, falls back to word boundaries
+  - **Intelligent Verse Splitting**: Automatically splits verses longer than 200 characters into optimally-sized parts
+  - **Multi-Part Support**: Creates 2, 3, or more parts as needed (e.g., 9a, 9b, 9c) for balanced readability
+  - **Smart Splitting Algorithm**: Calculates optimal number of parts, splits at sentence boundaries when possible, falls back to word boundaries
+  - **Even Distribution**: Aims for approximately equal-sized parts rather than simple binary splits
 - **Output**: JSON files with verse text in `output_chapters_json/`
-- **Split Verse Examples**: Esther 8:9 becomes "Esth.8.9a" and "Esth.8.9b"
+- **Split Verse Examples**: Esther 8:9 becomes "Esth.8.9a", "Esth.8.9b", and "Esth.8.9c" for optimal readability
 - **Total Files Processed**: 1,189 chapter files across 66 books
 
 #### 3. Book Names Generation (`generate_book_names.py`)
