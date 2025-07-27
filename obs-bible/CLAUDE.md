@@ -114,19 +114,29 @@ The application uses a three-tier data architecture:
 ### Component Architecture
 
 #### Main Application (`App.jsx`)
-- **State Management**: Manages `bibleData` state and loading state only
-- **Data Fetching**: Loads Bible structure from `/data/kjv_structure.json`
-- **Simple Architecture**: Clean separation of concerns with Navigation component handling all navigation logic
+- **State Management**: Manages `bibleData`, verse data, and selection states
+- **Data Fetching**: 
+  - Loads Bible structure from `/data/kjv_structure.json`
+  - Dynamically loads verse data from JSON files when chapters are selected
+- **Layout Architecture**: Single-view interface that switches between navigation and verse display
 - **User Interface**: 
   - Shows loading state while Bible data loads
-  - Renders Navigation component with Bible data once loaded
-  - Minimal, focused responsibility for data loading and high-level layout
-- **Loading States**: Handles loading and error states during data fetch
-- **Component Integration**: Delegates all navigation functionality to Navigation component
+  - Renders Navigation component for Bible browsing
+  - Switches to VerseDisplay component when verses are selected
+  - Includes back button to return to navigation
+  - Responsive design for all screen sizes
+- **Loading States**: Handles loading and error states for both Bible data and verse content
+- **Component Integration**: 
+  - Conditional rendering between Navigation and VerseDisplay components
+  - Clean state management with back navigation functionality
+- **Navigation Flow**: Simple two-state system (navigation OR verse display)
 - **Verse Selection Callback**: Implements `handleVerseSelected` callback to receive scripture references
   - Receives complete scripture reference object when verses are selected
-  - Provides extension point for custom navigation logic (content loading, URL updates, etc.)
-  - Currently logs selections for debugging and can be extended for application features
+  - Loads corresponding JSON chapter file for verse content
+  - Creates OSIS ID for verse highlighting and auto-scroll
+  - Switches interface to verse display mode
+  - Handles loading states and error conditions during verse fetch
+- **Back Navigation**: `handleBackToBooks()` function clears selections and returns to navigation
 
 #### Navigation Component (`src/ref-nav/navigation/`)
 - **Purpose**: Centralized navigation system managing all Bible browsing functionality
@@ -265,11 +275,12 @@ The application uses a comprehensive CSS architecture:
    - Typography and base element styling
 
 2. **Application Styles** (`src/App.css`):
-   - Layout for main application components
-   - Navigation view containers (`.chapter-view`, `.verse-view`) with clean layouts
-   - Loading state styling
-   - Dark mode support for all navigation elements
-   - Simplified structure with breadcrumb handling all navigation UI
+   - Layout for single-view interface switching between navigation and verse display
+   - Flexbox layout system (`.navigation-view`, `.verse-view`, `.verse-header`)
+   - Prominent back button styling with blue theme and hover effects
+   - Loading state styling for both Bible data and verse content
+   - Dark mode support for all interface elements
+   - Responsive design adapting button and spacing for mobile
 
 3. **Component Styles**:
    - **Global Accessibility** (`src/index.css`):
@@ -494,35 +505,41 @@ The `.vscode/settings.json` includes optimized settings for Jest test discovery:
 ## Application Flow
 
 ### User Navigation Experience
-The application provides a complete three-level navigation system with minimalist unified breadcrumb:
+The application provides a simple two-view system with complete Bible navigation and verse content display:
 
-1. **Initial State**: User sees BibleBookSelector with breadcrumb showing "📖 Books" button
-2. **Book Selection**: User clicks a book → ChapterSelector appears with breadcrumb "📖 Books › Genesis" (Genesis disabled, Books clickable)
-3. **Chapter Selection**: User clicks a chapter → VerseSelect appears with breadcrumb "📖 Books › Genesis › Chapter 1" (Chapter 1 disabled, Books and Genesis clickable)
-4. **Verse Selection**: User clicks a verse → Breadcrumb remains "📖 Books › Genesis › Chapter 1" with no additional verse display (minimalist design)
-5. **Hierarchical Navigation**: Breadcrumb provides contextual navigation - any previous level is clickable, current level is highlighted and disabled
+1. **Initial State**: User sees BibleBookSelector for Bible navigation
+2. **Book Selection**: User clicks a book → ChapterSelector appears with breadcrumb "📖 Books › Genesis"
+3. **Chapter Selection**: User clicks a chapter → VerseSelect appears with breadcrumb "📖 Books › Genesis › Chapter 1"
+4. **Verse Selection**: User clicks a verse → Interface switches to VerseDisplay showing full chapter content
+5. **Verse Content Display**: Selected verse is highlighted and auto-scrolled to in the VerseDisplay component
+6. **Verse Navigation**: Users can click different verses directly in the content display for highlighting
+7. **Back Navigation**: Prominent "← Back to Books" button returns to navigation, clearing all selections
+8. **Hierarchical Navigation**: Breadcrumb provides contextual navigation within the navigation view
 
 ### State Management Architecture
-- **App-level State**: `selectedBook`, `selectedChapter`, `selectedVerse`, `bibleData`
-- **Cascading Reset**: Verse selection resets when chapter changes; both reset when book changes
-- **Conditional Rendering**: Three-level conditional logic determines which component renders
-- **Event Propagation**: Child components communicate via callback props with automatic state management
-- **Breadcrumb Navigation Handlers**:
-  - `handleBreadcrumbReset`: Clears all selections (returns to books view)
-  - `handleBreadcrumbBookSelect`: Clears chapter/verse selections (returns to chapters view for selected book)
-  - `handleBreadcrumbChapterSelect`: Clears verse selection (returns to verses view for selected chapter)
-- **Centralized Navigation**: All navigation logic flows through breadcrumb component with clean handler delegation
+- **App-level State**: `bibleData`, `selectedScripture`, `verseData`, `loadingVerses`
+- **View State**: Simple conditional rendering between Navigation and VerseDisplay components
+- **Navigation State**: Managed internally by Navigation component with callback integration
+- **Data Flow**: Navigation selection triggers App-level verse data loading and view switching
+- **Clean Reset**: `handleBackToBooks()` clears all selections and returns to navigation view
+- **Conditional Rendering**: Single view system - either Navigation OR VerseDisplay, never both
+- **Event Propagation**: 
+  - Navigation → App: `handleVerseSelected` with scripture reference (switches to verse view)
+  - VerseDisplay → App: `handleVerseDisplaySelect` for verse highlighting within content
+  - Back Button → App: `handleBackToBooks` to return to navigation view
+- **Dynamic Data Loading**: Chapter JSON files loaded on-demand when verses are selected
+- **Error Handling**: Graceful handling of verse loading failures with error states
 
 ## Key Features
 
-1. **Clean Architecture**: Navigation logic extracted into dedicated component with clear separation of concerns
-2. **Minimalist Breadcrumb Navigation**: Clean navigation path (Books › Book › Chapter) with smart contextual controls, stops at chapter level
+1. **Clean Architecture**: Simple two-view system with clear separation between navigation and content display
+2. **Minimalist Navigation**: Clean navigation path (Books › Book › Chapter) with smart contextual controls
 3. **Comprehensive Verse Selection**: Handles all verse counts from 0 (rare) to 176 (Psalm 119)  
-4. **Verse Content Display**: VerseDisplay component shows actual verse text from JSON files with selection and auto-scroll
-5. **Responsive Design**: Adapts from mobile to desktop with proper button wrapping and breadcrumb collapse
-6. **Cascading State Management**: Automatic state reset with proper hierarchy via centralized breadcrumb handlers
-7. **Contextual Navigation Intelligence**: Current location disabled, all previous levels clickable for backward traversal
-8. **Ultra-Clean UI**: No redundant verse reference or chapter info displays - purely functional navigation
+4. **Full Verse Content Display**: Complete chapter content with verse selection and auto-scroll functionality
+5. **Simple Back Navigation**: Prominent back button to return to Bible navigation from any verse display
+6. **Single-View Interface**: Either navigation OR verse content - never both simultaneously for focused experience
+7. **Responsive Design**: Adapts from mobile to desktop with proper button and layout scaling
+8. **Dynamic Content Loading**: On-demand loading of chapter content when verses are selected
 9. **Dark Mode Support**: System preference detection and manual override for all components including breadcrumb
 10. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
 11. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy

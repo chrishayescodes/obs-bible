@@ -8,6 +8,37 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation-view {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.verse-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.verse-header {
+  padding: 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+}
+
+.verse-loading,
+.verse-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  margin: 20px;
 }
 
 .app h1 {
@@ -47,14 +78,14 @@
 }
 
 .back-button {
-  background-color: #e2e8f0;
-  border: 2px solid #cbd5e1;
+  background-color: #3b82f6;
+  border: 2px solid #2563eb;
   border-radius: 8px;
-  padding: 10px 16px;
-  margin-bottom: 20px;
+  padding: 12px 20px;
   cursor: pointer;
-  font-size: 14px;
-  color: #475569;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
@@ -62,9 +93,10 @@
 }
 
 .back-button:hover {
-  background-color: #cbd5e1;
-  border-color: #94a3b8;
+  background-color: #2563eb;
+  border-color: #1d4ed8;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .loading {
@@ -98,15 +130,21 @@
     color: #cbd5e0;
   }
 
+  .verse-header {
+    background-color: #1e293b;
+    border-bottom-color: #334155;
+  }
+
   .back-button {
-    background-color: #374151;
-    border-color: #4b5563;
-    color: #e5e7eb;
+    background-color: #3b82f6;
+    border-color: #2563eb;
+    color: white;
   }
 
   .back-button:hover {
-    background-color: #4b5563;
-    border-color: #6b7280;
+    background-color: #2563eb;
+    border-color: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
   }
 
   .loading {
@@ -137,17 +175,62 @@
   color: #cbd5e0;
 }
 
+.dark .verse-header {
+  background-color: #1e293b;
+  border-bottom-color: #334155;
+}
+
 .dark .back-button {
-  background-color: #374151;
-  border-color: #4b5563;
-  color: #e5e7eb;
+  background-color: #3b82f6;
+  border-color: #2563eb;
+  color: white;
 }
 
 .dark .back-button:hover {
-  background-color: #4b5563;
-  border-color: #6b7280;
+  background-color: #2563eb;
+  border-color: #1d4ed8;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
 }
 
 .dark .loading {
   color: #a0aec0;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  #root {
+    padding: 0.5rem;
+  }
+  
+  .navigation-view {
+    padding: 15px;
+  }
+  
+  .verse-header {
+    padding: 15px;
+  }
+  
+  .back-button {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 0.25rem;
+  }
+  
+  .navigation-view {
+    padding: 10px;
+  }
+  
+  .verse-header {
+    padding: 12px;
+  }
+  
+  .back-button {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
 }
