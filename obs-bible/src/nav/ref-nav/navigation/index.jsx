@@ -3,6 +3,7 @@ import BibleBookSelector from '../book-selection'
 import ChapterSelector from '../chapter-selection'
 import VerseSelect from '../verse-selection'
 import Breadcrumb from '../breadcrumb'
+import { getSimpleBookName } from '../../../utils/bookNames'
 import './Navigation.css'
 
 const Navigation = ({ bibleData, onVerseSelected }) => {
@@ -26,12 +27,14 @@ const Navigation = ({ bibleData, onVerseSelected }) => {
     
     // Call the callback with scripture reference
     if (onVerseSelected && selectedBook && selectedChapter) {
+      // Use simple book name instead of formal title
+      const simpleBookName = getSimpleBookName(selectedBook.id)
       const scriptureRef = {
-        book: selectedBook.title,
+        book: simpleBookName,
         bookId: selectedBook.id,
         chapter: selectedChapter,
         verse: verseNumber,
-        reference: `${selectedBook.title} ${selectedChapter}:${verseNumber}`
+        reference: `${simpleBookName} ${selectedChapter}:${verseNumber}`
       }
       onVerseSelected(scriptureRef)
     }
