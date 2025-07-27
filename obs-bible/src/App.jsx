@@ -9,6 +9,8 @@ function App() {
   const [selectedScripture, setSelectedScripture] = useState(null)
   const [verseData, setVerseData] = useState(null)
   const [loadingVerses, setLoadingVerses] = useState(false)
+  const [navigatedVerse, setNavigatedVerse] = useState(null)
+  const [selectedVerse, setSelectedVerse] = useState(null)
 
   useEffect(() => {
     // Load the Bible structure data
@@ -25,17 +27,18 @@ function App() {
   }, [])
 
   const handleVerseSelected = async (scriptureRef) => {
-    console.log('Verse selected:', scriptureRef)
+    console.log('Verse navigated to:', scriptureRef)
     
-    // Create the selectedVerse OSIS ID from the scripture reference
-    const selectedVerseId = `${scriptureRef.bookId}.${scriptureRef.chapter}.${scriptureRef.verse}`
+    // Create the navigated verse OSIS ID from the scripture reference
+    const navigatedVerseId = `${scriptureRef.bookId}.${scriptureRef.chapter}.${scriptureRef.verse}`
     
     const updatedScriptureRef = {
       ...scriptureRef,
-      selectedVerse: selectedVerseId
+      navigatedVerse: navigatedVerseId
     }
     
     setSelectedScripture(updatedScriptureRef)
+    setNavigatedVerse(navigatedVerseId)
     setLoadingVerses(true)
     
     try {
@@ -59,11 +62,8 @@ function App() {
   }
 
   const handleVerseDisplaySelect = (osisId) => {
-    // Update the selected verse for highlighting
-    setSelectedScripture(prev => ({
-      ...prev,
-      selectedVerse: osisId
-    }))
+    // Update the selected verse for highlighting when clicking in verse display
+    setSelectedVerse(osisId)
   }
 
   const handleBackToBooks = () => {
@@ -71,6 +71,8 @@ function App() {
     setSelectedScripture(null)
     setVerseData(null)
     setLoadingVerses(false)
+    setNavigatedVerse(null)
+    setSelectedVerse(null)
   }
 
   if (loading) {
@@ -103,7 +105,8 @@ function App() {
           ) : verseData ? (
             <VerseDisplay
               verseData={verseData}
-              selectedVerse={selectedScripture.selectedVerse}
+              selectedVerse={selectedVerse}
+              navigateToVerse={navigatedVerse}
               onVerseSelect={handleVerseDisplaySelect}
               bookName={selectedScripture.book}
               chapterNumber={selectedScripture.chapter}

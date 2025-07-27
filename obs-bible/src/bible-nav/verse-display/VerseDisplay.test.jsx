@@ -151,6 +151,60 @@ describe('VerseDisplay', () => {
       });
     });
 
+    it('applies navigation highlight when navigating to unselected verse', () => {
+      render(
+        <VerseDisplay 
+          verseData={mockVerseData}
+          selectedVerse="Gen.1.1"
+          navigateToVerse="Gen.1.3"
+          onVerseSelect={mockOnVerseSelect}
+        />
+      );
+
+      const selectedVerse = screen.getByRole('button', { 
+        name: /Verse 1: In the beginning/ 
+      });
+      const navigatedVerse = screen.getByRole('button', { 
+        name: /Verse 3: And God said/ 
+      });
+      
+      // Selected verse should have selected class
+      expect(selectedVerse).toHaveClass('selected');
+      expect(selectedVerse).not.toHaveClass('navigated');
+      
+      // Navigated verse should have navigated class but not selected
+      expect(navigatedVerse).toHaveClass('navigated');
+      expect(navigatedVerse).not.toHaveClass('selected');
+    });
+
+    it('removes navigation highlight after timeout', async () => {
+      jest.useFakeTimers();
+      
+      render(
+        <VerseDisplay 
+          verseData={mockVerseData}
+          selectedVerse="Gen.1.1"
+          navigateToVerse="Gen.1.3"
+          onVerseSelect={mockOnVerseSelect}
+        />
+      );
+
+      const navigatedVerse = screen.getByRole('button', { 
+        name: /Verse 3: And God said/ 
+      });
+      
+      expect(navigatedVerse).toHaveClass('navigated');
+      
+      // Fast-forward past the timeout
+      jest.advanceTimersByTime(1000);
+      
+      await waitFor(() => {
+        expect(navigatedVerse).not.toHaveClass('navigated');
+      });
+      
+      jest.useRealTimers();
+    });
+
     it('scrolls to newly selected verse when prop changes', async () => {
       const { rerender } = render(
         <VerseDisplay 
@@ -192,6 +246,25 @@ describe('VerseDisplay', () => {
       );
 
       expect(Element.prototype.scrollIntoView).not.toHaveBeenCalled();
+    });
+
+    it('does not apply navigation highlight to selected verse', () => {
+      render(
+        <VerseDisplay 
+          verseData={mockVerseData}
+          selectedVerse="Gen.1.3"
+          navigateToVerse="Gen.1.3"  // Same as selected
+          onVerseSelect={mockOnVerseSelect}
+        />
+      );
+
+      const verse3 = screen.getByRole('button', { 
+        name: /Verse 3: And God said/ 
+      });
+
+      // Should have selected class but not navigated class
+      expect(verse3).toHaveClass('selected');
+      expect(verse3).not.toHaveClass('navigated');
     });
   });
 

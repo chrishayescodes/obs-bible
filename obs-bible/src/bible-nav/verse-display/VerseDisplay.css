@@ -66,6 +66,38 @@
   border-color: #1d4ed8;
 }
 
+.verse-item.navigated {
+  background-color: #fef3c7;
+  border-color: #f59e0b;
+  animation: pulseHighlight 0.6s ease-out;
+}
+
+.verse-item.navigated .verse-number {
+  color: #92400e;
+}
+
+.verse-item.navigated .verse-text {
+  color: #92400e;
+}
+
+@keyframes pulseHighlight {
+  0% {
+    background-color: #fed7aa;
+    border-color: #ea580c;
+    transform: scale(1.03);
+  }
+  40% {
+    background-color: #fef3c7;
+    border-color: #f59e0b;
+    transform: scale(1.01);
+  }
+  100% {
+    background-color: #fef3c7;
+    border-color: #f59e0b;
+    transform: scale(1);
+  }
+}
+
 .verse-number {
   font-weight: 700;
   font-size: 14px;
@@ -164,6 +196,16 @@
   .verse-list::-webkit-scrollbar-thumb:hover {
     background: #64748b;
   }
+
+  .verse-item.navigated {
+    background-color: #451a03;
+    border-color: #ea580c;
+  }
+
+  .verse-item.navigated .verse-number,
+  .verse-item.navigated .verse-text {
+    color: #fed7aa;
+  }
 }
 
 /* Explicit dark mode class */
@@ -198,6 +240,16 @@
 
 .dark .verse-display-empty {
   color: #64748b;
+}
+
+.dark .verse-item.navigated {
+  background-color: #451a03;
+  border-color: #ea580c;
+}
+
+.dark .verse-item.navigated .verse-number,
+.dark .verse-item.navigated .verse-text {
+  color: #fed7aa;
 }
 
 /* Responsive design */

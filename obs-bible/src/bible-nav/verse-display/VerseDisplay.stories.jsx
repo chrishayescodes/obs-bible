@@ -194,3 +194,63 @@ export const InteractiveExample = () => {
     </div>
   );
 };
+
+// Navigation highlight demo
+export const NavigationHighlightDemo = () => {
+  const [selectedVerse, setSelectedVerse] = React.useState('Gen.1.1');
+  const [navigateToVerse, setNavigateToVerse] = React.useState(null);
+  
+  const navigateToRandomVerse = () => {
+    const verses = Object.keys(genesisData);
+    const randomVerse = verses[Math.floor(Math.random() * verses.length)];
+    setNavigateToVerse(randomVerse);
+    
+    // Clear navigation after highlighting
+    setTimeout(() => setNavigateToVerse(null), 1000);
+  };
+  
+  return (
+    <div style={{ height: '500px', display: 'flex', gap: '20px' }}>
+      <div style={{ flex: 1 }}>
+        <VerseDisplay 
+          verseData={genesisData}
+          bookName="Genesis"
+          chapterNumber="1"
+          selectedVerse={selectedVerse}
+          navigateToVerse={navigateToVerse}
+          onVerseSelect={setSelectedVerse}
+        />
+      </div>
+      <div style={{ 
+        flex: 1, 
+        padding: '20px', 
+        backgroundColor: '#f8fafc',
+        borderRadius: '12px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px'
+      }}>
+        <h3>Navigation Demo</h3>
+        <p><strong>Selected:</strong> {selectedVerse || 'None'}</p>
+        <p><strong>Navigating to:</strong> {navigateToVerse || 'None'}</p>
+        <button 
+          onClick={navigateToRandomVerse}
+          style={{
+            padding: '8px 16px',
+            backgroundColor: '#f59e0b',
+            color: 'white',
+            border: 'none',
+            borderRadius: '6px',
+            cursor: 'pointer'
+          }}
+        >
+          Navigate to Random Verse
+        </button>
+        <p style={{ fontSize: '14px', color: '#666' }}>
+          Click the button to navigate to a random verse with orange highlight.
+          This demonstrates navigation without selection.
+        </p>
+      </div>
+    </div>
+  );
+};
