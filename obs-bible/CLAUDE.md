@@ -76,6 +76,12 @@ obs-bible/
 │   │       │   ├── Breadcrumb.css      # Component-specific styling
 │   │       │   ├── Breadcrumb.test.jsx # Comprehensive test suite (22 tests)
 │   │       │   └── Breadcrumb.stories.jsx # Storybook stories
+│   │       ├── search-history/        # Verse history display and navigation component
+│   │       │   ├── index.jsx           # SearchHistory component
+│   │       │   ├── SearchHistory.css   # Component-specific styling
+│   │       │   ├── SearchHistory.test.jsx # Comprehensive test suite (23 tests)
+│   │       │   ├── SearchHistory.integration.test.jsx # Integration test suite (7 tests)
+│   │       │   └── SearchHistory.stories.jsx # Storybook stories
 │   │       └── navigation/             # Navigation container component
 │   │           ├── index.jsx           # Navigation component
 │   │           ├── Navigation.css      # Component-specific styling
@@ -313,6 +319,53 @@ The application uses a three-tier data architecture:
   - No verse display element - navigation stops at chapter level for clean UI
 - **State Management**: Purely controlled component with no internal state
 
+#### SearchHistory Component (`src/ref-nav/search-history/`)
+- **Purpose**: Display and manage verse search history with clickable navigation links and history management features
+- **Features**:
+  - **History Display**: Shows recently visited verses as interactive navigation buttons with timestamps
+  - **Split Verse Support**: Handles both regular verses and split verse parts (e.g., "9a", "9b") from localStorage history
+  - **Responsive Design**: Mobile-optimized layout with adaptive button sizing and stacked header layout on small screens
+  - **Dark Mode Support**: Both system preference detection (`prefers-color-scheme`) and explicit `.dark` class support
+  - **Full Accessibility**: Complete ARIA support, semantic HTML structure, keyboard navigation, and screen reader compatibility
+  - **History Management**: Clear all history functionality and individual item removal with confirmation
+  - **Timestamp Formatting**: Smart relative time display (minutes, hours, days ago, or formatted dates for older items)
+  - **Loading States**: Proper loading indicators with accessibility attributes during data fetching
+  - **Empty States**: Helpful messaging when no history exists with actionable guidance
+  - **Error Handling**: Graceful error recovery with fallback to empty state and console error logging
+- **Props**:
+  - `onVerseSelect`: Optional callback function triggered when verse history item is clicked
+    - Receives scripture reference object: `{ book, bookId, chapter, verse, reference }`
+    - Verse numbers are converted to integers for navigation (e.g., "9a" becomes verse 9)
+  - `onClearHistory`: Optional callback function triggered when clear all button is clicked
+- **Data Integration**:
+  - **verseHistory Utility**: Uses `verseHistoryUtils.getHistory()` to load verse history from localStorage
+  - **History Format**: Each history item contains: `{ book, bookId, chapter, verse, reference, timestamp, osisId }`
+  - **Split Verse Handling**: Extracts numeric verse from split parts (e.g., "9a" → 9) for navigation compatibility
+  - **Scripture Reference Creation**: Converts history items to navigation-compatible scripture reference objects
+- **User Interactions**:
+  - **Verse Navigation**: Click verse buttons to trigger navigation with `onVerseSelect` callback
+  - **Individual Removal**: Remove specific verses from history using × button on each item
+  - **Clear All**: Remove entire history with prominent red "Clear All" button in header
+  - **Hover Effects**: Interactive button states with proper focus and hover styling
+- **Integration with Navigation System**:
+  - **useVerseNavigation Hook**: Integrates seamlessly with `handleVerseSelected` for verse navigation
+  - **Navigation Flow**: History selections trigger main navigation system to load and display verses
+  - **Cross-Component Compatibility**: Works with existing breadcrumb, verse display, and chapter navigation
+  - **Split Verse Navigation**: Automatically redirects to first part (e.g., 9a) when navigating to split verses
+- **State Management**: 
+  - **Component State**: Uses `useState` for history array, loading state management
+  - **Effect Hooks**: `useEffect` for loading history on component mount with error handling
+  - **Local Updates**: Optimistic UI updates for remove operations with localStorage synchronization
+- **Accessibility Architecture**:
+  - **Semantic Structure**: Proper `role="main"`, `role="list"`, `role="listitem"` attributes
+  - **ARIA Labels**: Descriptive labels for all interactive elements
+  - **Screen Reader Support**: Hidden loading text with `sr-only` class and `aria-live` regions
+  - **Keyboard Navigation**: Full keyboard accessibility for all buttons and interactions
+- **Responsive Layout**:
+  - **Desktop**: Horizontal header layout with side-by-side title and clear button
+  - **Tablet**: Maintains horizontal layout with adjusted spacing and button sizes
+  - **Mobile**: Stacked header layout with full-width clear button and reduced padding
+
 #### SelectedVerseDisplay Component (`src/display/`)
 - **Purpose**: Display the currently selected verse from localStorage with full text content and user interactions
 - **Features**:
@@ -430,6 +483,16 @@ The application uses a comprehensive CSS architecture:
      - Comprehensive responsive design (desktop, tablet, mobile breakpoints)
      - Complete dark mode support with system preference and explicit class support
      - Accessibility-focused design with proper focus states and ARIA support
+   - **SearchHistory** (`src/search-history/SearchHistory.css`):
+     - Card-based layout with individual history items as interactive buttons
+     - Two-column layout per item: verse information and remove button
+     - Responsive header design with adaptive Clear All button positioning
+     - Comprehensive dark mode support with proper contrast ratios and hover states
+     - Mobile-responsive breakpoints (768px, 480px) with stacked header layout
+     - Accessibility-focused styling with proper focus states and screen reader support
+     - Interactive states: hover effects, focus outlines, loading states, empty states
+     - Consistent spacing and typography with flexible button sizing
+     - Remove button styling with danger color theme and hover transitions
    - **Navigation** (`src/navigation/Navigation.css`):
      - Simple container styling for navigation wrapper
      - View containers for chapter and verse selection states
@@ -563,6 +626,87 @@ const unsubscribe = verseSyncUtils.subscribe((message) => {
 unsubscribe();
 ```
 
+### SearchHistory Component Usage Examples
+
+```javascript
+// Basic SearchHistory component usage
+import SearchHistory from '../src/nav/ref-nav/search-history'
+
+// Simple usage with verse selection callback
+const MyApp = () => {
+  const handleVerseSelect = (scriptureRef) => {
+    console.log(`Navigating to: ${scriptureRef.reference}`)
+    // Navigate to verse using existing navigation system
+    // scriptureRef: { book, bookId, chapter, verse, reference }
+  }
+
+  return (
+    <SearchHistory onVerseSelect={handleVerseSelect} />
+  )
+}
+
+// Integration with useVerseNavigation hook
+const NavigationApp = () => {
+  const navigation = useVerseNavigation(bibleData)
+  
+  const handleClearHistory = () => {
+    console.log('History cleared by user')
+    // Optional cleanup or notifications
+  }
+
+  return (
+    <SearchHistory 
+      onVerseSelect={navigation.handleVerseSelected}
+      onClearHistory={handleClearHistory}
+    />
+  )
+}
+
+// Split verse handling example
+// When user clicks "Esther 8:9a" in history:
+// - Component extracts verse number "9" from "9a"
+// - Calls onVerseSelect with: { book: 'Esther', bookId: 'Esth', chapter: '8', verse: 9, reference: 'Esther 8:9a' }
+// - Navigation system loads verse 9 and automatically redirects to 9a
+
+// Responsive design - component automatically adapts:
+// Desktop: Horizontal header with side-by-side title and clear button
+// Mobile: Stacked header with full-width clear button
+
+// Dark mode support - automatically enabled via:
+// System preference: @media (prefers-color-scheme: dark)
+// Manual override: <div className="dark"><SearchHistory /></div>
+```
+
+### SearchHistory Props API
+
+```javascript
+// Component Props Interface
+SearchHistory.propTypes = {
+  // Optional callback for verse selection
+  onVerseSelect: PropTypes.func,
+  // Optional callback for history clearing
+  onClearHistory: PropTypes.func
+}
+
+// onVerseSelect callback receives scripture reference:
+{
+  book: 'Genesis',           // Full book name
+  bookId: 'Gen',            // Book abbreviation
+  chapter: '1',             // Chapter number (string)
+  verse: 1,                 // Verse number (integer, extracted from split parts)
+  reference: 'Genesis 1:1'  // Formatted reference (preserves original format)
+}
+
+// Split verse example - "9a" becomes:
+{
+  book: 'Esther',
+  bookId: 'Esth', 
+  chapter: '8',
+  verse: 9,                 // Extracted from "9a"
+  reference: 'Esther 8:9a'  // Original reference preserved
+}
+```
+
 ## Verse History System
 
 The application includes a comprehensive verse history tracking system that automatically saves and restores selected verses using localStorage. This system operates independently of existing components, providing persistent verse selection across browser sessions.
@@ -680,13 +824,15 @@ npm run build-storybook
 
 ### Testing Strategy
 
-The project implements comprehensive testing with 247 total tests (all passing):
+The project implements comprehensive testing with 277 total tests (all passing):
 
 1. **Unit Tests**:
    - **BibleBookSelector**: 21 tests covering component rendering, user interactions, accessibility, and edge cases
    - **ChapterSelector**: 20 tests covering component state management, user events, and error handling
    - **VerseSelect**: 22 tests covering verse selection, edge cases (0-176 verses), and prop changes
    - **Breadcrumb**: 22 tests covering navigation states, user interactions, accessibility, and edge cases
+   - **SearchHistory**: 23 tests covering history display, verse navigation, history management, error handling, timestamp formatting, accessibility, and component structure
+   - **SearchHistory Integration**: 7 tests covering integration with useVerseNavigation hook, split verse handling, navigation lifecycle, and cross-component compatibility
    - **Navigation**: 25 tests covering complete navigation flow, state management, integration, callback functionality, and edge cases
    - **VerseDisplay**: 25 tests covering verse rendering, navigation highlighting, persistent reminders, selection clearing, auto-scroll, accessibility, and edge cases
    - **SelectedVerseDisplay**: 22 tests covering localStorage integration, verse loading, error handling, user interactions, accessibility, and component lifecycle
@@ -775,12 +921,30 @@ The project implements comprehensive testing with 247 total tests (all passing):
    - **Dual-Layer Verse Display**: Added temporary verse layer to enable crossfade between old and new verses with CSS Grid stacking
    - **Reference Preservation**: Separate state management for temporary verse references ensures complete fade transitions including text and citations
    - **CSS Grid Layout**: Replaced absolute positioning with CSS Grid for reliable verse positioning and proper padding respect in OBS overlay
+   - **SearchHistory Component**: Comprehensive verse history navigation component with complete functionality
+   - **History Management Features**: Clear all history, individual item removal, and clickable verse navigation with timestamps
+   - **Split Verse History Support**: Intelligent handling of split verse parts (9a, 9b) with automatic navigation to base verses
+   - **Responsive History Layout**: Mobile-optimized design with stacked header layout and adaptive button sizing
+   - **History Accessibility**: Complete ARIA support, semantic HTML structure, keyboard navigation, and screen reader compatibility
+   - **Integration Testing**: Comprehensive integration tests (7 tests) with useVerseNavigation hook and navigation lifecycle
+   - **History Component Testing**: Full unit test coverage (23 tests) including timestamp formatting, error handling, and user interactions
+   - **Storybook History Stories**: Complete story collection covering empty states, loading states, responsive design, and dark mode
+   - **LocalStorage Integration**: Seamless integration with existing verseHistory utility for persistent history management
 
 4. **Storybook Stories**:
    - Component isolation and development
    - Multiple story variants (Default, Complete, Loading, WithInteraction, ResponsiveTest, DarkModePreview)
    - Mock data for consistent development experience
    - Breadcrumb stories covering all navigation states and edge cases
+   - SearchHistory stories covering multiple scenarios:
+     - Default history display with sample verse data
+     - Empty history state with helpful messaging
+     - Single item and large history datasets for layout testing
+     - Interactive examples with verse selection and history clearing
+     - Timestamp formatting demonstrations (recent vs. old verses)
+     - Responsive design testing across mobile, tablet, and desktop
+     - Dark mode preview with proper theme styling
+     - Loading state with accessibility features
    - Navigation stories covering complete navigation flow and edge cases
    - VerseDisplay stories demonstrating verse content display, selection, and scrolling behavior
    - SelectedVerseDisplay stories covering localStorage integration, loading states, error scenarios, and user interactions
@@ -933,6 +1097,9 @@ The application provides a simple two-view system with complete Bible navigation
 19. **Developer Experience**: Hot reload, comprehensive testing (248 tests), component isolation, Storybook documentation
 20. **Advanced Navigation System**: Fast orange pulse animation (0.6s) plus persistent subtle reminders for navigated verses, with global clearing on selection
 21. **Callback Integration**: Verse selection callback system enabling custom navigation actions and application extensions
+22. **Search History Management**: Comprehensive verse history display with clickable navigation, individual item removal, and complete history clearing
+23. **Split Verse History Support**: Intelligent handling of split verse parts (9a, 9b) in history with automatic navigation to base verses
+24. **History Accessibility**: Full screen reader support with ARIA labels, semantic structure, and keyboard navigation for history management
 
 ## Future Development Considerations
 
