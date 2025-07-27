@@ -14,7 +14,10 @@ const AppNavigation = ({ bibleData }) => {
     handleVerseSelected,
     handleVerseDisplaySelect,
     handleBackToBooks,
-    restoreCurrentVerse
+    restoreCurrentVerse,
+    handlePreviousChapter,
+    handleNextChapter,
+    getAdjacentChapterInfo
   } = useVerseNavigation()
 
   // Restore current verse when bibleData is loaded
@@ -23,6 +26,19 @@ const AppNavigation = ({ bibleData }) => {
       restoreCurrentVerse()
     }
   }, [bibleData, restoreCurrentVerse])
+
+  // Get the selected book data for chapter navigation
+  const getSelectedBookData = () => {
+    if (!selectedScripture || !bibleData) return null
+    
+    const { bookId } = selectedScripture
+    const oldTestament = bibleData.old_testament?.books?.[bookId]
+    const newTestament = bibleData.new_testament?.books?.[bookId]
+    
+    return oldTestament || newTestament || null
+  }
+
+  const selectedBookData = getSelectedBookData()
 
   return (
     <>
@@ -51,6 +67,11 @@ const AppNavigation = ({ bibleData }) => {
               onVerseSelect={handleVerseDisplaySelect}
               bookName={selectedScripture.book}
               chapterNumber={selectedScripture.chapter}
+              bookData={selectedBookData}
+              onPreviousChapter={handlePreviousChapter}
+              onNextChapter={handleNextChapter}
+              getAdjacentChapterInfo={getAdjacentChapterInfo}
+              loadingVerses={loadingVerses}
             />
           ) : (
             <div className="verse-error">

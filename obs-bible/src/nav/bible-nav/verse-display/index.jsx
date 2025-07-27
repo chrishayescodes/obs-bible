@@ -7,7 +7,12 @@ const VerseDisplay = ({
   navigateToVerse,
   onVerseSelect,
   bookName = '',
-  chapterNumber = ''
+  chapterNumber = '',
+  bookData = null,
+  onPreviousChapter = null,
+  onNextChapter = null,
+  getAdjacentChapterInfo = null,
+  loadingVerses = false
 }) => {
   const [localSelectedVerse, setLocalSelectedVerse] = useState(selectedVerse);
   const [navigatedVerse, setNavigatedVerse] = useState(null);
@@ -108,44 +113,94 @@ const VerseDisplay = ({
   }
 
   const verseEntries = Object.entries(verseData);
+  
+  // Get chapter navigation info
+  const chapterInfo = getAdjacentChapterInfo ? getAdjacentChapterInfo(bookData) : { hasPrevious: false, hasNext: false };
+
+  // Group verses by chapter for display headers
+  const versesByChapter = {};
+  verseEntries.forEach(([osisId, verseText]) => {
+    const parts = osisId.split('.');
+    const chapterNum = parts[1];
+    if (!versesByChapter[chapterNum]) {
+      versesByChapter[chapterNum] = [];
+    }
+    versesByChapter[chapterNum].push([osisId, verseText]);
+  });
+
+  const sortedChapters = Object.keys(versesByChapter).sort((a, b) => parseInt(a) - parseInt(b));
 
   return (
     <div className="verse-display" ref={containerRef}>
-      {bookName && chapterNumber && (
-        <h2 className="verse-display-header">
-          {bookName} {chapterNumber}
-        </h2>
+      {/* Previous Chapter Button at Top */}
+      {chapterInfo.hasPrevious && onPreviousChapter && (
+        <div className="chapter-navigation-top">
+          <button
+            type="button"
+            className="chapter-nav-button previous"
+            onClick={() => onPreviousChapter(bookData)}
+            disabled={loadingVerses}
+          >
+            ↑ Load Previous Chapter
+          </button>
+        </div>
       )}
-      <div className="verse-list">
-        {verseEntries.map(([osisId, verseText]) => {
-          const verseNumber = getVerseNumber(osisId);
-          const isSelected = localSelectedVerse === osisId;
-          const isNavigated = navigatedVerse === osisId && !isSelected;
-          const hasBeenNavigated = hasBeenNavigatedTo.has(osisId);
-          
-          const classNames = [
-            'verse-item',
-            isSelected && 'selected',
-            isNavigated && 'navigated',
-            hasBeenNavigated && 'has-been-navigated'
-          ].filter(Boolean).join(' ');
-          
-          return (
-            <button
-              key={osisId}
-              ref={el => verseRefs.current[osisId] = el}
-              type="button"
-              className={classNames}
-              onClick={() => handleVerseClick(osisId)}
-              aria-label={`Verse ${verseNumber}: ${verseText}`}
-              data-verse-id={osisId}
-            >
-              <span className="verse-number">{verseNumber}</span>
-              <span className="verse-text">{verseText}</span>
-            </button>
-          );
-        })}
+
+      {/* Scrollable Content Area */}
+      <div className="verse-content">
+        {/* Chapter Headers and Verses */}
+        {sortedChapters.map(chapterNum => (
+          <div key={chapterNum} className="chapter-section">
+            <h2 className="verse-display-header">
+              {bookName} {chapterNum}
+            </h2>
+            <div className="verse-list">
+            {versesByChapter[chapterNum].map(([osisId, verseText]) => {
+              const verseNumber = getVerseNumber(osisId);
+              const isSelected = localSelectedVerse === osisId;
+              const isNavigated = navigatedVerse === osisId && !isSelected;
+              const hasBeenNavigated = hasBeenNavigatedTo.has(osisId);
+              
+              const classNames = [
+                'verse-item',
+                isSelected && 'selected',
+                isNavigated && 'navigated',
+                hasBeenNavigated && 'has-been-navigated'
+              ].filter(Boolean).join(' ');
+              
+              return (
+                <button
+                  key={osisId}
+                  ref={el => verseRefs.current[osisId] = el}
+                  type="button"
+                  className={classNames}
+                  onClick={() => handleVerseClick(osisId)}
+                  aria-label={`Verse ${verseNumber}: ${verseText}`}
+                  data-verse-id={osisId}
+                >
+                  <span className="verse-number">{verseNumber}</span>
+                  <span className="verse-text">{verseText}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      ))}
       </div>
+
+      {/* Next Chapter Button at Bottom */}
+      {chapterInfo.hasNext && onNextChapter && (
+        <div className="chapter-navigation-bottom">
+          <button
+            type="button"
+            className="chapter-nav-button next"
+            onClick={() => onNextChapter(bookData)}
+            disabled={loadingVerses}
+          >
+            ↓ Load Next Chapter
+          </button>
+        </div>
+      )}
     </div>
   );
 };

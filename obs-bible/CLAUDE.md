@@ -148,7 +148,7 @@ The application uses a three-tier data architecture:
 
 #### Navigation Hook (`src/nav/useVerseNavigation.js`)
 - **State Management**: Manages all verse navigation state internally
-  - `selectedScripture`, `verseData`, `loadingVerses`, `navigatedVerse`, `selectedVerse`
+  - `selectedScripture`, `verseData`, `loadingVerses`, `navigatedVerse`, `selectedVerse`, `loadedChapters`
 - **Verse Selection Logic**: `handleVerseSelected` callback implementation
   - Receives complete scripture reference object when verses are selected
   - Loads corresponding JSON chapter file for verse content
@@ -156,10 +156,19 @@ The application uses a three-tier data architecture:
   - Switches interface to verse display mode
   - Handles loading states and error conditions during verse fetch
   - Integrates with verse history system automatically
+- **Chapter Navigation Logic**: Multi-chapter loading and management
+  - `loadAdjacentChapter()`: Core function for loading previous/next chapters
+  - `handlePreviousChapter()`: Loads previous chapter and scrolls to first verse
+  - `handleNextChapter()`: Loads next chapter and scrolls to first verse
+  - `getAdjacentChapterInfo()`: Determines if previous/next chapters exist
+  - `loadedChapters`: Set tracking which chapters have been loaded to prevent duplicates
+  - **Smart Loading**: Only fetches chapters that haven't been loaded yet
+  - **Data Merging**: Combines new chapter data with existing verse data seamlessly
+  - **Auto-scroll**: Automatically navigates to first verse of newly loaded chapters
 - **Back Navigation**: `handleBackToBooks()` function clears selections and returns to navigation
 - **Verse History Integration**: Automatic history tracking and current verse persistence
-- **Data Loading**: Dynamic loading of chapter JSON files on verse selection
-- **Error Handling**: Graceful handling of fetch errors with proper state management
+- **Data Loading**: Dynamic loading of chapter JSON files on verse selection and chapter navigation
+- **Error Handling**: Graceful handling of fetch errors with proper state management for both verse and chapter operations
 - **Memoization**: All callback functions memoized with `useCallback` for performance
 
 #### Navigation Component (`src/ref-nav/navigation/`)
@@ -268,12 +277,16 @@ The application uses a three-tier data architecture:
   - No verse display element - navigation stops at chapter level for clean UI
 - **State Management**: Purely controlled component with no internal state
 
-#### VerseDisplay Component (`src/bible-nav/verse-display/`)
-- **Purpose**: Display and interact with actual verse content from JSON chapter files with separate navigation and selection states
+#### VerseDisplay Component (`src/nav/bible-nav/verse-display/`)
+- **Purpose**: Display and interact with actual verse content from JSON chapter files with multi-chapter support and chapter navigation
 - **Features**:
-  - Column layout with scrollable verse buttons
+  - **Multi-Chapter Display**: Shows multiple chapters in a single scrollable view with individual chapter headers
+  - **Chapter Navigation**: Previous/Next chapter buttons for seamless reading experience
+  - **Dynamic Chapter Loading**: Loads adjacent chapters on-demand into the same view
+  - **Smart Button Visibility**: Previous/Next buttons only show when adjacent chapters exist
+  - **Scrollable Content Area**: Dedicated scrollable container with fixed navigation buttons
   - Full verse text display with verse numbers
-  - Auto-scroll to verses for both navigation and selection
+  - Auto-scroll to verses for both navigation and selection across multiple chapters
   - Triple highlighting system: orange animation (navigation), persistent orange reminder, blue selection
   - Fast navigation highlight animation (0.6s ease-out with pulse effect)
   - Persistent navigation reminders with subtle orange left border and background
@@ -282,12 +295,23 @@ The application uses a three-tier data architecture:
   - Accessibility support with proper ARIA labels and keyboard navigation
   - Loading and empty states handling
 - **Props**:
-  - `verseData`: JSON object with OSIS IDs as keys and verse text as values
+  - `verseData`: JSON object with OSIS IDs as keys and verse text as values (supports multiple chapters)
   - `selectedVerse`: OSIS ID of currently selected verse (e.g., "Gen.1.15") - blue highlight
   - `navigateToVerse`: OSIS ID for navigation-only highlighting (e.g., "Gen.1.15") - orange highlight
   - `onVerseSelect`: Callback function that receives OSIS ID when verse is clicked
   - `bookName`: Optional book name for display header
-  - `chapterNumber`: Optional chapter number for display header
+  - `chapterNumber`: Optional initial chapter number for display header
+  - `bookData`: Book metadata for chapter navigation (chapter count, etc.)
+  - `onPreviousChapter`: Callback function to load previous chapter
+  - `onNextChapter`: Callback function to load next chapter
+  - `getAdjacentChapterInfo`: Function to determine button visibility
+  - `loadingVerses`: Boolean indicating if chapters are currently loading
+- **Chapter Navigation System**:
+  - **Previous Chapter Button**: Fixed at top, loads previous chapter into same view
+  - **Next Chapter Button**: Fixed at bottom, loads next chapter into same view  
+  - **Chapter Headers**: Individual headers for each loaded chapter (e.g., "Genesis 1", "Genesis 2")
+  - **Loading States**: Buttons disabled during chapter loading operations
+  - **Auto-scroll**: Automatically scrolls to first verse of newly loaded chapters
 - **Navigation vs Selection System**:
   - **Navigation Animation**: Temporary orange pulse animation (0.6s) triggered only by `navigateToVerse` prop
   - **Navigation Reminder**: Persistent subtle orange left border and background for previously navigated verses
@@ -295,14 +319,16 @@ The application uses a three-tier data architecture:
   - **Combined State**: Selected verses that were previously navigated show blue selection with orange accent
   - **Animation Clearing**: Any verse selection immediately clears ALL navigation animations globally
   - **Reminder Persistence**: Orange reminders remain until component unmount/reload
+  - **Cross-Chapter Support**: All highlighting and selection works seamlessly across multiple chapters
 - **Interaction Flow**:
   - Navigate to verse → Orange pulse + persistent reminder added
   - Select any verse → All navigation animations stop, selection highlighting begins
+  - Load previous/next chapter → Chapter added to view, auto-scroll to first verse
   - Previously navigated verses retain subtle orange reminders even when selected
   - Navigation and selection are completely independent state systems
 - **Data Integration**: Works with JSON chapter files from `output_chapters_json/`
 - **OSIS ID Handling**: Extracts verse numbers from OSIS IDs (e.g., "Gen.1.15" → "15")
-- **State Management**: Uses `useState` and `useEffect` for navigation highlighting, persistent reminders, selection tracking, and auto-scroll functionality
+- **State Management**: Uses `useState` and `useEffect` for navigation highlighting, persistent reminders, selection tracking, auto-scroll functionality, and chapter grouping
 
 ### Styling Architecture
 
@@ -353,14 +379,17 @@ The application uses a comprehensive CSS architecture:
      - View containers for chapter and verse selection states
      - Minimal styling focused on layout and spacing
      - Delegates visual design to child components
-   - **VerseDisplay** (`src/bible-nav/verse-display/VerseDisplay.css`):
-     - Column layout with scrollable container and verse buttons
+   - **VerseDisplay** (`src/nav/bible-nav/verse-display/VerseDisplay.css`):
+     - Multi-chapter layout with individual chapter headers and verse sections
+     - Chapter navigation buttons with fixed positioning (top/bottom)
+     - Scrollable content area with proper overflow handling
      - Blue selection theme with smooth transitions
+     - Orange navigation highlighting with persistent reminders
      - Responsive design adapting button sizes and spacing
      - Dark mode support with proper contrast ratios
      - Custom scrollbar styling for better UX
      - Proper text wrapping for long verses
-     - Header styling for book and chapter display
+     - Interactive chapter navigation buttons with hover effects and loading states
 
 ### Category Color System
 
@@ -524,6 +553,16 @@ The project implements comprehensive testing with 200 total tests (all passing):
    - **VS Code Integration**: Enhanced Jest extension settings for test discovery
 
 3. **Recent Updates** (Latest):
+   - **Multi-Chapter Reading Experience**: Added seamless chapter navigation with previous/next chapter buttons
+   - **Dynamic Chapter Loading**: Implemented on-demand loading of adjacent chapters into the same verse display
+   - **Smart Chapter Navigation**: Previous/Next buttons only appear when adjacent chapters exist
+   - **Optimized Data Merging**: Intelligent chapter data merging prevents duplicate fetches and maintains verse state
+   - **Cross-Chapter Functionality**: All verse highlighting, selection, and navigation works across multiple chapters
+   - **Enhanced Scrolling Architecture**: Restructured VerseDisplay with dedicated scrollable content area and fixed navigation buttons
+   - **Multi-Chapter Headers**: Individual chapter headers for each loaded chapter (e.g., "Genesis 1", "Genesis 2")
+   - **Auto-scroll to New Chapters**: Automatically scrolls to first verse of newly loaded chapters
+   - **Loading State Management**: Chapter navigation buttons disabled during loading operations
+   - **Responsive Chapter Navigation**: Mobile-optimized chapter buttons with proper spacing and touch targets
    - **Architecture Refactoring**: Complete extraction of navigation logic from App.jsx into dedicated components and custom hook
    - **Component Separation**: App.jsx reduced from 94 to 39 lines, focusing solely on Bible data loading
    - **Custom Hook Architecture**: Created `useVerseNavigation` hook to encapsulate all navigation state and logic
@@ -534,22 +573,9 @@ The project implements comprehensive testing with 200 total tests (all passing):
    - **File Movement Tracking**: Used git commands to properly track file movements as renames rather than deletions/additions
    - **State Management Improvements**: Centralized navigation state in custom hook with proper memoization
    - **Integration Testing**: Comprehensive testing of hook-component integration and state management
-   - **Accessibility Enhancements**: Added screen-reader-only headings to ChapterSelector and VerseSelect components for improved accessibility
-   - **Screen Reader Support**: Implemented `sr-only` CSS class to provide semantic headings without visual clutter
-   - **Minimalist UI Design**: Removed all navigation help displays from individual components (book/chapter/verse headers removed)
-   - **Ultra-Clean Breadcrumb**: Removed verse display and chapter info from breadcrumb - navigation stops at chapter level
-   - **Streamlined Navigation**: Breadcrumb shows only Books › Book › Chapter (no verse reference or "Chapter has X verses" display)
-   - **Verse Selection Callback System**: Added `onVerseSelected` callback to Navigation component for scripture reference handling
-   - **Scripture Reference Integration**: Complete scripture reference object passed to callback with book, chapter, verse details
    - **Enhanced Testability**: All components fully testable in isolation with comprehensive test suites
    - **Component Reusability**: Navigation architecture can be reused independently of data loading concerns
-   - **Unified Breadcrumb Navigation**: Replaced individual back buttons and selected info displays with minimalist Breadcrumb component
-   - **Enhanced Navigation UX**: Smart contextual navigation with disabled current view indicators and clickable backward traversal
-   - **Enhanced State Management**: Implemented cascading state reset with centralized breadcrumb handlers
-   - **Accessibility Improvements**: Full ARIA support, keyboard navigation, and meaningful titles throughout breadcrumb
-   - **Responsive Design**: Mobile-optimized navigation with collapsing elements and touch-friendly targets
    - **Verse History System**: Comprehensive localStorage-based history tracking with automatic persistence and restoration
-   - **Independent Implementation**: Verse history added without modifying existing navigation components
    - **Performance Optimization**: All callback functions memoized with useCallback for optimal rendering performance
 
 4. **Storybook Stories**:
@@ -679,14 +705,18 @@ The application provides a simple two-view system with complete Bible navigation
 5. **Simple Back Navigation**: Prominent back button to return to Bible navigation from any verse display
 6. **Single-View Interface**: Either navigation OR verse content - never both simultaneously for focused experience
 7. **Responsive Design**: Adapts from mobile to desktop with proper button and layout scaling
-8. **Dynamic Content Loading**: On-demand loading of chapter content when verses are selected
-9. **Dark Mode Support**: System preference detection and manual override for all components including breadcrumb
-10. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
-11. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy
-12. **Testability**: Each component fully testable in isolation with comprehensive test coverage
-13. **Developer Experience**: Hot reload, comprehensive testing (139 tests), component isolation, Storybook documentation
-14. **Advanced Navigation System**: Fast orange pulse animation (0.6s) plus persistent subtle reminders for navigated verses, with global clearing on selection
-15. **Callback Integration**: Verse selection callback system enabling custom navigation actions and application extensions
+8. **Multi-Chapter Reading Experience**: Load adjacent chapters into the same view for seamless reading
+9. **Smart Chapter Navigation**: Previous/Next chapter buttons with intelligent visibility based on book structure
+10. **Dynamic Content Loading**: On-demand loading of chapter content when verses are selected or chapters are navigated
+11. **Optimized Chapter Loading**: Prevents duplicate chapter fetches and intelligently merges content
+12. **Cross-Chapter Functionality**: All verse highlighting, selection, and navigation works seamlessly across multiple chapters
+13. **Dark Mode Support**: System preference detection and manual override for all components including breadcrumb
+14. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
+15. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy
+16. **Testability**: Each component fully testable in isolation with comprehensive test coverage
+17. **Developer Experience**: Hot reload, comprehensive testing (200 tests), component isolation, Storybook documentation
+18. **Advanced Navigation System**: Fast orange pulse animation (0.6s) plus persistent subtle reminders for navigated verses, with global clearing on selection
+19. **Callback Integration**: Verse selection callback system enabling custom navigation actions and application extensions
 
 ## Future Development Considerations
 

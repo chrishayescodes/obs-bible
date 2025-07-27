@@ -30,12 +30,12 @@ describe('VerseDisplay', () => {
         />
       );
 
-      // Check that all verses are rendered
-      expect(screen.getByText('1')).toBeInTheDocument();
-      expect(screen.getByText('2')).toBeInTheDocument();
-      expect(screen.getByText('3')).toBeInTheDocument();
-      expect(screen.getByText('4')).toBeInTheDocument();
-      expect(screen.getByText('5')).toBeInTheDocument();
+      // Check that all verse numbers are rendered (using more specific selectors)
+      expect(screen.getByRole('button', { name: /Verse 1:/ })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Verse 2:/ })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Verse 3:/ })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Verse 4:/ })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Verse 5:/ })).toBeInTheDocument();
 
       // Check that verse text is rendered
       expect(screen.getByText('In the beginning God created the heaven and the earth.')).toBeInTheDocument();
@@ -421,9 +421,9 @@ describe('VerseDisplay', () => {
         />
       );
 
-      expect(screen.getByText('21')).toBeInTheDocument();
-      expect(screen.getByText('58')).toBeInTheDocument();
-      expect(screen.getByText('14')).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Verse 21:/ })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Verse 58:/ })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Verse 14:/ })).toBeInTheDocument();
     });
   });
 
@@ -487,7 +487,7 @@ describe('VerseDisplay', () => {
         />
       );
 
-      expect(screen.getByText('21')).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Verse 21:/ })).toBeInTheDocument();
       expect(screen.getByText(/And saviours shall come up/)).toBeInTheDocument();
     });
 
@@ -503,7 +503,7 @@ describe('VerseDisplay', () => {
         />
       );
 
-      expect(screen.getByText('9')).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Verse 9:/ })).toBeInTheDocument();
       expect(screen.getByText(/Then were the king's scribes called/)).toBeInTheDocument();
     });
 
