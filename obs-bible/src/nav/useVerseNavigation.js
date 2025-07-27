@@ -149,42 +149,78 @@ export const useVerseNavigation = (bibleData) => {
   }, [selectedScripture, loadedChapters])
 
   const handlePreviousChapter = useCallback(async (bookData) => {
-    if (!selectedScripture) return
+    if (!selectedScripture || !bookData || loadedChapters.size === 0) return
     
-    const currentChapter = selectedScripture.chapter
-    const result = await loadAdjacentChapter(bookData, currentChapter, 'previous')
+    const { bookId } = selectedScripture
+    
+    // Get all loaded chapter numbers for this book
+    const loadedChapterNums = Array.from(loadedChapters)
+      .filter(key => key.startsWith(`${bookId}.`))
+      .map(key => parseInt(key.split('.')[1]))
+    
+    if (loadedChapterNums.length === 0) return
+    
+    const minLoadedChapter = Math.min(...loadedChapterNums)
+    const targetChapter = minLoadedChapter - 1
+    
+    const result = await loadAdjacentChapter(bookData, minLoadedChapter, 'previous')
     
     if (result) {
       // Scroll to the first verse of the previous chapter
-      const firstVerseId = `${selectedScripture.bookId}.${result}.1`
+      const firstVerseId = `${bookId}.${result}.1`
       setNavigatedVerse(firstVerseId)
     }
-  }, [selectedScripture, loadAdjacentChapter])
+  }, [selectedScripture, loadedChapters, loadAdjacentChapter])
 
   const handleNextChapter = useCallback(async (bookData) => {
-    if (!selectedScripture) return
+    if (!selectedScripture || !bookData || loadedChapters.size === 0) return
     
-    const currentChapter = selectedScripture.chapter
-    const result = await loadAdjacentChapter(bookData, currentChapter, 'next')
+    const { bookId } = selectedScripture
+    
+    // Get all loaded chapter numbers for this book
+    const loadedChapterNums = Array.from(loadedChapters)
+      .filter(key => key.startsWith(`${bookId}.`))
+      .map(key => parseInt(key.split('.')[1]))
+    
+    if (loadedChapterNums.length === 0) return
+    
+    const maxLoadedChapter = Math.max(...loadedChapterNums)
+    const targetChapter = maxLoadedChapter + 1
+    
+    const result = await loadAdjacentChapter(bookData, maxLoadedChapter, 'next')
     
     if (result) {
       // Scroll to the first verse of the next chapter
-      const firstVerseId = `${selectedScripture.bookId}.${result}.1`
+      const firstVerseId = `${bookId}.${result}.1`
       setNavigatedVerse(firstVerseId)
     }
-  }, [selectedScripture, loadAdjacentChapter])
+  }, [selectedScripture, loadedChapters, loadAdjacentChapter])
 
   const getAdjacentChapterInfo = useCallback((bookData) => {
-    if (!selectedScripture || !bookData) {
+    if (!selectedScripture || !bookData || loadedChapters.size === 0) {
       return { hasPrevious: false, hasNext: false }
     }
 
-    const currentChapterNum = parseInt(selectedScripture.chapter)
-    const hasPrevious = currentChapterNum > 1
-    const hasNext = currentChapterNum < bookData.chapter_count
+    const { bookId } = selectedScripture
+    
+    // Get all loaded chapter numbers for this book
+    const loadedChapterNums = Array.from(loadedChapters)
+      .filter(key => key.startsWith(`${bookId}.`))
+      .map(key => parseInt(key.split('.')[1]))
+      .sort((a, b) => a - b)
+    
+    if (loadedChapterNums.length === 0) {
+      return { hasPrevious: false, hasNext: false }
+    }
+    
+    const minLoadedChapter = Math.min(...loadedChapterNums)
+    const maxLoadedChapter = Math.max(...loadedChapterNums)
+    
+    const hasPrevious = minLoadedChapter > 1
+    const hasNext = maxLoadedChapter < bookData.chapter_count
 
     return { hasPrevious, hasNext }
-  }, [selectedScripture])
+  }, [selectedScripture, loadedChapters])
 
   return {
     // State
