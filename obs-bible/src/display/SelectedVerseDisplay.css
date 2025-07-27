@@ -27,9 +27,32 @@ body.obs-overlay #root {
   -webkit-backdrop-filter: blur(4px);
   padding: 30px 60px;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 120px; /* Ensure minimum height for content */
+}
+
+/* Verse wrapper for transitions */
+.verse-wrapper {
+  display: grid;
+  place-items: center;
+  transition: opacity 0.3s ease-in-out;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* Ensure wrappers stack on top of each other */
+.selected-verse-display {
+  display: grid;
+}
+
+/* Hidden state */
+.verse-wrapper.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Visible state */
+.verse-wrapper.visible {
+  opacity: 1;
 }
 
 /* Verse text styling */

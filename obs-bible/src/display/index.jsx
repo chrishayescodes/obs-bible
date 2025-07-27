@@ -6,6 +6,10 @@ import './SelectedVerseDisplay.css'
 
 const SelectedVerseDisplay = () => {
   const [currentVerse, setCurrentVerse] = useState(null)
+  const [currentHidden, setCurrentHidden] = useState(false);
+  const [tempVerse, setTempVerse] = useState(null)
+  const [tempHidden, setTempHidden] = useState(true);
+  const [tempVerseRef, setTempVerseRef] = useState('')
   const [verseText, setVerseText] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -13,10 +17,10 @@ const SelectedVerseDisplay = () => {
   useEffect(() => {
     // Optionally load book names from JSON to enhance the mapping
     loadBookNames()
-    
+
     // Add body class for OBS Studio overlay styling
     document.body.classList.add('obs-overlay')
-    
+
     // Cleanup on unmount
     return () => {
       document.body.classList.remove('obs-overlay')
@@ -33,7 +37,7 @@ const SelectedVerseDisplay = () => {
 
     // Subscribe to broadcast messages for cross-tab synchronization
     const unsubscribe = verseSyncUtils.subscribe((message) => {
-        
+
       if (message.type === MessageTypes.VERSE_SELECTED && message.data) {
         // Update display with the new verse
         setCurrentVerse(message.data)
@@ -62,7 +66,7 @@ const SelectedVerseDisplay = () => {
 
     try {
       const response = await fetch(`/data/output_chapters_json/${verse.bookId}/${verse.bookId}_${verse.chapter}.json`)
-      
+
       if (!response.ok) {
         throw new Error(`Failed to load chapter data: ${response.status}`)
       }
@@ -73,7 +77,17 @@ const SelectedVerseDisplay = () => {
       const text = chapterData[osisId]
 
       if (text) {
-        setVerseText(text)
+        // Store the old verse and reference in temp
+        setTempVerse(verseText)
+        setTempVerseRef(currentVerse ? createSimpleReference(currentVerse.bookId, currentVerse.chapter, currentVerse.verse) : '')
+        setTempHidden(false)
+        setCurrentHidden(true)
+
+        setTimeout(() => {
+          setVerseText(text)
+          setCurrentHidden(false)
+          setTempHidden(true)
+          }, 300)
       } else {
         setError(`Verse ${verse.reference} not found in chapter data`)
       }
@@ -101,7 +115,12 @@ const SelectedVerseDisplay = () => {
 
   return (
     <div className="selected-verse-display">
-      <div className="verse-text">{verseText} ~ {verseReference}</div>
+      <div className={`verse-wrapper ${currentHidden ? 'hidden' : 'visible'}`}>
+        <div className="verse-text">{verseText && verseReference ? `${verseText} ~ ${verseReference}` : ''}</div>
+      </div>
+      <div className={`verse-wrapper ${tempHidden ? 'hidden' : 'visible'}`}>
+        <div className="verse-text">{tempVerse && tempVerseRef ? `${tempVerse} ~ ${tempVerseRef}` : ''}</div>
+      </div>
     </div>
   )
 }
