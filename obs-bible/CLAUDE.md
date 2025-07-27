@@ -33,40 +33,48 @@ obs-bible/
 │   │       ├── Matt/                   # Matthew chapters (Matt_1.json to Matt_28.json)
 │   │       └── ... (all 66 Bible books)
 ├── src/
-│   ├── App.jsx                         # Main application component
+│   ├── App.jsx                         # Simplified main application component (39 lines)
 │   ├── main.jsx                        # React application entry point
-│   ├── bible-nav/                      # Bible content display components folder
-│   │   └── verse-display/              # Verse display component
-│   │       ├── index.jsx               # VerseDisplay component
-│   │       ├── VerseDisplay.css        # Component-specific styling
-│   │       ├── VerseDisplay.test.jsx   # Comprehensive test suite (25 tests)
-│   │       └── VerseDisplay.stories.jsx # Storybook stories
-│   ├── ref-nav/                        # Reference navigation components folder
-│   │   ├── book-selection/             # Bible book selector component
-│   │   │   ├── index.jsx               # BibleBookSelector component
-│   │   │   ├── BibleBookSelector.css   # Component-specific styling
-│   │   │   ├── BibleBookSelector.test.jsx # Comprehensive test suite (21 tests)
-│   │   │   └── BibleBookSelector.stories.jsx # Storybook stories
-│   │   ├── chapter-selection/          # Chapter selector component
-│   │   │   ├── index.jsx               # ChapterSelector component
-│   │   │   ├── ChapterSelector.css     # Component-specific styling
-│   │   │   ├── ChapterSelector.test.jsx # Comprehensive test suite (20 tests)
-│   │   │   └── ChapterSelector.stories.jsx # Storybook stories
-│   │   ├── verse-selection/            # Verse selector component
-│   │   │   ├── index.jsx               # VerseSelect component
-│   │   │   ├── VerseSelect.css         # Component-specific styling
-│   │   │   ├── VerseSelect.test.jsx    # Comprehensive test suite (22 tests)
-│   │   │   └── VerseSelect.stories.jsx # Storybook stories
-│   │   ├── breadcrumb/                 # Breadcrumb navigation component
-│   │   │   ├── index.jsx               # Breadcrumb component
-│   │   │   ├── Breadcrumb.css          # Component-specific styling
-│   │   │   ├── Breadcrumb.test.jsx     # Comprehensive test suite (22 tests)
-│   │   │   └── Breadcrumb.stories.jsx  # Storybook stories
-│   │   └── navigation/                 # Navigation container component
-│   │       ├── index.jsx               # Navigation component
-│   │       ├── Navigation.css          # Component-specific styling
-│   │       ├── Navigation.test.jsx     # Comprehensive test suite (25 tests)
-│   │       └── Navigation.stories.jsx  # Storybook stories
+│   ├── nav/                            # Navigation architecture folder
+│   │   ├── AppNavigation.jsx           # Navigation orchestration component
+│   │   ├── AppNavigation.test.jsx      # AppNavigation test suite
+│   │   ├── useVerseNavigation.js       # Verse navigation custom hook
+│   │   ├── useVerseNavigation.test.js  # Hook test suite
+│   │   ├── bible-nav/                  # Bible content display components
+│   │   │   └── verse-display/          # Verse display component
+│   │   │       ├── index.jsx           # VerseDisplay component
+│   │   │       ├── VerseDisplay.css    # Component-specific styling
+│   │   │       ├── VerseDisplay.test.jsx # Comprehensive test suite (25 tests)
+│   │   │       └── VerseDisplay.stories.jsx # Storybook stories
+│   │   └── ref-nav/                    # Reference navigation components
+│   │       ├── book-selection/         # Bible book selector component
+│   │       │   ├── index.jsx           # BibleBookSelector component
+│   │       │   ├── BibleBookSelector.css # Component-specific styling
+│   │       │   ├── BibleBookSelector.test.jsx # Comprehensive test suite (21 tests)
+│   │       │   └── BibleBookSelector.stories.jsx # Storybook stories
+│   │       ├── chapter-selection/      # Chapter selector component
+│   │       │   ├── index.jsx           # ChapterSelector component
+│   │       │   ├── ChapterSelector.css # Component-specific styling
+│   │       │   ├── ChapterSelector.test.jsx # Comprehensive test suite (20 tests)
+│   │       │   └── ChapterSelector.stories.jsx # Storybook stories
+│   │       ├── verse-selection/        # Verse selector component
+│   │       │   ├── index.jsx           # VerseSelect component
+│   │       │   ├── VerseSelect.css     # Component-specific styling
+│   │       │   ├── VerseSelect.test.jsx # Comprehensive test suite (22 tests)
+│   │       │   └── VerseSelect.stories.jsx # Storybook stories
+│   │       ├── breadcrumb/             # Breadcrumb navigation component
+│   │       │   ├── index.jsx           # Breadcrumb component
+│   │       │   ├── Breadcrumb.css      # Component-specific styling
+│   │       │   ├── Breadcrumb.test.jsx # Comprehensive test suite (22 tests)
+│   │       │   └── Breadcrumb.stories.jsx # Storybook stories
+│   │       └── navigation/             # Navigation container component
+│   │           ├── index.jsx           # Navigation component
+│   │           ├── Navigation.css      # Component-specific styling
+│   │           ├── Navigation.test.jsx # Comprehensive test suite (25 tests)
+│   │           └── Navigation.stories.jsx # Storybook stories
+│   ├── utils/                          # Utility modules
+│   │   ├── verseHistory.js             # Verse history localStorage utility
+│   │   └── verseHistory.test.js        # Comprehensive test suite (27 tests)
 │   └── stories/                        # Default Storybook example components
 ├── .storybook/                         # Storybook configuration
 │   ├── main.js                         # Storybook main configuration
@@ -114,29 +122,45 @@ The application uses a three-tier data architecture:
 ### Component Architecture
 
 #### Main Application (`App.jsx`)
-- **State Management**: Manages `bibleData`, verse data, and selection states
+- **Simplified Architecture**: Single responsibility for Bible data loading only (39 lines, reduced from 94)
 - **Data Fetching**: 
   - Loads Bible structure from `/data/kjv_structure.json`
-  - Dynamically loads verse data from JSON files when chapters are selected
-- **Layout Architecture**: Single-view interface that switches between navigation and verse display
-- **User Interface**: 
-  - Shows loading state while Bible data loads
-  - Renders Navigation component for Bible browsing
-  - Switches to VerseDisplay component when verses are selected
-  - Includes back button to return to navigation
-  - Responsive design for all screen sizes
-- **Loading States**: Handles loading and error states for both Bible data and verse content
+  - Handles loading states and error conditions gracefully
+- **Clean Separation**: All navigation logic extracted into dedicated components
 - **Component Integration**: 
-  - Conditional rendering between Navigation and VerseDisplay components
-  - Clean state management with back navigation functionality
-- **Navigation Flow**: Simple two-state system (navigation OR verse display)
-- **Verse Selection Callback**: Implements `handleVerseSelected` callback to receive scripture references
+  - Renders only `AppNavigation` component after data loads
+  - Passes `bibleData` prop to navigation system
+  - Simple conditional rendering (loading OR navigation)
+- **Error Handling**: Graceful error logging with fallback rendering
+
+#### AppNavigation Component (`src/nav/AppNavigation.jsx`)
+- **Navigation Orchestration**: Centralized navigation UI management using custom hook
+- **Hook Integration**: Uses `useVerseNavigation` for all navigation state and logic
+- **View Management**: Conditional rendering between navigation and verse display modes
+- **State Restoration**: Automatically restores current verse when Bible data loads
+- **Component Architecture**: 
+  - Renders `Navigation` component for Bible browsing
+  - Switches to `VerseDisplay` component when verses are selected
+  - Includes back button to return to navigation
+  - Handles loading and error states for verse content
+- **Props**:
+  - `bibleData`: Complete Bible structure object passed from App
+
+#### Navigation Hook (`src/nav/useVerseNavigation.js`)
+- **State Management**: Manages all verse navigation state internally
+  - `selectedScripture`, `verseData`, `loadingVerses`, `navigatedVerse`, `selectedVerse`
+- **Verse Selection Logic**: `handleVerseSelected` callback implementation
   - Receives complete scripture reference object when verses are selected
   - Loads corresponding JSON chapter file for verse content
   - Creates OSIS ID for verse highlighting and auto-scroll
   - Switches interface to verse display mode
   - Handles loading states and error conditions during verse fetch
+  - Integrates with verse history system automatically
 - **Back Navigation**: `handleBackToBooks()` function clears selections and returns to navigation
+- **Verse History Integration**: Automatic history tracking and current verse persistence
+- **Data Loading**: Dynamic loading of chapter JSON files on verse selection
+- **Error Handling**: Graceful handling of fetch errors with proper state management
+- **Memoization**: All callback functions memoized with `useCallback` for performance
 
 #### Navigation Component (`src/ref-nav/navigation/`)
 - **Purpose**: Centralized navigation system managing all Bible browsing functionality
@@ -469,7 +493,7 @@ npm run build-storybook
 
 ### Testing Strategy
 
-The project implements comprehensive testing with 171 total tests (all passing):
+The project implements comprehensive testing with 200 total tests (all passing):
 
 1. **Unit Tests**:
    - **BibleBookSelector**: 21 tests covering component rendering, user interactions, accessibility, and edge cases
@@ -479,7 +503,9 @@ The project implements comprehensive testing with 171 total tests (all passing):
    - **Navigation**: 25 tests covering complete navigation flow, state management, integration, callback functionality, and edge cases
    - **VerseDisplay**: 25 tests covering verse rendering, navigation highlighting, persistent reminders, selection clearing, auto-scroll, accessibility, and edge cases
    - **verseHistory**: 27 tests covering localStorage functionality, history management, error handling, and data integrity
-   - **App**: 9 tests covering verse history integration, state restoration, and error scenarios (all passing)
+   - **App**: 13 tests covering simplified architecture, Bible data loading, AppNavigation integration, and error handling
+   - **AppNavigation**: 35 tests covering navigation orchestration, hook integration, component rendering states, and user interactions
+   - **useVerseNavigation**: 35 tests covering custom hook state management, verse selection logic, history integration, and memoization
    - Component rendering and behavior validation
    - User interactions and event handling
    - Edge cases and error conditions (including zero verses, invalid data)
@@ -488,6 +514,7 @@ The project implements comprehensive testing with 171 total tests (all passing):
    - Navigation flow testing across all breadcrumb states
    - Integration testing between navigation components
    - Verse history persistence and localStorage functionality
+   - Custom hook testing with renderHook and comprehensive state management scenarios
 
 2. **Test Configuration**:
    - **Environment**: jsdom for DOM simulation
@@ -497,6 +524,16 @@ The project implements comprehensive testing with 171 total tests (all passing):
    - **VS Code Integration**: Enhanced Jest extension settings for test discovery
 
 3. **Recent Updates** (Latest):
+   - **Architecture Refactoring**: Complete extraction of navigation logic from App.jsx into dedicated components and custom hook
+   - **Component Separation**: App.jsx reduced from 94 to 39 lines, focusing solely on Bible data loading
+   - **Custom Hook Architecture**: Created `useVerseNavigation` hook to encapsulate all navigation state and logic
+   - **AppNavigation Component**: New orchestration component handling navigation UI with hook integration
+   - **Comprehensive Testing**: Expanded to 200 tests including new AppNavigation (35 tests) and useVerseNavigation (35 tests) suites
+   - **Clean Architecture**: Complete separation of concerns between data loading, navigation orchestration, and UI components
+   - **Folder Reorganization**: Consolidated all navigation components under `src/nav/` folder with proper subfolders
+   - **File Movement Tracking**: Used git commands to properly track file movements as renames rather than deletions/additions
+   - **State Management Improvements**: Centralized navigation state in custom hook with proper memoization
+   - **Integration Testing**: Comprehensive testing of hook-component integration and state management
    - **Accessibility Enhancements**: Added screen-reader-only headings to ChapterSelector and VerseSelect components for improved accessibility
    - **Screen Reader Support**: Implemented `sr-only` CSS class to provide semantic headings without visual clutter
    - **Minimalist UI Design**: Removed all navigation help displays from individual components (book/chapter/verse headers removed)
@@ -504,23 +541,16 @@ The project implements comprehensive testing with 171 total tests (all passing):
    - **Streamlined Navigation**: Breadcrumb shows only Books › Book › Chapter (no verse reference or "Chapter has X verses" display)
    - **Verse Selection Callback System**: Added `onVerseSelected` callback to Navigation component for scripture reference handling
    - **Scripture Reference Integration**: Complete scripture reference object passed to callback with book, chapter, verse details
-   - **Component Organization**: Moved all navigation components to `src/ref-nav/` folder for better organization
-   - **Enhanced Testing**: Expanded to 171 tests with verse history functionality (27 verseHistory tests, 9 App integration tests)
-   - **Extensible Architecture**: Callback system enables custom navigation actions (content loading, URL updates, etc.)
-   - **Navigation Component Extraction**: Extracted all navigation logic from App.jsx into dedicated Navigation component
-   - **Clean Architecture**: App.jsx now focuses solely on data loading, Navigation handles all Bible browsing
-   - **Enhanced Testability**: Navigation component fully testable in isolation with comprehensive test suite
-   - **Component Reusability**: Navigation can be reused independently of data loading concerns
+   - **Enhanced Testability**: All components fully testable in isolation with comprehensive test suites
+   - **Component Reusability**: Navigation architecture can be reused independently of data loading concerns
    - **Unified Breadcrumb Navigation**: Replaced individual back buttons and selected info displays with minimalist Breadcrumb component
    - **Enhanced Navigation UX**: Smart contextual navigation with disabled current view indicators and clickable backward traversal
-   - **Minimalist Navigation System**: Book → Chapter selection with clean breadcrumb (no redundant verse displays)
    - **Enhanced State Management**: Implemented cascading state reset with centralized breadcrumb handlers
    - **Accessibility Improvements**: Full ARIA support, keyboard navigation, and meaningful titles throughout breadcrumb
-   - **Responsive Breadcrumb Design**: Mobile-optimized navigation with collapsing elements and touch-friendly targets
-   - **Separation of Concerns**: Clear architectural boundaries between data loading and navigation functionality
+   - **Responsive Design**: Mobile-optimized navigation with collapsing elements and touch-friendly targets
    - **Verse History System**: Comprehensive localStorage-based history tracking with automatic persistence and restoration
    - **Independent Implementation**: Verse history added without modifying existing navigation components
-   - **Comprehensive Testing**: 36 new tests covering utility functions and integration scenarios
+   - **Performance Optimization**: All callback functions memoized with useCallback for optimal rendering performance
 
 4. **Storybook Stories**:
    - Component isolation and development
