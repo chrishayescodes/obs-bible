@@ -20,17 +20,11 @@ function App() {
       })
   }, [])
 
-  if (loading) {
-    return (
-      <div className="app">
-        <div className="loading">Loading Bible data...</div>
-      </div>
-    )
-  }
-
+  const loadingDiv = <div className="loading">Loading Bible data...</div>;
+  
   return (
     <div className="app">
-      <AppNavigation bibleData={bibleData} />
+      { loading ? loadingDiv : <AppNavigation bibleData={bibleData} /> }
     </div>
   )
 }
