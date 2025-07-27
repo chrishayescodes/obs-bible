@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import { verseHistoryUtils } from '../utils/verseHistory'
 import { verseSyncUtils } from '../utils/broadcastChannel'
+import { getSimpleBookName } from '../utils/bookNames'
 
 // Debug logging removed - implementation working correctly
 
@@ -58,16 +59,8 @@ export const useVerseNavigation = (bibleData) => {
     // Parse the OSIS ID to create a scripture reference
     const [bookId, chapter, verse] = osisId.split('.')
     
-    // Get the book title from bibleData
-    let bookTitle = bookId // fallback to bookId if not found
-    if (bibleData) {
-      const oldTestamentBook = bibleData.old_testament?.books?.[bookId]
-      const newTestamentBook = bibleData.new_testament?.books?.[bookId]
-      const bookInfo = oldTestamentBook || newTestamentBook
-      if (bookInfo && bookInfo.title) {
-        bookTitle = bookInfo.title
-      }
-    }
+    // Use simple book name instead of formal title
+    const bookTitle = getSimpleBookName(bookId)
     
     const scriptureRef = {
       book: bookTitle,

@@ -13,6 +13,14 @@ const SelectedVerseDisplay = () => {
   useEffect(() => {
     // Optionally load book names from JSON to enhance the mapping
     loadBookNames()
+    
+    // Add body class for OBS Studio overlay styling
+    document.body.classList.add('obs-overlay')
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('obs-overlay')
+    }
   }, [])
 
   useEffect(() => {
@@ -76,79 +84,23 @@ const SelectedVerseDisplay = () => {
     }
   }
 
-  const handleClearVerse = () => {
-    verseHistoryUtils.clearCurrentVerse()
-    setCurrentVerse(null)
-    setVerseText('')
-    setError(null)
+  // Don't render anything if no verse is selected
+  if (!currentVerse || (!verseText && !loading)) {
+    return null
   }
 
-  if (!currentVerse) {
-    return (
-      <div className="selected-verse-display">
-        <div className="no-verse-selected">
-          <h3>No Verse Selected</h3>
-          <p>Navigate to a verse to see it displayed here.</p>
-        </div>
-      </div>
-    )
+  // Only show content when we have verse text (no loading or error states)
+  if (!verseText || loading || error) {
+    return null
   }
+
+  const verseReference = currentVerse.bookId && currentVerse.chapter && currentVerse.verse !== undefined
+    ? createSimpleReference(currentVerse.bookId, currentVerse.chapter, currentVerse.verse)
+    : currentVerse.reference
 
   return (
     <div className="selected-verse-display">
-      <div className="verse-header">
-        <h3 className="verse-reference">
-          {(() => {
-            if (currentVerse.bookId && currentVerse.chapter && currentVerse.verse !== undefined) {
-              return createSimpleReference(currentVerse.bookId, currentVerse.chapter, currentVerse.verse)
-            }
-            return currentVerse.reference
-          })()}
-        </h3>
-        <button 
-          type="button"
-          className="clear-verse-button"
-          onClick={handleClearVerse}
-          aria-label={`Clear selected verse ${
-            currentVerse.bookId && currentVerse.chapter && currentVerse.verse !== undefined
-              ? createSimpleReference(currentVerse.bookId, currentVerse.chapter, currentVerse.verse)
-              : currentVerse.reference
-          }`}
-        >
-          ✕
-        </button>
-      </div>
-
-      <div className="verse-content">
-        {loading && (
-          <div className="verse-loading">
-            <div className="loading-spinner" aria-label="Loading verse content"></div>
-            <span>Loading verse content...</span>
-          </div>
-        )}
-
-        {error && (
-          <div className="verse-error">
-            <span className="error-icon" aria-hidden="true">⚠️</span>
-            <span>{error}</span>
-          </div>
-        )}
-
-        {!loading && !error && verseText && (
-          <div className="verse-text">
-            <span className="verse-number">{currentVerse.verse}</span>
-            <span className="verse-content-text">{verseText}</span>
-          </div>
-        )}
-      </div>
-
-      {currentVerse.timestamp && (
-        <div className="verse-metadata">
-          <span className="verse-timestamp">
-            Selected {new Date(currentVerse.timestamp).toLocaleString()}
-          </span>
-        </div>
-      )}
+      <div className="verse-text">{verseText} ~ {verseReference}</div>
     </div>
   )
 }

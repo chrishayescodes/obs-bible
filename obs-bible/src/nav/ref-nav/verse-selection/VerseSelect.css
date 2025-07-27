@@ -43,7 +43,7 @@
   justify-content: center;
   height: 60px;
   font-family: inherit;
-  color: #475569;
+  color: #000000;
   font-size: 14px;
   font-weight: 600;
 }
@@ -86,7 +86,7 @@
   .verse-button {
     background-color: #374151;
     border-color: #4b5563;
-    color: #e5e7eb;
+    color: #ffffff;
   }
 
   .verse-button:hover {
@@ -112,7 +112,7 @@
 .dark .verse-button {
   background-color: #374151;
   border-color: #4b5563;
-  color: #e5e7eb;
+  color: #ffffff;
 }
 
 .dark .verse-button:hover {

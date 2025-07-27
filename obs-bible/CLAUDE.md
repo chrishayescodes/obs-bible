@@ -707,6 +707,11 @@ The project implements comprehensive testing with 247 total tests (all passing):
    - **VS Code Integration**: Enhanced Jest extension settings for test discovery
 
 3. **Recent Updates** (Latest):
+   - **OBS Studio Overlay Enhancements**: Simplified display component to single-line format with verse text and reference combined using tilde separator
+   - **Text Size Optimization**: Increased font sizes for better video streaming readability (1.8rem desktop, 1.5rem tablet, 1.3rem mobile)
+   - **CSS Specificity Fix**: Made SelectedVerseDisplay CSS more specific to prevent text-shadow and styling conflicts with verse selection components
+   - **Layout Simplification**: Changed from two-element layout to single centered text element showing "verse text ~ reference" format
+   - **Verse Selection Text Fix**: Updated verse selection buttons to use pure black text (#000000) in light mode and white (#ffffff) in dark mode, removing gray color
    - **Cross-Tab Communication System**: Implemented comprehensive BroadcastChannel API for real-time verse synchronization across browser tabs
    - **Architecture Refinement**: Fixed navigation vs selection architecture - only explicit verse selections broadcast, navigation is visual-only
    - **Book Title Integration**: Enhanced verse selection to use actual Bible data structure for proper book titles instead of hardcoded mapping

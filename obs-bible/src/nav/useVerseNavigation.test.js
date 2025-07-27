@@ -299,7 +299,7 @@ describe('useVerseNavigation', () => {
       expect(result.current.selectedVerse).toBe('Gen.1.5')
     })
 
-    it('should handle verse selection without bibleData (fallback to bookId)', () => {
+    it('should handle verse selection with simple book names', () => {
       const { result } = renderHook(() => useVerseNavigation())
 
       act(() => {
@@ -307,11 +307,11 @@ describe('useVerseNavigation', () => {
       })
 
       const expectedScriptureRef = {
-        book: 'Matt', // Falls back to bookId when no bibleData
+        book: 'Matthew', // Uses simple book name from fallback mapping
         bookId: 'Matt',
         chapter: '5',
         verse: 3,
-        reference: 'Matt 5:3'
+        reference: 'Matthew 5:3'
       }
 
       expect(verseHistoryUtils.addToHistory).toHaveBeenCalledWith(expectedScriptureRef)
