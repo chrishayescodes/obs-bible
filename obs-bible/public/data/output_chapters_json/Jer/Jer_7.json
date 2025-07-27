@@ -16,9 +16,11 @@
   "Jer.7.15": "And I will cast you out of my sight, as I have cast out all your brethren, even the whole seed of Ephraim.",
   "Jer.7.16": "Therefore pray not thou for this people, neither lift up cry nor prayer for them, neither make intercession to me: for I will not hear thee.",
   "Jer.7.17": "Seest thou not what they do in the cities of Judah and in the streets of Jerusalem?",
-  "Jer.7.18": "The children gather wood, and the fathers kindle the fire, and the women knead their dough, to make cakes to the queen of heaven, and to pour out drink offerings unto other gods, that they may provoke me to anger.",
+  "Jer.7.18a": "The children gather wood, and the fathers kindle the fire, and the women knead their dough, to make cakes to",
+  "Jer.7.18b": "the queen of heaven, and to pour out drink offerings unto other gods, that they may provoke me to anger.",
   "Jer.7.19": "Do they provoke me to anger? saith the Lord: do they not provoke themselves to the confusion of their own faces?",
-  "Jer.7.20": "Therefore thus saith the Lord God; Behold, mine anger and my fury shall be poured out upon this place, upon man, and upon beast, and upon the trees of the field, and upon the fruit of the ground; and it shall burn, and shall not be quenched.",
+  "Jer.7.20a": "Therefore thus saith the Lord God; Behold, mine anger and my fury shall be poured out upon this place, upon man, and upon",
+  "Jer.7.20b": "beast, and upon the trees of the field, and upon the fruit of the ground; and it shall burn, and shall not be quenched.",
   "Jer.7.21": "Thus saith the Lord of hosts, the God of Israel; Put your burnt offerings unto your sacrifices, and eat flesh.",
   "Jer.7.22": "For I spake not unto your fathers, nor commanded them in the day that I brought them out of the land of Egypt, concerning burnt offerings or sacrifices:",
   "Jer.7.23": "But this thing commanded I them, saying, Obey my voice, and I will be your God, and ye shall be my people: and walk ye in all the ways that I have commanded you, that it may be well unto you.",
@@ -29,8 +31,11 @@
   "Jer.7.28": "But thou shalt say unto them, This is a nation that obeyeth not the voice of the Lord their God, nor receiveth correction: truth is perished, and is cut off from their mouth.",
   "Jer.7.29": "Cut off thine hair, O Jerusalem, and cast it away, and take up a lamentation on high places; for the Lord hath rejected and forsaken the generation of his wrath.",
   "Jer.7.30": "For the children of Judah have done evil in my sight, saith the Lord: they have set their abominations in the house which is called by my name, to pollute it.",
-  "Jer.7.31": "And they have built the high places of Tophet, which is in the valley of the son of Hinnom, to burn their sons and their daughters in the fire; which I commanded them not, neither came it into my heart.",
-  "Jer.7.32": "Therefore, behold, the days come, saith the Lord, that it shall no more be called Tophet, nor the valley of the son of Hinnom, but the valley of slaughter: for they shall bury in Tophet, till there be no place.",
+  "Jer.7.31a": "And they have built the high places of Tophet, which is in the valley of the son of Hinnom, to",
+  "Jer.7.31b": "burn their sons and their daughters in the fire; which I commanded them not, neither came it into my heart.",
+  "Jer.7.32a": "Therefore, behold, the days come, saith the Lord, that it shall no more be called Tophet, nor the valley of",
+  "Jer.7.32b": "the son of Hinnom, but the valley of slaughter: for they shall bury in Tophet, till there be no place.",
   "Jer.7.33": "And the carcases of this people shall be meat for the fowls of the heaven, and for the beasts of the earth; and none shall fray them away.",
-  "Jer.7.34": "Then will I cause to cease from the cities of Judah, and from the streets of Jerusalem, the voice of mirth, and the voice of gladness, the voice of the bridegroom, and the voice of the bride: for the land shall be desolate."
+  "Jer.7.34a": "Then will I cause to cease from the cities of Judah, and from the streets of Jerusalem, the voice of mirth,",
+  "Jer.7.34b": "and the voice of gladness, the voice of the bridegroom, and the voice of the bride: for the land shall be desolate."
 }

@@ -9,6 +9,10 @@ import os
 import re
 from pathlib import Path
 
+# Configuration for verse splitting
+MAX_VERSE_LENGTH = 200  # Characters threshold for splitting verses
+SPLIT_PATTERN = r'[.!?]\s+'  # Split on sentence boundaries
+
 
 def extract_text_from_line(line):
     """Extract plain text from a verse line, ignoring notes."""
@@ -50,6 +54,107 @@ def extract_text_from_line(line):
     return text.strip()
 
 
+def split_long_verse(text, max_length=MAX_VERSE_LENGTH):
+    """Split a long verse into multiple evenly-sized parts at sentence boundaries."""
+    if len(text) <= max_length:
+        return [text]
+    
+    # Calculate how many parts we need for approximately even distribution
+    num_parts = max(2, (len(text) + max_length - 1) // max_length)
+    target_length = len(text) // num_parts
+    
+    # Split on sentence boundaries first
+    sentences = re.split(SPLIT_PATTERN, text)
+    
+    if len(sentences) <= 1:
+        # If no sentence boundaries found, split at word boundaries
+        words = text.split()
+        words_per_part = len(words) // num_parts
+        
+        parts = []
+        for i in range(num_parts):
+            start_idx = i * words_per_part
+            if i == num_parts - 1:  # Last part gets remaining words
+                end_idx = len(words)
+            else:
+                end_idx = (i + 1) * words_per_part
+            parts.append(' '.join(words[start_idx:end_idx]))
+        
+        return parts
+    
+    # Rebuild sentences with their punctuation
+    full_sentences = []
+    sentence_start = 0
+    for i, sentence in enumerate(sentences):
+        if sentence.strip():  # Skip empty sentences
+            # Find the actual sentence with punctuation in original text
+            sentence_end = text.find(sentence, sentence_start) + len(sentence)
+            # Look for punctuation after the sentence
+            while sentence_end < len(text) and text[sentence_end] in '.!?':
+                sentence_end += 1
+            # Include any trailing space
+            while sentence_end < len(text) and text[sentence_end] == ' ':
+                sentence_end += 1
+            
+            full_sentence = text[sentence_start:sentence_end].strip()
+            if full_sentence:
+                full_sentences.append(full_sentence)
+            sentence_start = sentence_end
+    
+    # If we couldn't find proper sentences, fall back to original splitting
+    if not full_sentences:
+        words = text.split()
+        words_per_part = len(words) // num_parts
+        
+        parts = []
+        for i in range(num_parts):
+            start_idx = i * words_per_part
+            if i == num_parts - 1:
+                end_idx = len(words)
+            else:
+                end_idx = (i + 1) * words_per_part
+            parts.append(' '.join(words[start_idx:end_idx]))
+        
+        return parts
+    
+    # Group sentences into parts aiming for target length
+    parts = []
+    current_part = ""
+    
+    for sentence in full_sentences:
+        test_part = current_part + (" " if current_part else "") + sentence
+        
+        # If this sentence would make us exceed target and we have content, start new part
+        if len(test_part) > target_length and current_part:
+            parts.append(current_part.strip())
+            current_part = sentence
+        else:
+            current_part = test_part
+    
+    # Add the last part
+    if current_part:
+        parts.append(current_part.strip())
+    
+    # If we ended up with too few parts, try to balance them better
+    if len(parts) < num_parts and len(parts) > 1:
+        # Find the longest part and try to split it
+        longest_idx = max(range(len(parts)), key=lambda i: len(parts[i]))
+        longest_part = parts[longest_idx]
+        
+        if len(longest_part) > max_length:
+            # Split the longest part
+            words = longest_part.split()
+            mid_point = len(words) // 2
+            part1 = ' '.join(words[:mid_point])
+            part2 = ' '.join(words[mid_point:])
+            
+            # Replace the longest part with the two new parts
+            parts[longest_idx] = part1
+            parts.insert(longest_idx + 1, part2)
+    
+    return parts
+
+
 def extract_verses_from_xml(xml_path):
     """Extract verses from an OSIS XML file."""
     verses = {}
@@ -74,7 +179,18 @@ def extract_verses_from_xml(xml_path):
                         verse_content = content_match.group(1)
                         text = extract_text_from_line(verse_content)
                         if text:  # Only add non-empty verses
-                            verses[osisid] = text
+                            # Check if verse needs to be split
+                            verse_parts = split_long_verse(text)
+                            
+                            if len(verse_parts) == 1:
+                                # Single verse, add normally
+                                verses[osisid] = text
+                            else:
+                                # Multiple parts, add with letter suffixes
+                                for i, part in enumerate(verse_parts):
+                                    suffix = chr(ord('a') + i)  # 'a', 'b', 'c', etc.
+                                    split_osisid = f"{osisid}{suffix}"
+                                    verses[split_osisid] = part
     
     return verses
 

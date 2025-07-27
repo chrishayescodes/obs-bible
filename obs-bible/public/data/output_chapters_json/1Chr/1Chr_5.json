@@ -1,5 +1,6 @@
 {
-  "1Chr.5.1": "Now the sons of Reuben the firstborn of Israel, (for he was the firstborn; but, forasmuch as he defiled his father's bed, his birthright was given unto the sons of Joseph the son of Israel: and the genealogy is not to be reckoned after the birthright.",
+  "1Chr.5.1a": "Now the sons of Reuben the firstborn of Israel, (for he was the firstborn; but, forasmuch as he defiled his father's bed, his",
+  "1Chr.5.1b": "birthright was given unto the sons of Joseph the son of Israel: and the genealogy is not to be reckoned after the birthright.",
   "1Chr.5.2": "For Judah prevailed above his brethren, and of him came the chief ruler; but the birthright was Joseph's:)",
   "1Chr.5.3": "The sons, I say, of Reuben the firstborn of Israel were, Hanoch, and Pallu, Hezron, and Carmi.",
   "1Chr.5.4": "The sons of Joel; Shemaiah his son, Gog his son, Shimei his son,",
@@ -16,13 +17,17 @@
   "1Chr.5.15": "Ahi the son of Abdiel, the son of Guni, chief of the house of their fathers.",
   "1Chr.5.16": "And they dwelt in Gilead in Bashan, and in her towns, and in all the suburbs of Sharon, upon their borders.",
   "1Chr.5.17": "All these were reckoned by genealogies in the days of Jotham king of Judah, and in the days of Jeroboam king of Israel.",
-  "1Chr.5.18": "The sons of Reuben, and the Gadites, and half the tribe of Manasseh, of valiant men, men able to bear buckler and sword, and to shoot with bow, and skilful in war, were four and forty thousand seven hundred and threescore, that went out to the war.",
+  "1Chr.5.18a": "The sons of Reuben, and the Gadites, and half the tribe of Manasseh, of valiant men, men able to bear buckler and sword,",
+  "1Chr.5.18b": "and to shoot with bow, and skilful in war, were four and forty thousand seven hundred and threescore, that went out to the war.",
   "1Chr.5.19": "And they made war with the Hagarites, with Jetur, and Nephish, and Nodab.",
-  "1Chr.5.20": "And they were helped against them, and the Hagarites were delivered into their hand, and all that were with them: for they cried to God in the battle, and he was intreated of them; because they put their trust in him.",
+  "1Chr.5.20a": "And they were helped against them, and the Hagarites were delivered into their hand, and all that were with them:",
+  "1Chr.5.20b": "for they cried to God in the battle, and he was intreated of them; because they put their trust in him.",
   "1Chr.5.21": "And they took away their cattle; of their camels fifty thousand, and of sheep two hundred and fifty thousand, and of asses two thousand, and of men an hundred thousand.",
   "1Chr.5.22": "For there fell down many slain, because the war was of God. And they dwelt in their steads until the captivity.",
   "1Chr.5.23": "And the children of the half tribe of Manasseh dwelt in the land: they increased from Bashan unto Baal–hermon and Senir, and unto mount Hermon.",
-  "1Chr.5.24": "And these were the heads of the house of their fathers, even Epher, and Ishi, and Eliel, and Azriel, and Jeremiah, and Hodaviah, and Jahdiel, mighty men of valour, famous men, and heads of the house of their fathers.",
+  "1Chr.5.24a": "And these were the heads of the house of their fathers, even Epher, and Ishi, and Eliel, and Azriel,",
+  "1Chr.5.24b": "and Jeremiah, and Hodaviah, and Jahdiel, mighty men of valour, famous men, and heads of the house of their fathers.",
   "1Chr.5.25": "And they transgressed against the God of their fathers, and went a whoring after the gods of the people of the land, whom God destroyed before them.",
-  "1Chr.5.26": "And the God of Israel stirred up the spirit of Pul king of Assyria, and the spirit of Tilgath–pilneser king of Assyria, and he carried them away, even the Reubenites, and the Gadites, and the half tribe of Manasseh, and brought them unto Halah, and Habor, and Hara, and to the river Gozan, unto this day."
+  "1Chr.5.26a": "And the God of Israel stirred up the spirit of Pul king of Assyria, and the spirit of Tilgath–pilneser king of Assyria, and he carried them away, even",
+  "1Chr.5.26b": "the Reubenites, and the Gadites, and the half tribe of Manasseh, and brought them unto Halah, and Habor, and Hara, and to the river Gozan, unto this day."
 }

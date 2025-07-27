@@ -7,7 +7,8 @@
   "Josh.19.6": "And Beth–lebaoth, and Sharuhen; thirteen cities and their villages:",
   "Josh.19.7": "Ain, Remmon, and Ether, and Ashan; four cities and their villages:",
   "Josh.19.8": "And all the villages that were round about these cities to Baalath–beer, Ramath of the south. This is the inheritance of the tribe of the children of Simeon according to their families.",
-  "Josh.19.9": "Out of the portion of the children of Judah was the inheritance of the children of Simeon: for the part of the children of Judah was too much for them: therefore the children of Simeon had their inheritance within the inheritance of them.",
+  "Josh.19.9a": "Out of the portion of the children of Judah was the inheritance of the children of Simeon: for the part of",
+  "Josh.19.9b": "the children of Judah was too much for them: therefore the children of Simeon had their inheritance within the inheritance of them.",
   "Josh.19.10": "And the third lot came up for the children of Zebulun according to their families: and the border of their inheritance was unto Sarid:",
   "Josh.19.11": "And their border went up toward the sea, and Maralah, and reached to Dabbasheth, and reached to the river that is before Jokneam;",
   "Josh.19.12": "And turned from Sarid eastward toward the sunrising unto the border of Chisloth–tabor, and then goeth out to Daberath, and goeth up to Japhia,",
@@ -32,7 +33,8 @@
   "Josh.19.31": "This is the inheritance of the tribe of the children of Asher according to their families, these cities with their villages.",
   "Josh.19.32": "The sixth lot came out to the children of Naphtali, even for the children of Naphtali according to their families.",
   "Josh.19.33": "And their coast was from Heleph, from Allon to Zaanannim, and Adami, Nekeb, and Jabneel, unto Lakum; and the outgoings thereof were at Jordan:",
-  "Josh.19.34": "And then the coast turneth westward to Aznoth–tabor, and goeth out from thence to Hukkok, and reacheth to Zebulun on the south side, and reacheth to Asher on the west side, and to Judah upon Jordan toward the sunrising.",
+  "Josh.19.34a": "And then the coast turneth westward to Aznoth–tabor, and goeth out from thence to Hukkok, and reacheth to Zebulun",
+  "Josh.19.34b": "on the south side, and reacheth to Asher on the west side, and to Judah upon Jordan toward the sunrising.",
   "Josh.19.35": "And the fenced cities are Ziddim, Zer, and Hammath, Rakkath, and Chinnereth,",
   "Josh.19.36": "And Adamah, and Ramah, and Hazor,",
   "Josh.19.37": "And Kedesh, and Edrei, and En–hazor,",
@@ -45,9 +47,11 @@
   "Josh.19.44": "And Eltekeh, and Gibbethon, and Baalath,",
   "Josh.19.45": "And Jehud, and Bene–berak, and Gath–rimmon,",
   "Josh.19.46": "And Me–jarkon, and Rakkon, with the border before Japho.",
-  "Josh.19.47": "And the coast of the children of Dan went out too little for them: therefore the children of Dan went up to fight against Leshem, and took it, and smote it with the edge of the sword, and possessed it, and dwelt therein, and called Leshem, Dan, after the name of Dan their father.",
+  "Josh.19.47a": "And the coast of the children of Dan went out too little for them: therefore the children of Dan went up to fight against Leshem, and took",
+  "Josh.19.47b": "it, and smote it with the edge of the sword, and possessed it, and dwelt therein, and called Leshem, Dan, after the name of Dan their father.",
   "Josh.19.48": "This is the inheritance of the tribe of the children of Dan according to their families, these cities with their villages.",
   "Josh.19.49": "When they had made an end of dividing the land for inheritance by their coasts, the children of Israel gave an inheritance to Joshua the son of Nun among them:",
   "Josh.19.50": "According to the word of the Lord they gave him the city which he asked, even Timnath–serah in mount Ephraim: and he built the city, and dwelt therein.",
-  "Josh.19.51": "These are the inheritances, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes of the children of Israel, divided for an inheritance by lot in Shiloh before the Lord, at the door of the tabernacle of the congregation. So they made an end of dividing the country."
+  "Josh.19.51a": "These are the inheritances, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes of the children of Israel, divided for an inheritance by lot in Shiloh before the Lord, at the door of the tabernacle of the congregation.",
+  "Josh.19.51b": "So they made an end of dividing the country."
 }

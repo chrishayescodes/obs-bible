@@ -25,7 +25,9 @@
   "Mark.1.24": "Saying, Let us alone; what have we to do with thee, thou Jesus of Nazareth? art thou come to destroy us? I know thee who thou art, the Holy One of God.",
   "Mark.1.25": "And Jesus rebuked him, saying, Hold thy peace, and come out of him.",
   "Mark.1.26": "And when the unclean spirit had torn him, and cried with a loud voice, he came out of him.",
-  "Mark.1.27": "And they were all amazed, insomuch that they questioned among themselves, saying, What thing is this? what new doctrine is this? for with authority commandeth he even the unclean spirits, and they do obey him.",
+  "Mark.1.27a": "And they were all amazed, insomuch that they questioned among themselves, saying, What thing is this?",
+  "Mark.1.27b": "what new doctrine is this?",
+  "Mark.1.27c": "for with authority commandeth he even the unclean spirits, and they do obey him.",
   "Mark.1.28": "And immediately his fame spread abroad throughout all the region round about Galilee.",
   "Mark.1.29": "And forthwith, when they were come out of the synagogue, they entered into the house of Simon and Andrew, with James and John.",
   "Mark.1.30": "But Simon's wife's mother lay sick of a fever, and anon they tell him of her.",
@@ -43,5 +45,6 @@
   "Mark.1.42": "And as soon as he had spoken, immediately the leprosy departed from him, and he was cleansed.",
   "Mark.1.43": "And he straitly charged him, and forthwith sent him away;",
   "Mark.1.44": "And saith unto him, See thou say nothing to any man: but go thy way, shew thyself to the priest, and offer for thy cleansing those things which Moses commanded, for a testimony unto them.",
-  "Mark.1.45": "But he went out, and began to publish it much, and to blaze abroad the matter, insomuch that Jesus could no more openly enter into the city, but was without in desert places: and they came to him from every quarter."
+  "Mark.1.45a": "But he went out, and began to publish it much, and to blaze abroad the matter, insomuch that Jesus could",
+  "Mark.1.45b": "no more openly enter into the city, but was without in desert places: and they came to him from every quarter."
 }

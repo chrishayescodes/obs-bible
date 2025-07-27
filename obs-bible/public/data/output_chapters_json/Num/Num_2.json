@@ -1,7 +1,8 @@
 {
   "Num.2.1": "And the Lord spake unto Moses and unto Aaron, saying,",
   "Num.2.2": "Every man of the children of Israel shall pitch by his own standard, with the ensign of their father's house: far off about the tabernacle of the congregation shall they pitch.",
-  "Num.2.3": "And on the east side toward the rising of the sun shall they of the standard of the camp of Judah pitch throughout their armies: and Nahshon the son of Amminadab shall be captain of the children of Judah.",
+  "Num.2.3a": "And on the east side toward the rising of the sun shall they of the standard of the camp",
+  "Num.2.3b": "of Judah pitch throughout their armies: and Nahshon the son of Amminadab shall be captain of the children of Judah.",
   "Num.2.4": "And his host, and those that were numbered of them, were threescore and fourteen thousand and six hundred.",
   "Num.2.5": "And those that do pitch next unto him shall be the tribe of Issachar: and Nethaneel the son of Zuar shall be captain of the children of Issachar.",
   "Num.2.6": "And his host, and those that were numbered thereof, were fifty and four thousand and four hundred.",
@@ -30,7 +31,9 @@
   "Num.2.29": "Then the tribe of Naphtali: and the captain of the children of Naphtali shall be Ahira the son of Enan.",
   "Num.2.30": "And his host, and those that were numbered of them, were fifty and three thousand and four hundred.",
   "Num.2.31": "All they that were numbered in the camp of Dan were an hundred thousand and fifty and seven thousand and six hundred. They shall go hindmost with their standards.",
-  "Num.2.32": "These are those which were numbered of the children of Israel by the house of their fathers: all those that were numbered of the camps throughout their hosts were six hundred thousand and three thousand and five hundred and fifty.",
+  "Num.2.32a": "These are those which were numbered of the children of Israel by the house of their fathers: all those that",
+  "Num.2.32b": "were numbered of the camps throughout their hosts were six hundred thousand and three thousand and five hundred and fifty.",
   "Num.2.33": "But the Levites were not numbered among the children of Israel; as the Lord commanded Moses.",
-  "Num.2.34": "And the children of Israel did according to all that the Lord commanded Moses: so they pitched by their standards, and so they set forward, every one after their families, according to the house of their fathers."
+  "Num.2.34a": "And the children of Israel did according to all that the Lord commanded Moses: so they pitched by",
+  "Num.2.34b": "their standards, and so they set forward, every one after their families, according to the house of their fathers."
 }

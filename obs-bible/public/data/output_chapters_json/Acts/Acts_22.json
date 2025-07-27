@@ -1,9 +1,11 @@
 {
   "Acts.22.1": "Men, brethren, and fathers, hear ye my defence which I make now unto you.",
   "Acts.22.2": "(And when they heard that he spake in the Hebrew tongue to them, they kept the more silence: and he saith,)",
-  "Acts.22.3": "I am verily a man which am a Jew, born in Tarsus, a city in Cilicia, yet brought up in this city at the feet of Gamaliel, and taught according to the perfect manner of the law of the fathers, and was zealous toward God, as ye all are this day.",
+  "Acts.22.3a": "I am verily a man which am a Jew, born in Tarsus, a city in Cilicia, yet brought up in this city at the feet",
+  "Acts.22.3b": "of Gamaliel, and taught according to the perfect manner of the law of the fathers, and was zealous toward God, as ye all are this day.",
   "Acts.22.4": "And I persecuted this way unto the death, binding and delivering into prisons both men and women.",
-  "Acts.22.5": "As also the high priest doth bear me witness, and all the estate of the elders: from whom also I received letters unto the brethren, and went to Damascus, to bring them which were there bound unto Jerusalem, for to be punished.",
+  "Acts.22.5a": "As also the high priest doth bear me witness, and all the estate of the elders: from whom also I received",
+  "Acts.22.5b": "letters unto the brethren, and went to Damascus, to bring them which were there bound unto Jerusalem, for to be punished.",
   "Acts.22.6": "And it came to pass, that, as I made my journey, and was come nigh unto Damascus about noon, suddenly there shone from heaven a great light round about me.",
   "Acts.22.7": "And I fell unto the ground, and heard a voice saying unto me, Saul, Saul, why persecutest thou me?",
   "Acts.22.8": "And I answered, Who art thou, Lord? And he said unto me, I am Jesus of Nazareth, whom thou persecutest.",
@@ -28,5 +30,6 @@
   "Acts.22.27": "Then the chief captain came, and said unto him, Tell me, art thou a Roman? He said, Yea.",
   "Acts.22.28": "And the chief captain answered, With a great sum obtained I this freedom. And Paul said, But I was free born.",
   "Acts.22.29": "Then straightway they departed from him which should have examined him: and the chief captain also was afraid, after he knew that he was a Roman, and because he had bound him.",
-  "Acts.22.30": "On the morrow, because he would have known the certainty wherefore he was accused of the Jews, he loosed him from his bands, and commanded the chief priests and all their council to appear, and brought Paul down, and set him before them."
+  "Acts.22.30a": "On the morrow, because he would have known the certainty wherefore he was accused of the Jews, he loosed him from",
+  "Acts.22.30b": "his bands, and commanded the chief priests and all their council to appear, and brought Paul down, and set him before them."
 }

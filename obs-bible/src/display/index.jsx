@@ -68,6 +68,7 @@ const SelectedVerseDisplay = () => {
       }
 
       const chapterData = await response.json()
+      // Handle both regular verses (9) and split verses (9a, 9b)
       const osisId = `${verse.bookId}.${verse.chapter}.${verse.verse}`
       const text = chapterData[osisId]
 

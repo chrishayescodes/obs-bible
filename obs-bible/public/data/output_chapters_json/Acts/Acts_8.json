@@ -1,5 +1,6 @@
 {
-  "Acts.8.1": "And Saul was consenting unto his death. And at that time there was a great persecution against the church which was at Jerusalem; and they were all scattered abroad throughout the regions of Judæa and Samaria, except the apostles.",
+  "Acts.8.1a": "And Saul was consenting unto his death.",
+  "Acts.8.1b": "And at that time there was a great persecution against the church which was at Jerusalem; and they were all scattered abroad throughout the regions of Judæa and Samaria, except the apostles.",
   "Acts.8.2": "And devout men carried Stephen to his burial, and made great lamentation over him.",
   "Acts.8.3": "As for Saul, he made havock of the church, entering into every house, and haling men and women committed them to prison.",
   "Acts.8.4": "Therefore they that were scattered abroad went every where preaching the word.",
@@ -25,7 +26,8 @@
   "Acts.8.24": "Then answered Simon, and said, Pray ye to the Lord for me, that none of these things which ye have spoken come upon me.",
   "Acts.8.25": "And they, when they had testified and preached the word of the Lord, returned to Jerusalem, and preached the gospel in many villages of the Samaritans.",
   "Acts.8.26": "And the angel of the Lord spake unto Philip, saying, Arise, and go toward the south unto the way that goeth down from Jerusalem unto Gaza, which is desert.",
-  "Acts.8.27": "And he arose and went: and, behold, a man of Ethiopia, an eunuch of great authority under Candace queen of the Ethiopians, who had the charge of all her treasure, and had come to Jerusalem for to worship,",
+  "Acts.8.27a": "And he arose and went: and, behold, a man of Ethiopia, an eunuch of great authority under Candace queen",
+  "Acts.8.27b": "of the Ethiopians, who had the charge of all her treasure, and had come to Jerusalem for to worship,",
   "Acts.8.28": "Was returning, and sitting in his chariot read Esaias the prophet.",
   "Acts.8.29": "Then the Spirit said unto Philip, Go near, and join thyself to this chariot.",
   "Acts.8.30": "And Philip ran thither to him, and heard him read the prophet Esaias, and said, Understandest thou what thou readest?",

@@ -1,6 +1,7 @@
 {
   "Gen.9.1": "And God blessed Noah and his sons, and said unto them, Be fruitful, and multiply, and replenish the earth.",
-  "Gen.9.2": "And the fear of you and the dread of you shall be upon every beast of the earth, and upon every fowl of the air, upon all that moveth upon the earth, and upon all the fishes of the sea; into your hand are they delivered.",
+  "Gen.9.2a": "And the fear of you and the dread of you shall be upon every beast of the earth, and upon every fowl of",
+  "Gen.9.2b": "the air, upon all that moveth upon the earth, and upon all the fishes of the sea; into your hand are they delivered.",
   "Gen.9.3": "Every moving thing that liveth shall be meat for you; even as the green herb have I given you all things.",
   "Gen.9.4": "But flesh with the life thereof, which is the blood thereof, shall ye not eat.",
   "Gen.9.5": "And surely your blood of your lives will I require; at the hand of every beast will I require it, and at the hand of man; at the hand of every man's brother will I require the life of man.",
@@ -21,7 +22,8 @@
   "Gen.9.20": "And Noah began to be an husbandman, and he planted a vineyard:",
   "Gen.9.21": "And he drank of the wine, and was drunken; and he was uncovered within his tent.",
   "Gen.9.22": "And Ham, the father of Canaan, saw the nakedness of his father, and told his two brethren without.",
-  "Gen.9.23": "And Shem and Japheth took a garment, and laid it upon both their shoulders, and went backward, and covered the nakedness of their father; and their faces were backward, and they saw not their father's nakedness.",
+  "Gen.9.23a": "And Shem and Japheth took a garment, and laid it upon both their shoulders, and went backward, and",
+  "Gen.9.23b": "covered the nakedness of their father; and their faces were backward, and they saw not their father's nakedness.",
   "Gen.9.24": "And Noah awoke from his wine, and knew what his younger son had done unto him.",
   "Gen.9.25": "And he said, Cursed be Canaan; a servant of servants shall he be unto his brethren.",
   "Gen.9.26": "And he said, Blessed be the Lord God of Shem; and Canaan shall be his servant.",

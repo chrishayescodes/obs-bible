@@ -2,9 +2,11 @@
   "1Chr.24.1": "Now these are the divisions of the sons of Aaron. The sons of Aaron; Nadab, and Abihu, Eleazar, and Ithamar.",
   "1Chr.24.2": "But Nadab and Abihu died before their father, and had no children: therefore Eleazar and Ithamar executed the priest's office.",
   "1Chr.24.3": "And David distributed them, both Zadok of the sons of Eleazar, and Ahimelech of the sons of Ithamar, according to their offices in their service.",
-  "1Chr.24.4": "And there were more chief men found of the sons of Eleazar than of the sons of Ithamar; and thus were they divided. Among the sons of Eleazar there were sixteen chief men of the house of their fathers, and eight among the sons of Ithamar according to the house of their fathers.",
+  "1Chr.24.4a": "And there were more chief men found of the sons of Eleazar than of the sons of Ithamar; and thus were they divided.",
+  "1Chr.24.4b": "Among the sons of Eleazar there were sixteen chief men of the house of their fathers, and eight among the sons of Ithamar according to the house of their fathers.",
   "1Chr.24.5": "Thus were they divided by lot, one sort with another; for the governors of the sanctuary, and governors of the house of God, were of the sons of Eleazar, and of the sons of Ithamar.",
-  "1Chr.24.6": "And Shemaiah the son of Nethaneel the scribe, one of the Levites, wrote them before the king, and the princes, and Zadok the priest, and Ahimelech the son of Abiathar, and before the chief of the fathers of the priests and Levites: one principal household being taken for Eleazar, and one taken for Ithamar.",
+  "1Chr.24.6a": "And Shemaiah the son of Nethaneel the scribe, one of the Levites, wrote them before the king, and the princes, and Zadok the priest, and Ahimelech the",
+  "1Chr.24.6b": "son of Abiathar, and before the chief of the fathers of the priests and Levites: one principal household being taken for Eleazar, and one taken for Ithamar.",
   "1Chr.24.7": "Now the first lot came forth to Jehoiarib, the second to Jedaiah,",
   "1Chr.24.8": "The third to Harim, the fourth to Seorim,",
   "1Chr.24.9": "The fifth to Malchijah, the sixth to Mijamin,",
@@ -29,5 +31,6 @@
   "1Chr.24.28": "Of Mahli came Eleazar, who had no sons.",
   "1Chr.24.29": "Concerning Kish: the son of Kish was Jerahmeel.",
   "1Chr.24.30": "The sons also of Mushi; Mahli, and Eder, and Jerimoth. These were the sons of the Levites after the house of their fathers.",
-  "1Chr.24.31": "These likewise cast lots over against their brethren the sons of Aaron in the presence of David the king, and Zadok, and Ahimelech, and the chief of the fathers of the priests and Levites, even the principal fathers over against their younger brethren."
+  "1Chr.24.31a": "These likewise cast lots over against their brethren the sons of Aaron in the presence of David the king, and Zadok,",
+  "1Chr.24.31b": "and Ahimelech, and the chief of the fathers of the priests and Levites, even the principal fathers over against their younger brethren."
 }

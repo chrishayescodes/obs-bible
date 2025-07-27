@@ -25,7 +25,7 @@ obs-bible/
 │   │   ├── kjvfull.xml                 # Complete KJV Bible XML
 │   │   ├── book_names.json             # Simple book name mappings (Gen -> Genesis, etc.)
 │   │   ├── parse_kjv_bible.py          # Python script for data processing
-│   │   ├── extract_verses_to_json.py   # Python script to extract verses from XML to JSON
+│   │   ├── extract_verses_to_json.py   # Python script to extract verses from XML to JSON with automatic verse splitting
 │   │   ├── generate_book_names.py      # Python script to generate book name mappings
 │   │   ├── output_chapters/            # Individual chapter XML files (66 books)
 │   │   │   ├── Gen/                    # Genesis chapters (Gen_1.xml to Gen_50.xml)
@@ -122,12 +122,15 @@ The application uses a three-tier data architecture:
    - Individual JSON files for each chapter (e.g., `Gen_1.json`)
    - Simple key-value structure with OSIS IDs as keys (e.g., "Gen.1.1")
    - Plain text verse content as values
-   - Generated from XML files using `extract_verses_to_json.py`
+   - Generated from XML files using `extract_verses_to_json.py` with automatic verse splitting
+   - **Split Verses**: Long verses (>200 characters) are automatically split into parts with letter suffixes
    - Example structure:
      ```json
      {
        "Gen.1.1": "In the beginning God created the heaven and the earth.",
        "Gen.1.2": "And the earth was without form, and void...",
+       "Esth.8.9a": "Then were the king's scribes called at that time in the third month...",
+       "Esth.8.9b": "and rulers of the provinces which are from India unto Ethiopia...",
        ...
      }
      ```
@@ -176,13 +179,15 @@ The application uses a three-tier data architecture:
   - Receives complete scripture reference object when verses are navigated to
   - Loads corresponding JSON chapter file for verse content
   - Creates OSIS ID for verse highlighting and auto-scroll
+  - **Split Verse Navigation**: Automatically redirects to first part (e.g., 9a) if original verse (9) doesn't exist
   - Switches interface to verse display mode
   - Handles loading states and error conditions during verse fetch
   - **Does NOT update history or broadcast** - navigation is visual-only
 - **Verse Selection Logic**: `handleVerseDisplaySelect` callback implementation
   - Receives OSIS ID when verses are explicitly selected (clicked in display)
+  - **Split Verse Selection**: Preserves exact verse parts (e.g., "9a", "9b") when selected
   - Parses OSIS ID and creates scripture reference with proper book titles from bibleData
-  - Updates verse history and localStorage current verse
+  - Updates verse history and localStorage current verse with exact verse identifier
   - Broadcasts selection to other browser tabs/windows via BroadcastChannel API
   - Updates selected verse highlighting state
 - **Chapter Navigation Logic**: Multi-chapter loading and management
@@ -313,6 +318,7 @@ The application uses a three-tier data architecture:
 - **Features**:
   - **LocalStorage Integration**: Automatically loads and displays current verse from localStorage using verseHistory utility
   - **Dynamic Content Loading**: Fetches verse text from JSON chapter files on component mount
+  - **Split Verse Support**: Handles both regular verses and split verse parts (e.g., "9a", "9b") from localStorage
   - **Loading States**: Shows spinner and loading message while fetching verse content
   - **Error Handling**: Graceful handling of network errors, missing verses, 404 responses, and invalid JSON
   - **User Interactions**: Clear button to remove selected verse from localStorage
@@ -707,6 +713,11 @@ The project implements comprehensive testing with 247 total tests (all passing):
    - **VS Code Integration**: Enhanced Jest extension settings for test discovery
 
 3. **Recent Updates** (Latest):
+   - **Automatic Verse Splitting System**: Implemented intelligent verse splitting for long verses (>200 characters) into readable parts with letter suffixes (e.g., 9a, 9b)
+   - **Smart Navigation for Split Verses**: When users click verse 9, system automatically navigates to 9a while preserving exact selection (9a, 9b) for history and display
+   - **Split Verse Architecture**: Clear separation between navigation (guides to first part) and selection (saves exact part), maintaining backward compatibility
+   - **Data Processing Enhancement**: Updated extract_verses_to_json.py with sentence-boundary splitting and word-boundary fallback for optimal readability
+   - **Cross-Component Support**: All components (navigation, display, history, broadcasting) now handle split verses seamlessly
    - **Enhanced OBS Studio Text Readability**: Increased display text size by 33% (2.4rem desktop, 2.0rem tablet, 1.6rem mobile) and added 50% more padding for better video streaming visibility
    - **Continuous Chapter Navigation**: Fixed chapter navigation to work continuously in both directions, tracking loaded chapter range instead of original chapter for seamless multi-chapter reading
    - **Complete Simple Book Name Integration**: Updated breadcrumb component to use simple book names (Genesis, Matthew) instead of formal titles throughout entire navigation system
@@ -791,7 +802,10 @@ The application includes Python scripts for processing Bible data:
   - Extracts OSIS IDs from verse markers
   - Extracts plain text from `<ns1:w>` and `<ns1:transChange>` tags
   - Ignores `<ns1:note>` tags and their content
+  - **Automatic Verse Splitting**: Splits verses longer than 200 characters into parts (e.g., 9a, 9b)
+  - **Smart Splitting**: Splits at sentence boundaries when possible, falls back to word boundaries
 - **Output**: JSON files with verse text in `output_chapters_json/`
+- **Split Verse Examples**: Esther 8:9 becomes "Esth.8.9a" and "Esth.8.9b"
 - **Total Files Processed**: 1,189 chapter files across 66 books
 
 #### 3. Book Names Generation (`generate_book_names.py`)

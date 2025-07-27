@@ -43,6 +43,15 @@ export const useVerseNavigation = (bibleData) => {
       const verses = await response.json()
       setVerseData(verses)
       setLoadedChapters(new Set([`${bookId}.${chapter}`]))
+      
+      // Check if the requested verse exists, if not, look for split verse (e.g., 9a)
+      if (navigatedVerseId && !verses[navigatedVerseId]) {
+        const splitVerseId = `${navigatedVerseId}a`
+        if (verses[splitVerseId]) {
+          // Update the navigated verse to point to the first part of the split verse
+          setNavigatedVerse(splitVerseId)
+        }
+      }
     } catch (error) {
       console.error('Error loading verse data:', error)
       setVerseData(null)
@@ -66,7 +75,7 @@ export const useVerseNavigation = (bibleData) => {
       book: bookTitle,
       bookId: bookId,
       chapter: chapter,
-      verse: parseInt(verse),
+      verse: verse, // Keep exact verse (could be "9a", "9b", etc.)
       reference: `${bookTitle} ${chapter}:${verse}`
     }
     

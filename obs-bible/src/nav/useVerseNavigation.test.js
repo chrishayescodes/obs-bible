@@ -284,7 +284,7 @@ describe('useVerseNavigation', () => {
         book: 'Genesis',
         bookId: 'Gen',
         chapter: '1',
-        verse: 5,
+        verse: '5',
         reference: 'Genesis 1:5'
       }
 
@@ -310,7 +310,7 @@ describe('useVerseNavigation', () => {
         book: 'Matthew', // Uses simple book name from fallback mapping
         bookId: 'Matt',
         chapter: '5',
-        verse: 3,
+        verse: '3',
         reference: 'Matthew 5:3'
       }
 

@@ -1,6 +1,7 @@
 {
   "1Cor.1.1": "Paul, called to be an apostle of Jesus Christ through the will of God, and Sosthenes our brother,",
-  "1Cor.1.2": "Unto the church of God which is at Corinth, to them that are sanctified in Christ Jesus, called to be saints, with all that in every place call upon the name of Jesus Christ our Lord, both theirs and ours:",
+  "1Cor.1.2a": "Unto the church of God which is at Corinth, to them that are sanctified in Christ Jesus, called to be",
+  "1Cor.1.2b": "saints, with all that in every place call upon the name of Jesus Christ our Lord, both theirs and ours:",
   "1Cor.1.3": "Grace be unto you, and peace, from God our Father, and from the Lord Jesus Christ.",
   "1Cor.1.4": "I thank my God always on your behalf, for the grace of God which is given you by Jesus Christ;",
   "1Cor.1.5": "That in every thing ye are enriched by him, in all utterance, and in all knowledge;",
@@ -8,7 +9,8 @@
   "1Cor.1.7": "So that ye come behind in no gift; waiting for the coming of our Lord Jesus Christ:",
   "1Cor.1.8": "Who shall also confirm you unto the end, that ye may be blameless in the day of our Lord Jesus Christ.",
   "1Cor.1.9": "God is faithful, by whom ye were called unto the fellowship of his Son Jesus Christ our Lord.",
-  "1Cor.1.10": "Now I beseech you, brethren, by the name of our Lord Jesus Christ, that ye all speak the same thing, and that there be no divisions among you; but that ye be perfectly joined together in the same mind and in the same judgment.",
+  "1Cor.1.10a": "Now I beseech you, brethren, by the name of our Lord Jesus Christ, that ye all speak the same thing, and that",
+  "1Cor.1.10b": "there be no divisions among you; but that ye be perfectly joined together in the same mind and in the same judgment.",
   "1Cor.1.11": "For it hath been declared unto me of you, my brethren, by them which are of the house of Chloe, that there are contentions among you.",
   "1Cor.1.12": "Now this I say, that every one of you saith, I am of Paul; and I of Apollos; and I of Cephas; and I of Christ.",
   "1Cor.1.13": "Is Christ divided? was Paul crucified for you? or were ye baptized in the name of Paul?",

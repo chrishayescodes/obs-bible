@@ -22,7 +22,8 @@
   "Matt.27.21": "The governor answered and said unto them, Whether of the twain will ye that I release unto you? They said, Barabbas.",
   "Matt.27.22": "Pilate saith unto them, What shall I do then with Jesus which is called Christ? They all say unto him, Let him be crucified.",
   "Matt.27.23": "And the governor said, Why, what evil hath he done? But they cried out the more, saying, Let him be crucified.",
-  "Matt.27.24": "When Pilate saw that he could prevail nothing, but that rather a tumult was made, he took water, and washed his hands before the multitude, saying, I am innocent of the blood of this just person: see ye to it.",
+  "Matt.27.24a": "When Pilate saw that he could prevail nothing, but that rather a tumult was made, he took water, and washed",
+  "Matt.27.24b": "his hands before the multitude, saying, I am innocent of the blood of this just person: see ye to it.",
   "Matt.27.25": "Then answered all the people, and said, His blood be on us, and on our children.",
   "Matt.27.26": "Then released he Barabbas unto them: and when he had scourged Jesus, he delivered him to be crucified.",
   "Matt.27.27": "Then the soldiers of the governor took Jesus into the common hall, and gathered unto him the whole band of soldiers.",
@@ -62,7 +63,8 @@
   "Matt.27.61": "And there was Mary Magdalene, and the other Mary, sitting over against the sepulchre.",
   "Matt.27.62": "Now the next day, that followed the day of the preparation, the chief priests and Pharisees came together unto Pilate,",
   "Matt.27.63": "Saying, Sir, we remember that that deceiver said, while he was yet alive, After three days I will rise again.",
-  "Matt.27.64": "Command therefore that the sepulchre be made sure until the third day, lest his disciples come by night, and steal him away, and say unto the people, He is risen from the dead: so the last error shall be worse than the first.",
+  "Matt.27.64a": "Command therefore that the sepulchre be made sure until the third day, lest his disciples come by night, and steal him",
+  "Matt.27.64b": "away, and say unto the people, He is risen from the dead: so the last error shall be worse than the first.",
   "Matt.27.65": "Pilate said unto them, Ye have a watch: go your way, make it as sure as ye can.",
   "Matt.27.66": "So they went, and made the sepulchre sure, sealing the stone, and setting a watch."
 }
