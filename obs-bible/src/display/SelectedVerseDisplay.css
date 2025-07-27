@@ -25,7 +25,7 @@ body.obs-overlay #root {
   background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  padding: 20px 40px;
+  padding: 30px 60px;
   margin: 0;
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@ body.obs-overlay #root {
 /* Verse text styling */
 .selected-verse-display .verse-text {
   color: #ffffff;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
@@ -54,20 +54,20 @@ body.obs-overlay #root {
 /* Media queries for different video resolutions */
 @media (max-width: 1280px) {
   .selected-verse-display .verse-text {
-    font-size: 1.5rem;
+    font-size: 2.0rem;
   }
   
   .selected-verse-display {
-    padding: 16px 32px;
+    padding: 24px 48px;
   }
 }
 
 @media (max-width: 720px) {
   .selected-verse-display .verse-text {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
   
   .selected-verse-display {
-    padding: 12px 20px;
+    padding: 18px 36px;
   }
 }
