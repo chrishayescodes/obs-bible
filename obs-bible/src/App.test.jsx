@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
 import App from './App';
 
@@ -20,7 +21,7 @@ jest.mock('./nav/AppNavigation', () => {
   };
 });
 
-describe('App Component - Simplified Architecture', () => {
+describe('App Component - Routing Architecture', () => {
   const mockBibleData = {
     old_testament: {
       books: {
@@ -34,6 +35,15 @@ describe('App Component - Simplified Architecture', () => {
     }
   };
 
+  // Helper function to render App with router
+  const renderWithRouter = (initialEntries = ['/']) => {
+    return render(
+      <MemoryRouter initialEntries={initialEntries}>
+        <App />
+      </MemoryRouter>
+    );
+  };
+
   beforeEach(() => {
     jest.clearAllMocks();
   });
@@ -42,7 +52,7 @@ describe('App Component - Simplified Architecture', () => {
     it('should show loading state while Bible data loads', () => {
       fetch.mockImplementationOnce(() => new Promise(() => {})); // Never resolves
 
-      render(<App />);
+      renderWithRouter();
 
       expect(screen.getByText('Loading Bible data...')).toBeInTheDocument();
       expect(screen.queryByTestId('app-navigation')).not.toBeInTheDocument();
@@ -54,7 +64,7 @@ describe('App Component - Simplified Architecture', () => {
         json: () => Promise.resolve(mockBibleData)
       });
 
-      render(<App />);
+      renderWithRouter();
 
       await waitFor(() => {
         expect(screen.getByTestId('app-navigation')).toBeInTheDocument();
@@ -69,7 +79,7 @@ describe('App Component - Simplified Architecture', () => {
         json: () => Promise.resolve(mockBibleData)
       });
 
-      render(<App />);
+      renderWithRouter();
 
       await waitFor(() => {
         expect(screen.getByTestId('bible-data-passed')).toBeInTheDocument();
@@ -81,7 +91,7 @@ describe('App Component - Simplified Architecture', () => {
 
       const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
 
-      render(<App />);
+      renderWithRouter();
 
       // Should still render AppNavigation even with fetch error (but with null data)
       await waitFor(() => {
@@ -102,7 +112,7 @@ describe('App Component - Simplified Architecture', () => {
         json: () => Promise.resolve(mockBibleData)
       });
 
-      render(<App />);
+      renderWithRouter();
 
       await waitFor(() => {
         expect(screen.getByTestId('app-navigation')).toBeInTheDocument();
@@ -118,7 +128,7 @@ describe('App Component - Simplified Architecture', () => {
         json: () => Promise.resolve(mockBibleData)
       });
 
-      render(<App />);
+      renderWithRouter();
 
       await waitFor(() => {
         expect(screen.getByTestId('app-navigation')).toBeInTheDocument();
@@ -138,7 +148,7 @@ describe('App Component - Simplified Architecture', () => {
         json: () => Promise.resolve(mockBibleData)
       });
 
-      render(<App />);
+      renderWithRouter();
 
       expect(fetch).toHaveBeenCalledWith('/data/kjv_structure.json');
 
@@ -153,7 +163,7 @@ describe('App Component - Simplified Architecture', () => {
         json: () => Promise.resolve(mockBibleData)
       });
 
-      render(<App />);
+      renderWithRouter();
 
       await waitFor(() => {
         expect(screen.getByTestId('bible-data-passed')).toBeInTheDocument();
@@ -169,7 +179,7 @@ describe('App Component - Simplified Architecture', () => {
 
       const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
 
-      render(<App />);
+      renderWithRouter();
 
       await waitFor(() => {
         expect(screen.getByTestId('app-navigation')).toBeInTheDocument();
@@ -189,7 +199,7 @@ describe('App Component - Simplified Architecture', () => {
         json: () => Promise.resolve(mockBibleData)
       });
 
-      render(<App />);
+      renderWithRouter();
 
       await waitFor(() => {
         expect(screen.getByTestId('app-navigation')).toBeInTheDocument();
@@ -202,11 +212,59 @@ describe('App Component - Simplified Architecture', () => {
         json: () => Promise.resolve(mockBibleData)
       });
 
-      render(<App />);
+      renderWithRouter();
 
       await waitFor(() => {
         expect(screen.getByTestId('bible-data-passed')).toBeInTheDocument();
       });
+    });
+  });
+
+  describe('Routing functionality', () => {
+    it('should render AppNavigation on root path', async () => {
+      fetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(mockBibleData)
+      });
+
+      renderWithRouter(['/']);
+
+      await waitFor(() => {
+        expect(screen.getByTestId('app-navigation')).toBeInTheDocument();
+      });
+    });
+
+    it('should render loading screen on /loading path', () => {
+      fetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(mockBibleData)
+      });
+
+      renderWithRouter(['/loading']);
+
+      expect(screen.getByText('Loading Bible data...')).toBeInTheDocument();
+    });
+
+    it('should render AppNavigation on unknown paths (fallback)', async () => {
+      fetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(mockBibleData)
+      });
+
+      renderWithRouter(['/unknown-path']);
+
+      await waitFor(() => {
+        expect(screen.getByTestId('app-navigation')).toBeInTheDocument();
+      });
+    });
+
+    it('should prioritize loading state over route when data is loading', () => {
+      fetch.mockImplementationOnce(() => new Promise(() => {})); // Never resolves
+
+      renderWithRouter(['/loading']);
+
+      expect(screen.getByText('Loading Bible data...')).toBeInTheDocument();
+      expect(screen.queryByTestId('app-navigation')).not.toBeInTheDocument();
     });
   });
 });

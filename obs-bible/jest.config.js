@@ -1,6 +1,7 @@
 export default {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
+  setupFiles: ['<rootDir>/src/testSetup.js'],
   moduleNameMapper: {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
@@ -16,6 +17,7 @@ export default {
     'src/**/*.(js|jsx)',
     '!src/**/*.stories.(js|jsx)',
     '!src/main.jsx',
-    '!src/setupTests.js'
+    '!src/setupTests.js',
+    '!src/testSetup.js'
   ]
 };

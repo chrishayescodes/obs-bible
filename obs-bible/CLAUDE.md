@@ -7,6 +7,7 @@ The OSB (Open Source Bible) Bible project is a React-based web application for b
 ### Technology Stack
 
 - **Frontend Framework**: React 19.1.0 with React DOM 19.1.0
+- **Routing**: React Router DOM 7.7.1 for client-side navigation
 - **Build Tool**: Vite 7.0.4 with hot module replacement (HMR)
 - **Testing**: Jest 30.0.5 with Testing Library (@testing-library/react, @testing-library/jest-dom)
 - **Component Development**: Storybook 9.0.18 for isolated component development and documentation
@@ -33,8 +34,9 @@ obs-bible/
 │   │       ├── Matt/                   # Matthew chapters (Matt_1.json to Matt_28.json)
 │   │       └── ... (all 66 Bible books)
 ├── src/
-│   ├── App.jsx                         # Simplified main application component (39 lines)
-│   ├── main.jsx                        # React application entry point
+│   ├── App.jsx                         # Main application component with React Router integration
+│   ├── main.jsx                        # React application entry point with BrowserRouter setup
+│   ├── testSetup.js                    # Jest test environment polyfills for React Router
 │   ├── nav/                            # Navigation architecture folder
 │   │   ├── AppNavigation.jsx           # Navigation orchestration component
 │   │   ├── AppNavigation.test.jsx      # AppNavigation test suite
@@ -122,15 +124,20 @@ The application uses a three-tier data architecture:
 ### Component Architecture
 
 #### Main Application (`App.jsx`)
-- **Simplified Architecture**: Single responsibility for Bible data loading only (39 lines, reduced from 94)
+- **Routing Architecture**: React Router integration with client-side navigation
+- **Route Structure**: 
+  - `/` - Main application with navigation and loading states (default route)
+  - `*` - Fallback route redirects to main application
 - **Data Fetching**: 
   - Loads Bible structure from `/data/kjv_structure.json`
   - Handles loading states and error conditions gracefully
+  - Loading state integrated within routing components
 - **Clean Separation**: All navigation logic extracted into dedicated components
 - **Component Integration**: 
-  - Renders only `AppNavigation` component after data loads
+  - Uses React Router's Routes and Route components
+  - Renders `AppNavigation` component after data loads
   - Passes `bibleData` prop to navigation system
-  - Simple conditional rendering (loading OR navigation)
+  - Conditional rendering with ternary operator within MainApp component (loading ? LoadingScreen : AppNavigation)
 - **Error Handling**: Graceful error logging with fallback rendering
 
 #### AppNavigation Component (`src/nav/AppNavigation.jsx`)
@@ -698,7 +705,7 @@ The application provides a simple two-view system with complete Bible navigation
 
 ## Key Features
 
-1. **Clean Architecture**: Simple two-view system with clear separation between navigation and content display
+1. **Client-Side Routing**: React Router integration with clean URL-based navigation
 2. **Minimalist Navigation**: Clean navigation path (Books › Book › Chapter) with smart contextual controls
 3. **Comprehensive Verse Selection**: Handles all verse counts from 0 (rare) to 176 (Psalm 119)  
 4. **Navigation-Only Verse Display**: Bible reference navigation shows verse content with visual highlighting but no automatic selection - users must explicitly click verses to select them
