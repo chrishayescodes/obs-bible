@@ -98,6 +98,31 @@
   }
 }
 
+.verse-item.has-been-navigated {
+  border-left: 3px solid #f59e0b;
+  background-color: #fffbeb;
+}
+
+.verse-item.has-been-navigated .verse-number {
+  color: #d97706;
+}
+
+.verse-item.selected.has-been-navigated {
+  border-left: 3px solid #f59e0b;
+  background-color: #3b82f6;
+  background-image: linear-gradient(135deg, #3b82f6 0%, #3b82f6 85%, #fed7aa 85%, #fed7aa 100%);
+}
+
+.verse-item.selected.has-been-navigated .verse-number,
+.verse-item.selected.has-been-navigated .verse-text {
+  color: white;
+}
+
+/* Ensure navigation animation doesn't apply to selected verses */
+.verse-item.selected.navigated {
+  animation: none;
+}
+
 .verse-number {
   font-weight: 700;
   font-size: 14px;
@@ -206,6 +231,21 @@
   .verse-item.navigated .verse-text {
     color: #fed7aa;
   }
+
+  .verse-item.has-been-navigated {
+    border-left: 3px solid #f59e0b;
+    background-color: #451a03;
+  }
+
+  .verse-item.has-been-navigated .verse-number {
+    color: #fbbf24;
+  }
+
+  .verse-item.selected.has-been-navigated {
+    border-left: 3px solid #f59e0b;
+    background-color: #3b82f6;
+    background-image: linear-gradient(135deg, #3b82f6 0%, #3b82f6 85%, #92400e 85%, #92400e 100%);
+  }
 }
 
 /* Explicit dark mode class */
@@ -250,6 +290,21 @@
 .dark .verse-item.navigated .verse-number,
 .dark .verse-item.navigated .verse-text {
   color: #fed7aa;
+}
+
+.dark .verse-item.has-been-navigated {
+  border-left: 3px solid #f59e0b;
+  background-color: #451a03;
+}
+
+.dark .verse-item.has-been-navigated .verse-number {
+  color: #fbbf24;
+}
+
+.dark .verse-item.selected.has-been-navigated {
+  border-left: 3px solid #f59e0b;
+  background-color: #3b82f6;
+  background-image: linear-gradient(135deg, #3b82f6 0%, #3b82f6 85%, #92400e 85%, #92400e 100%);
 }
 
 /* Responsive design */

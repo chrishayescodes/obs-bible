@@ -247,9 +247,59 @@ export const NavigationHighlightDemo = () => {
           Navigate to Random Verse
         </button>
         <p style={{ fontSize: '14px', color: '#666' }}>
-          Click the button to navigate to a random verse with orange highlight.
-          This demonstrates navigation without selection.
+          Click the button to navigate to a random verse with orange highlight and persistent reminder.
+          Notice the subtle left border that remains after animation.
         </p>
+      </div>
+    </div>
+  );
+};
+
+// Combined navigation and selection demo
+export const NavigationWithSelectionDemo = () => {
+  const [selectedVerse, setSelectedVerse] = React.useState(null);
+  const [navigatedVerses, setNavigatedVerses] = React.useState(new Set(['Gen.1.2', 'Gen.1.4']));
+  
+  return (
+    <div style={{ height: '500px', display: 'flex', gap: '20px' }}>
+      <div style={{ flex: 1 }}>
+        <VerseDisplay 
+          verseData={genesisData}
+          bookName="Genesis"
+          chapterNumber="1"
+          selectedVerse={selectedVerse}
+          navigateToVerse={navigatedVerses.has('Gen.1.6') ? 'Gen.1.6' : null}
+          onVerseSelect={setSelectedVerse}
+        />
+      </div>
+      <div style={{ 
+        flex: 1, 
+        padding: '20px', 
+        backgroundColor: '#f8fafc',
+        borderRadius: '12px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px'
+      }}>
+        <h3>Combined States Demo</h3>
+        <p><strong>Selected:</strong> {selectedVerse || 'None'}</p>
+        <p style={{ fontSize: '14px', color: '#666' }}>
+          Verses 2 and 4 have been previously navigated to (orange left border).
+          Click any verse to see how all navigation animations clear but reminders remain.
+        </p>
+        <button 
+          onClick={() => setNavigatedVerses(prev => new Set([...prev, 'Gen.1.6']))}
+          style={{
+            padding: '8px 16px',
+            backgroundColor: '#f59e0b',
+            color: 'white',
+            border: 'none',
+            borderRadius: '6px',
+            cursor: 'pointer'
+          }}
+        >
+          Navigate to Verse 6
+        </button>
       </div>
     </div>
   );

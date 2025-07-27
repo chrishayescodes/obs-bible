@@ -250,8 +250,9 @@ The application uses a three-tier data architecture:
   - Column layout with scrollable verse buttons
   - Full verse text display with verse numbers
   - Auto-scroll to verses for both navigation and selection
-  - Dual highlighting system: orange for navigation (0.8s), blue for selection
+  - Triple highlighting system: orange animation (navigation), persistent orange reminder, blue selection
   - Fast navigation highlight animation (0.6s ease-out with pulse effect)
+  - Persistent navigation reminders with subtle orange left border and background
   - Responsive design for different screen sizes
   - Dark mode support with system preference detection
   - Accessibility support with proper ARIA labels and keyboard navigation
@@ -263,14 +264,21 @@ The application uses a three-tier data architecture:
   - `onVerseSelect`: Callback function that receives OSIS ID when verse is clicked
   - `bookName`: Optional book name for display header
   - `chapterNumber`: Optional chapter number for display header
-- **Navigation vs Selection**:
-  - Navigation: Temporary orange highlight with pulse animation, auto-clears after 0.8s
-  - Selection: Persistent blue highlight until user selects different verse
-  - Navigation scrolling: Provides visual feedback without changing selection state
-  - Explicit selection: Only triggered by user clicks within the component
+- **Navigation vs Selection System**:
+  - **Navigation Animation**: Temporary orange pulse animation (0.6s) triggered only by `navigateToVerse` prop
+  - **Navigation Reminder**: Persistent subtle orange left border and background for previously navigated verses
+  - **Selection State**: Persistent blue highlight for currently selected verse
+  - **Combined State**: Selected verses that were previously navigated show blue selection with orange accent
+  - **Animation Clearing**: Any verse selection immediately clears ALL navigation animations globally
+  - **Reminder Persistence**: Orange reminders remain until component unmount/reload
+- **Interaction Flow**:
+  - Navigate to verse → Orange pulse + persistent reminder added
+  - Select any verse → All navigation animations stop, selection highlighting begins
+  - Previously navigated verses retain subtle orange reminders even when selected
+  - Navigation and selection are completely independent state systems
 - **Data Integration**: Works with JSON chapter files from `output_chapters_json/`
 - **OSIS ID Handling**: Extracts verse numbers from OSIS IDs (e.g., "Gen.1.15" → "15")
-- **State Management**: Uses `useState` and `useEffect` for navigation highlighting, selection tracking, and auto-scroll functionality
+- **State Management**: Uses `useState` and `useEffect` for navigation highlighting, persistent reminders, selection tracking, and auto-scroll functionality
 
 ### Styling Architecture
 
@@ -378,7 +386,7 @@ npm run build-storybook
 
 ### Testing Strategy
 
-The project implements comprehensive testing with 135 passing tests:
+The project implements comprehensive testing with 139 passing tests:
 
 1. **Unit Tests**:
    - **BibleBookSelector**: 21 tests covering component rendering, user interactions, accessibility, and edge cases
@@ -386,7 +394,7 @@ The project implements comprehensive testing with 135 passing tests:
    - **VerseSelect**: 22 tests covering verse selection, edge cases (0-176 verses), and prop changes
    - **Breadcrumb**: 22 tests covering navigation states, user interactions, accessibility, and edge cases
    - **Navigation**: 25 tests covering complete navigation flow, state management, integration, callback functionality, and edge cases
-   - **VerseDisplay**: 25 tests covering verse rendering, selection, auto-scroll, accessibility, and edge cases
+   - **VerseDisplay**: 25 tests covering verse rendering, navigation highlighting, persistent reminders, selection clearing, auto-scroll, accessibility, and edge cases
    - Component rendering and behavior validation
    - User interactions and event handling
    - Edge cases and error conditions (including zero verses, invalid data)
@@ -557,8 +565,8 @@ The application provides a simple two-view system with complete Bible navigation
 10. **Accessibility Excellence**: Full ARIA support, keyboard navigation, meaningful titles, semantic HTML structure
 11. **Performance**: Component-level CSS, efficient rendering, lazy loading ready, clean component hierarchy
 12. **Testability**: Each component fully testable in isolation with comprehensive test coverage
-13. **Developer Experience**: Hot reload, comprehensive testing (135 tests), component isolation, Storybook documentation
-14. **Navigation Highlighting**: Fast orange highlight animation (0.8s) when navigating to verses without selecting them, providing quick visual feedback
+13. **Developer Experience**: Hot reload, comprehensive testing (139 tests), component isolation, Storybook documentation
+14. **Advanced Navigation System**: Fast orange pulse animation (0.6s) plus persistent subtle reminders for navigated verses, with global clearing on selection
 15. **Callback Integration**: Verse selection callback system enabling custom navigation actions and application extensions
 
 ## Future Development Considerations

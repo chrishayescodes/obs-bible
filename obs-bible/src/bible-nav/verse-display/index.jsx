@@ -11,6 +11,7 @@ const VerseDisplay = ({
 }) => {
   const [localSelectedVerse, setLocalSelectedVerse] = useState(selectedVerse);
   const [navigatedVerse, setNavigatedVerse] = useState(null);
+  const [hasBeenNavigatedTo, setHasBeenNavigatedTo] = useState(new Set());
   const verseRefs = useRef({});
   const containerRef = useRef(null);
   const highlightTimeoutRef = useRef(null);
@@ -18,6 +19,15 @@ const VerseDisplay = ({
   // Update local selection when prop changes
   useEffect(() => {
     setLocalSelectedVerse(selectedVerse);
+    
+    // Clear navigation animation when a verse is selected via props
+    if (selectedVerse) {
+      setNavigatedVerse(null);
+      if (highlightTimeoutRef.current) {
+        clearTimeout(highlightTimeoutRef.current);
+        highlightTimeoutRef.current = null;
+      }
+    }
   }, [selectedVerse]);
 
   // Scroll to selected verse when it changes (for selection)
@@ -38,10 +48,11 @@ const VerseDisplay = ({
         clearTimeout(highlightTimeoutRef.current);
       }
 
-      // Set navigation highlight only if not the currently selected verse
-      if (navigateToVerse !== selectedVerse) {
-        setNavigatedVerse(navigateToVerse);
-      }
+      // Add to "has been navigated to" set for persistent subtle reminder
+      setHasBeenNavigatedTo(prev => new Set([...prev, navigateToVerse]));
+
+      // Always set navigation highlight when navigating (regardless of selection state)
+      setNavigatedVerse(navigateToVerse);
 
       verseRefs.current[navigateToVerse].scrollIntoView({
         behavior: 'smooth',
@@ -49,13 +60,11 @@ const VerseDisplay = ({
       });
 
       // Remove navigation highlight after a delay
-      if (navigateToVerse !== selectedVerse) {
-        highlightTimeoutRef.current = setTimeout(() => {
-          setNavigatedVerse(null);
-        }, 800); // 0.8 seconds highlight duration
-      }
+      highlightTimeoutRef.current = setTimeout(() => {
+        setNavigatedVerse(null);
+      }, 800); // 0.8 seconds highlight duration
     }
-  }, [navigateToVerse, selectedVerse]);
+  }, [navigateToVerse]);
 
   // Cleanup timeout on unmount
   useEffect(() => {
@@ -68,6 +77,15 @@ const VerseDisplay = ({
 
   const handleVerseClick = (osisId) => {
     setLocalSelectedVerse(osisId);
+    
+    // Clear navigation highlight animation from ALL verses when any verse is selected
+    setNavigatedVerse(null);
+    // Clear any existing highlight timeout
+    if (highlightTimeoutRef.current) {
+      clearTimeout(highlightTimeoutRef.current);
+      highlightTimeoutRef.current = null;
+    }
+    
     if (onVerseSelect) {
       onVerseSelect(osisId);
     }
@@ -103,13 +121,21 @@ const VerseDisplay = ({
           const verseNumber = getVerseNumber(osisId);
           const isSelected = localSelectedVerse === osisId;
           const isNavigated = navigatedVerse === osisId && !isSelected;
+          const hasBeenNavigated = hasBeenNavigatedTo.has(osisId);
+          
+          const classNames = [
+            'verse-item',
+            isSelected && 'selected',
+            isNavigated && 'navigated',
+            hasBeenNavigated && 'has-been-navigated'
+          ].filter(Boolean).join(' ');
           
           return (
             <button
               key={osisId}
               ref={el => verseRefs.current[osisId] = el}
               type="button"
-              className={`verse-item ${isSelected ? 'selected' : ''} ${isNavigated ? 'navigated' : ''}`}
+              className={classNames}
               onClick={() => handleVerseClick(osisId)}
               aria-label={`Verse ${verseNumber}: ${verseText}`}
               data-verse-id={osisId}

@@ -266,6 +266,144 @@ describe('VerseDisplay', () => {
       expect(verse3).toHaveClass('selected');
       expect(verse3).not.toHaveClass('navigated');
     });
+
+    it('clears navigation when selectedVerse prop changes', () => {
+      const { rerender } = render(
+        <VerseDisplay 
+          verseData={mockVerseData}
+          navigateToVerse="Gen.1.3"
+          onVerseSelect={mockOnVerseSelect}
+        />
+      );
+
+      const verse3 = screen.getByRole('button', { 
+        name: /Verse 3: And God said/ 
+      });
+      
+      // Should initially have navigation animation
+      expect(verse3).toHaveClass('navigated');
+
+      // Update selectedVerse prop to select a different verse
+      rerender(
+        <VerseDisplay 
+          verseData={mockVerseData}
+          selectedVerse="Gen.1.4"
+          navigateToVerse="Gen.1.3"
+          onVerseSelect={mockOnVerseSelect}
+        />
+      );
+
+      // Navigation animation should be cleared from verse 3
+      expect(verse3).not.toHaveClass('navigated');
+      // But reminder should remain
+      expect(verse3).toHaveClass('has-been-navigated');
+    });
+
+    it('applies persistent has-been-navigated class after navigation', () => {
+      render(
+        <VerseDisplay 
+          verseData={mockVerseData}
+          selectedVerse="Gen.1.1"
+          navigateToVerse="Gen.1.3"
+          onVerseSelect={mockOnVerseSelect}
+        />
+      );
+
+      const navigatedVerse = screen.getByRole('button', { 
+        name: /Verse 3: And God said/ 
+      });
+      
+      // Should have both navigated and has-been-navigated classes
+      expect(navigatedVerse).toHaveClass('navigated');
+      expect(navigatedVerse).toHaveClass('has-been-navigated');
+    });
+
+    it('carries over navigation state when verse is selected', () => {
+      const { rerender } = render(
+        <VerseDisplay 
+          verseData={mockVerseData}
+          selectedVerse="Gen.1.1"
+          navigateToVerse="Gen.1.3"
+          onVerseSelect={mockOnVerseSelect}
+        />
+      );
+
+      // Click on the navigated verse to select it
+      const verse3 = screen.getByRole('button', { 
+        name: /Verse 3: And God said/ 
+      });
+      fireEvent.click(verse3);
+
+      // Rerender with the verse selected
+      rerender(
+        <VerseDisplay 
+          verseData={mockVerseData}
+          selectedVerse="Gen.1.3"
+          onVerseSelect={mockOnVerseSelect}
+        />
+      );
+
+      // Should have both selected and has-been-navigated classes
+      expect(verse3).toHaveClass('selected');
+      expect(verse3).toHaveClass('has-been-navigated');
+      expect(verse3).not.toHaveClass('navigated');
+    });
+
+    it('removes navigation animation when verse is clicked', () => {
+      render(
+        <VerseDisplay 
+          verseData={mockVerseData}
+          selectedVerse="Gen.1.1"
+          navigateToVerse="Gen.1.3"
+          onVerseSelect={mockOnVerseSelect}
+        />
+      );
+
+      const verse3 = screen.getByRole('button', { 
+        name: /Verse 3: And God said/ 
+      });
+      
+      // Should initially have both navigated and has-been-navigated classes
+      expect(verse3).toHaveClass('navigated');
+      expect(verse3).toHaveClass('has-been-navigated');
+
+      // Click the verse
+      fireEvent.click(verse3);
+
+      // Should remove navigated class but keep has-been-navigated
+      expect(verse3).not.toHaveClass('navigated');
+      expect(verse3).toHaveClass('has-been-navigated');
+    });
+
+    it('removes navigation animation from all verses when any verse is selected', () => {
+      render(
+        <VerseDisplay 
+          verseData={mockVerseData}
+          selectedVerse="Gen.1.1"
+          navigateToVerse="Gen.1.3"
+          onVerseSelect={mockOnVerseSelect}
+        />
+      );
+
+      const verse3 = screen.getByRole('button', { 
+        name: /Verse 3: And God said/ 
+      });
+      const verse4 = screen.getByRole('button', { 
+        name: /Verse 4: And God saw/ 
+      });
+      
+      // Verse 3 should have navigation animation
+      expect(verse3).toHaveClass('navigated');
+      expect(verse3).toHaveClass('has-been-navigated');
+
+      // Click a different verse (verse 4)
+      fireEvent.click(verse4);
+
+      // Navigation animation should be cleared from verse 3
+      expect(verse3).not.toHaveClass('navigated');
+      // But reminder should remain
+      expect(verse3).toHaveClass('has-been-navigated');
+    });
   });
 
   describe('Verse number extraction', () => {
