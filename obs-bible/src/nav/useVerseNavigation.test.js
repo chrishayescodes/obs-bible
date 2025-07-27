@@ -186,7 +186,11 @@ describe('useVerseNavigation', () => {
         result.current.handleBackToBooks()
       })
 
-      expect(verseHistoryUtils.clearCurrentVerse).toHaveBeenCalled()
+      // Should NOT clear localStorage or broadcast - display should remain independent
+      expect(verseHistoryUtils.clearCurrentVerse).not.toHaveBeenCalled()
+      expect(verseSyncUtils.broadcastVerseClear).not.toHaveBeenCalled()
+      
+      // Should only clear navigation state
       expect(result.current.selectedScripture).toBeNull()
       expect(result.current.verseData).toBeNull()
       expect(result.current.loadingVerses).toBe(false)

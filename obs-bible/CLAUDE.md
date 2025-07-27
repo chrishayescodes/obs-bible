@@ -191,7 +191,9 @@ The application uses a three-tier data architecture:
   - **Smart Loading**: Only fetches chapters that haven't been loaded yet
   - **Data Merging**: Combines new chapter data with existing verse data seamlessly
   - **Auto-scroll**: Automatically navigates to first verse of newly loaded chapters
-- **Back Navigation**: `handleBackToBooks()` function clears selections and returns to navigation
+- **Back Navigation**: `handleBackToBooks()` function clears navigation state only - does NOT clear localStorage or broadcast
+  - Display page remains independent of navigation state changes
+  - Users can explicitly clear display using the clear button in SelectedVerseDisplay component
 - **Verse History Integration**: Automatic history tracking and current verse persistence
 - **Data Loading**: Dynamic loading of chapter JSON files on verse selection and chapter navigation
 - **Error Handling**: Graceful handling of fetch errors with proper state management for both verse and chapter operations
@@ -486,8 +488,9 @@ Comprehensive utility providing:
 
 #### When Broadcasting Occurs
 - **Verse Selection**: When users click on verses in the VerseDisplay component
-- **Verse Clearing**: When users clear current verse selection
+- **Verse Clearing**: When users explicitly clear verse in SelectedVerseDisplay component
 - **NOT on Navigation**: Navigation highlighting does not trigger broadcasts
+- **NOT on Back to Books**: Returning to navigation does not clear display or broadcast
 
 #### Message Structure
 Broadcast messages contain:
@@ -861,7 +864,7 @@ The application provides a simple two-view system with complete Bible navigation
 
 1. **Client-Side Routing**: React Router integration with clean URL-based navigation including dedicated `/display` route for verse viewing
 2. **Cross-Tab Synchronization**: Real-time verse selection synchronization across multiple browser tabs using BroadcastChannel API with localStorage fallback
-3. **Standalone Verse Display**: Independent SelectedVerseDisplay component at `/display` route for viewing selected verses from localStorage
+3. **Standalone Verse Display**: Independent SelectedVerseDisplay component at `/display` route that remains unaffected by navigation changes
 4. **Minimalist Navigation**: Clean navigation path (Books › Book › Chapter) with smart contextual controls
 5. **Comprehensive Verse Selection**: Handles all verse counts from 0 (rare) to 176 (Psalm 119)  
 6. **Navigation-Only Verse Display**: Bible reference navigation shows verse content with visual highlighting but no automatic selection - users must explicitly click verses to select them

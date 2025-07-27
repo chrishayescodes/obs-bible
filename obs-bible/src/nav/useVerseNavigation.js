@@ -86,13 +86,9 @@ export const useVerseNavigation = (bibleData) => {
   }, [bibleData])
 
   const handleBackToBooks = useCallback(() => {
-    // Clear current verse from localStorage and all selections
-    verseHistoryUtils.clearCurrentVerse()
+    // Clear navigation state only - do NOT clear localStorage or broadcast
+    // The display page should remain independent of navigation state
     
-    // Broadcast verse clearing to other tabs/windows
-    verseSyncUtils.broadcastVerseClear()
-    
-    // Clear all selections and return to navigation
     setSelectedScripture(null)
     setVerseData(null)
     setLoadingVerses(false)
