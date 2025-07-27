@@ -121,8 +121,7 @@ describe('SelectedVerseDisplay Component', () => {
       render(<SelectedVerseDisplay />);
 
       await waitFor(() => {
-        expect(screen.getByText('Genesis 1:1')).toBeInTheDocument();
-        expect(screen.getByText('In the beginning God created the heaven and the earth.')).toBeInTheDocument();
+        expect(screen.getByText(/In the beginning God created the heaven and the earth\. ~ Genesis 1:1/)).toBeInTheDocument();
       });
 
       expect(verseHistoryUtils.getCurrentVerse).toHaveBeenCalledTimes(1);
@@ -156,8 +155,7 @@ describe('SelectedVerseDisplay Component', () => {
       render(<SelectedVerseDisplay />);
 
       await waitFor(() => {
-        expect(screen.getByText('Genesis 1:1')).toBeInTheDocument();
-        expect(screen.getByText('In the beginning God created the heaven and the earth.')).toBeInTheDocument();
+        expect(screen.getByText(/In the beginning God created the heaven and the earth\. ~ Genesis 1:1/)).toBeInTheDocument();
       });
     });
 
@@ -184,7 +182,7 @@ describe('SelectedVerseDisplay Component', () => {
       });
 
       await waitFor(() => {
-        expect(screen.getByText('Genesis 1:1')).toBeInTheDocument();
+        expect(screen.getByText(/In the beginning God created the heaven and the earth\. ~ Genesis 1:1/)).toBeInTheDocument();
       });
     });
 

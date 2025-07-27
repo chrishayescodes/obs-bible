@@ -1,4 +1,5 @@
 import React from 'react';
+import { getSimpleBookName } from '../../../utils/bookNames';
 import './Breadcrumb.css';
 
 const Breadcrumb = ({ 
@@ -9,6 +10,12 @@ const Breadcrumb = ({
   onChapterSelect, 
   onReset 
 }) => {
+  // Get simple book name for display
+  // Handle both new format (with id) and old format (for tests)
+  const bookId = selectedBook?.id;
+  const simpleBookName = selectedBook ? 
+    (bookId ? getSimpleBookName(bookId) : selectedBook.title) : null;
+
   const handleBookClick = () => {
     if (onBookSelect) {
       onBookSelect();
@@ -48,9 +55,9 @@ const Breadcrumb = ({
                 className={`breadcrumb-button ${!selectedChapter ? 'current' : ''}`}
                 onClick={selectedChapter ? handleBookClick : undefined}
                 disabled={!selectedChapter}
-                title={selectedChapter ? `Go to ${selectedBook.title} chapters` : `Currently viewing ${selectedBook.title} chapters`}
+                title={selectedChapter ? `Go to ${simpleBookName} chapters` : `Currently viewing ${simpleBookName} chapters`}
               >
-                {selectedBook.title}
+                {simpleBookName}
               </button>
             </li>
           </>
@@ -64,7 +71,7 @@ const Breadcrumb = ({
                 className={`breadcrumb-button ${!selectedVerse ? 'current' : ''}`}
                 onClick={selectedVerse ? handleChapterClick : undefined}
                 disabled={!selectedVerse}
-                title={selectedVerse ? `Go to ${selectedBook.title} ${selectedChapter} verses` : `Currently viewing ${selectedBook.title} ${selectedChapter} verses`}
+                title={selectedVerse ? `Go to ${simpleBookName} ${selectedChapter} verses` : `Currently viewing ${simpleBookName} ${selectedChapter} verses`}
               >
                 Chapter {selectedChapter}
               </button>

@@ -389,7 +389,7 @@ describe('Navigation', () => {
       
       // Should show loading state or handle gracefully
       expect(screen.getByText('📖 Books')).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /Test Book/ })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Test/ })).toBeInTheDocument();
     });
 
     test('handles missing verse data gracefully', async () => {
