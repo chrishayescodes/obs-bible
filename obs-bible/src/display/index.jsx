@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { flushSync } from 'react-dom'
 import { verseHistoryUtils } from '../utils/verseHistory'
 import { verseSyncUtils, MessageTypes } from '../utils/broadcastChannel'
 import { createSimpleReference, loadBookNames } from '../utils/bookNames'
@@ -6,11 +7,10 @@ import './SelectedVerseDisplay.css'
 
 const SelectedVerseDisplay = () => {
   const [currentVerse, setCurrentVerse] = useState(null)
-  const [currentHidden, setCurrentHidden] = useState(false);
-  const [tempVerse, setTempVerse] = useState(null)
-  const [tempHidden, setTempHidden] = useState(true);
-  const [tempVerseRef, setTempVerseRef] = useState('')
-  const [verseText, setVerseText] = useState('')
+  const [tempText, setTempText] = useState("")
+  const [currentText, setCurrentText] = useState("")
+  const [currentOpacity, setCurrentOpacity] = useState(1)
+  const [tempOpacity, setTempOpacity] = useState(0)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
@@ -77,17 +77,39 @@ const SelectedVerseDisplay = () => {
       const text = chapterData[osisId]
 
       if (text) {
-        // Store the old verse and reference in temp
-        setTempVerse(verseText)
-        setTempVerseRef(currentVerse ? createSimpleReference(currentVerse.bookId, currentVerse.chapter, currentVerse.verse) : '')
-        setTempHidden(false)
-        setCurrentHidden(true)
+        const verseReference = createSimpleReference(verse.bookId, verse.chapter, verse.verse)
+        const newText = `${text} ~ ${verseReference}`
 
+        // Use setTimeout to move flushSync out of render cycle
         setTimeout(() => {
-          setVerseText(text)
-          setCurrentHidden(false)
-          setTempHidden(true)
-          }, 300)
+          flushSync(() => {
+            // swap text and opacity, set temp to look like current
+            setTempText(currentText)
+            setTempOpacity(1)
+            setCurrentOpacity(0)
+            setCurrentText(newText)
+          })
+
+          let startTime = Date.now()
+          const duration = 500
+
+          const animate = () => {
+            const elapsed = Date.now() - startTime
+            const progress = Math.min(elapsed / duration, 1)
+
+            setTempOpacity(1 - progress)
+            setCurrentOpacity(progress)
+
+            if (progress < 1) {
+              requestAnimationFrame(animate)
+            } else {
+              setTempOpacity(0)
+              setCurrentOpacity(1)
+            }
+          }
+
+          requestAnimationFrame(animate)
+        }, 0)
       } else {
         setError(`Verse ${verse.reference} not found in chapter data`)
       }
@@ -100,26 +122,22 @@ const SelectedVerseDisplay = () => {
   }
 
   // Don't render anything if no verse is selected
-  if (!currentVerse || (!verseText && !loading)) {
+  if (!currentVerse || (!currentText && !loading)) {
     return null
   }
 
   // Only show content when we have verse text (no loading or error states)
-  if (!verseText || loading || error) {
+  if (!currentText || loading || error) {
     return null
   }
 
-  const verseReference = currentVerse.bookId && currentVerse.chapter && currentVerse.verse !== undefined
-    ? createSimpleReference(currentVerse.bookId, currentVerse.chapter, currentVerse.verse)
-    : currentVerse.reference
-
   return (
     <div className="selected-verse-display">
-      <div className={`verse-wrapper ${currentHidden ? 'hidden' : 'visible'}`}>
-        <div className="verse-text">{verseText && verseReference ? `${verseText} ~ ${verseReference}` : ''}</div>
+      <div className="verse-wrapper current-div" style={{ opacity: currentOpacity }}>
+        <div className="verse-text">{currentText}</div>
       </div>
-      <div className={`verse-wrapper ${tempHidden ? 'hidden' : 'visible'}`}>
-        <div className="verse-text">{tempVerse && tempVerseRef ? `${tempVerse} ~ ${tempVerseRef}` : ''}</div>
+      <div className="verse-wrapper temp-div" style={{ opacity: tempOpacity }}>
+        <div className="verse-text">{tempText}</div>
       </div>
     </div>
   )
