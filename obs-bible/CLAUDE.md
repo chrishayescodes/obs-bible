@@ -76,12 +76,21 @@ obs-bible/
 │   │       │   ├── Breadcrumb.css      # Component-specific styling
 │   │       │   ├── Breadcrumb.test.jsx # Comprehensive test suite (22 tests)
 │   │       │   └── Breadcrumb.stories.jsx # Storybook stories
+│   │       ├── verse-list/            # Reusable verse list component
+│   │       │   ├── index.jsx           # VerseList component
+│   │       │   ├── VerseList.css       # Minimal CSS (uses parent stylesheets)
+│   │       │   ├── VerseList.test.jsx  # Comprehensive test suite (30 tests)
+│   │       │   └── VerseList.stories.jsx # Storybook stories (10 variations)
 │   │       ├── search-history/        # Verse history display and navigation component
-│   │       │   ├── index.jsx           # SearchHistory component
+│   │       │   ├── index.jsx           # SearchHistory component (refactored with VerseList)
 │   │       │   ├── SearchHistory.css   # Component-specific styling
 │   │       │   ├── SearchHistory.test.jsx # Comprehensive test suite (23 tests)
 │   │       │   ├── SearchHistory.integration.test.jsx # Integration test suite (7 tests)
 │   │       │   └── SearchHistory.stories.jsx # Storybook stories
+│   │       ├── stage-list/            # Staged verses display and management component
+│   │       │   ├── index.jsx           # StageList component (refactored with VerseList)
+│   │       │   ├── StageList.css       # Component-specific styling
+│   │       │   └── StageList.stories.jsx # Storybook stories
 │   │       ├── tabbed-nav/             # Tabbed navigation wrapper component
 │   │       │   ├── index.jsx           # TabbedNavigation component
 │   │       │   └── TabbedNavigation.css # Component-specific styling
@@ -370,8 +379,54 @@ The application uses a three-tier data architecture:
   - **Hidden Panels**: Inactive panels properly hidden with `hidden` attribute
   - **Focus Management**: Tab switching maintains proper focus states
 
+#### VerseList Component (`src/ref-nav/verse-list/`)
+- **Purpose**: Reusable component for displaying lists of Bible verses with navigation, removal, and management functionality
+- **Architecture**: Extracted from SearchHistory and StageList components to eliminate code duplication and provide consistent functionality
+- **Features**:
+  - **Configurable Data Source**: Adapter pattern for different data sources (history, staged verses, etc.)
+  - **Event-Driven Updates**: Window event listening for real-time list updates
+  - **Split Verse Support**: Intelligent handling of verse parts (e.g., "9a", "9b", "9c") with proper navigation
+  - **Customizable Styling**: Works with existing CSS via configurable CSS prefix system
+  - **Accessibility**: Full ARIA support, semantic HTML, keyboard navigation, screen reader compatibility
+  - **Loading States**: Proper loading indicators with accessibility attributes
+  - **Empty States**: Configurable empty state messaging with helpful hints
+  - **Error Handling**: Graceful error recovery with console logging and fallback states
+- **Props**:
+  - `dataSource`: Object with `getItems()`, `clearAll()`, and `removeItem(osisId)` methods
+  - `eventName`: Window event name to listen for updates (e.g., 'verseHistoryUpdated')
+  - `title`: Display title for the component header
+  - `emptyMessage`: Message shown when no items exist
+  - `emptyHint`: Hint text shown below empty message
+  - `loadingMessage`: Message shown during loading state
+  - `cssPrefix`: CSS class prefix for styling (e.g., 'search-history', 'stage-list')
+  - `showCount`: Boolean to show/hide item count in title
+  - `formatTimestamp`: Optional custom timestamp formatting function
+  - `ariaLabel`: Custom ARIA label for main container
+  - `onVerseSelect`: Callback for verse navigation with scripture reference object
+  - `onClearAll`: Callback for clear all button functionality
+- **Usage Pattern**:
+  ```javascript
+  const dataSource = {
+    getItems: () => verseHistoryUtils.getHistory(),
+    clearAll: () => verseHistoryUtils.clearHistory(),
+    removeItem: (osisId) => verseHistoryUtils.removeFromHistory(osisId)
+  }
+  
+  <VerseList
+    dataSource={dataSource}
+    eventName="verseHistoryUpdated"
+    title="Search History"
+    cssPrefix="search-history"
+    onVerseSelect={handleVerseSelect}
+  />
+  ```
+- **Code Reduction**: Reduced SearchHistory from 159 to 50 lines, StageList from 159 to 50 lines (~75% reduction)
+- **Testing**: Comprehensive test suite with 30 tests covering all functionality
+- **Storybook**: 10 story variations demonstrating different configurations and use cases
+
 #### SearchHistory Component (`src/ref-nav/search-history/`)
 - **Purpose**: Display and manage verse search history with clickable navigation links and history management features
+- **Architecture**: Refactored to use VerseList component for consistent functionality and reduced code duplication
 - **Features**:
   - **History Display**: Shows recently visited verses as interactive navigation buttons with timestamps
   - **Split Verse Support**: Handles both regular verses and split verse parts (e.g., "9a", "9b") from localStorage history
@@ -379,7 +434,7 @@ The application uses a three-tier data architecture:
   - **Dark Mode Support**: Both system preference detection (`prefers-color-scheme`) and explicit `.dark` class support
   - **Full Accessibility**: Complete ARIA support, semantic HTML structure, keyboard navigation, and screen reader compatibility
   - **History Management**: Clear all history functionality and individual item removal with confirmation
-  - **Timestamp Formatting**: Smart relative time display (minutes, hours, days ago, or formatted dates for older items)
+  - **Timestamp Formatting**: Custom relative time display ("Less than an hour ago", "X hours ago", "X days ago")
   - **Loading States**: Proper loading indicators with accessibility attributes during data fetching
   - **Empty States**: Helpful messaging when no history exists with actionable guidance
   - **Error Handling**: Graceful error recovery with fallback to empty state and console error logging

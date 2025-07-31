@@ -1,0 +1,7 @@
+/* 
+ * Reusable VerseList Component - No CSS needed
+ * This component is designed to work with existing CSS files
+ * by accepting a cssPrefix prop and using existing stylesheets
+ */
+
+/* This file is intentionally minimal - styling is provided by parent components */

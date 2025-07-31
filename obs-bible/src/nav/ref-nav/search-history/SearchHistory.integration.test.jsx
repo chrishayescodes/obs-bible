@@ -228,7 +228,7 @@ describe('SearchHistory Integration', () => {
     })
 
     // Remove an item
-    const removeButton = screen.getByLabelText('Remove Genesis 1:1 from history')
+    const removeButton = screen.getByLabelText('Remove Genesis 1:1 from search history')
     fireEvent.click(removeButton)
 
     expect(verseHistoryUtils.removeFromHistory).toHaveBeenCalledWith('Gen.1.1')
@@ -250,7 +250,7 @@ describe('SearchHistory Integration', () => {
       expect(screen.getByText('Clear All')).toBeInTheDocument()
     })
 
-    const clearButton = screen.getByRole('button', { name: /clear all history/i })
+    const clearButton = screen.getByRole('button', { name: /clear all search history/i })
     fireEvent.click(clearButton)
 
     expect(verseHistoryUtils.clearHistory).toHaveBeenCalled()

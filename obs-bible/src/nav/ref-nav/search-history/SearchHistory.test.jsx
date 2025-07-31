@@ -173,7 +173,7 @@ describe('SearchHistory Component', () => {
         expect(screen.getByText('Clear All')).toBeInTheDocument()
       })
 
-      const clearButton = screen.getByRole('button', { name: /clear all history/i })
+      const clearButton = screen.getByRole('button', { name: /clear all search history/i })
       expect(clearButton).toBeInTheDocument()
     })
 
@@ -246,7 +246,7 @@ describe('SearchHistory Component', () => {
       render(<SearchHistory onClearHistory={mockOnClearHistory} />)
 
       await waitFor(() => {
-        const clearButton = screen.getByRole('button', { name: /clear all history/i })
+        const clearButton = screen.getByRole('button', { name: /clear all search history/i })
         fireEvent.click(clearButton)
       })
 
@@ -260,7 +260,7 @@ describe('SearchHistory Component', () => {
       render(<SearchHistory />)
 
       await waitFor(() => {
-        const removeButton = screen.getByLabelText('Remove Genesis 1:1 from history')
+        const removeButton = screen.getByLabelText('Remove Genesis 1:1 from search history')
         fireEvent.click(removeButton)
       })
 
@@ -276,7 +276,7 @@ describe('SearchHistory Component', () => {
         expect(screen.getByText('Genesis 1:1')).toBeInTheDocument()
       })
 
-      const removeButton = screen.getByLabelText('Remove Genesis 1:1 from history')
+      const removeButton = screen.getByLabelText('Remove Genesis 1:1 from search history')
       fireEvent.click(removeButton)
 
       await waitFor(() => {
@@ -294,9 +294,9 @@ describe('SearchHistory Component', () => {
       render(<SearchHistory />)
 
       await waitFor(() => {
-        const removeButton = screen.getByLabelText('Remove Genesis 1:1 from history')
+        const removeButton = screen.getByLabelText('Remove Genesis 1:1 from search history')
         expect(removeButton).toHaveAttribute('type', 'button')
-        expect(removeButton).toHaveAttribute('title', 'Remove Genesis 1:1 from history')
+        expect(removeButton).toHaveAttribute('title', 'Remove Genesis 1:1 from search history')
       })
     })
   })
@@ -314,7 +314,7 @@ describe('SearchHistory Component', () => {
         expect(screen.getByText('No verses in your history yet.')).toBeInTheDocument()
       })
 
-      expect(consoleSpy).toHaveBeenCalledWith('Failed to load verse history:', expect.any(Error))
+      expect(consoleSpy).toHaveBeenCalledWith('Failed to load search history:', expect.any(Error))
       consoleSpy.mockRestore()
     })
 
@@ -324,7 +324,7 @@ describe('SearchHistory Component', () => {
       render(<SearchHistory />)
 
       await waitFor(() => {
-        const clearButton = screen.getByRole('button', { name: /clear all history/i })
+        const clearButton = screen.getByRole('button', { name: /clear all search history/i })
         fireEvent.click(clearButton)
       })
 
@@ -455,10 +455,10 @@ describe('SearchHistory Component', () => {
         expect(verseButton).toBeInTheDocument()
       })
 
-      const removeButton = screen.getByLabelText('Remove Genesis 1:1 from history')
+      const removeButton = screen.getByLabelText('Remove Genesis 1:1 from search history')
       expect(removeButton).toBeInTheDocument()
 
-      const clearButton = screen.getByLabelText('Clear all history')
+      const clearButton = screen.getByLabelText('Clear all search history')
       expect(clearButton).toBeInTheDocument()
     })
   })
