@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { stageUtils } from '../../../utils/stageUtils';
+import { getSimpleBookName } from '../../../utils/bookNames';
 import './VerseDisplay.css';
 
 const VerseDisplay = ({ 
@@ -17,6 +19,7 @@ const VerseDisplay = ({
   const [localSelectedVerse, setLocalSelectedVerse] = useState(selectedVerse);
   const [navigatedVerse, setNavigatedVerse] = useState(null);
   const [hasBeenNavigatedTo, setHasBeenNavigatedTo] = useState(new Set());
+  const [stagedVerses, setStagedVerses] = useState(new Set());
   const verseRefs = useRef({});
   const containerRef = useRef(null);
   const highlightTimeoutRef = useRef(null);
@@ -80,6 +83,34 @@ const VerseDisplay = ({
     };
   }, []);
 
+  // Load and track staged verses
+  useEffect(() => {
+    const updateStagedVerses = () => {
+      if (verseData) {
+        const currentStaged = stageUtils.getStagedVerses();
+        const currentDisplayStaged = new Set(
+          currentStaged
+            .filter(item => Object.keys(verseData).some(osisId => osisId === item.osisId))
+            .map(item => item.osisId)
+        );
+        setStagedVerses(currentDisplayStaged);
+      }
+    };
+
+    updateStagedVerses();
+
+    // Listen for staging updates
+    const handleStagingUpdate = () => {
+      updateStagedVerses();
+    };
+
+    window.addEventListener('stagedVersesUpdated', handleStagingUpdate);
+
+    return () => {
+      window.removeEventListener('stagedVersesUpdated', handleStagingUpdate);
+    };
+  }, [verseData]);
+
   const handleVerseClick = (osisId) => {
     setLocalSelectedVerse(osisId);
     
@@ -93,6 +124,30 @@ const VerseDisplay = ({
     
     if (onVerseSelect) {
       onVerseSelect(osisId);
+    }
+  };
+
+  const handleStageClick = (osisId, event) => {
+    event.stopPropagation(); // Prevent verse selection
+
+    // Parse the OSIS ID to create a scripture reference
+    const [bookId, chapter, verse] = osisId.split('.');
+    
+    // Use simple book name instead of formal title
+    const bookTitle = getSimpleBookName(bookId);
+    
+    const scriptureRef = {
+      book: bookTitle,
+      bookId: bookId,
+      chapter: chapter,
+      verse: verse, // Keep exact verse (could be "9a", "9b", etc.)
+      reference: `${bookTitle} ${chapter}:${verse}`
+    };
+
+    const success = stageUtils.addToStage(scriptureRef);
+    if (!success) {
+      // Verse was already staged, could show a message here if desired
+      console.log('Verse already staged:', scriptureRef.reference);
     }
   };
 
@@ -169,18 +224,29 @@ const VerseDisplay = ({
               ].filter(Boolean).join(' ');
               
               return (
-                <button
-                  key={osisId}
-                  ref={el => verseRefs.current[osisId] = el}
-                  type="button"
-                  className={classNames}
-                  onClick={() => handleVerseClick(osisId)}
-                  aria-label={`Verse ${verseNumber}: ${verseText}`}
-                  data-verse-id={osisId}
-                >
-                  <span className="verse-number">{verseNumber}</span>
-                  <span className="verse-text">{verseText}</span>
-                </button>
+                <div key={osisId} className="verse-container">
+                  <button
+                    ref={el => verseRefs.current[osisId] = el}
+                    type="button"
+                    className={classNames}
+                    onClick={() => handleVerseClick(osisId)}
+                    aria-label={`Verse ${verseNumber}: ${verseText}`}
+                    data-verse-id={osisId}
+                  >
+                    <span className="verse-number">{verseNumber}</span>
+                    <span className="verse-text">{verseText}</span>
+                  </button>
+                  <button
+                    type="button"
+                    className={`stage-button ${stagedVerses.has(osisId) ? 'staged' : ''}`}
+                    onClick={(event) => handleStageClick(osisId, event)}
+                    title={`${stagedVerses.has(osisId) ? 'Already staged' : 'Add to stage'}`}
+                    disabled={stagedVerses.has(osisId)}
+                    aria-label={`${stagedVerses.has(osisId) ? 'Already staged' : 'Add to stage'}: ${verseNumber}`}
+                  >
+                    +
+                  </button>
+                </div>
               );
             })}
           </div>

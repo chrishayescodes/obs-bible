@@ -515,7 +515,8 @@ describe('VerseDisplay', () => {
         />
       );
 
-      const verseButtons = screen.getAllByRole('button');
+      const allButtons = screen.getAllByRole('button');
+      const verseButtons = allButtons.filter(button => button.hasAttribute('data-verse-id'));
       
       // Verify order matches the input data
       expect(verseButtons[0]).toHaveAttribute('data-verse-id', 'Gen.1.1');
