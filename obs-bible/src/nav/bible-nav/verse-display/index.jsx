@@ -240,11 +240,11 @@ const VerseDisplay = ({
                     type="button"
                     className={`stage-button ${stagedVerses.has(osisId) ? 'staged' : ''}`}
                     onClick={(event) => handleStageClick(osisId, event)}
-                    title={`${stagedVerses.has(osisId) ? 'Already staged' : 'Add to stage'}`}
+                    title={`${stagedVerses.has(osisId) ? 'Already staged' : 'Add verse to stage'}`}
                     disabled={stagedVerses.has(osisId)}
                     aria-label={`${stagedVerses.has(osisId) ? 'Already staged' : 'Add to stage'}: ${verseNumber}`}
                   >
-                    +
+                    📋
                   </button>
                 </div>
               );
