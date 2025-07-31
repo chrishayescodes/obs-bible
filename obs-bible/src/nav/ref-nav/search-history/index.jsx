@@ -19,7 +19,20 @@ const SearchHistory = ({ onVerseSelect, onClearHistory }) => {
       }
     }
 
+    // Load history on component mount
     loadHistory()
+
+    // Listen for history updates and reload when they occur
+    const handleHistoryUpdate = () => {
+      loadHistory()
+    }
+
+    window.addEventListener('verseHistoryUpdated', handleHistoryUpdate)
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('verseHistoryUpdated', handleHistoryUpdate)
+    }
   }, [])
 
   const handleVerseClick = (historyItem) => {

@@ -15,8 +15,9 @@ export const useVerseNavigation = (bibleData) => {
 
   const handleVerseSelected = useCallback(async (scriptureRef) => {
     
-    // Navigation only - do NOT update history or broadcast
-    // This is just for visual navigation/highlighting
+    // Add to history when navigating to verses
+    verseHistoryUtils.addToHistory(scriptureRef)
+    verseHistoryUtils.setCurrentVerse(scriptureRef)
     
     // Create the navigated verse OSIS ID from the scripture reference
     const navigatedVerseId = `${scriptureRef.bookId}.${scriptureRef.chapter}.${scriptureRef.verse}`
@@ -79,11 +80,7 @@ export const useVerseNavigation = (bibleData) => {
       reference: `${bookTitle} ${chapter}:${verse}`
     }
     
-    // Add to history and save as current verse
-    verseHistoryUtils.addToHistory(scriptureRef)
-    verseHistoryUtils.setCurrentVerse(scriptureRef)
-    
-    // Broadcast verse selection to other tabs/windows
+    // Broadcast verse selection to other tabs/windows (but don't add to history)
     verseSyncUtils.broadcastVerseSelection(scriptureRef)
   }, [bibleData])
 

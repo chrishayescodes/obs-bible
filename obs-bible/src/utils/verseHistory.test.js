@@ -181,7 +181,7 @@ describe('verseHistoryUtils', () => {
       const history = verseHistoryUtils.getHistory();
       expect(history).toHaveLength(50);
       expect(history[0].osisId).toBe('John.1.1');
-      expect(history[49].osisId).toBe('Gen.1.49'); // Last item should be removed
+      expect(history[49].osisId).toBe('Gen.1.2'); // Oldest item remains at the end
     });
 
     it('should not add invalid scripture references', () => {
@@ -360,8 +360,8 @@ describe('verseHistoryUtils', () => {
 
       const recent = verseHistoryUtils.getRecentVerses(5);
       expect(recent).toHaveLength(5);
-      expect(recent[0].osisId).toBe('Gen.1.1');
-      expect(recent[4].osisId).toBe('Gen.1.5');
+      expect(recent[0].osisId).toBe('Gen.1.20'); // Most recent (highest timestamp)
+      expect(recent[4].osisId).toBe('Gen.1.16'); // 5th most recent
     });
 
     it('should use default limit of 10', () => {

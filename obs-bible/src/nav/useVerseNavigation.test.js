@@ -77,9 +77,9 @@ describe('useVerseNavigation', () => {
         await result.current.handleVerseSelected(mockScriptureRef)
       })
 
-      // Should NOT add to history or set current verse (navigation only)
-      expect(verseHistoryUtils.addToHistory).not.toHaveBeenCalled()
-      expect(verseHistoryUtils.setCurrentVerse).not.toHaveBeenCalled()
+      // Should add to history and set current verse (navigation behavior)
+      expect(verseHistoryUtils.addToHistory).toHaveBeenCalledWith(mockScriptureRef)
+      expect(verseHistoryUtils.setCurrentVerse).toHaveBeenCalledWith(mockScriptureRef)
 
       // Should update state
       expect(result.current.selectedScripture).toEqual({
@@ -288,9 +288,9 @@ describe('useVerseNavigation', () => {
         reference: 'Genesis 1:5'
       }
 
-      // Should add to history and set current verse (selection behavior)
-      expect(verseHistoryUtils.addToHistory).toHaveBeenCalledWith(expectedScriptureRef)
-      expect(verseHistoryUtils.setCurrentVerse).toHaveBeenCalledWith(expectedScriptureRef)
+      // Should NOT add to history (selection is just for highlighting)
+      expect(verseHistoryUtils.addToHistory).not.toHaveBeenCalled()
+      expect(verseHistoryUtils.setCurrentVerse).not.toHaveBeenCalled()
 
       // Should broadcast verse selection
       expect(verseSyncUtils.broadcastVerseSelection).toHaveBeenCalledWith(expectedScriptureRef)
@@ -314,7 +314,7 @@ describe('useVerseNavigation', () => {
         reference: 'Matthew 5:3'
       }
 
-      expect(verseHistoryUtils.addToHistory).toHaveBeenCalledWith(expectedScriptureRef)
+      expect(verseHistoryUtils.addToHistory).not.toHaveBeenCalled()
       expect(verseSyncUtils.broadcastVerseSelection).toHaveBeenCalledWith(expectedScriptureRef)
     })
   })

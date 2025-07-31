@@ -6,7 +6,9 @@ export const verseHistoryUtils = {
   getHistory() {
     try {
       const stored = localStorage.getItem(VERSE_HISTORY_KEY)
-      return stored ? JSON.parse(stored) : []
+      const history = stored ? JSON.parse(stored) : []
+      // Sort by timestamp descending (most recent first)
+      return history.sort((a, b) => b.timestamp - a.timestamp)
     } catch (error) {
       console.warn('Failed to load verse history from localStorage:', error)
       return []
@@ -41,6 +43,9 @@ export const verseHistoryUtils = {
       }
       
       localStorage.setItem(VERSE_HISTORY_KEY, JSON.stringify(history))
+      
+      // Dispatch custom event to notify components that history has been updated
+      window.dispatchEvent(new CustomEvent('verseHistoryUpdated'))
     } catch (error) {
       console.warn('Failed to save verse history to localStorage:', error)
     }
@@ -49,6 +54,9 @@ export const verseHistoryUtils = {
   clearHistory() {
     try {
       localStorage.removeItem(VERSE_HISTORY_KEY)
+      
+      // Dispatch custom event to notify components that history has been cleared
+      window.dispatchEvent(new CustomEvent('verseHistoryUpdated'))
     } catch (error) {
       console.warn('Failed to clear verse history from localStorage:', error)
     }
@@ -103,6 +111,9 @@ export const verseHistoryUtils = {
       const history = this.getHistory()
       const filtered = history.filter(item => item.osisId !== osisId)
       localStorage.setItem(VERSE_HISTORY_KEY, JSON.stringify(filtered))
+      
+      // Dispatch custom event to notify components that history has been updated
+      window.dispatchEvent(new CustomEvent('verseHistoryUpdated'))
     } catch (error) {
       console.warn('Failed to remove verse from history:', error)
     }
