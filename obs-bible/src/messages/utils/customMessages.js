@@ -282,6 +282,9 @@ const addMessage = (messageData) => {
     customMessageSyncUtils.broadcastMessageAdded(message)
   }
 
+  // Dispatch local event for UI updates
+  dispatchCustomEvent('customMessagesUpdated', { type: 'added', message })
+
   return message
 }
 
@@ -371,6 +374,9 @@ const updateMessage = (id, updates) => {
     customMessageSyncUtils.broadcastMessageUpdated(updatedMessage)
   }
 
+  // Dispatch local event for UI updates
+  dispatchCustomEvent('customMessagesUpdated', { type: 'updated', message: updatedMessage })
+
   return { ...updatedMessage, tags: [...updatedMessage.tags] }
 }
 
@@ -411,6 +417,9 @@ const deleteMessage = (id) => {
     customMessageSyncUtils.broadcastMessageDeleted(id)
   }
 
+  // Dispatch local event for UI updates
+  dispatchCustomEvent('customMessagesUpdated', { type: 'deleted', messageId: id })
+
   return wasDeleted
 }
 
@@ -450,6 +459,9 @@ const clearMessages = () => {
   if (!isSyncingFromBroadcast) {
     customMessageSyncUtils.broadcastMessagesCleared()
   }
+  
+  // Dispatch local event for UI updates
+  dispatchCustomEvent('customMessagesUpdated', { type: 'cleared' })
   
   return count
 }
