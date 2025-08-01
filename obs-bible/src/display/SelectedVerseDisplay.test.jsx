@@ -181,7 +181,7 @@ describe('SelectedVerseDisplay Component', () => {
       render(<SelectedVerseDisplay />);
 
       await waitFor(() => {
-        expect(screen.getByText(/This is a test message with markdown ~ Test Message/)).toBeInTheDocument();
+        expect(screen.getByText(/This is a test message with markdown/)).toBeInTheDocument();
       });
 
       expect(verseHistoryUtils.getCurrentVerse).toHaveBeenCalledTimes(1);
@@ -286,7 +286,7 @@ describe('SelectedVerseDisplay Component', () => {
       render(<SelectedVerseDisplay />);
 
       await waitFor(() => {
-        expect(screen.getByText(/This is a test message with markdown ~ Test Message/)).toBeInTheDocument();
+        expect(screen.getByText(/This is a test message with markdown/)).toBeInTheDocument();
       });
 
       expect(markdownUtils.renderToPlainText).toHaveBeenCalledWith('**This is a test message** with *markdown*');
@@ -307,7 +307,7 @@ describe('SelectedVerseDisplay Component', () => {
       render(<SelectedVerseDisplay />);
 
       await waitFor(() => {
-        expect(screen.getByText(/Header Bold text and italic text List item ~ Markdown Test/)).toBeInTheDocument();
+        expect(screen.getByText(/Header Bold text and italic text List item/)).toBeInTheDocument();
       });
 
       expect(markdownUtils.renderToPlainText).toHaveBeenCalledWith('# Header\n**Bold text** and *italic text*\n- List item');
@@ -409,7 +409,7 @@ describe('SelectedVerseDisplay Component', () => {
       mockSubscribeCallback(message);
 
       await waitFor(() => {
-        expect(screen.getByText(/This is a broadcast test message ~ Test Message/)).toBeInTheDocument();
+        expect(screen.getByText(/This is a broadcast test message/)).toBeInTheDocument();
       });
 
       expect(markdownUtils.renderToPlainText).toHaveBeenCalledWith('**This is a test message** with *markdown*');
@@ -449,7 +449,7 @@ describe('SelectedVerseDisplay Component', () => {
 
       // Wait for initial custom message to load
       await waitFor(() => {
-        expect(screen.getByText(/This message will be cleared ~ Test Message/)).toBeInTheDocument();
+        expect(screen.getByText(/This message will be cleared/)).toBeInTheDocument();
       });
 
       // Simulate receiving a custom message cleared broadcast
@@ -502,7 +502,7 @@ describe('SelectedVerseDisplay Component', () => {
       render(<SelectedVerseDisplay />);
 
       await waitFor(() => {
-        expect(screen.getByText(/Custom message content ~ Test Message/)).toBeInTheDocument();
+        expect(screen.getByText(/Custom message content/)).toBeInTheDocument();
       });
 
       // Should have called markdown renderer
@@ -566,7 +566,7 @@ describe('SelectedVerseDisplay Component', () => {
       mockSubscribeCallback(message);
 
       await waitFor(() => {
-        expect(screen.getByText(/Switched to custom message ~ Test Message/)).toBeInTheDocument();
+        expect(screen.getByText(/Switched to custom message/)).toBeInTheDocument();
       });
 
       // Should not show verse content anymore
@@ -581,7 +581,7 @@ describe('SelectedVerseDisplay Component', () => {
 
       // Wait for custom message to load
       await waitFor(() => {
-        expect(screen.getByText(/Initial custom message ~ Test Message/)).toBeInTheDocument();
+        expect(screen.getByText(/Initial custom message/)).toBeInTheDocument();
       });
 
       // Simulate switching to verse via broadcast
@@ -602,7 +602,7 @@ describe('SelectedVerseDisplay Component', () => {
       });
 
       // Should not show custom message content anymore
-      expect(screen.queryByText(/Initial custom message ~ Test Message/)).not.toBeInTheDocument();
+      expect(screen.queryByText(/Initial custom message/)).not.toBeInTheDocument();
     });
   });
 
@@ -680,7 +680,7 @@ describe('SelectedVerseDisplay Component', () => {
       render(<SelectedVerseDisplay />);
 
       await waitFor(() => {
-        expect(screen.getByText(/Message with fade transition ~ Test Message/)).toBeInTheDocument();
+        expect(screen.getByText(/Message with fade transition/)).toBeInTheDocument();
       });
 
       // Check that fade transition elements are present
@@ -718,7 +718,7 @@ describe('SelectedVerseDisplay Component', () => {
       mockSubscribeCallback(message);
 
       await waitFor(() => {
-        expect(screen.getByText(/Transitioning to custom message ~ Test Message/)).toBeInTheDocument();
+        expect(screen.getByText(/Transitioning to custom message/)).toBeInTheDocument();
       });
 
       // Verify fade transition elements

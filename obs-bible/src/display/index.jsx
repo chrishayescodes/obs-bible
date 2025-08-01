@@ -82,7 +82,7 @@ const SelectedVerseDisplay = () => {
 
         // Convert markdown to plain text for display
         const plainTextContent = markdownUtils.renderToPlainText(content.content)
-        newText = `${plainTextContent} ~ ${content.title}`
+        newText = plainTextContent
 
         // Use setTimeout to move flushSync out of render cycle
         setTimeout(() => {
