@@ -8,6 +8,9 @@ export default {
   transform: {
     '^.+\\.(js|jsx)$': ['babel-jest', { presets: ['@babel/preset-env', '@babel/preset-react'] }],
   },
+  transformIgnorePatterns: [
+    'node_modules/(?!(marked|dompurify)/)',
+  ],
   moduleFileExtensions: ['js', 'jsx', 'json'],
   testMatch: [
     '<rootDir>/src/**/__tests__/**/*.(js|jsx)',

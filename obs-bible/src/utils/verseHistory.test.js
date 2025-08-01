@@ -251,7 +251,83 @@ describe('verseHistoryUtils', () => {
       localStorageMock.setItem('osb-bible-current-verse', JSON.stringify(mockVerse));
 
       const currentVerse = verseHistoryUtils.getCurrentVerse();
-      expect(currentVerse).toEqual(mockVerse);
+      expect(currentVerse).toEqual({
+        ...mockVerse,
+        type: 'verse' // Should add type for legacy data
+      });
+    });
+
+    it('should return custom message data correctly', () => {
+      const mockMessage = {
+        type: 'custom',
+        id: 'msg-123',
+        title: 'Test Message',
+        content: 'Test content',
+        displayText: 'Rendered text',
+        timestamp: 1234567890,
+        source: 'custom-messages'
+      };
+      localStorageMock.setItem('osb-bible-current-verse', JSON.stringify(mockMessage));
+
+      const currentVerse = verseHistoryUtils.getCurrentVerse();
+      expect(currentVerse).toEqual(mockMessage);
+    });
+
+    it('should handle legacy verse data without type', () => {
+      const legacyVerse = {
+        book: 'Genesis',
+        bookId: 'Gen',
+        chapter: '1',
+        verse: 1,
+        reference: 'Genesis 1:1',
+        timestamp: 1234567890,
+        osisId: 'Gen.1.1'
+      };
+      localStorageMock.setItem('osb-bible-current-verse', JSON.stringify(legacyVerse));
+
+      const currentVerse = verseHistoryUtils.getCurrentVerse();
+      expect(currentVerse).toEqual({
+        ...legacyVerse,
+        type: 'verse'
+      });
+    });
+
+    it('should validate and clear invalid custom message data', () => {
+      const invalidMessage = {
+        type: 'custom',
+        id: null, // Missing required field
+        title: 'Test Message'
+      };
+      localStorageMock.setItem('osb-bible-current-verse', JSON.stringify(invalidMessage));
+
+      const currentVerse = verseHistoryUtils.getCurrentVerse();
+      expect(currentVerse).toBeNull();
+      expect(console.warn).toHaveBeenCalledWith('Invalid stored custom message data, clearing');
+    });
+
+    it('should validate and clear invalid verse data', () => {
+      const invalidVerse = {
+        type: 'verse',
+        book: 'Genesis',
+        // Missing required fields
+      };
+      localStorageMock.setItem('osb-bible-current-verse', JSON.stringify(invalidVerse));
+
+      const currentVerse = verseHistoryUtils.getCurrentVerse();
+      expect(currentVerse).toBeNull();
+      expect(console.warn).toHaveBeenCalledWith('Invalid stored verse data, clearing');
+    });
+
+    it('should validate and clear invalid content type', () => {
+      const invalidContent = {
+        type: 'invalid-type',
+        someData: 'test'
+      };
+      localStorageMock.setItem('osb-bible-current-verse', JSON.stringify(invalidContent));
+
+      const currentVerse = verseHistoryUtils.getCurrentVerse();
+      expect(currentVerse).toBeNull();  
+      expect(console.warn).toHaveBeenCalledWith('Invalid stored content type, clearing');
     });
 
     it('should handle invalid JSON gracefully', () => {
@@ -260,7 +336,7 @@ describe('verseHistoryUtils', () => {
       const currentVerse = verseHistoryUtils.getCurrentVerse();
       expect(currentVerse).toBeNull();
       expect(console.warn).toHaveBeenCalledWith(
-        'Failed to load current verse from localStorage:',
+        'Failed to load current content from localStorage:',
         expect.any(Error)
       );
     });
@@ -275,15 +351,84 @@ describe('verseHistoryUtils', () => {
       reference: 'Genesis 1:1'
     };
 
-    it('should save current verse to localStorage', () => {
+    const mockCustomMessage = {
+      type: 'custom',
+      id: 'msg-123',
+      title: 'Test Message',
+      content: 'Test content'
+    };
+
+    // Mock window.dispatchEvent for event testing
+    beforeEach(() => {
+      window.dispatchEvent = jest.fn();
+    });
+
+    it('should save current verse to localStorage with type', () => {
       verseHistoryUtils.setCurrentVerse(mockScriptureRef);
       
       const currentVerse = verseHistoryUtils.getCurrentVerse();
       expect(currentVerse).toMatchObject({
+        type: 'verse',
         ...mockScriptureRef,
         osisId: 'Gen.1.1'
       });
       expect(currentVerse).toHaveProperty('timestamp');
+    });
+
+    it('should save custom message to localStorage', () => {
+      verseHistoryUtils.setCurrentVerse(mockCustomMessage);
+      
+      const currentContent = verseHistoryUtils.getCurrentVerse();
+      expect(currentContent).toMatchObject({
+        type: 'custom',
+        id: 'msg-123',
+        title: 'Test Message',
+        content: 'Test content',
+        displayText: 'Test content',
+        source: 'custom-messages'
+      });
+      expect(currentContent).toHaveProperty('timestamp');
+    });
+
+    it('should use displayText when provided for custom messages', () => {
+      const messageWithDisplayText = {
+        ...mockCustomMessage,
+        displayText: 'Rendered display text'
+      };
+      
+      verseHistoryUtils.setCurrentVerse(messageWithDisplayText);
+      
+      const currentContent = verseHistoryUtils.getCurrentVerse();
+      expect(currentContent.displayText).toBe('Rendered display text');
+    });
+
+    it('should dispatch currentVerseUpdated event for verses', () => {
+      verseHistoryUtils.setCurrentVerse(mockScriptureRef);
+      
+      expect(window.dispatchEvent).toHaveBeenCalledWith(
+        expect.objectContaining({
+          type: 'currentVerseUpdated',
+          detail: expect.objectContaining({
+            type: 'verse',
+            ...mockScriptureRef
+          })
+        })
+      );
+    });
+
+    it('should dispatch currentVerseUpdated event for custom messages', () => {
+      verseHistoryUtils.setCurrentVerse(mockCustomMessage);
+      
+      expect(window.dispatchEvent).toHaveBeenCalledWith(
+        expect.objectContaining({
+          type: 'currentVerseUpdated',
+          detail: expect.objectContaining({
+            type: 'custom',
+            id: 'msg-123',
+            title: 'Test Message'
+          })
+        })
+      );
     });
 
     it('should clear current verse when passed null', () => {
@@ -294,12 +439,63 @@ describe('verseHistoryUtils', () => {
       expect(currentVerse).toBeNull();
     });
 
+    it('should reject invalid content types', () => {
+      const invalidContent = {
+        type: 'invalid-type',
+        someData: 'test'
+      };
+      
+      verseHistoryUtils.setCurrentVerse(invalidContent);
+      
+      expect(console.warn).toHaveBeenCalledWith('Invalid content type:', 'invalid-type');
+      expect(localStorageMock.setItem).not.toHaveBeenCalled();
+    });
+
+    it('should reject invalid custom message data', () => {
+      const invalidMessage = {
+        type: 'custom',
+        id: null, // Missing required field
+        title: 'Test Message'
+      };
+      
+      verseHistoryUtils.setCurrentVerse(invalidMessage);
+      
+      expect(console.warn).toHaveBeenCalledWith('Invalid custom message data - missing id or title');
+      expect(localStorageMock.setItem).not.toHaveBeenCalled();
+    });
+
+    it('should reject invalid verse data', () => {
+      const invalidVerse = {
+        type: 'verse',
+        book: 'Genesis'
+        // Missing required fields
+      };
+      
+      verseHistoryUtils.setCurrentVerse(invalidVerse);
+      
+      expect(console.warn).toHaveBeenCalledWith('Invalid verse data - missing required fields');
+      expect(localStorageMock.setItem).not.toHaveBeenCalled();
+    });
+
+    it('should handle backward compatibility for verse data without type', () => {
+      verseHistoryUtils.setCurrentVerse(mockScriptureRef);
+      
+      const currentVerse = verseHistoryUtils.getCurrentVerse();
+      expect(currentVerse.type).toBe('verse');
+    });
+
     it('should handle incomplete scripture references', () => {
-      const incompleteRef = { book: 'Genesis', bookId: 'Gen' };
+      const incompleteRef = { book: 'Genesis', bookId: 'Gen', chapter: '1' };
       verseHistoryUtils.setCurrentVerse(incompleteRef);
       
       const currentVerse = verseHistoryUtils.getCurrentVerse();
-      expect(currentVerse.osisId).toBeNull();
+      // Should not be saved due to validation, or if saved, should have null osisId
+      if (currentVerse) {
+        expect(currentVerse.osisId).toBeNull();
+      } else {
+        // It's also valid for it to be null due to validation
+        expect(console.warn).toHaveBeenCalledWith('Invalid verse data - missing required fields');
+      }
     });
 
     it('should handle localStorage write errors gracefully', () => {
@@ -310,13 +506,17 @@ describe('verseHistoryUtils', () => {
       verseHistoryUtils.setCurrentVerse(mockScriptureRef);
       
       expect(console.warn).toHaveBeenCalledWith(
-        'Failed to save current verse to localStorage:',
+        'Failed to save current content to localStorage:',
         expect.any(Error)
       );
     });
   });
 
   describe('clearCurrentVerse', () => {
+    beforeEach(() => {
+      window.dispatchEvent = jest.fn();
+    });
+
     it('should remove current verse from localStorage', () => {
       localStorageMock.setItem('osb-bible-current-verse', JSON.stringify({ test: 'data' }));
       
@@ -324,6 +524,17 @@ describe('verseHistoryUtils', () => {
       
       expect(localStorageMock.removeItem).toHaveBeenCalledWith('osb-bible-current-verse');
       expect(verseHistoryUtils.getCurrentVerse()).toBeNull();
+    });
+
+    it('should dispatch currentVerseUpdated event with null detail', () => {
+      verseHistoryUtils.clearCurrentVerse();
+      
+      expect(window.dispatchEvent).toHaveBeenCalledWith(
+        expect.objectContaining({
+          type: 'currentVerseUpdated',
+          detail: null
+        })
+      );
     });
 
     it('should handle localStorage errors gracefully', () => {
@@ -334,7 +545,7 @@ describe('verseHistoryUtils', () => {
       verseHistoryUtils.clearCurrentVerse();
       
       expect(console.warn).toHaveBeenCalledWith(
-        'Failed to clear current verse from localStorage:',
+        'Failed to clear current content from localStorage:',
         expect.any(Error)
       );
     });

@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 import { verseHistoryUtils } from '../utils/verseHistory'
-import { verseSyncUtils } from '../utils/broadcastChannel'
+import { verseSyncUtils } from '../messages/utils/broadcastChannel'
 import { getSimpleBookName } from '../utils/bookNames'
 
 // Debug logging removed - implementation working correctly

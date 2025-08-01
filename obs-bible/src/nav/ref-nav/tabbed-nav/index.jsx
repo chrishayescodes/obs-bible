@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navigation from '../navigation'
 import SearchHistory from '../search-history'
 import StageList from '../stage-list'
+import { MessagesTab } from '../../../messages'
 import VerseDisplay from '../../bible-nav/verse-display'
 import './TabbedNavigation.css'
 
@@ -84,6 +85,19 @@ const TabbedNavigation = ({
           <span className="tabbed-navigation__tab-icon" aria-hidden="true">📋</span>
           <span className="tabbed-navigation__tab-label">Stage</span>
         </button>
+        <button
+          type="button"
+          className={`tabbed-navigation__tab ${activeTab === 'messages' ? 'tabbed-navigation__tab--active' : ''}`}
+          onClick={() => handleTabChange('messages')}
+          role="tab"
+          aria-selected={activeTab === 'messages'}
+          aria-controls="messages-panel"
+          id="messages-tab"
+          title="Custom Messages"
+        >
+          <span className="tabbed-navigation__tab-icon" aria-hidden="true">💬</span>
+          <span className="tabbed-navigation__tab-label">Messages</span>
+        </button>
       </div>
 
       <div className="tabbed-navigation__content">
@@ -156,6 +170,15 @@ const TabbedNavigation = ({
           hidden={activeTab !== 'stage'}
         >
           <StageList onVerseSelect={handleStageVerseSelect} />
+        </div>
+        <div
+          className={`tabbed-navigation__panel ${activeTab === 'messages' ? 'tabbed-navigation__panel--active' : ''}`}
+          role="tabpanel"
+          aria-labelledby="messages-tab"
+          id="messages-panel"
+          hidden={activeTab !== 'messages'}
+        >
+          <MessagesTab />
         </div>
       </div>
     </div>

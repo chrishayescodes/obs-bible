@@ -1,7 +1,7 @@
 import { renderHook, act } from '@testing-library/react'
 import { useVerseNavigation } from './useVerseNavigation'
 import { verseHistoryUtils } from '../utils/verseHistory'
-import { verseSyncUtils } from '../utils/broadcastChannel'
+import { verseSyncUtils } from '../messages/utils/broadcastChannel'
 
 // Mock the verseHistory utility
 jest.mock('../utils/verseHistory', () => ({
@@ -14,7 +14,7 @@ jest.mock('../utils/verseHistory', () => ({
 }))
 
 // Mock the broadcastChannel utility
-jest.mock('../utils/broadcastChannel', () => ({
+jest.mock('../messages/utils/broadcastChannel', () => ({
   verseSyncUtils: {
     broadcastVerseSelection: jest.fn(),
     broadcastVerseClear: jest.fn(),

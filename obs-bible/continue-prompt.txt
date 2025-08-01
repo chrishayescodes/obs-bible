@@ -1,0 +1,138 @@
+CONTINUE-PROMPT: Custom Messages System Development
+
+=== CURRENT CONTEXT ===
+Repository: OBS Bible Application
+Branch: feature/custom-messages  
+Base Version: v1.0.0 (tagged)
+Feature: Custom Messages System (Phase 1: Core Infrastructure)
+
+=== CURRENT STATUS ===
+Phase: 1 of 4 (Core Infrastructure - Weeks 1-2)
+Current Milestone: 1 of 9 (Create customMessages utility with basic CRUD operations)
+Progress: 0/9 milestones complete ✅
+Estimated Time Remaining: 18-24 hours total
+
+=== ACTIVE MILESTONE ===
+**Milestone 1: Create customMessages utility with basic CRUD operations**
+Status: ⚡ IN PROGRESS
+Files to Create: /src/utils/customMessages.js, /src/utils/customMessages.test.js
+Estimated Time: 2-3 hours
+Dependencies: None
+
+Acceptance Criteria:
+- [ ] addMessage({title, content}) creates message with auto-generated ID and timestamps
+- [ ] getMessages() returns array of all messages  
+- [ ] updateMessage(id, updates) modifies existing message by ID
+- [ ] deleteMessage(id) removes message by ID
+- [ ] All functions return proper data structures with validation
+- [ ] Basic error handling for invalid inputs (null checks, required fields)
+
+Test Commands Ready:
+```javascript
+import { customMessageUtils } from './src/utils/customMessages'
+const message = customMessageUtils.addMessage({title: 'Test Message', content: 'Hello world'})
+console.log('Created:', message) // Should show ID, timestamps, title, content
+const messages = customMessageUtils.getMessages()
+console.log('Count:', messages.length) // Should be 1
+```
+
+=== ARCHITECTURAL DECISIONS MADE ===
+1. Markdown Library: Selected 'marked' (~20KB gzipped) over markdown-it (~47KB)
+   - Reasoning: Lightweight, fast, sufficient for basic formatting needs
+   - Alternative considered: micromark (~15KB) - too low-level
+   - Alternative considered: markdown-it (~47KB) - too heavy for our needs
+
+2. Data Structure Design:
+   ```javascript
+   const CustomMessage = {
+     id: 'uuid-v4-string',
+     type: 'custom',
+     title: 'Message Title',
+     content: '# Heading\n**Bold text**',
+     displayText: 'Heading\nBold text',
+     tags: ['announcement', 'prayer'],
+     createdAt: 1234567890,
+     updatedAt: 1234567890,
+     usageCount: 5,
+     lastUsed: 1234567890
+   }
+   ```
+
+3. Sub-tab Architecture: Messages tab will contain Create | Library sub-tabs
+4. Storage: localStorage with BroadcastChannel cross-tab sync
+5. Integration: Extends existing TabbedNavigation as fourth tab (💬)
+
+=== DOCUMENTATION LOCATIONS ===
+- Master Spec: .plan/features/custom-messages.md
+- Milestone Tracker: .plan/roadmap/phase1-milestones.md  
+- Current Sprint: .plan/roadmap/current-sprint.md
+- Feature Template: .plan/templates/feature-template.md
+
+=== NEXT STEPS ===
+1. Implement Milestone 1: customMessages utility basic CRUD
+2. Test with provided validation commands
+3. Create basic test file
+4. Update milestone tracker progress
+5. Move to Milestone 2: localStorage persistence
+
+=== FULL MILESTONE SEQUENCE ===
+1. ⚡ Create customMessages utility with basic CRUD operations (CURRENT)
+2. 🔄 Add localStorage persistence and data validation  
+3. 🔄 Implement event dispatching for cross-tab sync
+4. 🔄 Create basic markdownRenderer utility (parallel with #3)
+5. 🔄 Set up MessagesTab component structure (parallel)
+6. 🔄 Implement sub-tab navigation within MessagesTab
+7. 🔄 Create basic MessageEditor component
+8. 🔄 Add Messages tab to TabbedNavigation
+9. 🔄 Test and validate Phase 1 integration
+
+=== TESTING APPROACH ===
+Each milestone includes specific test validation commands to verify functionality before proceeding. All tests must pass before moving to next milestone.
+
+=== INTEGRATION POINTS ===
+- Extends existing BroadcastChannel utility (src/utils/broadcastChannel.js)
+- Integrates with TabbedNavigation component (src/nav/ref-nav/tabbed-nav/)
+- Follows existing localStorage utility patterns
+- Uses established component architecture patterns
+
+=== FILES TO TRACK ===
+New Files (to be created):
+- /src/utils/customMessages.js (Milestone 1)
+- /src/utils/customMessages.test.js (Milestone 1)
+- /src/utils/markdownRenderer.js (Milestone 4)
+- /src/utils/markdownRenderer.test.js (Milestone 4)
+- /src/nav/ref-nav/messages-tab/index.jsx (Milestone 5)
+- /src/nav/ref-nav/messages-tab/MessagesTab.css (Milestone 5)
+- /src/nav/ref-nav/messages-tab/sub-tabs/index.jsx (Milestone 6)
+- /src/nav/ref-nav/messages-tab/editor/index.jsx (Milestone 7)
+
+Modified Files (to be updated):
+- /src/nav/ref-nav/tabbed-nav/index.jsx (Milestone 8)
+- /src/nav/ref-nav/tabbed-nav/TabbedNavigation.css (Milestone 8)
+- /src/utils/broadcastChannel.js (Milestone 3)
+
+Dependencies to Install:
+- marked (~20KB gzipped) - Milestone 4
+- dompurify (for HTML sanitization) - Milestone 4
+- uuid (for unique IDs) - Milestone 1
+
+=== PHASE COMPLETION CRITERIA ===
+Phase 1 Complete When:
+- All 9 milestones pass acceptance criteria
+- End-to-end workflow: Create message → Save → Cross-tab sync → Display
+- No console errors during normal usage
+- Basic test suite passing
+- Components render properly on desktop/tablet/mobile
+- Performance acceptable (no lag during typing/saving)
+
+=== CONTINUE INSTRUCTIONS ===
+When resuming:
+1. Check current branch: git branch (should be feature/custom-messages)
+2. Review milestone tracker: .plan/roadmap/phase1-milestones.md
+3. Focus on current milestone acceptance criteria
+4. Run provided test validation commands to verify progress
+5. Update milestone tracker when completed
+6. Move to next milestone in sequence
+
+Current command to execute:
+"Let's continue with Milestone 1: Create customMessages utility with basic CRUD operations. I need to implement /src/utils/customMessages.js with the functions addMessage, getMessages, updateMessage, and deleteMessage."

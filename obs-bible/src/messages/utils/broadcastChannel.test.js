@@ -9,6 +9,8 @@ const {
   broadcastVerseSelection,
   broadcastVerseClear,
   broadcastChapterNavigation,
+  broadcastCustomMessageSelection,
+  broadcastCustomMessageClear,
   subscribeToBroadcast,
   closeBroadcastChannel,
   createLocalStorageFallback,
@@ -377,12 +379,198 @@ describe('BroadcastChannel utility', () => {
     });
   });
 
+  describe('broadcastCustomMessageSelection', () => {
+    it('should broadcast custom message selection with correct format', () => {
+      const messageData = {
+        id: 'test-msg-123',
+        title: 'Test Message',
+        content: 'Test content'
+      };
+
+      broadcastCustomMessageSelection(messageData);
+
+      const channel = mockBroadcastChannelInstances[0];
+      expect(channel.postMessage).toHaveBeenCalledWith({
+        type: MessageTypes.CUSTOM_MESSAGE_SELECTED,
+        data: {
+          type: 'custom',
+          id: 'test-msg-123',
+          title: 'Test Message',
+          content: 'Test content',
+          displayText: 'Test content',
+          timestamp: expect.any(Number),
+          source: 'custom-messages'
+        },
+        timestamp: expect.any(Number),
+        origin: expect.any(String)
+      });
+    });
+
+    it('should use displayText when provided', () => {
+      const messageData = {
+        id: 'test-msg-123',
+        title: 'Test Message',
+        content: 'Original content',
+        displayText: 'Rendered display text'
+      };
+
+      broadcastCustomMessageSelection(messageData);
+
+      const channel = mockBroadcastChannelInstances[0];
+      const call = channel.postMessage.mock.calls[0][0];
+      expect(call.data.displayText).toBe('Rendered display text');
+    });
+
+    it('should handle broadcast errors gracefully', () => {
+      const messageData = {
+        id: 'test-msg-123',
+        title: 'Test Message',
+        content: 'Test content'
+      };
+
+      const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
+      const channel = getBroadcastChannel();
+      channel.postMessage.mockImplementation(() => {
+        throw new Error('Broadcast failed');
+      });
+
+      expect(() => broadcastCustomMessageSelection(messageData)).not.toThrow();
+      expect(consoleSpy).toHaveBeenCalledWith('Failed to broadcast custom message selection:', expect.any(Error));
+
+      consoleSpy.mockRestore();
+    });
+
+    it('should not broadcast when channel is not available', () => {
+      delete global.BroadcastChannel;
+      const consoleSpy = jest.spyOn(console, 'warn').mockImplementation();
+      
+      const messageData = {
+        id: 'test-msg-123',
+        title: 'Test Message',
+        content: 'Test content'
+      };
+
+      broadcastCustomMessageSelection(messageData);
+      
+      expect(consoleSpy).toHaveBeenCalledWith('BroadcastChannel API is not supported in this browser');
+      consoleSpy.mockRestore();
+    });
+  });
+
+  describe('broadcastCustomMessageClear', () => {
+    it('should broadcast custom message clear', () => {
+      broadcastCustomMessageClear();
+
+      const channel = mockBroadcastChannelInstances[0];
+      expect(channel.postMessage).toHaveBeenCalledWith({
+        type: MessageTypes.CUSTOM_MESSAGE_CLEARED,
+        timestamp: expect.any(Number),
+        origin: expect.any(String)
+      });
+    });
+
+    it('should handle broadcast errors gracefully', () => {
+      const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
+      const channel = getBroadcastChannel();
+      channel.postMessage.mockImplementation(() => {
+        throw new Error('Clear broadcast failed');
+      });
+
+      expect(() => broadcastCustomMessageClear()).not.toThrow();
+      expect(consoleSpy).toHaveBeenCalledWith('Failed to broadcast custom message clear:', expect.any(Error));
+
+      consoleSpy.mockRestore();
+    });
+  });
+
+  describe('verseSyncUtils custom message functions', () => {
+    it('should broadcast custom message selection via BroadcastChannel', () => {
+      const messageData = {
+        id: 'test-msg-123',
+        title: 'Test Message',
+        content: 'Test content'
+      };
+
+      verseSyncUtils.broadcastCustomMessageSelection(messageData);
+
+      const channel = mockBroadcastChannelInstances[0];
+      expect(channel.postMessage).toHaveBeenCalledWith({
+        type: MessageTypes.CUSTOM_MESSAGE_SELECTED,
+        data: {
+          type: 'custom',
+          id: 'test-msg-123',
+          title: 'Test Message',
+          content: 'Test content',
+          displayText: 'Test content',
+          timestamp: expect.any(Number),
+          source: 'custom-messages'
+        },
+        timestamp: expect.any(Number),
+        origin: expect.any(String)
+      });
+    });
+
+    it('should fall back to localStorage for custom message selection', () => {
+      delete global.BroadcastChannel;
+      
+      const messageData = {
+        id: 'test-msg-123',
+        title: 'Test Message',
+        content: 'Test content'
+      };
+
+      verseSyncUtils.broadcastCustomMessageSelection(messageData);
+
+      const stored = JSON.parse(localStorage.getItem('osb-bible-sync-fallback'));
+      expect(stored).toMatchObject({
+        type: MessageTypes.CUSTOM_MESSAGE_SELECTED,
+        data: {
+          type: 'custom',
+          id: 'test-msg-123',
+          title: 'Test Message',
+          content: 'Test content',
+          displayText: 'Test content',
+          timestamp: expect.any(Number),
+          source: 'custom-messages'
+        },
+        timestamp: expect.any(Number),
+        origin: expect.any(String)
+      });
+    });
+
+    it('should broadcast custom message clear via BroadcastChannel', () => {
+      verseSyncUtils.broadcastCustomMessageClear();
+
+      const channel = mockBroadcastChannelInstances[0];
+      expect(channel.postMessage).toHaveBeenCalledWith({
+        type: MessageTypes.CUSTOM_MESSAGE_CLEARED,
+        timestamp: expect.any(Number),
+        origin: expect.any(String)
+      });
+    });
+
+    it('should fall back to localStorage for custom message clear', () => {
+      delete global.BroadcastChannel;
+
+      verseSyncUtils.broadcastCustomMessageClear();
+
+      const stored = JSON.parse(localStorage.getItem('osb-bible-sync-fallback'));
+      expect(stored).toMatchObject({
+        type: MessageTypes.CUSTOM_MESSAGE_CLEARED,
+        timestamp: expect.any(Number),
+        origin: expect.any(String)
+      });
+    });
+  });
+
   describe('MessageTypes', () => {
     it('should have all expected message types', () => {
       expect(MessageTypes.VERSE_SELECTED).toBe('verse-selected');
       expect(MessageTypes.VERSE_CLEARED).toBe('verse-cleared');
       expect(MessageTypes.CHAPTER_NAVIGATED).toBe('chapter-navigated');
       expect(MessageTypes.HISTORY_UPDATED).toBe('history-updated');
+      expect(MessageTypes.CUSTOM_MESSAGE_SELECTED).toBe('custom-message-selected');
+      expect(MessageTypes.CUSTOM_MESSAGE_CLEARED).toBe('custom-message-cleared');
     });
   });
 });
