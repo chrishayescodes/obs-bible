@@ -1,5 +1,15 @@
 # OSB Bible Application - Claude Development Guide
 
+> **📚 Focused Documentation Available**
+> 
+> For day-to-day development, use these focused guides:
+> - **[COMPONENTS.md](./COMPONENTS.md)** - Component API reference and usage examples
+> - **[TESTING.md](./TESTING.md)** - Testing workflow and best practices  
+> - **[MESSAGES.md](./MESSAGES.md)** - Messages Module development guide
+> - **[DEVELOPMENT.md](./DEVELOPMENT.md)** - Setup, commands, and daily workflow
+>
+> This file contains the complete architecture reference.
+
 ## Project Overview
 
 The OSB (Open Source Bible) Bible project is a React-based web application for browsing and interacting with Bible content. The application is built using modern web technologies with a focus on responsive design, comprehensive testing, and component-driven development.
