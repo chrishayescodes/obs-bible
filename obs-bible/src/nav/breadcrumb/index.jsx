@@ -1,5 +1,5 @@
 import React from 'react';
-import { getSimpleBookName } from '../../../utils/bookNames';
+import { getSimpleBookName } from '../../utils/bookNames';
 import './Breadcrumb.css';
 
 const Breadcrumb = ({ 
