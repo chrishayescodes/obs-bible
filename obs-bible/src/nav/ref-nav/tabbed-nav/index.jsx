@@ -123,6 +123,35 @@ const TabbedNavigation = ({
                   onBookSelect={handleBackToChapter}
                   onChapterSelect={handleBackToVerseSelection}
                 />
+                
+                {/* Chapter navigation buttons */}
+                {selectedBookData && getAdjacentChapterInfo && (
+                  <div className="chapter-nav-buttons">
+                    {getAdjacentChapterInfo(selectedBookData).hasPrevious && handlePreviousChapter && (
+                      <button
+                        type="button"
+                        className="chapter-nav-btn previous"
+                        onClick={() => handlePreviousChapter(selectedBookData)}
+                        disabled={loadingVerses}
+                        title="Previous chapter"
+                      >
+                        ← Previous Chapter
+                      </button>
+                    )}
+                    
+                    {getAdjacentChapterInfo(selectedBookData).hasNext && handleNextChapter && (
+                      <button
+                        type="button"
+                        className="chapter-nav-btn next"
+                        onClick={() => handleNextChapter(selectedBookData)}
+                        disabled={loadingVerses}
+                        title="Next chapter"
+                      >
+                        Next Chapter →
+                      </button>
+                    )}
+                  </div>
+                )}
               </div>
               
               {loadingVerses ? (

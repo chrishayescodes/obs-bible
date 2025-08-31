@@ -187,20 +187,6 @@ const VerseDisplay = ({
 
   return (
     <div className="verse-display" ref={containerRef}>
-      {/* Previous Chapter Button at Top */}
-      {chapterInfo.hasPrevious && onPreviousChapter && (
-        <div className="chapter-navigation-top">
-          <button
-            type="button"
-            className="chapter-nav-button previous"
-            onClick={() => onPreviousChapter(bookData)}
-            disabled={loadingVerses}
-          >
-            ↑ Load Previous Chapter
-          </button>
-        </div>
-      )}
-
       {/* Scrollable Content Area */}
       <div className="verse-content">
         {/* Chapter Headers and Verses */}
@@ -253,20 +239,6 @@ const VerseDisplay = ({
         </div>
       ))}
       </div>
-
-      {/* Next Chapter Button at Bottom */}
-      {chapterInfo.hasNext && onNextChapter && (
-        <div className="chapter-navigation-bottom">
-          <button
-            type="button"
-            className="chapter-nav-button next"
-            onClick={() => onNextChapter(bookData)}
-            disabled={loadingVerses}
-          >
-            ↓ Load Next Chapter
-          </button>
-        </div>
-      )}
     </div>
   );
 };
