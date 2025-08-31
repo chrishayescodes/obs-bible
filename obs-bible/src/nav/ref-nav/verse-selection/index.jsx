@@ -33,6 +33,17 @@ const VerseSelect = ({ bookData, chapterNumber, onVerseSelect }) => {
 
   const verses = Array.from({ length: verseCount }, (_, i) => i + 1);
 
+  const getColorClass = (number) => {
+    const num = parseInt(number);
+    if (num <= 25) return 'color-1-25';
+    if (num <= 50) return 'color-26-50';
+    if (num <= 75) return 'color-51-75';
+    if (num <= 100) return 'color-76-100';
+    if (num <= 125) return 'color-101-125';
+    if (num <= 150) return 'color-126-150';
+    return 'color-151-176';
+  };
+
   return (
     <div className="verse-select">
       <h2 className="sr-only">Select Verse</h2>
@@ -41,7 +52,7 @@ const VerseSelect = ({ bookData, chapterNumber, onVerseSelect }) => {
           <button
             key={verseNumber}
             type="button"
-            className={`verse-button ${selectedVerse === verseNumber ? 'selected' : ''}`}
+            className={`verse-button ${getColorClass(verseNumber)} ${selectedVerse === verseNumber ? 'selected' : ''}`}
             onClick={() => handleVerseClick(verseNumber)}
             title={`Verse ${verseNumber}`}
           >

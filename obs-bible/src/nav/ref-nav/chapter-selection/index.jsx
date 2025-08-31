@@ -26,6 +26,17 @@ const ChapterSelector = ({ bookData, onChapterSelect }) => {
 
   const chapters = Object.entries(bookData.chapters);
 
+  const getColorClass = (number) => {
+    const num = parseInt(number);
+    if (num <= 25) return 'color-1-25';
+    if (num <= 50) return 'color-26-50';
+    if (num <= 75) return 'color-51-75';
+    if (num <= 100) return 'color-76-100';
+    if (num <= 125) return 'color-101-125';
+    if (num <= 150) return 'color-126-150';
+    return 'color-151-176';
+  };
+
   return (
     <div className="chapter-selector">
       <h2 className="sr-only">Select Chapter</h2>
@@ -34,7 +45,7 @@ const ChapterSelector = ({ bookData, onChapterSelect }) => {
           <button
             key={chapterNumber}
             type="button"
-            className={`chapter-button ${selectedChapter === chapterNumber ? 'selected' : ''}`}
+            className={`chapter-button ${getColorClass(chapterNumber)} ${selectedChapter === chapterNumber ? 'selected' : ''}`}
             onClick={() => handleChapterClick(chapterNumber)}
             title={`Chapter ${chapterNumber} - ${verseCount} verses`}
           >
