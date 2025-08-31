@@ -244,7 +244,9 @@
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
-  .number-selector-button {
+  .number-selector-button,
+  .chapter-button,
+  .verse-button {
     background: #333;
     color: #fff;
     border-color: #555;
@@ -253,4 +255,158 @@
   .loading {
     color: #ccc;
   }
+
+  /* Dark mode color overrides with better contrast */
+  .color-1-25 {
+    background-color: #3d3100;
+    border-color: #5d4a00;
+    color: #fff;
+  }
+  .color-1-25:hover, .color-1-25.selected {
+    background-color: #ffeb3b;
+    color: #000;
+  }
+
+  .color-26-50 {
+    background-color: #0f2d33;
+    border-color: #1e4a52;
+    color: #fff;
+  }
+  .color-26-50:hover, .color-26-50.selected {
+    background-color: #17a2b8;
+    color: #fff;
+  }
+
+  .color-51-75 {
+    background-color: #2a1a4d;
+    border-color: #3d2b70;
+    color: #fff;
+  }
+  .color-51-75:hover, .color-51-75.selected {
+    background-color: #6f42c1;
+    color: #fff;
+  }
+
+  .color-76-100 {
+    background-color: #4a1e21;
+    border-color: #6b2c30;
+    color: #fff;
+  }
+  .color-76-100:hover, .color-76-100.selected {
+    background-color: #dc3545;
+    color: #fff;
+  }
+
+  .color-101-125 {
+    background-color: #1e2f15;
+    border-color: #2d4521;
+    color: #fff;
+  }
+  .color-101-125:hover, .color-101-125.selected {
+    background-color: #28a745;
+    color: #fff;
+  }
+
+  .color-126-150 {
+    background-color: #3d1a2b;
+    border-color: #5c2741;
+    color: #fff;
+  }
+  .color-126-150:hover, .color-126-150.selected {
+    background-color: #e83e8c;
+    color: #fff;
+  }
+
+  .color-151-176 {
+    background-color: #1a2e33;
+    border-color: #2b4449;
+    color: #fff;
+  }
+  .color-151-176:hover, .color-151-176.selected {
+    background-color: #20c997;
+    color: #fff;
+  }
+}
+
+/* Explicit dark mode class support */
+.dark .number-selector-button,
+.dark .chapter-button,
+.dark .verse-button {
+  background: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+.dark .loading {
+  color: #ccc;
+}
+
+.dark .color-1-25 {
+  background-color: #3d3100;
+  border-color: #5d4a00;
+  color: #fff;
+}
+.dark .color-1-25:hover, .dark .color-1-25.selected {
+  background-color: #ffeb3b;
+  color: #000;
+}
+
+.dark .color-26-50 {
+  background-color: #0f2d33;
+  border-color: #1e4a52;
+  color: #fff;
+}
+.dark .color-26-50:hover, .dark .color-26-50.selected {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.dark .color-51-75 {
+  background-color: #2a1a4d;
+  border-color: #3d2b70;
+  color: #fff;
+}
+.dark .color-51-75:hover, .dark .color-51-75.selected {
+  background-color: #6f42c1;
+  color: #fff;
+}
+
+.dark .color-76-100 {
+  background-color: #4a1e21;
+  border-color: #6b2c30;
+  color: #fff;
+}
+.dark .color-76-100:hover, .dark .color-76-100.selected {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.dark .color-101-125 {
+  background-color: #1e2f15;
+  border-color: #2d4521;
+  color: #fff;
+}
+.dark .color-101-125:hover, .dark .color-101-125.selected {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.dark .color-126-150 {
+  background-color: #3d1a2b;
+  border-color: #5c2741;
+  color: #fff;
+}
+.dark .color-126-150:hover, .dark .color-126-150.selected {
+  background-color: #e83e8c;
+  color: #fff;
+}
+
+.dark .color-151-176 {
+  background-color: #1a2e33;
+  border-color: #2b4449;
+  color: #fff;
+}
+.dark .color-151-176:hover, .dark .color-151-176.selected {
+  background-color: #20c997;
+  color: #fff;
 }
