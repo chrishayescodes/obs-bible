@@ -19,21 +19,21 @@
 
 .books-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
   gap: 8px;
   max-width: 100%;
 }
 
 .book-button {
   border-radius: 8px;
-  padding: 12px 8px;
+  padding: 4px 3px;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 70px;
+  min-height: 50px;
   font-family: inherit;
   border: 2px solid;
 }
@@ -313,47 +313,47 @@
 /* Extra large screens - 12+ columns */
 @media (min-width: 1400px) {
   .books-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   }
 }
 
 /* Large screens - 10-12 columns */
 @media (min-width: 1200px) and (max-width: 1399px) {
   .books-grid {
-    grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
   }
 }
 
 /* Medium screens - 8-10 columns */
 @media (min-width: 992px) and (max-width: 1199px) {
   .books-grid {
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
   }
 }
 
 /* Tablet landscape - 6-8 columns */
 @media (min-width: 768px) and (max-width: 991px) {
   .books-grid {
-    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
-    gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+    gap: 6px;
   }
   
   .book-button {
-    padding: 10px 6px;
-    min-height: 65px;
+    padding: 4px 3px;
+    min-height: 45px;
   }
 }
 
 /* Tablet portrait - 5-6 columns */
 @media (min-width: 576px) and (max-width: 767px) {
   .books-grid {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 6px;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 5px;
   }
   
   .book-button {
-    padding: 10px 6px;
-    min-height: 60px;
+    padding: 4px 3px;
+    min-height: 40px;
   }
   
   .book-id {
@@ -364,13 +364,13 @@
 /* Mobile landscape - 4-5 columns */
 @media (min-width: 480px) and (max-width: 575px) {
   .books-grid {
-    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
-    gap: 6px;
+    grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
+    gap: 5px;
   }
   
   .book-button {
-    padding: 8px 4px;
-    min-height: 55px;
+    padding: 3px 2px;
+    min-height: 35px;
   }
   
   .book-id {
@@ -381,13 +381,13 @@
 /* Mobile portrait - 3-4 columns */
 @media (max-width: 479px) {
   .books-grid {
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-    gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 4px;
   }
   
   .book-button {
-    padding: 8px 4px;
-    min-height: 50px;
+    padding: 3px 2px;
+    min-height: 30px;
   }
   
   .book-id {
