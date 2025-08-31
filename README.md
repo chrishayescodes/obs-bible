@@ -108,6 +108,10 @@ npm run build
 
 This project follows a milestone-driven development approach with comprehensive testing requirements. All contributions must maintain 100% test coverage and follow the established architectural patterns.
 
+## Support
+
+Support this project on [Patreon](https://patreon.com/chrishayescodes)
+
 ## License
 
 This project is licensed under the MIT License.
