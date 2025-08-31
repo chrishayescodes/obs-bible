@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import BibleBookSelector from '../book-selection'
-import ChapterSelector from '../chapter-selection'
-import VerseSelect from '../verse-selection'
+import NumberSelector from '../shared/NumberSelector'
 import Breadcrumb from '../breadcrumb'
 import { getSimpleBookName } from '../../../utils/bookNames'
 import './Navigation.css'
+import '../shared/NumberSelector.css'
 
 const Navigation = ({ bibleData, onVerseSelected, initialBookData = null, initialChapter = null }) => {
   const [selectedBook, setSelectedBook] = useState(initialBookData)
@@ -68,18 +68,63 @@ const Navigation = ({ bibleData, onVerseSelected, initialBookData = null, initia
       
       {selectedBook && selectedChapter ? (
         <div className="verse-view">
-          <VerseSelect 
-            bookData={selectedBook} 
-            chapterNumber={selectedChapter}
-            onVerseSelect={handleVerseSelect}
-          />
+          {(() => {
+            // Verse selection logic
+            if (!selectedBook.chapters || !(selectedChapter in selectedBook.chapters)) {
+              return <div className="loading">Loading verses...</div>;
+            }
+
+            const verseCount = selectedBook.chapters[selectedChapter];
+            if (typeof verseCount !== 'number' || verseCount < 0 || !Number.isInteger(verseCount)) {
+              return <div className="loading">Loading verses...</div>;
+            }
+
+            const verses = Array.from({ length: verseCount }, (_, i) => i + 1);
+            const getItemTitle = (verseNumber) => `Verse ${verseNumber}`;
+
+            return (
+              <NumberSelector
+                items={verses}
+                onItemSelect={handleVerseSelect}
+                emptyMessage="No verses available..."
+                className="verse-select"
+                itemClassName="verse-button"
+                gridClassName="verses-grid"
+                getItemTitle={getItemTitle}
+                srOnlyTitle="Select Verse"
+              />
+            );
+          })()}
         </div>
       ) : selectedBook ? (
         <div className="chapter-view">
-          <ChapterSelector 
-            bookData={selectedBook} 
-            onChapterSelect={handleChapterSelect}
-          />
+          {(() => {
+            // Chapter selection logic
+            if (!selectedBook.chapters) {
+              return <div className="loading">Loading chapters...</div>;
+            }
+
+            const chapters = Object.entries(selectedBook.chapters);
+            const items = chapters.map(([chapterNumber, verseCount]) => ({
+              key: chapterNumber,
+              value: chapterNumber,
+              verseCount
+            }));
+            const getItemTitle = (item) => `Chapter ${item.value} - ${item.verseCount} verses`;
+
+            return (
+              <NumberSelector
+                items={items}
+                onItemSelect={handleChapterSelect}
+                emptyMessage="No chapters available..."
+                className="chapter-selector"
+                itemClassName="chapter-button"
+                gridClassName="chapters-grid"
+                getItemTitle={getItemTitle}
+                srOnlyTitle="Select Chapter"
+              />
+            );
+          })()}
         </div>
       ) : (
         <BibleBookSelector bibleData={bibleData} onBookSelect={handleBookSelect} />
