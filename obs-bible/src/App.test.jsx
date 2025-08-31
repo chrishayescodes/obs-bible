@@ -144,7 +144,7 @@ describe('App Component - Routing Architecture', () => {
       // App should only render AppNavigation, not any specific navigation UI
       expect(screen.queryByTestId('navigation')).not.toBeInTheDocument();
       expect(screen.queryByTestId('verse-display')).not.toBeInTheDocument();
-      expect(screen.queryByText('← Back to Books')).not.toBeInTheDocument();
+      // Back to Books button no longer exists (replaced by breadcrumb)
     });
   });
 

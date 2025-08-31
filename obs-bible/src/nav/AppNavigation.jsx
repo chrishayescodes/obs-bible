@@ -15,6 +15,8 @@ const AppNavigation = ({ bibleData }) => {
     handleVerseSelected,
     handleVerseDisplaySelect,
     handleBackToBooks,
+    handleBackToChapter,
+    handleBackToVerseSelection,
     restoreCurrentVerse,
     handlePreviousChapter,
     handleNextChapter,
@@ -36,7 +38,10 @@ const AppNavigation = ({ bibleData }) => {
     const oldTestament = bibleData.old_testament?.books?.[bookId]
     const newTestament = bibleData.new_testament?.books?.[bookId]
     
-    return oldTestament || newTestament || null
+    const bookData = oldTestament || newTestament || null
+    
+    // Add the bookId to the book data so breadcrumb can use simple names
+    return bookData ? { ...bookData, id: bookId } : null
   }
 
   const selectedBookData = getSelectedBookData()
@@ -52,6 +57,8 @@ const AppNavigation = ({ bibleData }) => {
       selectedVerse={selectedVerse}
       handleVerseDisplaySelect={handleVerseDisplaySelect}
       handleBackToBooks={handleBackToBooks}
+      handleBackToChapter={handleBackToChapter}
+      handleBackToVerseSelection={handleBackToVerseSelection}
       selectedBookData={selectedBookData}
       handlePreviousChapter={handlePreviousChapter}
       handleNextChapter={handleNextChapter}

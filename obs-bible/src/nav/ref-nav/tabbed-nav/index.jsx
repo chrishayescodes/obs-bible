@@ -4,6 +4,7 @@ import SearchHistory from '../search-history'
 import StageList from '../stage-list'
 import { MessagesTab } from '../../../messages'
 import VerseDisplay from '../../bible-nav/verse-display'
+import Breadcrumb from '../breadcrumb'
 import './TabbedNavigation.css'
 
 const TabbedNavigation = ({ 
@@ -16,6 +17,8 @@ const TabbedNavigation = ({
   selectedVerse,
   handleVerseDisplaySelect,
   handleBackToBooks,
+  handleBackToChapter,
+  handleBackToVerseSelection,
   selectedBookData,
   handlePreviousChapter,
   handleNextChapter,
@@ -109,16 +112,17 @@ const TabbedNavigation = ({
           hidden={activeTab !== 'reference'}
         >
           {selectedScripture ? (
-            // Show verse display with back button
+            // Show verse display with breadcrumb navigation
             <div className="verse-view">
               <div className="verse-header">
-                <button 
-                  className="back-button" 
-                  onClick={handleBackToBooks}
-                  type="button"
-                >
-                  ← Back to Books
-                </button>
+                <Breadcrumb
+                  selectedBook={selectedBookData}
+                  selectedChapter={selectedScripture.chapter}
+                  selectedVerse={selectedScripture.verse}
+                  onReset={handleBackToBooks}
+                  onBookSelect={handleBackToChapter}
+                  onChapterSelect={handleBackToVerseSelection}
+                />
               </div>
               
               {loadingVerses ? (

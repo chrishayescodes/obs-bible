@@ -96,6 +96,33 @@ export const useVerseNavigation = (bibleData) => {
     setLoadedChapters(new Set())
   }, [])
 
+  const handleBackToChapter = useCallback(() => {
+    // Clear verse data to go back to chapter selection
+    setVerseData(null)
+    setLoadingVerses(false)
+    setNavigatedVerse(null)
+    setSelectedVerse(null)
+    setLoadedChapters(new Set())
+    
+    // Keep book and chapter selection but clear verse
+    if (selectedScripture) {
+      setSelectedScripture(prev => ({
+        ...prev,
+        verse: null
+      }))
+    }
+  }, [selectedScripture])
+
+  const handleBackToVerseSelection = useCallback(() => {
+    // Keep the current scripture reference but clear verse data
+    // This returns to verse selection view while maintaining current selection context
+    setVerseData(null)
+    setLoadingVerses(false)
+    setNavigatedVerse(null)
+    setSelectedVerse(null)
+    setLoadedChapters(new Set())
+  }, [])
+
   const restoreCurrentVerse = useCallback(async () => {
     // Restore current verse from localStorage if it exists
     const savedVerse = verseHistoryUtils.getCurrentVerse()
@@ -241,6 +268,8 @@ export const useVerseNavigation = (bibleData) => {
     handleVerseSelected,
     handleVerseDisplaySelect,
     handleBackToBooks,
+    handleBackToChapter,
+    handleBackToVerseSelection,
     restoreCurrentVerse,
     handlePreviousChapter,
     handleNextChapter,

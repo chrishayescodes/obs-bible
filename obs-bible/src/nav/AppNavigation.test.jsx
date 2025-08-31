@@ -135,7 +135,7 @@ describe('AppNavigation Component', () => {
       render(<AppNavigation bibleData={mockBibleData} />);
 
       expect(screen.getByTestId('verse-display')).toBeInTheDocument();
-      expect(screen.getByText('← Back to Books')).toBeInTheDocument();
+      expect(screen.getByTitle('Go to book selection')).toBeInTheDocument();
       expect(screen.queryByTestId('navigation')).not.toBeInTheDocument();
     });
 
@@ -152,7 +152,7 @@ describe('AppNavigation Component', () => {
       expect(screen.getByTestId('chapter-number')).toHaveTextContent('1');
     });
 
-    it('should call handleBackToBooks when back button is clicked', () => {
+    it('should call handleBackToBooks when breadcrumb Books button is clicked', () => {
       useVerseNavigation.mockReturnValue({
         ...mockNavigationHook,
         selectedScripture: mockSelectedScripture,
@@ -161,8 +161,8 @@ describe('AppNavigation Component', () => {
 
       render(<AppNavigation bibleData={mockBibleData} />);
 
-      const backButton = screen.getByText('← Back to Books');
-      fireEvent.click(backButton);
+      const booksButton = screen.getByTitle('Go to book selection');
+      fireEvent.click(booksButton);
 
       expect(mockNavigationHook.handleBackToBooks).toHaveBeenCalled();
     });
