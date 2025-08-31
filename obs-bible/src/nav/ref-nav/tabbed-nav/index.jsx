@@ -4,7 +4,7 @@ import SearchHistory from '../search-history'
 import StageList from '../stage-list'
 import { MessagesTab } from '../../../messages'
 import VerseDisplay from '../../bible-nav/verse-display'
-import Breadcrumb from '../breadcrumb'
+import Breadcrumb from '../../breadcrumb'
 import './TabbedNavigation.css'
 
 const TabbedNavigation = ({ 

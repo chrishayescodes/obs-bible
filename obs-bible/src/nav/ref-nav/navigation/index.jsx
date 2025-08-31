@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import BibleBookSelector from '../book-selection'
 import NumberSelector from '../shared/NumberSelector'
-import Breadcrumb from '../breadcrumb'
+import Breadcrumb from '../../breadcrumb'
 import { getSimpleBookName } from '../../../utils/bookNames'
 import './Navigation.css'
 import '../shared/NumberSelector.css'
@@ -87,9 +87,9 @@ const Navigation = ({ bibleData, onVerseSelected, initialBookData = null, initia
                 items={verses}
                 onItemSelect={handleVerseSelect}
                 emptyMessage="No verses available..."
-                className="verse-select"
-                itemClassName="verse-button"
-                gridClassName="verses-grid"
+                className="number-select-container"
+                itemClassName="number-select-button"
+                gridClassName="number-select-grid"
                 getItemTitle={getItemTitle}
                 srOnlyTitle="Select Verse"
               />
@@ -117,9 +117,9 @@ const Navigation = ({ bibleData, onVerseSelected, initialBookData = null, initia
                 items={items}
                 onItemSelect={handleChapterSelect}
                 emptyMessage="No chapters available..."
-                className="chapter-selector"
-                itemClassName="chapter-button"
-                gridClassName="chapters-grid"
+                className="number-select-container"
+                itemClassName="number-select-button"
+                gridClassName="number-select-grid"
                 getItemTitle={getItemTitle}
                 srOnlyTitle="Select Chapter"
               />
