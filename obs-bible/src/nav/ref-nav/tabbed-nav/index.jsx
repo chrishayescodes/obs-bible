@@ -18,6 +18,7 @@ const TabbedNavigation = ({
   handleVerseDisplaySelect,
   handleBackToBooks,
   handleBackToChapter,
+  handleBackToBookChapters,
   handleBackToVerseSelection,
   selectedBookData,
   handlePreviousChapter,
@@ -111,7 +112,7 @@ const TabbedNavigation = ({
           id="reference-panel"
           hidden={activeTab !== 'reference'}
         >
-          {selectedScripture ? (
+          {selectedScripture && selectedScripture.chapter && verseData ? (
             // Show verse display with breadcrumb navigation
             <div className="verse-view">
               <div className="verse-header">
@@ -120,7 +121,7 @@ const TabbedNavigation = ({
                   selectedChapter={selectedScripture.chapter}
                   selectedVerse={selectedScripture.verse}
                   onReset={handleBackToBooks}
-                  onBookSelect={handleBackToChapter}
+                  onBookSelect={handleBackToBookChapters}
                   onChapterSelect={handleBackToVerseSelection}
                 />
                 
@@ -183,6 +184,8 @@ const TabbedNavigation = ({
             <Navigation 
               bibleData={bibleData} 
               onVerseSelected={onVerseSelected}
+              initialBookData={selectedScripture ? selectedBookData : null}
+              initialChapter={selectedScripture ? selectedScripture.chapter : null}
             />
           )}
         </div>

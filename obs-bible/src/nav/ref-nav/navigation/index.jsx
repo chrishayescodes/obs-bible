@@ -6,9 +6,9 @@ import Breadcrumb from '../breadcrumb'
 import { getSimpleBookName } from '../../../utils/bookNames'
 import './Navigation.css'
 
-const Navigation = ({ bibleData, onVerseSelected }) => {
-  const [selectedBook, setSelectedBook] = useState(null)
-  const [selectedChapter, setSelectedChapter] = useState(null)
+const Navigation = ({ bibleData, onVerseSelected, initialBookData = null, initialChapter = null }) => {
+  const [selectedBook, setSelectedBook] = useState(initialBookData)
+  const [selectedChapter, setSelectedChapter] = useState(initialChapter)
   const [selectedVerse, setSelectedVerse] = useState(null)
 
   const handleBookSelect = (bookId, bookInfo) => {

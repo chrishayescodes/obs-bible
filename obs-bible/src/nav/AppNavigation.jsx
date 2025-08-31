@@ -16,6 +16,7 @@ const AppNavigation = ({ bibleData }) => {
     handleVerseDisplaySelect,
     handleBackToBooks,
     handleBackToChapter,
+    handleBackToBookChapters,
     handleBackToVerseSelection,
     restoreCurrentVerse,
     handlePreviousChapter,
@@ -58,6 +59,7 @@ const AppNavigation = ({ bibleData }) => {
       handleVerseDisplaySelect={handleVerseDisplaySelect}
       handleBackToBooks={handleBackToBooks}
       handleBackToChapter={handleBackToChapter}
+      handleBackToBookChapters={handleBackToBookChapters}
       handleBackToVerseSelection={handleBackToVerseSelection}
       selectedBookData={selectedBookData}
       handlePreviousChapter={handlePreviousChapter}
